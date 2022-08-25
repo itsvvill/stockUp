@@ -1,4 +1,4 @@
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 // styles
 import './App.css';
 //components
@@ -9,15 +9,17 @@ import Signup from './pages/signup/signup';
 function App() {
   return (
     <BrowserRouter>
-      <Route exact path="/home">
-        <Home />
-      </Route>
-      <Route exact path="/login">
-        <Login />
-      </Route>
-      <Route exact path="/signup">
-        <Signup />
-      </Route>
+      <Switch>
+        <Route exact path="/home">
+          <Home />
+        </Route>
+        <Route exact path="/login">
+          <Login />
+        </Route>
+        <Route exact path="/signup">
+          <Signup />
+        </Route>
+      </Switch>
     </BrowserRouter>
   );
 }
