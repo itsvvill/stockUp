@@ -5,6 +5,7 @@ import './App.css';
 import Home from './pages/home/Home';
 import Login from './pages/login/login';
 import Signup from './pages/signup/signup';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
