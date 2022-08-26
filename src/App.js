@@ -9,6 +9,7 @@ import Signup from './pages/signup/signup';
 function App() {
   return (
     <BrowserRouter>
+      <Navbar />
       <Switch>
         <Route exact path="/">
           <Home />
