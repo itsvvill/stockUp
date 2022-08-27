@@ -13,8 +13,8 @@ export default function Signup() {
     console.log(email, password, displayName);
   };
   return (
-    <form onSubmit={handleSubmit} className={styles['login-form']}>
-      <h2>login</h2>
+    <form onSubmit={handleSubmit} className={styles['signup-form']}>
+      <h2>Sign Up</h2>
       <label>
         <span>Email:</span>
         <input
@@ -34,7 +34,7 @@ export default function Signup() {
       <label>
         <span>Display Name:</span>
         <input
-          type="displayname"
+          type="text"
           onChange={(e) => setDisplayName(e.target.value)}
           value={displayName}
         />
