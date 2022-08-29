@@ -10,7 +10,6 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_FIREBASE_APP_ID,
   measurementID: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
-console.log(process.env.REACT_APP_HELLO);
 
 //init firebase
 firebase.initializeApp(firebaseConfig);
