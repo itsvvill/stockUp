@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSignup } from '../../hooks/useSignup';
 
 //styles
 import styles from './Signup.module.css';
@@ -7,6 +8,7 @@ export default function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [displayName, setDisplayName] = useState('');
+  const { signUp, isPending, error } = useSignup();
 
   const handleSubmit = (e) => {
     e.preventDefault();
