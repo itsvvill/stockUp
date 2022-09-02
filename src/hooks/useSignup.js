@@ -5,7 +5,7 @@ export const useSignup = () => {
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
 
-  const signup = async (email, password, displayName) => {
+  const signUp = async (email, password, displayName) => {
     setError(null);
     setIsPending(true);
 
@@ -33,5 +33,5 @@ export const useSignup = () => {
     }
   };
 
-  return { error, isPending, signup };
+  return { error, isPending, signUp };
 };
