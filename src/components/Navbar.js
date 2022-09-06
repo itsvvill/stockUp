@@ -15,6 +15,11 @@ export default function Navbar() {
           <Link to="/login">Login</Link>
           <Link to="/signup">Signup</Link>
         </li>
+        <li>
+          <button className="btn" onClick={logout}>
+            Logout
+          </button>
+        </li>
       </ul>
     </nav>
   );
