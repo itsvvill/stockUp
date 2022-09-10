@@ -4,7 +4,6 @@ import { useAuthContext } from './useAuthContext';
 
 export const useLogout = () => {
   const [isCancelled, setIsCancelled] = useState(false);
-  ß;
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const { dispatch } = useAuthContext();
