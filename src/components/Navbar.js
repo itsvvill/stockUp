@@ -4,6 +4,7 @@ import { useAuthContext } from '../hooks/useAuthContext';
 
 // styles
 import styles from './Navbar.module.css';
+import { useReducer } from 'react';
 
 export default function Navbar() {
   const { logout } = useLogout();
@@ -12,7 +13,7 @@ export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <ul>
-        <li className={styles.title}>myMoney</li>
+        <li className={styles.title}>StockUp</li>
         {!user && (
           <>
             <li>
@@ -24,11 +25,14 @@ export default function Navbar() {
           </>
         )}
         {user && (
-          <li>
-            <button className="btn" onClick={logout}>
-              Logout
-            </button>
-          </li>
+          <>
+            <li>Hello, {user.displayName}!</li>
+            <li>
+              <button className="btn" onClick={logout}>
+                Logout
+              </button>
+            </li>
+          </>
         )}
       </ul>
     </nav>
