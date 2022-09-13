@@ -1,0 +1,17 @@
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  max-width: 960px;
+  margin: 60px auto;
+}
+.content {
+  padding-right: 30px;
+}
+.sidebar {
+  padding-left: 30px;
+}
+.sidebar form {
+  padding: 20px;
+  background: #1f9751;
+  border-radius: 10px;
+}
