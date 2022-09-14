@@ -6,7 +6,12 @@ export default function TransactionForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log({
+      name,
+      amount,
+    });
   };
+
   return (
     <>
       <h3>Add a Transaction</h3>
