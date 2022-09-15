@@ -8,6 +8,13 @@ let initialState = {
   success: null,
 };
 
+const firestoreReducer = (state, action) => {
+  switch (action.type) {
+    default:
+      return state;
+  }
+};
+
 export const useFirestore = (collection) => {
   const [response, dispatch] = useReducer(firestoreReducer, initialState);
 };
