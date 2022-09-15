@@ -30,4 +30,6 @@ export const useFirestore = (collection) => {
   useEffect(() => {
     return () => setIsCancelled(true);
   }, []);
+
+  return { addDocument, deleteDocument, response };
 };
