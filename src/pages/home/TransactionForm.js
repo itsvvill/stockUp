@@ -15,6 +15,7 @@ export default function TransactionForm({ uid }) {
     });
   };
 
+  // reset the form fields
   useEffect(() => {
     if (response.success) {
       setName('');
