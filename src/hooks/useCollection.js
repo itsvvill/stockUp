@@ -18,5 +18,9 @@ export const useCollection = (collection) => {
       setDocuments(results);
       setError(null);
     });
+    // unsubscribe on unmount
+    return () => unsubscribe();
   }, [collection]);
+
+  return { documents, error };
 };
