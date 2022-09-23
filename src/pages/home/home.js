@@ -5,6 +5,7 @@ import { useCollection } from '../../hooks/useCollection';
 import styles from './Home.module.css';
 // components and pages
 import TransactionForm from './TransactionForm';
+import TransactionList from './TransactionList';
 
 export default function Home() {
   const { user } = useAuthContext();
