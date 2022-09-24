@@ -4,7 +4,6 @@ import { useAuthContext } from '../hooks/useAuthContext';
 
 // styles
 import styles from './Navbar.module.css';
-import { useReducer } from 'react';
 
 export default function Navbar() {
   const { logout } = useLogout();

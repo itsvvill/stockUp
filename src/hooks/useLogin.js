@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { projectAuth } from '../firebase/config';
-import { AuthContext } from '../context/AuthContext';
 import { useAuthContext } from './useAuthContext';
 
 export const useLogin = () => {
@@ -13,8 +12,8 @@ export const useLogin = () => {
     setError(null);
     setIsPending(true);
 
-    //log the user in
     try {
+      //log the user in
       const res = await projectAuth.signInWithEmailAndPassword(email, password);
       // dispatch login action
       dispatch({ type: 'LOGIN', payload: res.user });

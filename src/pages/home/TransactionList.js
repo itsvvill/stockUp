@@ -1,5 +1,5 @@
 // styles
-import styles from './Home.modules.css';
+import styles from './Home.module.css';
 
 export default function TransactionList({ transactions }) {
   return (
