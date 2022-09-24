@@ -12,9 +12,10 @@ export default function Home() {
   const { documents, error } = useCollection('transactions');
   return (
     <div className={styles.container}>
-      <div className={styles.content}>Transaction List</div>
-      {error && <p>{error}</p>}
-      {documents && <TransactionList transactions={documents} />}
+      <div className={styles.content}>
+        {error && <p>{error}</p>}
+        {documents && <TransactionList transactions={documents} />}
+      </div>
       <div className={styles.sidebar}>
         <TransactionForm uid={user.uid} />
       </div>
