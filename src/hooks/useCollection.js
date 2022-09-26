@@ -4,7 +4,8 @@ import { projectFirestore } from '../firebase/config';
 export const useCollection = (collection, _query) => {
   const [documents, setDocuments] = useState(null);
   const [error, setError] = useState(null);
-
+  // using a ref avoids infinite loop in useEffect
+  // _query is an array and is "different" on every function call
   const query = useRef(_query).current;
 
   useEffect(() => {
