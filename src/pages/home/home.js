@@ -12,7 +12,7 @@ export default function Home() {
   const { documents, error } = useCollection('transactions', [
     'uid',
     '==',
-    user.id,
+    user.uid,
   ]);
   return (
     <div className={styles.container}>
