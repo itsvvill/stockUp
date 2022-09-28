@@ -83,7 +83,9 @@ export const useFirestore = (collection) => {
         type: 'DELETED_DOCUMENT',
         payload: deletedDocument,
       });
-    } catch (err) {}
+    } catch (err) {
+      dispatchIfNotCancelled({ type: 'ERROR', payload: 'could not delete' });
+    }
   };
 
   useEffect(() => {
