@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  text-align: center;
+}
+.input {
+  margin: 25px;
+  width: 150px;
+  font-size: 15px;
+  border: 2px solid grey;
+  padding: 8px 12px;
+  border-radius: 14px;
+}
+
+.container {
+  margin: 3px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+.stock {
+  padding: 20px;
+}
+.current-price {
+  font-size: 25px;
+  font-weight: bold;
+}
+.prices {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+.high-price {
+  text-transform: uppercase;
+  color: green;
+  margin: 10px;
+}
+.low-price {
+  text-transform: uppercase;
+  color: red;
+  margin: 10px;
+}
+.change-in-price {
+  text-transform: uppercase;
+  margin: 10px;
+}
+.perc-change {
+  margin: 20px;
+  font-size: 25px;
+}
+.btn {
+  font-size: 15px;
+  margin-top: 25px;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 14px;
+}
