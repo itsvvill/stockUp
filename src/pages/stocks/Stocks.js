@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './styles.css';
+
+// styles
+import styles from './Stocks.module.css';
 
 export default function Stocks() {
   const [stock, setStock] = useState('');
