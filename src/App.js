@@ -6,6 +6,7 @@ import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
 import Navbar from './components/Navbar';
+import Stocks from './pages/stocks/Stocks';
 
 function App() {
   const { authIsReady, user } = useAuthContext();
@@ -17,6 +18,10 @@ function App() {
           <Switch>
             <Route exact path="/">
               {user && <Home />}
+              {!user && <Redirect to="/login" />}
+            </Route>
+            <Route exact path="/stocks">
+              {user && <Stocks />}
               {!user && <Redirect to="/login" />}
             </Route>
             <Route path="/login">
