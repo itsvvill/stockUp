@@ -28,10 +28,10 @@ export default function Stocks() {
       });
   };
   return (
-    <div className="container">
-      <div className="info">
+    <div className={styles['container']}>
+      <div className={styles['info']}>
         {stock && (
-          <h1 className="stock">
+          <h1 className={styles['stock']}>
             <span role="img" aria-label="money">
               💵
             </span>{' '}
@@ -42,7 +42,7 @@ export default function Stocks() {
           </h1>
         )}
         {!stock && (
-          <h1 className="stock">
+          <h1 className={styles['stock']}>
             <span role="img" aria-label="to the moon">
               🚀
             </span>{' '}
@@ -52,25 +52,25 @@ export default function Stocks() {
             </span>
           </h1>
         )}
-        <div className="prices">
-          <p className="high-price">High: ${high}</p>
-          <p className="change-in-price">Change: ${change}</p>
-          <p className="low-price">Low: ${low}</p>
+        <div className={styles['prices']}>
+          <p className={styles['high-price']}>High: ${high}</p>
+          <p className={styles['change-in-price']}>Change: ${change}</p>
+          <p className={styles['low-price']}>Low: ${low}</p>
         </div>
-        <p className="current-price">Current price: ${price}</p>
-        <p className="perc-change">{perc}%</p>
+        <p className={styles['current-price']}>Current price: ${price}</p>
+        <p className={styles['perc-change']}>{perc}%</p>
       </div>
-      <div className="search">
+      <div className={styles['search']}>
         <input
           placeholder="Enter a stock "
           type="text"
-          className="input"
+          className={styles['input']}
           onChange={(e) => setStock(e.target.value.toUpperCase())}
           minLength="1"
           maxLength="6"
           required
         />
-        <button className="btn" onClick={getData}>
+        <button className={styles['btn']} onClick={getData}>
           Get Price Info
         </button>
       </div>
