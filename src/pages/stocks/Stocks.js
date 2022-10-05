@@ -12,7 +12,7 @@ export default function Stocks() {
   const [perc, setPerc] = useState(0);
 
   let api = process.env.REACT_APP_API_KEY;
-  // https://finnhub.io/api/v1/quote?symbol=AAPL&token=APIHERE
+
   useEffect(() => {});
 
   const getData = () => {
