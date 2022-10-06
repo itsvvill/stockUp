@@ -74,6 +74,7 @@ export default function Stocks() {
             onChange={(e) => setStock(e.target.value.toUpperCase())}
             minLength="1"
             maxLength="6"
+            autoComplete="off"
             required
           />
           <input type="submit" value="Submit" className={styles['btn']} />
