@@ -11,9 +11,9 @@ export default function Navbar() {
 
   return (
     <nav className={styles.navbar}>
-      <ul>
-        <li className={styles.title}>StockUp</li>
-        {!user && (
+      {!user && (
+        <ul>
+          <li className={styles.stocks}>StockUp</li>
           <>
             <li>
               <Link to="/login">Login</Link>
@@ -22,18 +22,28 @@ export default function Navbar() {
               <Link to="/signup">Signup</Link>
             </li>
           </>
-        )}
-        {user && (
-          <>
+        </ul>
+      )}
+      {user && (
+        <ul>
+          <div>
+            <li className={styles.stocks}>
+              <Link to="/stocks">StockUp</Link>
+            </li>
+            <li className={styles.transactions}>
+              <Link to="/">Transactions</Link>
+            </li>
+          </div>
+          <div>
             <li>Hello, {user.displayName}!</li>
             <li>
               <button className="btn" onClick={logout}>
                 Logout
               </button>
             </li>
-          </>
-        )}
-      </ul>
+          </div>
+        </ul>
+      )}
     </nav>
   );
 }

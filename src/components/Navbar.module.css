@@ -10,16 +10,28 @@
   margin: 0 auto;
   max-width: 960px;
   align-items: center;
+  justify-content: space-between;
 }
-.title {
+.navbar div {
+  display: flex;
+  align-items: center;
+}
+.stocks {
   margin-right: auto;
   font-weight: bold;
+  letter-spacing: 1.2px;
+  font-size: 1.4em;
+}
+.transactions {
+  margin-right: auto;
+  margin-top: 5px;
+  font-weight: bold;
   letter-spacing: 1px;
-  font-size: 1.2em;
+  font-size: 0.9em;
 }
 .navbar button,
 .navbar a {
-  margin-left: 16px;
+  margin-left: 25px;
 }
 .navbar a {
   color: #333;
