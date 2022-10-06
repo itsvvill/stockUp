@@ -1,7 +1,7 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: Poppins, sans-serif;
   text-align: center;
 }
 .input {
@@ -14,7 +14,7 @@
 }
 
 .container {
-  margin: 3px auto;
+  margin: 50px auto;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -58,9 +58,10 @@
   font-size: 25px;
 }
 .btn {
+  background: #effaf0;
   font-size: 15px;
   margin-top: 25px;
   border: none;
-  padding: 8px 12px;
+  padding: 10px 16px;
   border-radius: 14px;
 }
