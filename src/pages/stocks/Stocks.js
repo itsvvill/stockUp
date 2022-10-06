@@ -15,8 +15,11 @@ export default function Stocks() {
 
   useEffect(() => {});
 
-  const getData = (e) => {
+  //   const stockForm = document.getElementById('stockForm');
+
+  const handleSubmit = (e) => {
     e.preventDefault();
+    // let stockFormData = new FormData(stockForm);
     let apiURL = `https://finnhub.io/api/v1/quote?symbol=${stock}&token=${api}`;
     fetch(apiURL)
       .then((res) => res.json())
@@ -62,19 +65,18 @@ export default function Stocks() {
         <p className={styles['perc-change']}>{perc}%</p>
       </div>
       <div className={styles['search']}>
-        <form>
+        <form id="stockForm" onSubmit={handleSubmit}>
           <input
             placeholder="Enter a stock "
             type="text"
+            name="stockName"
             className={styles['input']}
             onChange={(e) => setStock(e.target.value.toUpperCase())}
             minLength="1"
             maxLength="6"
             required
           />
-          <button className={styles['btn']} onSubmit={(e) => getData}>
-            Get Price Info
-          </button>
+          <input type="submit" value="Submit" className={styles['btn']} />
         </form>
       </div>
     </div>
