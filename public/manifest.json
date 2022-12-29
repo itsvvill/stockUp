@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "StockUp",
+  "name": "StockUp",
   "icons": [
     {
       "src": "favicon.ico",
