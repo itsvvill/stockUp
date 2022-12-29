@@ -15,6 +15,7 @@ export default function TransactionList({ transactions }) {
         <li key={transaction.id}>
           <p className={styles.name}>{transaction.name}</p>
           <p className={styles.amount}>${transaction.amount}</p>
+          <p className={styles.date}>{transaction.date}</p>
           {deleteClicked && (
             <button
               className={styles.clicked}
