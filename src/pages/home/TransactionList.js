@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
+import { UilTrash } from '@iconscout/react-unicons';
 
 // styles
 import styles from './Home.module.css';
@@ -19,7 +20,7 @@ export default function TransactionList({ transactions }) {
               className={styles.clicked}
               onClick={() => deleteDocument(transaction.id)}
             >
-              🗑
+              <UilTrash size="25" color="#F4F7F9" />
             </button>
           )}
           <button
