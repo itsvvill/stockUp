@@ -8,7 +8,21 @@ import styles from './Home.module.css';
 export default function TransactionList({ transactions }) {
   const { deleteDocument } = useFirestore('transactions');
   const [deleteClicked, setDeleteClicked] = useState(false);
+  const filterList = ['amount', 'date', 'createdAt.seconds', 'name'];
 
+  // need to update fn to work for text, format date for sorting
+  function getSortedTransactions(transactions, filter, ascending = true) {
+    if (ascending) {
+      return transactions
+        .map((transaction) => transaction)
+        .sort((a, b) => Number(a[filter]) - Number(b[filter]));
+    } else {
+      return transactions
+        .map((transaction) => transaction)
+        .sort((a, b) => Number(b[filter]) - Number(a[filter]));
+    }
+  }
+  // console.log(getSortedTransactions(transactions, 'amount', true));
   return (
     <ul className={styles.transactions}>
       {transactions.map((transaction) => (
