@@ -67,9 +67,18 @@
   overflow: hidden;
   border-left: 4px solid #1f9751;
 }
+
+.transactions .date {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  color: #777;
+  font-size: 0.7em;
+}
 .transactions .name {
   color: #777;
-  font-size: 1.4em;
+  font-size: 1.6em;
+  font-weight: bold;
 }
 .transactions .amount {
   margin-left: auto;
