@@ -70,14 +70,14 @@
 
 .transactions .date {
   position: absolute;
-  top: 0;
+  top: 0px;
   left: 5px;
   color: #777;
-  font-size: 0.7em;
+  font-size: 0.8em;
 }
 .transactions .name {
   color: #777;
-  font-size: 1.6em;
+  font-size: 1.7em;
   font-weight: bold;
 }
 .transactions .amount {
@@ -86,6 +86,13 @@
   color: #777;
   font-weight: bold;
   font-size: 1.6em;
+}
+.transactions .category {
+  color: #777;
+  position: absolute;
+  bottom: 0;
+  left: 4px;
+  font-size: 0.8em;
 }
 .transactions .delete {
   position: absolute;
