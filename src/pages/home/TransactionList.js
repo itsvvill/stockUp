@@ -30,6 +30,7 @@ export default function TransactionList({ transactions }) {
           <p className={styles.name}>{transaction.name}</p>
           <p className={styles.amount}>${transaction.amount}</p>
           <p className={styles.date}>{transaction.date}</p>
+          <p className={styles.category}>{transaction.category}</p>
           {deleteClicked && (
             <button
               className={styles.clicked}
