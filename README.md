@@ -24,7 +24,7 @@ Users can also search for and view live stock prices via the Finnhub Stock API.
 
 ## License
 
-Stock prices are retrieved from the [Finnhub Stock API](https://finnhub.io/docs/api).
+Stock prices and information are retrieved using the [Finnhub Stock API](https://finnhub.io/docs/api).
 
 ## Disclaimer
 
