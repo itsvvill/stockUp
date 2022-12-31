@@ -22,3 +22,5 @@ Users can sign up with an email and password. Once they are logged in they can a
 - Conditionally showing user stock details if the stock is up
 
 ## License
+
+Stock prices are retrieved from the [Finnhub Stock API](https://finnhub.io/docs/api)
