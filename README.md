@@ -23,4 +23,8 @@ Users can sign up with an email and password. Once they are logged in they can a
 
 ## License
 
-Stock prices are retrieved from the [Finnhub Stock API](https://finnhub.io/docs/api)
+Stock prices are retrieved from the [Finnhub Stock API](https://finnhub.io/docs/api).
+
+## Disclaimer
+
+Any suggestions or features are not financial advice, invest at your own risk.
