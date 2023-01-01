@@ -13,13 +13,8 @@ export default function Stocks() {
 
   let api = process.env.REACT_APP_API_KEY;
 
-  useEffect(() => {});
-
-  //   const stockForm = document.getElementById('stockForm');
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    // let stockFormData = new FormData(stockForm);
     let apiURL = `https://finnhub.io/api/v1/quote?symbol=${stock}&token=${api}`;
     fetch(apiURL)
       .then((res) => res.json())
