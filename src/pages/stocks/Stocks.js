@@ -5,25 +5,30 @@ import styles from './Stocks.module.css';
 
 export default function Stocks() {
   const [stock, setStock] = useState('');
-  const [price, setPrice] = useState(0);
-  const [high, setHigh] = useState(0);
-  const [low, setLow] = useState(0);
-  const [change, setChange] = useState(0);
-  const [percent, setPercent] = useState(0);
+  const [currentPrice, setCurrentPrice] = useState(0);
+  const [highPrice, setHighPrice] = useState(0);
+  const [lowPrice, setLowPrice] = useState(0);
+  const [changeAmount, setChangeAmount] = useState(0);
+  const [openPrice, setOpenPrice] = useState(0);
+  const [percentChange, setPercentChange] = useState(0);
 
   let api = process.env.REACT_APP_API_KEY;
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // let searchURL = `https://finnhub.op/api/v1/search?q=${stock}&token=${api}`;
     let apiURL = `https://finnhub.io/api/v1/quote?symbol=${stock}&token=${api}`;
     fetch(apiURL)
       .then((res) => res.json())
       .then((data) => {
-        setPrice(data.c);
-        setHigh(data.h);
-        setLow(data.l);
-        setChange(data.d);
-        setPercent(data.dp);
+        console.log(data);
+        setCurrentPrice(data.c);
+        setHighPrice(data.h);
+        setLowPrice(data.l);
+        setChangeAmount(data.d);
+        // add to form
+        setOpenPrice(data.o);
+        setPercentChange(data.dp);
       });
   };
 
@@ -53,12 +58,14 @@ export default function Stocks() {
           </h1>
         )}
         <div className={styles['prices']}>
-          <p className={styles['high-price']}>High: ${high}</p>
-          <p className={styles['change-in-price']}>Change: ${change}</p>
-          <p className={styles['low-price']}>Low: ${low}</p>
+          <p className={styles['high-price']}>High: ${highPrice}</p>
+          <p className={styles['change-in-price']}>Change: ${changeAmount}</p>
+          <p className={styles['low-price']}>Low: ${lowPrice}</p>
         </div>
-        <p className={styles['current-price']}>Current price: ${price}</p>
-        <p className={styles['percent-change']}>{percent}%</p>
+        <p className={styles['current-price']}>
+          Current price: ${currentPrice}
+        </p>
+        <p className={styles['percent-change']}>{percentChange}%</p>
       </div>
       <div className={styles['search']}>
         <form id="stockForm" onSubmit={handleSubmit}>
