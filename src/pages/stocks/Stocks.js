@@ -9,7 +9,7 @@ export default function Stocks() {
   const [high, setHigh] = useState(0);
   const [low, setLow] = useState(0);
   const [change, setChange] = useState(0);
-  const [perc, setPerc] = useState(0);
+  const [percent, setPercent] = useState(0);
 
   let api = process.env.REACT_APP_API_KEY;
 
@@ -23,9 +23,10 @@ export default function Stocks() {
         setHigh(data.h);
         setLow(data.l);
         setChange(data.d);
-        setPerc(data.dp);
+        setPercent(data.dp);
       });
   };
+
   return (
     <div className={styles['container']}>
       <div className={styles['info']}>
@@ -57,7 +58,7 @@ export default function Stocks() {
           <p className={styles['low-price']}>Low: ${low}</p>
         </div>
         <p className={styles['current-price']}>Current price: ${price}</p>
-        <p className={styles['perc-change']}>{perc}%</p>
+        <p className={styles['percent-change']}>{percent}%</p>
       </div>
       <div className={styles['search']}>
         <form id="stockForm" onSubmit={handleSubmit}>
