@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { useLogin } from '../../hooks/useLogin';
 
-// styles
+// styles and icons
 import styles from './Login.module.css';
+import { UilGoogle } from '@iconscout/react-unicons';
+import { UilFacebook } from '@iconscout/react-unicons';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -33,7 +35,17 @@ export default function Login() {
           value={password}
         />
       </label>
-      {!isPending && <button className="btn">Login</button>}
+      {!isPending && (
+        <div className="login-btns">
+          <button className="btn">Login</button>
+          <button className="btn">
+            <UilGoogle size="25" color="#121212" />
+          </button>
+          <button className="btn">
+            <UilFacebook size="25" color="#1880C5" />
+          </button>
+        </div>
+      )}
       {isPending && (
         <button className="btn" disabled>
           Loading

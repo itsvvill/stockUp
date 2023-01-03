@@ -17,3 +17,15 @@
   color: #777;
   width: 100%;
 }
+.login-form div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.login-form button {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
