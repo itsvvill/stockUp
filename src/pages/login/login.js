@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useLogin } from '../../hooks/useLogin';
+import { projectAuth, googleAuth } from '../../firebase/config';
 
 // styles and icons
 import styles from './Login.module.css';
@@ -11,9 +12,29 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const { login, error, isPending } = useLogin();
 
+  //Sign in with Google
+  const GoogleLogin = (e) => {
+    e.preventDefault();
+    projectAuth
+      .signInWithPopup(googleAuth)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    login(email, password);
+    if (e.type === 'google') {
+      GoogleLogin(e);
+    } else if (e.type === 'facebook') {
+      //FacebookLogin
+    } else {
+      login(email, password);
+    }
   };
 
   return (
@@ -27,6 +48,7 @@ export default function Login() {
           value={email}
         />
       </label>
+      {error && error.code === 'auth/invalid-email' && <p>{error.message}</p>}
       <label>
         <span>Password:</span>
         <input
@@ -35,10 +57,13 @@ export default function Login() {
           value={password}
         />
       </label>
+      {error && error.code === 'auth/wrong-password' && <p>{error.message}</p>}
       {!isPending && (
         <div className="login-btns">
-          <button className="btn">Login</button>
-          <button className="btn">
+          <button name="login" className="btn">
+            Login
+          </button>
+          <button name="google" className="btn">
             <UilGoogle size="25" color="#121212" />
           </button>
           <button className="btn">
@@ -51,7 +76,6 @@ export default function Login() {
           Loading
         </button>
       )}
-      {error && <p>{error}</p>}
     </form>
   );
 }
