@@ -29,3 +29,10 @@
   padding: 10px 20px;
   margin-top: 20px;
 }
+.login-form p {
+  position: relative;
+  bottom: 25px;
+  color: #cc3333;
+  font-size: 0.65em;
+  text-align: center;
+}
