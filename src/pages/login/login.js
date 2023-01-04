@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useLogin } from '../../hooks/useLogin';
-import { projectAuth, googleAuth } from '../../firebase/config';
 
 // styles and icons
 import styles from './Login.module.css';
@@ -12,29 +11,11 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const { login, error, isPending } = useLogin();
 
-  //Sign in with Google
-  const GoogleLogin = (e) => {
-    e.preventDefault();
-    projectAuth
-      .signInWithPopup(googleAuth)
-      .then((result) => {
-        const user = result.user;
-        console.log(user);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (e.type === 'google') {
-      GoogleLogin(e);
-    } else if (e.type === 'facebook') {
-      //FacebookLogin
-    } else {
-      login(email, password);
-    }
+    let buttonType = e.nativeEvent.submitter.value;
+
+    login(email, password, buttonType);
   };
 
   return (
@@ -60,14 +41,19 @@ export default function Login() {
       {error && error.code === 'auth/wrong-password' && <p>{error.message}</p>}
       {!isPending && (
         <div className="login-btns">
-          <button name="login" className="btn">
+          <button name="submit" value="Login" className="btn">
             Login
           </button>
-          <button name="google" className="btn">
+          <button name="submit" value="Google" className="btn">
             <UilGoogle size="25" color="#121212" />
           </button>
           <button className="btn">
-            <UilFacebook size="25" color="#1880C5" />
+            <UilFacebook
+              name="submit"
+              value="Facebook"
+              size="25"
+              color="#1880C5"
+            />
           </button>
         </div>
       )}
