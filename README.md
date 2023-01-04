@@ -18,6 +18,7 @@ Users can also search for and view live stock prices via the Finnhub Stock API.
 
 ## Features to be implemented
 
+- Social signup and login from Google, Facebook accounts
 - Sorting and filtering for transactions by date, amount, name, category
 - Storing a list of stocks selected by user
 - Conditionally showing user stock details if the stock is up
