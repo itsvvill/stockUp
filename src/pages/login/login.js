@@ -40,20 +40,15 @@ export default function Login() {
       </label>
       {error && error.code === 'auth/wrong-password' && <p>{error.message}</p>}
       {!isPending && (
-        <div className="login-btns">
+        <div>
           <button name="submit" value="Login" className="btn">
             Login
           </button>
           <button name="submit" value="Google" className="btn">
             <UilGoogle size="25" color="#121212" />
           </button>
-          <button className="btn">
-            <UilFacebook
-              name="submit"
-              value="Facebook"
-              size="25"
-              color="#1880C5"
-            />
+          <button name="submit" value="Facebook" className="btn">
+            <UilFacebook size="25" color="#1880C5" />
           </button>
         </div>
       )}

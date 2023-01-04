@@ -17,3 +17,23 @@
   color: #777;
   width: 100%;
 }
+
+.signup-form div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.signup-form button {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+.signup-form p {
+  position: relative;
+  bottom: 25px;
+  color: #cc3333;
+  font-size: 0.65em;
+  text-align: center;
+}

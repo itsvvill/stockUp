@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { useSignup } from '../../hooks/useSignup';
 
-//styles
+//styles and icons
 import styles from './Signup.module.css';
+import { UilGoogle } from '@iconscout/react-unicons';
+import { UilFacebook } from '@iconscout/react-unicons';
 
 export default function Signup() {
   const [email, setEmail] = useState('');
@@ -41,7 +43,19 @@ export default function Signup() {
           value={displayName}
         />
       </label>
-      {!isPending && <button className="btn">Sign up</button>}
+      {!isPending && (
+        <div>
+          <button name="submit" value="Login" className="btn">
+            Login
+          </button>
+          <button name="submit" value="Google" className="btn">
+            <UilGoogle size="25" color="#121212" />
+          </button>
+          <button name="submit" value="Facebook" className="btn">
+            <UilFacebook size="25" color="#1880C5" />
+          </button>
+        </div>
+      )}
       {isPending && (
         <button className="btn" disabled>
           Loading...
