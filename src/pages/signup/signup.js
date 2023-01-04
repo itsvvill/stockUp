@@ -14,7 +14,9 @@ export default function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    signUp(email, password, displayName);
+    let buttonType = e.nativeEvent.submitter.value;
+
+    signUp(email, password, displayName, buttonType);
   };
   return (
     <form onSubmit={handleSubmit} className={styles['signup-form']}>
