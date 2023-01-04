@@ -13,12 +13,16 @@ StockUp is a finance and stock tracker created to help the user make smarter fin
 
 ## Usage
 
+### Signup/Login
+
 Users can have two options for signing up:
 
 - manually enter email, password, display name
 - using their Google account
-  Once they are logged in they can add transactions with name, amount, date, and categorize the transaction.
-  Users can also search for and view live stock prices via the Finnhub Stock API.
+
+### Authenticated User Features
+
+Once a user is logged in they can add transactions with name, amount, date, and categorize the transaction. Users can also search for and view live stock prices via the Finnhub Stock API.
 
 ## Features to be implemented
 
