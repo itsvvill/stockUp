@@ -27,6 +27,7 @@ export default function Signup() {
           value={email}
         />
       </label>
+      {error && error.code === 'auth/invalid-email' && <p>{error.message}</p>}
       <label>
         <span>Password:</span>
         <input
@@ -35,6 +36,7 @@ export default function Signup() {
           value={password}
         />
       </label>
+      {error && error.code === 'auth/weak-password' && <p>{error.message}</p>}
       <label>
         <span>Display Name:</span>
         <input
@@ -45,8 +47,8 @@ export default function Signup() {
       </label>
       {!isPending && (
         <div>
-          <button name="submit" value="Login" className="btn">
-            Login
+          <button name="submit" value="Signup" className="btn">
+            Sign Up
           </button>
           <button name="submit" value="Google" className="btn">
             <UilGoogle size="25" color="#121212" />
@@ -61,7 +63,6 @@ export default function Signup() {
           Loading...
         </button>
       )}
-      {error && <p>{error}</p>}
     </form>
   );
 }
