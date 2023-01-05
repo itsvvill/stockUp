@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { projectAuth, googleAuth } from '../firebase/config';
+import { projectAuth, googleAuth, facebookAuth } from '../firebase/config';
 import { useAuthContext } from './useAuthContext';
 
 export const useLogin = (type) => {
@@ -40,6 +40,27 @@ export const useLogin = (type) => {
         setIsPending(true);
         //log the user in
         const res = await projectAuth.signInWithPopup(googleAuth);
+        // dispatch login action
+        dispatch({ type: 'LOGIN', payload: res.user });
+        // update state
+        if (!isCancelled) {
+          setIsPending(false);
+          setError(null);
+        }
+      } catch (err) {
+        if (!isCancelled) {
+          console.log(err.message);
+          setError(err);
+          setIsPending(false);
+        }
+      }
+      // Facebook OAuth login
+    } else if (type === 'Facebook') {
+      try {
+        setError(null);
+        setIsPending(true);
+        //log the user in
+        const res = await projectAuth.signInWithPopup(facebookAuth);
         // dispatch login action
         dispatch({ type: 'LOGIN', payload: res.user });
         // update state
