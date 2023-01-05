@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
 
-export default function TransactionForm({ uid }) {
+export default function TransactionForm({ uid, categories }) {
   const [name, setName] = useState('');
   const [amount, setAmount] = useState('');
   const [date, setDate] = useState('');
@@ -68,25 +68,11 @@ export default function TransactionForm({ uid }) {
             value={category}
           >
             <option value="">-- Choose an option --</option>
-            <option value="Miscellaneous">Miscellaneous</option>
-            <option value="Rent/Mortgage">Rent/Mortgage</option>
-            <option value="Electricity">Electricity</option>
-            <option value="Water">Water</option>
-            <option value="Internet">Internet</option>
-            <option value="Cellphone">Cellphone</option>
-            <option value="Groceries">Groceries</option>
-            <option value="Eating Out">Eating Out</option>
-            <option value="Transportation">Transportation</option>
-            <option value="Home Maintenance">Home Maintenance</option>
-            <option value="Auto Maintenance">Auto Maintenance</option>
-            <option value="Gifts">Gifts</option>
-            <option value="Vacation">Vacation</option>
-            <option value="Education">Education</option>
-            <option value="Home Improvement">Home Improvement</option>
-            <option value="Hobbies">Hobbies</option>
-            <option value="Entertainment">Entertainment</option>
-            <option value="Health & Wellness">Health & Wellness</option>
-            <option value="Other">Other</option>
+            {categories.map((c) => (
+              <option value={c} key={c}>
+                {c}
+              </option>
+            ))}
           </select>
         </label>
         <button>Add Transaction</button>
