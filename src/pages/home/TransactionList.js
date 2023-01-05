@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
 import { UilTrash } from '@iconscout/react-unicons';
+import CategoryFilter from './CategoryFilter';
 
 // styles
 import styles from './Home.module.css';
