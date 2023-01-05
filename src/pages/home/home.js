@@ -10,15 +10,45 @@ import TransactionList from './TransactionList';
 import CategoryFilter from './CategoryFilter';
 
 export default function Home() {
-  const [currentCategory, setCurrentCategory] = useState('');
+  const [currentCategory, setCurrentCategory] = useState('All');
   const { user } = useAuthContext();
   const { documents, error } = useCollection(
     'transactions',
     ['uid', '==', user.uid],
     ['createdAt', 'desc']
   );
-
+  const transactions = documents
+    ? documents.filter((transaction) => {
+        switch (currentCategory) {
+          case 'All':
+            return true;
+          case 'Auto Maintenance':
+          case 'Cellphone':
+          case 'Eating Out':
+          case 'Education':
+          case 'Electricity':
+          case 'Entertainment':
+          case 'Gifts':
+          case 'Groceries':
+          case 'Health & Wellness':
+          case 'Hobbies':
+          case 'Home Improvement':
+          case 'Home Maintenance':
+          case 'Internet':
+          case 'Miscellaneous':
+          case 'Other':
+          case 'Rent/Mortgage':
+          case 'Transportation':
+          case 'Vacation':
+          case 'Water':
+            return transaction.category === currentCategory;
+          default:
+            return true;
+        }
+      })
+    : null;
   const categoryList = [
+    'All',
     'Auto Maintenance',
     'Cellphone',
     'Eating Out',
@@ -53,10 +83,10 @@ export default function Home() {
           changeCategory={changeCategory}
           categories={categoryList}
         />
-        {documents && <TransactionList transactions={documents} />}
+        {documents && <TransactionList transactions={transactions} />}
       </div>
       <div className={styles.sidebar}>
-        <TransactionForm uid={user.uid} categories={categoryList} />
+        <TransactionForm uid={user.uid} categories={categoryList.slice(1)} />
       </div>
     </div>
   );

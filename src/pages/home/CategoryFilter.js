@@ -4,7 +4,6 @@ export default function CategoryFilter({
   categories,
 }) {
   const handleClick = (newCategory) => {
-    console.log(newCategory);
     changeCategory(newCategory);
   };
 
