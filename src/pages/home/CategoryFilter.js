@@ -14,7 +14,9 @@ export default function CategoryFilter({
           <button
             key={c}
             onClick={() => handleClick(c)}
-            className={currentCategory === c ? 'active btn' : 'btn'}
+            className={
+              currentCategory === c ? 'active-btn category-btn' : 'category-btn'
+            }
           >
             {c}
           </button>

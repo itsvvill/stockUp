@@ -6,7 +6,13 @@ body {
   margin: 0;
   font-size: 1.1em;
 }
-ul, li, p, h1, h2, h3, h4 {
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4 {
   margin: 0;
   padding: 0;
 }
@@ -26,4 +32,19 @@ ul {
 .btn:hover {
   background: #1f9751;
   color: #fff;
+}
+.category-btn {
+  background: none;
+  border: 2px solid #1f9751;
+  padding: 3px 6px;
+  margin: 2px;
+  border-radius: 25px;
+  color: #1f9751;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.7em;
+}
+.active-btn {
+  background: #effaf0;
+  color: #333;
 }
