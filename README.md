@@ -23,13 +23,15 @@ Users have 3 options for signing up:
 
 ### Authenticated User Features
 
-- Add and view transactions with name, amount, date, and category
+- Create and view transactions with name, amount, date, and category
 - Filter transactions to view only a specific category
+- Delete transactions
 - View live stock prices via the Finnhub Stock API.
 
 ## Features to be implemented
 
-- Social signup and login using a Facebook account
+- Updating a transaction after creation
+- Additional metrics for transactions (total number per category, total amount, amount per month)
 - Sorting transactions by date, amount, name
 - Storing a list of stocks selected by user
 - Conditionally showing user stock details if the stock is up
