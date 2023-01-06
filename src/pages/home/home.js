@@ -78,12 +78,17 @@ export default function Home() {
     <div className={styles.container}>
       <div className={styles.content}>
         {error && <p>{error}</p>}
-        <CategoryFilter
-          currentCategory={currentCategory}
-          changeCategory={changeCategory}
-          categories={categoryList}
-        />
-        {documents && <TransactionList transactions={transactions} />}
+
+        {documents && documents.length > 0 && (
+          <>
+            <CategoryFilter
+              currentCategory={currentCategory}
+              changeCategory={changeCategory}
+              categories={categoryList}
+            />
+            <TransactionList transactions={transactions} />
+          </>
+        )}
       </div>
       <div className={styles.sidebar}>
         <TransactionForm uid={user.uid} categories={categoryList.slice(1)} />
