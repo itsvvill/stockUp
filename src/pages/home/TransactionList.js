@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
 import { UilTrash } from '@iconscout/react-unicons';
+import { UilEdit } from '@iconscout/react-unicons';
+import { UilEllipsisV } from '@iconscout/react-unicons';
 
 // styles
 import styles from './Home.module.css';
@@ -8,6 +10,7 @@ import styles from './Home.module.css';
 export default function TransactionList({ transactions }) {
   const { deleteDocument } = useFirestore('transactions');
   const [deleteClicked, setDeleteClicked] = useState(false);
+  const [editClicked, setEditClicked] = useState(false);
   const filterList = ['amount', 'date', 'createdAt.seconds', 'name'];
 
   // need to update fn to work for text, format date for sorting
@@ -32,12 +35,20 @@ export default function TransactionList({ transactions }) {
           <p className={styles.date}>{transaction.date}</p>
           <p className={styles.category}>{transaction.category}</p>
           {deleteClicked && (
-            <button
-              className={styles.clicked}
-              onClick={() => deleteDocument(transaction.id)}
-            >
-              <UilTrash size="25" color="#F4F7F9" />
-            </button>
+            <>
+              <button
+                className={styles.clicked}
+                onClick={() => deleteDocument(transaction.id)}
+              >
+                <UilTrash size="20" color="#F4F7F9" />
+              </button>
+              <button
+                className={styles.edit}
+                onClick={() => deleteDocument(transaction.id)}
+              >
+                <UilEdit size="20" color="#F4F7F9" />
+              </button>
+            </>
           )}
           <button
             className={styles.delete}
