@@ -38,6 +38,7 @@ export default function TransactionForm({ uid, categories }) {
           <input
             type="text"
             required
+            placeholder="Enter a transaction name"
             onChange={(e) => setName(e.target.value)}
             value={name}
           />
@@ -47,6 +48,7 @@ export default function TransactionForm({ uid, categories }) {
           <input
             type="number"
             required
+            placeholder="00.00"
             onChange={(e) => setAmount(e.target.value)}
             value={amount}
           />
@@ -67,7 +69,7 @@ export default function TransactionForm({ uid, categories }) {
             onChange={(e) => setCategory(e.target.value)}
             value={category}
           >
-            <option value="">-- Choose an option --</option>
+            <option value="">-- Choose a category --</option>
             {categories.map((c) => (
               <option value={c} key={c}>
                 {c}

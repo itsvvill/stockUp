@@ -11,6 +11,10 @@ StockUp is a finance and stock tracker created to help the user make smarter fin
 - CSS
 - HTML5
 
+## Image
+
+[Transaction list and transaction form](./public/stockUp_transaction_list.png)
+
 ## Usage
 
 ### Signup/Login
