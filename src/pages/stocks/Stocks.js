@@ -57,15 +57,23 @@ export default function Stocks() {
             </span>
           </h1>
         )}
-        <div className={styles['prices']}>
-          <p className={styles['high-price']}>High: ${highPrice}</p>
-          <p className={styles['change-in-price']}>Change: ${changeAmount}</p>
-          <p className={styles['low-price']}>Low: ${lowPrice}</p>
-        </div>
-        <p className={styles['current-price']}>
-          Current price: ${currentPrice}
-        </p>
-        <p className={styles['percent-change']}>{percentChange}%</p>
+        {currentPrice !== 0 && (
+          <>
+            <div className={styles['prices']}>
+              <p className={styles['high-price']}>High: ${highPrice}</p>
+              <p className={styles['change-in-price']}>
+                Change: ${changeAmount}
+              </p>
+              <p className={styles['low-price']}>Low: ${lowPrice}</p>
+            </div>
+            <>
+              <p className={styles['current-price']}>
+                Current price: ${currentPrice}
+              </p>
+              <p className={styles['percent-change']}>{percentChange}%</p>
+            </>
+          </>
+        )}
       </div>
       <div className={styles['search']}>
         <form id="stockForm" onSubmit={handleSubmit}>
