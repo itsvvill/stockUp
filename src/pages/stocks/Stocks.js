@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 // styles
 import styles from './Stocks.module.css';
@@ -16,12 +16,11 @@ export default function Stocks() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // let searchURL = `https://finnhub.op/api/v1/search?q=${stock}&token=${api}`;
+
     let apiURL = `https://finnhub.io/api/v1/quote?symbol=${stock}&token=${api}`;
     fetch(apiURL)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setCurrentPrice(data.c);
         setHighPrice(data.h);
         setLowPrice(data.l);
@@ -78,7 +77,7 @@ export default function Stocks() {
       <div className={styles['search']}>
         <form id="stockForm" onSubmit={handleSubmit}>
           <input
-            placeholder="Enter a stock "
+            placeholder="Enter a stock ticker"
             type="text"
             name="stockName"
             className={styles['input']}
