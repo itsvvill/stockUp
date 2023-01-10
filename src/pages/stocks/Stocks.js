@@ -4,7 +4,9 @@ import React, { useState } from 'react';
 import styles from './Stocks.module.css';
 
 export default function Stocks() {
-  const [stock, setStock] = useState('');
+  const [stockSymbol, setStockSymbol] = useState('');
+  const [stockName, setStockName] = useState('');
+  const [stockExchange, setStockExchange] = useState('');
   const [currentPrice, setCurrentPrice] = useState(0);
   const [highPrice, setHighPrice] = useState(0);
   const [lowPrice, setLowPrice] = useState(0);
@@ -16,46 +18,40 @@ export default function Stocks() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    let apiURL = `https://finnhub.io/api/v1/quote?symbol=${stock}&token=${api}`;
+    let apiURL = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${stockSymbol}&apikey=${api}`;
+    // let apiURL = `https://finnhub.io/api/v1/quote?symbol=${stockSymbol}&token=${api}`;
     fetch(apiURL)
       .then((res) => res.json())
       .then((data) => {
-        setCurrentPrice(data.c);
-        setHighPrice(data.h);
-        setLowPrice(data.l);
-        setChangeAmount(data.d);
-        // add to form
-        setOpenPrice(data.o);
-        setPercentChange(data.dp);
+        console.log(data);
+        setStockName(data.Name);
+        setStockExchange(data.Exchange);
+        // setCurrentPrice(data.c);
+        // setHighPrice(data.h);
+        // setLowPrice(data.l);
+        // setChangeAmount(data.d);
+        // // add to form
+        // setOpenPrice(data.o);
+        // setPercentChange(data.dp);
       });
   };
 
   return (
     <div className={styles['container']}>
       <div className={styles['info']}>
-        {stock && (
+        {stockSymbol && (
           <h1 className={styles['stock']}>
+            {stockSymbol}
             <span role="img" aria-label="money">
               💵
             </span>{' '}
-            {stock}{' '}
+            {stockName}{' '}
             <span role="img" aria-label="money">
               💵
             </span>
           </h1>
         )}
-        {!stock && (
-          <h1 className={styles['stock']}>
-            <span role="img" aria-label="to the moon">
-              🚀
-            </span>{' '}
-            Stock Prices{' '}
-            <span role="img" aria-label="to the moon">
-              🚀
-            </span>
-          </h1>
-        )}
+        {!stockSymbol && <h1 className={styles['stock']}>Stock Prices </h1>}
         {currentPrice !== 0 && (
           <>
             <div className={styles['prices']}>
@@ -81,7 +77,7 @@ export default function Stocks() {
             type="text"
             name="stockName"
             className={styles['input']}
-            onChange={(e) => setStock(e.target.value.toUpperCase())}
+            onChange={(e) => setStockSymbol(e.target.value.toUpperCase())}
             minLength="1"
             maxLength="6"
             autoComplete="off"
