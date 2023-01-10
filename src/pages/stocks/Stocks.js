@@ -39,19 +39,13 @@ export default function Stocks() {
   return (
     <div className={styles['container']}>
       <div className={styles['info']}>
-        {stockSymbol && (
+        {stockName && (
           <h1 className={styles['stock']}>
             {stockSymbol}
-            <span role="img" aria-label="money">
-              💵
-            </span>{' '}
-            {stockName}{' '}
-            <span role="img" aria-label="money">
-              💵
-            </span>
+            {stockName}
           </h1>
         )}
-        {!stockSymbol && <h1 className={styles['stock']}>Stock Prices </h1>}
+        {!stockName && <h1 className={styles['stock']}>Stock Prices </h1>}
         {currentPrice !== 0 && (
           <>
             <div className={styles['prices']}>
@@ -83,7 +77,7 @@ export default function Stocks() {
             autoComplete="off"
             required
           />
-          <input type="submit" value="Submit" className={styles['btn']} />
+          <input type="submit" value="Search" className={styles['btn']} />
         </form>
       </div>
     </div>
