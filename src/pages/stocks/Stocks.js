@@ -43,9 +43,9 @@ export default function Stocks() {
       <div className={styles['info']}>
         {stockName && (
           <>
-            <div role="heading">
+            <div role="heading" className={styles['heading']}>
               <span className={styles['symbol']}>{stockSymbol}</span>•
-              <span>{stockExchange}</span>
+              <span className={styles['exchange']}>{stockExchange}</span>
             </div>
             <h1 className={styles['stock']}>{stockName}</h1>
           </>
