@@ -7,6 +7,7 @@ export default function Stocks() {
   const [stockSymbol, setStockSymbol] = useState('');
   const [stockName, setStockName] = useState('');
   const [stockExchange, setStockExchange] = useState('');
+  const [sector, setSector] = useState('');
   const [currentPrice, setCurrentPrice] = useState(0);
   const [highPrice, setHighPrice] = useState(0);
   const [lowPrice, setLowPrice] = useState(0);
@@ -26,6 +27,7 @@ export default function Stocks() {
         console.log(data);
         setStockName(data.Name);
         setStockExchange(data.Exchange);
+        setSector(data.Sector);
         // setCurrentPrice(data.c);
         // setHighPrice(data.h);
         // setLowPrice(data.l);
@@ -40,10 +42,13 @@ export default function Stocks() {
     <div className={styles['container']}>
       <div className={styles['info']}>
         {stockName && (
-          <h1 className={styles['stock']}>
-            {stockSymbol}
-            {stockName}
-          </h1>
+          <>
+            <div role="heading">
+              <span className={styles['symbol']}>{stockSymbol}</span>•
+              <span>{stockExchange}</span>
+            </div>
+            <h1 className={styles['stock']}>{stockName}</h1>
+          </>
         )}
         {!stockName && <h1 className={styles['stock']}>Stock Prices </h1>}
         {currentPrice !== 0 && (
