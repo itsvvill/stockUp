@@ -48,51 +48,76 @@ export default function Stocks() {
 
   return (
     <div className={styles['container']}>
-      <div className={styles['info']}>
-        {stockName && (
-          <>
-            <div role="heading" className={styles['heading']}>
-              <span className={styles['symbol']}>{stockSymbol}</span>•
-              <span className={styles['exchange']}>{stockExchange}</span>
-            </div>
-            <h1 className={styles['stock']}>{stockName}</h1>
-          </>
-        )}
-        {!stockName && <h1 className={styles['stock']}>Stock Prices </h1>}
-        {currentPrice !== 0 && (
-          <>
+      {!stockName && (
+        <>
+          <h1 className={styles['title']}>Stock Prices </h1>
+          <div className={styles['search']}>
+            <form id="stockForm" onSubmit={handleSubmit}>
+              <input
+                placeholder="Enter a stock ticker"
+                type="text"
+                name="stockName"
+                className={styles['input']}
+                onChange={(e) => setStockSymbol(e.target.value.toUpperCase())}
+                minLength="1"
+                maxLength="6"
+                autoComplete="off"
+                required
+              />
+              <input type="submit" value="Search" className={styles['btn']} />
+            </form>
+          </div>
+        </>
+      )}
+      {stockName && currentPrice !== 0 && (
+        <>
+          <div role="heading" className={styles['heading']}>
+            <span className={styles['symbol']}>{stockSymbol}</span>
+            {'>'}
+            <span className={styles['exchange']}>{stockExchange}</span>
+            {'>'}
+            <span className={styles['sector']}>{sector}</span>
+          </div>
+
+          <div className={styles['title-and-prices']}>
+            <span className={styles['stock']}>{stockName}</span>
             <div className={styles['prices']}>
-              <p className={styles['high-price']}>High: ${highPrice}</p>
-              <p className={styles['change-in-price']}>
-                Change: ${changeAmount}
+              <p className={styles['high-price']}>
+                High: ${parseFloat(highPrice).toFixed(2)}
               </p>
-              <p className={styles['low-price']}>Low: ${lowPrice}</p>
+              <p className={styles['change-in-price']}>
+                Change: ${parseFloat(changeAmount).toFixed(2)}
+              </p>
+              <p className={styles['low-price']}>
+                Low: ${parseFloat(lowPrice).toFixed(2)}
+              </p>
+              <div />
             </div>
             <>
               <p className={styles['current-price']}>
-                Current price: ${currentPrice}
+                Current price: ${parseFloat(currentPrice).toFixed(2)}
               </p>
               <p className={styles['percent-change']}>{percentChange}</p>
             </>
-          </>
-        )}
-      </div>
-      <div className={styles['search']}>
-        <form id="stockForm" onSubmit={handleSubmit}>
-          <input
-            placeholder="Enter a stock ticker"
-            type="text"
-            name="stockName"
-            className={styles['input']}
-            onChange={(e) => setStockSymbol(e.target.value.toUpperCase())}
-            minLength="1"
-            maxLength="6"
-            autoComplete="off"
-            required
-          />
-          <input type="submit" value="Search" className={styles['btn']} />
-        </form>
-      </div>
+            <div className={styles['search']}>
+              <form id="stockForm" onSubmit={handleSubmit}>
+                <input
+                  placeholder="Enter a stock ticker"
+                  type="text"
+                  name="stockName"
+                  className={styles['input']}
+                  onChange={(e) => setStockSymbol(e.target.value.toUpperCase())}
+                  minLength="1"
+                  maxLength="6"
+                  autoComplete="off"
+                  required
+                />
+                <input type="submit" value="Search" className={styles['btn']} />
+              </form>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }
