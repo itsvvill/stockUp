@@ -30,7 +30,7 @@ Users have 3 options for signing up:
 - Create and view transactions with name, amount, date, and category
 - Filter transactions to view only a specific category
 - Delete transactions
-- View live stock prices via the Finnhub Stock API.
+- Search for and view live stock prices via the Alpha Vantage API.
 
 ## Features to be implemented
 
