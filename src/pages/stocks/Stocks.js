@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED } from 'react/cjs/react.production.min';
 
 // styles
 import styles from './Stocks.module.css';
@@ -13,28 +14,37 @@ export default function Stocks() {
   const [lowPrice, setLowPrice] = useState(0);
   const [changeAmount, setChangeAmount] = useState(0);
   const [openPrice, setOpenPrice] = useState(0);
+  const [day, setDay] = useState('');
+  const [tradeVolume, setTradeVolume] = useState(0);
   const [percentChange, setPercentChange] = useState(0);
 
   let api = process.env.REACT_APP_API_KEY;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let apiURL = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${stockSymbol}&apikey=${api}`;
+    let companyOverviewURL = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${stockSymbol}&apikey=${api}`;
     // let apiURL = `https://finnhub.io/api/v1/quote?symbol=${stockSymbol}&token=${api}`;
-    fetch(apiURL)
+    let quoteEndpointURL = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${stockSymbol}&apikey=${api}`;
+    fetch(companyOverviewURL)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         setStockName(data.Name);
         setStockExchange(data.Exchange);
         setSector(data.Sector);
-        // setCurrentPrice(data.c);
-        // setHighPrice(data.h);
-        // setLowPrice(data.l);
-        // setChangeAmount(data.d);
-        // // add to form
-        // setOpenPrice(data.o);
-        // setPercentChange(data.dp);
+      });
+    fetch(quoteEndpointURL)
+      .then((res) => res.json())
+      .then((data) => {
+        data = data['Global Quote'];
+        setOpenPrice('02. open');
+        setHighPrice(data['03. high']);
+        setLowPrice(data['04. low']);
+        setCurrentPrice(data['05. price']);
+        setTradeVolume(data['06 volume']);
+        setDay(data['07. latest trading day']);
+        setChangeAmount(data['09. change']);
+        setPercentChange(data['10. change percent']);
       });
   };
 
@@ -64,7 +74,7 @@ export default function Stocks() {
               <p className={styles['current-price']}>
                 Current price: ${currentPrice}
               </p>
-              <p className={styles['percent-change']}>{percentChange}%</p>
+              <p className={styles['percent-change']}>{percentChange}</p>
             </>
           </>
         )}
