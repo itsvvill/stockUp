@@ -61,7 +61,9 @@
 }
 
 .stock {
-  padding: 20px;
+  font-size: 30px;
+  margin-top: 15px;
+  padding: 20px 20px 10px 20px;
 }
 .current-price {
   font-size: 25px;
@@ -71,20 +73,24 @@
   margin: 20px;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 20px;
+  padding-bottom: 25px;
 }
 .high-price {
   text-transform: uppercase;
-  color: green;
+  background: #effaf0;
+  border-radius: 10px;
   margin: 10px;
 }
 .low-price {
   text-transform: uppercase;
-  color: red;
+  background: #ff69614b;
+  border-radius: 10px;
   margin: 10px;
 }
 .change-in-price {
   text-transform: uppercase;
+  background: rgba(228, 227, 227, 0.643);
+  border-radius: 10px;
   margin: 10px;
 }
 .percent-change {
