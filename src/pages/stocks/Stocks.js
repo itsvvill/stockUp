@@ -47,9 +47,9 @@ export default function Stocks() {
   };
 
   return (
-    <div className={styles['container']}>
+    <>
       {!stockName && (
-        <>
+        <div className={styles['container']}>
           <h1 className={styles['title']}>Stock Prices </h1>
           <div className={styles['search']}>
             <form id="stockForm" onSubmit={handleSubmit}>
@@ -67,10 +67,10 @@ export default function Stocks() {
               <input type="submit" value="Search" className={styles['btn']} />
             </form>
           </div>
-        </>
+        </div>
       )}
       {stockName && currentPrice !== 0 && (
-        <>
+        <div className={styles['container']}>
           <div role="heading" className={styles['heading']}>
             <span className={styles['symbol']}>{stockSymbol}</span>
             {'>'}
@@ -93,12 +93,12 @@ export default function Stocks() {
               </p>
               <div />
             </div>
-            <>
+            <div className={styles['price-and-percentage']}>
               <p className={styles['current-price']}>
-                Current price: ${parseFloat(currentPrice).toFixed(2)}
+                ${parseFloat(currentPrice).toFixed(2)}
               </p>
               <p className={styles['percent-change']}>{percentChange}</p>
-            </>
+            </div>
             <div className={styles['search']}>
               <form id="stockForm" onSubmit={handleSubmit}>
                 <input
@@ -116,8 +116,8 @@ export default function Stocks() {
               </form>
             </div>
           </div>
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 }

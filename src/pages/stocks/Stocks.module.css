@@ -5,8 +5,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 500px;
-  height: 500px;
+  max-height: 700px;
+  max-width: 500px;
   border-radius: 25px;
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     5px 5px 15px 5px rgba(0, 0, 0, 0);
@@ -69,9 +69,6 @@
   flex-direction: column;
   align-items: center;
   border-radius: 0 0 25px 25px;
-  -webkit-box-shadow: 0px 10px 13px -7px #000000,
-    5px 5px 15px 5px rgba(0, 0, 0, 0);
-  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 .stock {
   font-size: 25px;
@@ -83,50 +80,58 @@
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-
-  margin-top: 30px;
-}
-.current-price {
-  font-size: 25px;
-  font-weight: bold;
+  margin-top: 75px;
 }
 .prices {
-  margin-top: 20px;
+  margin: 25px 0 15px 0;
   font-size: 15px;
   font-weight: 500;
-  padding: 10px 25px;
+  padding: 25px 100px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  text-transform: uppercase;
 }
 .high-price {
-  text-transform: uppercase;
   background: #effaf0;
-  border-radius: 10px;
-  margin: 10px;
+  border-radius: 25px;
+  margin-right: 10px;
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 .low-price {
-  text-transform: uppercase;
   background: #ff69614b;
-  border-radius: 10px;
-  margin: 10px;
+  border-radius: 25px;
+  margin-left: 10px;
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 .change-in-price {
-  text-transform: uppercase;
   background: rgba(228, 227, 227, 0.643);
-  border-radius: 10px;
-  margin: 10px;
+  border-radius: 25px;
+  margin: 0 10px;
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
-.percent-change {
-  margin: 20px;
+.price-and-percentage {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  background-color: #effaf0;
+  border-radius: 25px;
+  margin: 15px;
+  padding: 10px 20px;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+.current-price {
   font-size: 25px;
+  font-weight: bold;
+}
+.percent-change {
+  font-size: 25px;
+  font-weight: bold;
 }
