@@ -42,7 +42,7 @@ Users have 3 options for signing up:
 
 ## License
 
-Stock prices and information are retrieved using the [Finnhub Stock API](https://finnhub.io/docs/api).
+Stock prices and information are retrieved using the [Alpha Vantage API](https://www.alphavantage.co/).
 
 ## Disclaimer
 

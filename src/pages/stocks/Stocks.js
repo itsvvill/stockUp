@@ -21,9 +21,8 @@ export default function Stocks() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let companyOverviewURL = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${stockSymbol}&apikey=${api}`;
-    // let apiURL = `https://finnhub.io/api/v1/quote?symbol=${stockSymbol}&token=${api}`;
-    let quoteEndpointURL = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${stockSymbol}&apikey=${api}`;
+    const companyOverviewURL = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${stockSymbol}&apikey=${api}`;
+    const quoteEndpointURL = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${stockSymbol}&apikey=${api}`;
     fetch(companyOverviewURL)
       .then((res) => res.json())
       .then((data) => {
