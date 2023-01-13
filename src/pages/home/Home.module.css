@@ -58,6 +58,7 @@
 
 /* transactions */
 .transactions li {
+  background: white;
   margin: 30px auto;
   border: 1px solid #f2f2f2;
   box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
