@@ -1,4 +1,5 @@
 .container {
+  background-color: white;
   box-sizing: border-box;
   text-align: center;
   margin: 50px auto;
@@ -19,7 +20,6 @@
   max-width: 100%;
   background: #effaf0;
   border: none;
-  margin-top: 8px;
   padding: 5px 1px;
   border-radius: 25px;
   font-size: 0.8em;
