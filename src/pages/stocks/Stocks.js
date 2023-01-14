@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import styles from './Stocks.module.css';
 
 export default function Stocks() {
+  const [searchQuery, setSearchQuery] = useState('');
   const [stockSymbol, setStockSymbol] = useState('');
   const [stockName, setStockName] = useState('');
   const [stockExchange, setStockExchange] = useState('');
@@ -18,11 +19,12 @@ export default function Stocks() {
   const [percentChange, setPercentChange] = useState(0);
 
   let api = process.env.REACT_APP_API_KEY;
+  const companyOverviewURL = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${searchQuery}&apikey=${api}`;
+  const quoteEndpointURL = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${searchQuery}&apikey=${api}`;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const companyOverviewURL = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${stockSymbol}&apikey=${api}`;
-    const quoteEndpointURL = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${stockSymbol}&apikey=${api}`;
+    setStockSymbol(searchQuery);
     fetch(companyOverviewURL)
       .then((res) => res.json())
       .then((data) => {
@@ -47,6 +49,7 @@ export default function Stocks() {
             : data['10. change percent'].slice(0, 4)
         );
       });
+    setSearchQuery('');
   };
 
   return (
@@ -61,7 +64,7 @@ export default function Stocks() {
                 type="text"
                 name="stockName"
                 className={styles['input']}
-                onChange={(e) => setStockSymbol(e.target.value.toUpperCase())}
+                onChange={(e) => setSearchQuery(e.target.value.toUpperCase())}
                 minLength="1"
                 maxLength="6"
                 autoComplete="off"
@@ -87,7 +90,7 @@ export default function Stocks() {
             <div className={styles['prices']}>
               <p className={styles['high-price']}>High: ${highPrice}</p>
               <p className={styles['change-in-price']}>
-                Change: ${changeAmount}
+                Change: {changeAmount}
               </p>
               <p className={styles['low-price']}>Low: ${lowPrice}</p>
               <div />
@@ -103,7 +106,7 @@ export default function Stocks() {
                   type="text"
                   name="stockName"
                   className={styles['input']}
-                  onChange={(e) => setStockSymbol(e.target.value.toUpperCase())}
+                  onChange={(e) => setSearchQuery(e.target.value.toUpperCase())}
                   minLength="1"
                   maxLength="6"
                   autoComplete="off"
