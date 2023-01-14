@@ -38,7 +38,7 @@ export default function Stocks() {
         setOpenPrice('02. open');
         setHighPrice(data['03. high']);
         setLowPrice(data['04. low']);
-        setCurrentPrice(data['05. price']);
+        setCurrentPrice(parseFloat(data['05. price']).toFixed(2));
         setTradeVolume(data['06 volume']);
         setDay(data['07. latest trading day']);
         setChangeAmount(data['09. change']);
@@ -98,9 +98,7 @@ export default function Stocks() {
               <div />
             </div>
             <div className={styles['price-and-percentage']}>
-              <p className={styles['current-price']}>
-                ${parseFloat(currentPrice).toFixed(2)}
-              </p>
+              <p className={styles['current-price']}>${currentPrice}</p>
               <p className={styles['percent-change']}>{percentChange}%</p>
             </div>
             <div className={styles['search']}>
