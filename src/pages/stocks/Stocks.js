@@ -26,7 +26,6 @@ export default function Stocks() {
     fetch(companyOverviewURL)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setStockName(data.Name);
         setStockExchange(data.Exchange);
         setSector(data.Sector);
@@ -35,13 +34,13 @@ export default function Stocks() {
       .then((res) => res.json())
       .then((data) => {
         data = data['Global Quote'];
-        setOpenPrice('02. open');
-        setHighPrice(data['03. high']);
-        setLowPrice(data['04. low']);
+        setOpenPrice(parseFloat(data['02. open']).toFixed(2));
+        setHighPrice(parseFloat(data['03. high']).toFixed(2));
+        setLowPrice(parseFloat(data['04. low']).toFixed(2));
         setCurrentPrice(parseFloat(data['05. price']).toFixed(2));
         setTradeVolume(data['06 volume']);
         setDay(data['07. latest trading day']);
-        setChangeAmount(data['09. change']);
+        setChangeAmount(parseFloat(data['09. change']));
         setPercentChange(
           data['10. change percent'][0] === '-'
             ? data['10. change percent'].slice(0, 5)
@@ -86,15 +85,11 @@ export default function Stocks() {
           <div className={styles['title-and-prices']}>
             <span className={styles['stock']}>{stockName}</span>
             <div className={styles['prices']}>
-              <p className={styles['high-price']}>
-                High: ${parseFloat(highPrice).toFixed(2)}
-              </p>
+              <p className={styles['high-price']}>High: ${highPrice}</p>
               <p className={styles['change-in-price']}>
-                Change: ${parseFloat(changeAmount).toFixed(2)}
+                Change: ${changeAmount}
               </p>
-              <p className={styles['low-price']}>
-                Low: ${parseFloat(lowPrice).toFixed(2)}
-              </p>
+              <p className={styles['low-price']}>Low: ${lowPrice}</p>
               <div />
             </div>
             <div className={styles['price-and-percentage']}>
