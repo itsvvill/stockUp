@@ -42,7 +42,11 @@ export default function Stocks() {
         setTradeVolume(data['06 volume']);
         setDay(data['07. latest trading day']);
         setChangeAmount(data['09. change']);
-        setPercentChange(data['10. change percent']);
+        setPercentChange(
+          data['10. change percent'][0] === '-'
+            ? data['10. change percent'].slice(0, 5)
+            : data['10. change percent'].slice(0, 4)
+        );
       });
   };
 
@@ -97,7 +101,7 @@ export default function Stocks() {
               <p className={styles['current-price']}>
                 ${parseFloat(currentPrice).toFixed(2)}
               </p>
-              <p className={styles['percent-change']}>{percentChange}</p>
+              <p className={styles['percent-change']}>{percentChange}%</p>
             </div>
             <div className={styles['search']}>
               <form id="stockForm" onSubmit={handleSubmit}>
