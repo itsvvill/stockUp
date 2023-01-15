@@ -83,7 +83,7 @@ export default function Stocks() {
       )}
       {stockName && currentPrice !== 0 && (
         <div className={styles['container']}>
-          <div role="heading" className={styles['heading']}>
+          <div role="heading" aria-level="2" className={styles['heading']}>
             <span className={styles['symbol']}>{stockSymbol}</span>
             {'>'}
             <span className={styles['exchange']}>{stockExchange}</span>
