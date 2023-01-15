@@ -17,6 +17,7 @@ export default function Stocks() {
   const [day, setDay] = useState('');
   const [tradeVolume, setTradeVolume] = useState(0);
   const [percentChange, setPercentChange] = useState(0);
+  const [isLoss, setIsLoss] = useState(false);
 
   let api = process.env.REACT_APP_API_KEY;
   const companyOverviewURL = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${searchQuery}&apikey=${api}`;
@@ -48,6 +49,11 @@ export default function Stocks() {
             ? data['10. change percent'].slice(0, 5)
             : data['10. change percent'].slice(0, 4)
         );
+        if (data['10. change percent'][0] === '-') {
+          setIsLoss(true);
+        } else {
+          setIsLoss(false);
+        }
       });
     setSearchQuery('');
   };
@@ -95,7 +101,11 @@ export default function Stocks() {
               <p className={styles['low-price']}>Low: ${lowPrice}</p>
               <div />
             </div>
-            <div className={styles['price-and-percentage']}>
+            <div
+              className={
+                isLoss ? styles['percent-is-loss'] : styles['percent-is-gain']
+              }
+            >
               <p className={styles['current-price']}>${currentPrice}</p>
               <p className={styles['percent-change']}>{percentChange}%</p>
             </div>

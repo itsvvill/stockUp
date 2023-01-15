@@ -114,21 +114,8 @@
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 .change-in-price {
-  background: rgba(228, 227, 227, 0.643);
   border-radius: 25px;
   margin: 0 10px;
-  -webkit-box-shadow: 0px 10px 13px -7px #000000,
-    5px 5px 15px 5px rgba(0, 0, 0, 0);
-  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-}
-.price-and-percentage {
-  display: flex;
-  flex-direction: column;
-  max-width: 300px;
-  background-color: #effaf0;
-  border-radius: 25px;
-  margin: 15px;
-  padding: 10px 20px;
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
@@ -140,4 +127,28 @@
 .percent-change {
   font-size: 25px;
   font-weight: bold;
+}
+.percent-is-gain {
+  background-color: #effaf0;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  border-radius: 25px;
+  margin: 15px;
+  padding: 10px 20px;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+.percent-is-loss {
+  background-color: #ff69614b;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  border-radius: 25px;
+  margin: 15px;
+  padding: 10px 20px;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
