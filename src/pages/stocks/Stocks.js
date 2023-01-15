@@ -102,7 +102,7 @@ export default function Stocks() {
                     : styles['change-in-price-gain']
                 }
               >
-                Change: {changeAmount}
+                Change: {changeAmount > 0 ? '+' + changeAmount : changeAmount}
               </p>
               <p className={styles['low-price']}>Low: ${lowPrice}</p>
               <div />
