@@ -113,7 +113,14 @@ export default function Stocks() {
               }
             >
               <p className={styles['current-price']}>${currentPrice}</p>
-              <p className={styles['percent-change']}>{percentChange}%</p>
+              <p className={styles['percent-change']}>
+                {isLoss ? (
+                  <span className={styles['arrow-loss']}>⬇</span>
+                ) : (
+                  <span className={styles['arrow-gain']}>⬆</span>
+                )}
+                {percentChange}%
+              </p>
             </div>
             <div className={styles['search']}>
               <form id="stockForm" onSubmit={handleSubmit}>
