@@ -95,7 +95,13 @@ export default function Stocks() {
             <span className={styles['stock']}>{stockName}</span>
             <div className={styles['prices']}>
               <p className={styles['high-price']}>High: ${highPrice}</p>
-              <p className={styles['change-in-price']}>
+              <p
+                className={
+                  isLoss
+                    ? styles['change-in-price-loss']
+                    : styles['change-in-price-gain']
+                }
+              >
                 Change: {changeAmount}
               </p>
               <p className={styles['low-price']}>Low: ${lowPrice}</p>

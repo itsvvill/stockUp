@@ -98,7 +98,7 @@
   text-transform: uppercase;
 }
 .high-price {
-  background: #effaf0;
+  background: rgba(228, 227, 227, 0.643);
   border-radius: 25px;
   margin-right: 10px;
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
@@ -106,14 +106,23 @@
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 .low-price {
-  background: #ff69614b;
+  background: rgba(228, 227, 227, 0.643);
   border-radius: 25px;
   margin-left: 10px;
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
-.change-in-price {
+.change-in-price-loss {
+  background-color: #ff69614b;
+  border-radius: 25px;
+  margin: 0 10px;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+.change-in-price-gain {
+  background-color: #effaf0;
   border-radius: 25px;
   margin: 0 10px;
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
