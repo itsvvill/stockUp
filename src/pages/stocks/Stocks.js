@@ -18,10 +18,12 @@ export default function Stocks() {
   const [tradeVolume, setTradeVolume] = useState(0);
   const [percentChange, setPercentChange] = useState(0);
   const [isLoss, setIsLoss] = useState(false);
+  const [searchResults, setSearchResults] = useState([]);
 
   let api = process.env.REACT_APP_API_KEY;
-  const companyOverviewURL = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${searchQuery}&apikey=${api}`;
-  const quoteEndpointURL = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${searchQuery}&apikey=${api}`;
+  const searchURL = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${searchQuery.toLowerCase()}&apikey=${api}`;
+  const companyOverviewURL = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${searchQuery.toUpperCase()}&apikey=${api}`;
+  const quoteEndpointURL = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${searchQuery.toUpperCase()}&apikey=${api}`;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -55,6 +57,23 @@ export default function Stocks() {
           setIsLoss(false);
         }
       });
+    fetch(searchURL)
+      .then((res) => res.json())
+      .then((data) => {
+        setSearchResults(
+          data.bestMatches
+            .filter((item, count = 0) => {
+              if (count < 3 && !item['1. symbol'].split('').includes('.')) {
+                count++;
+                return true;
+              } else {
+                return false;
+              }
+            })
+            .map((arr) => [arr['1. symbol'], arr['2. name']])
+        );
+      });
+    setSearchResults([]);
     setSearchQuery('');
   };
 
@@ -70,13 +89,22 @@ export default function Stocks() {
                 type="text"
                 name="stockName"
                 className={styles['input']}
-                onChange={(e) => setSearchQuery(e.target.value.toUpperCase())}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 minLength="1"
-                maxLength="6"
+                maxLength="10"
                 autoComplete="off"
                 required
               />
               <input type="submit" value="Search" className={styles['btn']} />
+              {searchResults.length > 0 &&
+                searchResults.map((res, index) => (
+                  <ul>
+                    <li key={index}>
+                      <span key={index + res[0]}>{res[0]}</span>
+                      <span key={index + res[1]}>{res[1]}</span>
+                    </li>
+                  </ul>
+                ))}
             </form>
           </div>
         </div>
