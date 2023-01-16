@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SearchResults from './SearchResults';
 
 // styles
 import styles from './Stocks.module.css';
@@ -23,13 +24,16 @@ export default function Stocks() {
   let api = process.env.REACT_APP_API_KEY;
 
   // api endpoints
-  let searchURL = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${searchQuery.toLowerCase()}&apikey=${api}`;
+  let searchURL = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${searchQuery}&apikey=${api}`;
   let companyOverviewURL = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${searchQuery}&apikey=${api}`;
   let quoteEndpointURL = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${searchQuery}&apikey=${api}`;
 
+  const changeSearchQuery = (newSearch) => {
+    setSearchQuery(newSearch);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
     //general info fetch
     fetch(companyOverviewURL)
       .then((res) => res.json())
@@ -86,45 +90,6 @@ export default function Stocks() {
     setSearchQuery('');
   };
 
-  // function handleClick(e) {
-  //   e.preventDefault();
-  //   let stock = e.target.value;
-
-  //   fetch(
-  //     `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${stock}&apikey=${api}`
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setStockName(data.Name);
-  //       setStockExchange(data.Exchange);
-  //       setSector(data.Sector);
-  //     });
-  //   fetch(
-  //     `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${stock}&apikey=${api}`
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       data = data['Global Quote'];
-  //       setOpenPrice(parseFloat(data['02. open']).toFixed(2));
-  //       setHighPrice(parseFloat(data['03. high']).toFixed(2));
-  //       setLowPrice(parseFloat(data['04. low']).toFixed(2));
-  //       setCurrentPrice(parseFloat(data['05. price']).toFixed(2));
-  //       setTradeVolume(data['06 volume']);
-  //       setDay(data['07. latest trading day']);
-  //       setChangeAmount(parseFloat(data['09. change']));
-  //       setPercentChange(
-  //         data['10. change percent'][0] === '-'
-  //           ? data['10. change percent'].slice(0, 5)
-  //           : data['10. change percent'].slice(0, 4)
-  //       );
-  //       if (data['10. change percent'][0] === '-') {
-  //         setIsLoss(true);
-  //       } else {
-  //         setIsLoss(false);
-  //       }
-  //     });
-  // }
-
   return (
     <>
       {!stockName && (
@@ -146,18 +111,10 @@ export default function Stocks() {
               <input type="submit" value="Search" className={styles['btn']} />
             </form>
           </div>
-          <div className={styles['search-results']}>
-            {searchResults.length > 0 &&
-              searchResults.map((res, index) => (
-                <button
-                  key={index + res[0]}
-                  value={res[0]}
-                  // onClick={handleClick}
-                >
-                  {res[0]}
-                </button>
-              ))}
-          </div>
+          <SearchResults
+            searchResults={searchResults}
+            changeSearchQuery={changeSearchQuery}
+          />
         </div>
       )}
       {stockName && currentPrice !== 0 && (
@@ -217,6 +174,10 @@ export default function Stocks() {
                 <input type="submit" value="Search" className={styles['btn']} />
               </form>
             </div>
+            <SearchResults
+              searchResults={searchResults}
+              changeSearchQuery={changeSearchQuery}
+            />
           </div>
         </div>
       )}
