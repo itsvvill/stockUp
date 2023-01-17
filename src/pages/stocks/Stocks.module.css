@@ -40,23 +40,6 @@
 .search:focus-within {
   outline: 1px solid #effaf0;
 }
-.search-results {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  max-height: 100px;
-  max-width: 500px;
-  margin: 25px;
-}
-.search-results button {
-  text-align: center;
-  background: #effaf0;
-  font-size: 0.9em;
-  border: none;
-  padding: 14px 20px;
-  border-radius: 25px;
-  cursor: pointer;
-}
 .input {
   border: none;
   margin-right: 97.5px;
@@ -65,6 +48,7 @@
   padding: 14px 20px;
   flex-grow: 2;
 }
+
 .input:focus {
   outline: none;
 }
@@ -76,6 +60,9 @@
   padding: 14px 20px;
   border-radius: 25px;
   cursor: pointer;
+}
+.btn:hover {
+  background-color: #daf7dc;
 }
 .title {
   font-size: 25px;
@@ -178,7 +165,29 @@
     5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
-
+.search-results {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  max-height: 100px;
+  max-width: 500px;
+  margin: 25px;
+}
+.search-results button {
+  text-align: center;
+  background: #effaf0;
+  font-size: 0.9em;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin: 20px;
+}
+.search-results button:hover {
+  color: #000;
+  background: #daf7dc;
+}
 .arrow-loss {
   margin-right: 5px;
   color: red;
