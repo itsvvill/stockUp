@@ -40,13 +40,13 @@ export default function TransactionList({ transactions }) {
                 className={styles.clicked}
                 onClick={() => deleteDocument(transaction.id)}
               >
-                <UilTrash size="23" color="#F4F7F9" />
+                <UilTrash size="23" color="#000" />
               </button>
               <button
                 className={styles.edit}
                 onClick={() => deleteDocument(transaction.id)}
               >
-                <UilEdit size="23" color="#F4F7F9" />
+                <UilEdit size="23" color="#000" />
               </button>
             </>
           )}
