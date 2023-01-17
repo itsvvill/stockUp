@@ -17,6 +17,20 @@
   color: #777;
   width: 100%;
 }
+.login-form input:focus,
+.login-form textarea:focus {
+  border: 1px solid #daf7dc;
+  box-shadow: 0 0 3px #daf7dc;
+  -moz-box-shadow: 0 0 3px #daf7dc;
+  -webkit-box-shadow: 0 0 3px #daf7dc;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline-offset: 0px;
+  outline: none;
+}
 .login-form div {
   display: flex;
   flex-direction: row;
