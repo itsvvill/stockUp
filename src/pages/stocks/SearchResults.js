@@ -1,10 +1,15 @@
 // styles
 import styles from './Stocks.module.css';
 
-export default function SearchResults({ searchResults, changeSearchQuery }) {
+export default function SearchResults({
+  searchResults,
+  changeSearchQuery,
+  changeSymbolClicked,
+}) {
   function handleClick(e, query) {
     e.preventDefault();
     changeSearchQuery(query);
+    changeSymbolClicked((prevBool) => !prevBool);
   }
 
   return (

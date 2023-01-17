@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SearchResults from './SearchResults';
 
 // styles
@@ -20,75 +20,105 @@ export default function Stocks() {
   const [percentChange, setPercentChange] = useState(0);
   const [isLoss, setIsLoss] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
+  const [symbolClicked, setSymbolClicked] = useState(false);
 
-  let api = process.env.REACT_APP_API_KEY;
+  // let FINNHUBAPI = process.env.REACT_APP_API_KEY;
+  let ALPHAVANTAGEAPI = process.env.REACT_APP_API_KEY;
 
   // api endpoints
-  let searchURL = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${searchQuery}&apikey=${api}`;
-  let companyOverviewURL = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${searchQuery}&apikey=${api}`;
-  let quoteEndpointURL = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${searchQuery}&apikey=${api}`;
+  let searchURL = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${searchQuery}&apikey=${ALPHAVANTAGEAPI}`;
+  // let searchURL = `https://finnhub.io/api/v1/search?q=${searchQuery}&token=${FINNHUBAPI}`;
+  let companyOverviewURL = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${searchQuery}&apikey=${ALPHAVANTAGEAPI}`;
+  let quoteEndpointURL = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${searchQuery}&apikey=${ALPHAVANTAGEAPI}`;
 
   const changeSearchQuery = (newSearch) => {
     setSearchQuery(newSearch);
   };
+  const changeSymbolClicked = (bool) => {
+    setSymbolClicked(bool);
+  };
+  // async fetch
+  const fetchData = async (url) => {
+    let response = await fetch(url);
+    let data = await response.json();
+    return data;
+  };
+  //general info api call
+  const getGeneralInfo = (fetchCall, url) => {
+    fetchCall(url).then((data) => {
+      setStockSymbol(data.Symbol);
+      setStockName(data.Name);
+      setStockExchange(data.Exchange);
+      setSector(data.Sector);
+    });
+  };
 
+  //pricing info api call
+  const getPricingInfo = (fetchCall, url) => {
+    fetchCall(url).then((data) => {
+      data = data['Global Quote'];
+      setOpenPrice(parseFloat(data['02. open']).toFixed(2));
+      setHighPrice(parseFloat(data['03. high']).toFixed(2));
+      setLowPrice(parseFloat(data['04. low']).toFixed(2));
+      setCurrentPrice(parseFloat(data['05. price']).toFixed(2));
+      setTradeVolume(data['06 volume']);
+      setDay(data['07. latest trading day']);
+      setChangeAmount(parseFloat(data['09. change']));
+      setPercentChange(
+        data['10. change percent']?.[0] === '-'
+          ? data['10. change percent'].slice(0, 5)
+          : data['10. change percent'].slice(0, 4)
+      );
+      if (data['10. change percent']?.[0] === '-') {
+        setIsLoss(true);
+      } else {
+        setIsLoss(false);
+      }
+    });
+  };
+  //search info api call
+  const getSearchResults = (fetchCall, url) => {
+    fetchCall(url).then((data) => {
+      setSearchResults(
+        data.bestMatches
+          .filter((item, count = 0) => {
+            if (count < 3 && !item['1. symbol'].split('').includes('.')) {
+              count++;
+              return true;
+            } else {
+              return false;
+            }
+          })
+          .map((arr) => [arr['1. symbol'], arr['2. name']])
+      );
+    });
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-    //general info fetch
-    fetch(companyOverviewURL)
-      .then((res) => res.json())
-      .then((data) => {
-        setStockSymbol(data.Symbol);
-        setStockName(data.Name);
-        setStockExchange(data.Exchange);
-        setSector(data.Sector);
-      });
+    getGeneralInfo(fetchData, companyOverviewURL);
+    getPricingInfo(fetchData, quoteEndpointURL);
 
-    //pricing info fetch
-    fetch(quoteEndpointURL)
-      .then((res) => res.json())
-      .then((data) => {
-        data = data['Global Quote'];
-        setOpenPrice(parseFloat(data['02. open']).toFixed(2));
-        setHighPrice(parseFloat(data['03. high']).toFixed(2));
-        setLowPrice(parseFloat(data['04. low']).toFixed(2));
-        setCurrentPrice(parseFloat(data['05. price']).toFixed(2));
-        setTradeVolume(data['06 volume']);
-        setDay(data['07. latest trading day']);
-        setChangeAmount(parseFloat(data['09. change']));
-        setPercentChange(
-          data['10. change percent'][0] === '-'
-            ? data['10. change percent'].slice(0, 5)
-            : data['10. change percent'].slice(0, 4)
-        );
-        if (data['10. change percent'][0] === '-') {
-          setIsLoss(true);
-        } else {
-          setIsLoss(false);
-        }
-      });
-
-    //search fetch
-    fetch(searchURL)
-      .then((res) => res.json())
-      .then((data) => {
-        setSearchResults(
-          data.bestMatches
-            .filter((item, count = 0) => {
-              if (count < 3 && !item['1. symbol'].split('').includes('.')) {
-                count++;
-                return true;
-              } else {
-                return false;
-              }
-            })
-            .map((arr) => [arr['1. symbol'], arr['2. name']])
-        );
-      });
-    setSearchResults([]);
+    // need to consider better way to control number of api calls
+    setTimeout(() => {
+      if (stockName === '' && currentPrice === 0) {
+        console.log(stockName, currentPrice);
+        getSearchResults(fetchData, searchURL);
+      }
+    }, 200);
+    // setSearchResults([]);
     setStockSymbol('');
-    setSearchQuery('');
   };
+
+  // useEffect(() => {
+  //   if (searchQuery !== '') {
+  //     getPricingInfo(fetchData, quoteEndpointURL);
+  //     getGeneralInfo(fetchData, companyOverviewURL);
+  //     console.log(symbolClicked);
+  //     // setSearchResults([]);
+  //     // setStockSymbol('');
+  //     // setSearchQuery('');
+  //   }
+  // }, [symbolClicked]);
 
   return (
     <>
@@ -114,6 +144,7 @@ export default function Stocks() {
           <SearchResults
             searchResults={searchResults}
             changeSearchQuery={changeSearchQuery}
+            changeSymbolClicked={changeSymbolClicked}
           />
         </div>
       )}
@@ -177,6 +208,7 @@ export default function Stocks() {
             <SearchResults
               searchResults={searchResults}
               changeSearchQuery={changeSearchQuery}
+              changeSymbolClicked={changeSymbolClicked}
             />
           </div>
         </div>
