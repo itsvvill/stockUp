@@ -12,7 +12,7 @@
 }
 .sidebar form {
   padding: 30px;
-  background: #1f9751;
+  background: #daf7dc;
   border-radius: 25px;
 }
 .sidebar input,
@@ -30,10 +30,10 @@
 .sidebar label {
   margin: 0 auto 20px;
   display: block;
-  color: #fff;
+  color: #000;
 }
 .sidebar button {
-  color: #fff;
+  color: #000;
   border: 2px solid #fff;
   padding: 6px 12px;
   background-color: transparent;
@@ -44,7 +44,7 @@
   width: 100%;
 }
 .sidebar h3 {
-  color: #1f9751;
+  color: #000;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -67,7 +67,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  border-left: 4px solid #1f9751;
+  border-left: 4px solid #daf7dc;
 }
 
 .transactions .date {
@@ -134,6 +134,6 @@
   cursor: pointer;
 }
 button:hover {
-  background: #1f9751;
-  color: #fff;
+  background: #daf7dc;
+  border: 2px solid #000;
 }

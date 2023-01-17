@@ -97,15 +97,8 @@ export default function Stocks() {
     e.preventDefault();
     getGeneralInfo(fetchData, companyOverviewURL);
     getPricingInfo(fetchData, quoteEndpointURL);
-
-    // need to consider better way to control number of api calls
-    setTimeout(() => {
-      if (stockName === '' && currentPrice === 0) {
-        console.log(stockName, currentPrice);
-        getSearchResults(fetchData, searchURL);
-      }
-    }, 200);
-    // setSearchResults([]);
+    getSearchResults(fetchData, searchURL);
+    setSearchResults([]);
     setStockSymbol('');
   };
 
