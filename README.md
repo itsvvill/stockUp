@@ -30,7 +30,8 @@ Users have 3 options for signing up:
 - Create and view transactions with name, amount, date, and category
 - Filter transactions to view only a specific category
 - Delete transactions
-- Search for and view live stock prices via the Alpha Vantage API.
+- Lookup pricing information and other metrics using the stock symbol
+- If search query doesn't match a stock symbol a general search is performed and best results are shown to user as clickable buttons.
 
 ## Features to be implemented
 
