@@ -34,17 +34,3 @@ ul {
   background: #daf7dc;
   color: #333;
 }
-.category-btn {
-  border: 2px solid #daf7dc;
-  padding: 3px 6px;
-  margin: 2px;
-  border-radius: 25px;
-  color: #333;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 0.7em;
-}
-.active-btn {
-  background: #effaf0;
-  color: #333;
-}
