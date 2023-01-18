@@ -1,3 +1,6 @@
+//styles
+import styles from './Home.module.css';
+
 export default function CategoryFilter({
   currentCategory,
   changeCategory,
@@ -15,7 +18,9 @@ export default function CategoryFilter({
             key={c}
             onClick={() => handleClick(c)}
             className={
-              currentCategory === c ? 'active-btn category-btn' : 'category-btn'
+              currentCategory === c
+                ? styles['active-btn']
+                : styles['category-btn']
             }
           >
             {c}
