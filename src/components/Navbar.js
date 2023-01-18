@@ -37,7 +37,7 @@ export default function Navbar() {
           <div>
             <li>Hello, {user.displayName}!</li>
             <li>
-              <button className="btn" onClick={logout}>
+              <button className={styles.logout} onClick={logout}>
                 Logout
               </button>
             </li>
