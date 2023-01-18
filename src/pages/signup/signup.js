@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useSignup } from '../../hooks/useSignup';
+import { UilEyeSlash } from '@iconscout/react-unicons';
+import { UilEye } from '@iconscout/react-unicons';
 
 //styles and icons
 import styles from './Signup.module.css';
@@ -10,6 +12,7 @@ export default function Signup() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [displayName, setDisplayName] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const { signUp, isPending, error } = useSignup();
 
   const handleSubmit = (e) => {
@@ -17,6 +20,11 @@ export default function Signup() {
     let buttonType = e.nativeEvent.submitter.value;
 
     signUp(email, password, displayName, buttonType);
+  };
+
+  const togglePassword = (e) => {
+    e.preventDefault();
+    setShowPassword((prevState) => !prevState);
   };
   return (
     <form onSubmit={handleSubmit} className={styles['signup-form']}>
@@ -32,11 +40,24 @@ export default function Signup() {
       {error && error.code === 'auth/invalid-email' && <p>{error.message}</p>}
       <label>
         <span>Password:</span>
-        <input
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-        />
+        <div className={styles['password']}>
+          <input
+            type={showPassword ? 'text' : 'password'}
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+          />
+          {!showPassword ? (
+            <UilEyeSlash
+              className={styles['toggle-password']}
+              onClick={togglePassword}
+            />
+          ) : (
+            <UilEye
+              className={styles['toggle-password']}
+              onClick={togglePassword}
+            />
+          )}
+        </div>
       </label>
       {error && error.code === 'auth/weak-password' && <p>{error.message}</p>}
       <label>

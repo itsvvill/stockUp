@@ -50,3 +50,11 @@ select:focus {
   font-size: 0.65em;
   text-align: center;
 }
+.password {
+  width: 111%;
+}
+.toggle-password {
+  position: relative;
+  right: 30px;
+  top: 8px;
+}

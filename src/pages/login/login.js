@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useLogin } from '../../hooks/useLogin';
+import { UilEyeSlash } from '@iconscout/react-unicons';
+import { UilEye } from '@iconscout/react-unicons';
 
 // styles and icons
 import styles from './Login.module.css';
@@ -9,6 +11,7 @@ import { UilFacebook } from '@iconscout/react-unicons';
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const { login, error, isPending } = useLogin();
 
   const handleSubmit = (e) => {
@@ -16,6 +19,11 @@ export default function Login() {
     let buttonType = e.nativeEvent.submitter.value;
 
     login(email, password, buttonType);
+  };
+
+  const togglePassword = (e) => {
+    e.preventDefault();
+    setShowPassword((prevState) => !prevState);
   };
 
   return (
@@ -32,11 +40,24 @@ export default function Login() {
       {error && error.code === 'auth/invalid-email' && <p>{error.message}</p>}
       <label>
         <span>Password:</span>
-        <input
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-        />
+        <div className={styles['password']}>
+          <input
+            type={showPassword ? 'text' : 'password'}
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+          />
+          {!showPassword ? (
+            <UilEyeSlash
+              className={styles['toggle-password']}
+              onClick={togglePassword}
+            />
+          ) : (
+            <UilEye
+              className={styles['toggle-password']}
+              onClick={togglePassword}
+            />
+          )}
+        </div>
       </label>
       {error && error.code === 'auth/wrong-password' && <p>{error.message}</p>}
       {!isPending && (
