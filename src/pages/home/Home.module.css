@@ -55,6 +55,29 @@
 .sidebar aside li {
   margin: 10px;
 }
+.sidebar input[type='color'] {
+  margin: -10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 265px;
+  height: 70px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.sidebar input[type='color']::-webkit-color-swatch {
+  border-radius: 10px;
+  border: none;
+}
+.sidebar input[type='color']::-moz-color-swatch {
+  border-radius: 10px;
+  border: none;
+}
+.sidebar > label > .brush {
+  position: absolute;
+  top: 5px;
+}
 
 /* transactions */
 .transactions li {
@@ -67,7 +90,6 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  border-left: 4px solid #daf7dc;
 }
 
 .transactions .date {
