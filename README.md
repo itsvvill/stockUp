@@ -27,7 +27,7 @@ Users have 3 options for signing up:
 
 ### Authenticated User Features
 
-- Create and view transactions with name, amount, date, and category
+- Create and view transactions with name, amount, date, category, and color
 - Filter transactions to view only a specific category
 - Delete transactions
 - Lookup pricing information and other metrics using the stock symbol
