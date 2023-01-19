@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
+import { UilPalette } from '@iconscout/react-unicons';
 
 export default function TransactionForm({ uid, categories }) {
   const [name, setName] = useState('');
   const [amount, setAmount] = useState('');
   const [date, setDate] = useState('');
   const [category, setCategory] = useState('');
+  const [color, setColor] = useState('#effaf0');
   const { addDocument, response } = useFirestore('transactions');
 
   const handleSubmit = (e) => {
@@ -16,6 +18,7 @@ export default function TransactionForm({ uid, categories }) {
       amount,
       date,
       category,
+      color,
     });
   };
 
@@ -26,6 +29,7 @@ export default function TransactionForm({ uid, categories }) {
       setAmount('');
       setDate('');
       setCategory('');
+      setColor('#effaf0');
     }
   }, [response.success]);
 
@@ -76,6 +80,28 @@ export default function TransactionForm({ uid, categories }) {
               </option>
             ))}
           </select>
+        </label>
+        <label>
+          <span>Color:</span>
+          <UilPalette
+            className={'brush'}
+            size="22"
+            color="#555"
+            style={{
+              float: 'right',
+              display: 'block',
+              position: 'fixed',
+              marginTop: '15px',
+              marginLeft: '210px',
+              cursor: 'pointer',
+            }}
+          />
+          <input
+            type="color"
+            required
+            onChange={(e) => setColor(e.target.value)}
+            value={color}
+          />
         </label>
         <button>Add Transaction</button>
       </form>
