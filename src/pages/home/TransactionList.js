@@ -29,7 +29,10 @@ export default function TransactionList({ transactions }) {
   return (
     <ul className={styles.transactions}>
       {transactions.map((transaction) => (
-        <li key={transaction.id}>
+        <li
+          key={transaction.id}
+          style={{ borderLeft: `4px solid ${transaction.color}` }}
+        >
           <p className={styles.name}>{transaction.name}</p>
           <p className={styles.amount}>${transaction.amount}</p>
           <p className={styles.date}>{transaction.date}</p>
