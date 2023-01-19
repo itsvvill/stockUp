@@ -55,14 +55,16 @@
 .sidebar aside li {
   margin: 10px;
 }
+
+/* color picker styling */
 .sidebar input[type='color'] {
-  margin: -10px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   width: 265px;
-  height: 70px;
-  background-color: transparent;
+  height: 45px;
+  padding-right: 30px;
+  background-color: field;
   border: none;
   cursor: pointer;
 }
@@ -74,7 +76,7 @@
   border-radius: 10px;
   border: none;
 }
-.sidebar > label > .brush {
+.brush {
   position: absolute;
   top: 5px;
 }

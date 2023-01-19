@@ -86,13 +86,13 @@ export default function TransactionForm({ uid, categories }) {
           <UilPalette
             className={'brush'}
             size="22"
-            color="#555"
+            color="#000"
             style={{
               float: 'right',
               display: 'block',
               position: 'fixed',
-              marginTop: '15px',
-              marginLeft: '210px',
+              marginTop: '20px',
+              marginLeft: '235px',
               cursor: 'pointer',
             }}
           />
