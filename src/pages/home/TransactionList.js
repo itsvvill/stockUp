@@ -25,7 +25,7 @@ export default function TransactionList({ transactions }) {
         .sort((a, b) => Number(b[filter]) - Number(a[filter]));
     }
   }
-  // console.log(getSortedTransactions(transactions, 'amount', true));
+  console.log(getSortedTransactions(transactions, 'amount', true));
   return (
     <ul className={styles.transactions}>
       {transactions.map((transaction) => (

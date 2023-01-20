@@ -11,8 +11,8 @@ export default function CategoryFilter({
   };
 
   return (
-    <div className="category-filter">
-      <nav>
+    <div>
+      <nav className={styles['category-filter']}>
         {categories.map((c) => (
           <button
             key={c}

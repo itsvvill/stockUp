@@ -157,15 +157,21 @@
   line-height: 0;
   cursor: pointer;
 }
+nav.category-filter {
+  border: 1px solid #f2f2f2;
+  box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
+  background-color: #f2f2f2;
+}
 .category-btn {
   border: 2px solid #daf7dc;
+  background: #daf7dc;
   padding: 3px 6px;
   margin: 2px;
   border-radius: 25px;
   color: #333;
   font-weight: bold;
   cursor: pointer;
-  font-size: 0.7em;
+  font-size: 0.6em;
 }
 .active-btn {
   background: #daf7dc;
@@ -180,5 +186,6 @@
 }
 .category-btn:hover {
   background: #daf7dc;
-  border: 2px solid #daf7dc;
+  border: 2px solid #333;
+  scale: 1.3;
 }

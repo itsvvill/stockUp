@@ -73,7 +73,7 @@ export default function TransactionForm({ uid, categories }) {
             onChange={(e) => setCategory(e.target.value)}
             value={category}
           >
-            <option value="">-- Choose a category --</option>
+            <option value="">- Choose a category -</option>
             {categories.map((c) => (
               <option value={c} key={c}>
                 {c}
