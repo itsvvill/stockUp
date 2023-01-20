@@ -11,21 +11,67 @@ export default function TransactionList({ transactions }) {
   const { deleteDocument } = useFirestore('transactions');
   const [deleteClicked, setDeleteClicked] = useState(false);
   const [editClicked, setEditClicked] = useState(false);
-  const filterList = ['amount', 'date', 'createdAt.seconds', 'name'];
+  const filterList = ['amount', 'date', 'name'];
 
-  // need to update fn to work for text, format date for sorting
+  // sorting transactions by amount, date, name, (all asc or desc)
   function getSortedTransactions(transactions, filter, ascending = true) {
     if (ascending) {
+      if (filter === 'date') {
+        return transactions
+          .map((transaction) => transaction)
+          .sort(
+            (a, b) =>
+              Number(a[filter].split('-').join('')) -
+              Number(b[filter].split('-').join(''))
+          );
+      } else if (filter === 'name') {
+        return transactions
+          .map((transaction) => transaction)
+          .sort((a, b) => {
+            const aString = a[filter].toLowerCase();
+            const bString = b[filter].toLowerCase();
+            if (aString < bString) {
+              return -1;
+            }
+            if (aString > bString) {
+              return 1;
+            }
+            return 0;
+          });
+      }
       return transactions
         .map((transaction) => transaction)
         .sort((a, b) => Number(a[filter]) - Number(b[filter]));
     } else {
+      if (filter === 'date') {
+        return transactions
+          .map((transaction) => transaction)
+          .sort(
+            (a, b) =>
+              Number(b[filter].split('-').join('')) -
+              Number(a[filter].split('-').join(''))
+          );
+      } else if (filter === 'name') {
+        return transactions
+          .map((transaction) => transaction)
+          .sort((a, b) => {
+            const aString = a[filter].toLowerCase();
+            const bString = b[filter].toLowerCase();
+            if (aString < bString) {
+              return 1;
+            }
+            if (aString > bString) {
+              return -1;
+            }
+            return 0;
+          });
+      }
       return transactions
         .map((transaction) => transaction)
         .sort((a, b) => Number(b[filter]) - Number(a[filter]));
     }
   }
-  console.log(getSortedTransactions(transactions, 'amount', true));
+  // console.log(getSortedTransactions(transactions, 'name', false));
   return (
     <ul className={styles.transactions}>
       {transactions.map((transaction) => (
