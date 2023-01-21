@@ -93,7 +93,6 @@
   position: relative;
   overflow: hidden;
 }
-
 .transactions .date {
   position: absolute;
   top: 0px;
@@ -157,6 +156,29 @@
   line-height: 0;
   cursor: pointer;
 }
+/* transaction sorting buttons */
+.transaction-filter-container {
+  border: 1px solid #f2f2f2;
+  box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
+  background-color: #f2f2f2;
+  padding-left: 10px;
+}
+.transaction-filter-container button {
+  border: 2px solid transparent;
+  padding: 5px 10px 0px 10px;
+  margin: 0 10px 5px 0;
+  background: none;
+  cursor: pointer;
+}
+.transaction-filter-container button:hover {
+  border-bottom: 2px solid #333;
+  scale: 1.25;
+}
+svg {
+  pointer-events: none;
+}
+
+/* category filter buttons */
 nav.category-filter {
   border: 0 1px 1px 1px solid #f2f2f2;
   box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
@@ -189,23 +211,4 @@ nav.category-filter {
   background: #daf7dc;
   border: 2px solid #333;
   scale: 1.3;
-}
-.transaction-filter-container {
-  border: 1px solid #f2f2f2;
-  box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
-  background-color: #f2f2f2;
-}
-.transaction-filter-container button {
-  border: 2px solid transparent;
-  padding: 5px 10px 0px 10px;
-  margin: 0 15px 5px 0;
-  background: none;
-  cursor: pointer;
-}
-.transaction-filter-container button:hover {
-  border-bottom: 2px solid #333;
-  scale: 1.25;
-}
-svg {
-  pointer-events: none;
 }
