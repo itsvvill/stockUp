@@ -2,8 +2,13 @@ import { useState } from 'react';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { useCollection } from '../../hooks/useCollection';
 
-//styles
+//styles and icons
 import styles from './Home.module.css';
+import { UilDollarSignAlt } from '@iconscout/react-unicons';
+import { UilCalendarAlt } from '@iconscout/react-unicons';
+import { UilLetterEnglishA } from '@iconscout/react-unicons';
+import { UilDirection } from '@iconscout/react-unicons';
+
 // components and pages
 import TransactionForm from './TransactionForm';
 import TransactionList from './TransactionList';
@@ -11,13 +16,15 @@ import CategoryFilter from './CategoryFilter';
 
 export default function Home() {
   const [currentCategory, setCurrentCategory] = useState('All');
+  const [transactionFilter, setTransactionFilter] = useState('');
+  const [isAscending, setIsAscending] = useState(true);
   const { user } = useAuthContext();
   const { documents, error } = useCollection(
     'transactions',
     ['uid', '==', user.uid],
     ['createdAt', 'desc']
   );
-  const transactions = documents
+  let transactions = documents
     ? documents.filter((transaction) => {
         switch (currentCategory) {
           case 'All':
@@ -70,6 +77,15 @@ export default function Home() {
     'Water',
   ];
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    if (transactionFilter === e.target.value) {
+      setIsAscending((prevState) => !prevState);
+    } else {
+      setTransactionFilter(e.target.value);
+    }
+  };
+
   const changeCategory = (newCategory) => {
     setCurrentCategory(newCategory);
   };
@@ -81,12 +97,30 @@ export default function Home() {
 
         {documents && documents.length > 0 && (
           <>
+            <div className={styles['transaction-filter-container']}>
+              {/* <button onClick={handleClick} name="direction">
+                <UilDirection />
+              </button> */}
+              <button onClick={handleClick} name="amount">
+                <UilDollarSignAlt />
+              </button>
+              <button onClick={handleClick} name="date">
+                <UilCalendarAlt />
+              </button>
+              <button onClick={handleClick} value="name">
+                <UilLetterEnglishA />
+              </button>
+            </div>
             <CategoryFilter
               currentCategory={currentCategory}
               changeCategory={changeCategory}
               categories={categoryList}
             />
-            <TransactionList transactions={transactions} />
+            <TransactionList
+              transactions={transactions}
+              transactionFilter={transactionFilter}
+              ascending={isAscending}
+            />
           </>
         )}
       </div>

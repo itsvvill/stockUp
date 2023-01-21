@@ -7,14 +7,18 @@ import { UilEllipsisV } from '@iconscout/react-unicons';
 // styles
 import styles from './Home.module.css';
 
-export default function TransactionList({ transactions }) {
+export default function TransactionList({
+  transactions,
+  transactionFilter,
+  isAscending,
+}) {
   const { deleteDocument } = useFirestore('transactions');
   const [deleteClicked, setDeleteClicked] = useState(false);
-  const [editClicked, setEditClicked] = useState(false);
-  const filterList = ['amount', 'date', 'name'];
+  // const [editClicked, setEditClicked] = useState(false);
 
   // sorting transactions by amount, date, name, (all asc or desc)
   function getSortedTransactions(transactions, filter, ascending = true) {
+    if (filter === '') return transactions;
     if (ascending) {
       if (filter === 'date') {
         return transactions
@@ -71,10 +75,14 @@ export default function TransactionList({ transactions }) {
         .sort((a, b) => Number(b[filter]) - Number(a[filter]));
     }
   }
-  // console.log(getSortedTransactions(transactions, 'name', false));
+  const sortedTransactions = getSortedTransactions(
+    transactions,
+    transactionFilter,
+    isAscending
+  );
   return (
     <ul className={styles.transactions}>
-      {transactions.map((transaction) => (
+      {sortedTransactions.map((transaction) => (
         <li
           key={transaction.id}
           style={{ borderLeft: `4px solid ${transaction.color}` }}
