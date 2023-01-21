@@ -7,78 +7,101 @@ import { UilEllipsisV } from '@iconscout/react-unicons';
 // styles
 import styles from './Home.module.css';
 
-export default function TransactionList({
-  transactions,
-  transactionFilter,
-  isAscending,
-}) {
+export default function TransactionList({ transactions, amount, date, name }) {
   const { deleteDocument } = useFirestore('transactions');
   const [deleteClicked, setDeleteClicked] = useState(false);
   // const [editClicked, setEditClicked] = useState(false);
 
-  // sorting transactions by amount, date, name, (all asc or desc)
-  function getSortedTransactions(transactions, filter, ascending = true) {
-    if (filter === '') return transactions;
-    if (ascending) {
-      if (filter === 'date') {
-        return transactions
-          .map((transaction) => transaction)
-          .sort(
-            (a, b) =>
-              Number(a[filter].split('-').join('')) -
-              Number(b[filter].split('-').join(''))
-          );
-      } else if (filter === 'name') {
-        return transactions
-          .map((transaction) => transaction)
-          .sort((a, b) => {
-            const aString = a[filter].toLowerCase();
-            const bString = b[filter].toLowerCase();
-            if (aString < bString) {
-              return -1;
-            }
-            if (aString > bString) {
-              return 1;
-            }
-            return 0;
-          });
-      }
+  // sorting transactions by amount, date, name ( asc or desc)
+  function getSortedTransactions(transactions, amount, date, name) {
+    // early return for original state
+    if (amount === '' && date === '' && name === '') return transactions;
+    // date ascending
+    else if (date === 'asc') {
       return transactions
         .map((transaction) => transaction)
-        .sort((a, b) => Number(a[filter]) - Number(b[filter]));
-    } else {
-      if (filter === 'date') {
-        return transactions
-          .map((transaction) => transaction)
-          .sort(
-            (a, b) =>
-              Number(b[filter].split('-').join('')) -
-              Number(a[filter].split('-').join(''))
-          );
-      } else if (filter === 'name') {
-        return transactions
-          .map((transaction) => transaction)
-          .sort((a, b) => {
-            const aString = a[filter].toLowerCase();
-            const bString = b[filter].toLowerCase();
-            if (aString < bString) {
-              return 1;
-            }
-            if (aString > bString) {
-              return -1;
-            }
-            return 0;
-          });
-      }
+        .sort(
+          (a, b) =>
+            Number(a['date'].split('-').join('')) -
+            Number(b['date'].split('-').join(''))
+        );
+      // date descending
+    } else if (date === 'desc') {
       return transactions
         .map((transaction) => transaction)
-        .sort((a, b) => Number(b[filter]) - Number(a[filter]));
+        .sort(
+          (a, b) =>
+            Number(b['date'].split('-').join('')) -
+            Number(a['date'].split('-').join(''))
+        );
+      // name ascending
+    } else if (name === 'asc') {
+      return transactions
+        .map((transaction) => transaction)
+        .sort((a, b) => {
+          const aString = a['name'].toLowerCase();
+          const bString = b['name'].toLowerCase();
+          if (aString < bString) {
+            return -1;
+          }
+          if (aString > bString) {
+            return 1;
+          }
+          return 0;
+        });
+      // name descending
+    } else if (name === 'desc') {
+      return transactions
+        .map((transaction) => transaction)
+        .sort((a, b) => {
+          const aString = a['name'].toLowerCase();
+          const bString = b['name'].toLowerCase();
+          if (aString < bString) {
+            return 1;
+          }
+          if (aString > bString) {
+            return -1;
+          }
+          return 0;
+        });
+      // amount ascending
+    } else if (amount === 'asc') {
+      return transactions
+        .map((transaction) => transaction)
+        .sort((a, b) => {
+          let aNum = a['amount'];
+          let bNum = b['amount'];
+          if (aNum[0] === '0') {
+            aNum = aNum.slice(1);
+          }
+          if (bNum[0] === '0') {
+            bNum = bNum.slice(1);
+          }
+          return Number(aNum) - Number(bNum);
+        });
+      // amount descending
+    } else if (amount === 'desc') {
+      return transactions
+        .map((transaction) => transaction)
+        .sort((a, b) => {
+          let aNum = a['amount'];
+          let bNum = b['amount'];
+          if (aNum[0] === '0') {
+            aNum = aNum.slice(1);
+          }
+          if (bNum[0] === '0') {
+            bNum = bNum.slice(1);
+          }
+          return Number(bNum) - Number(aNum);
+        });
     }
   }
+
   const sortedTransactions = getSortedTransactions(
     transactions,
-    transactionFilter,
-    isAscending
+    amount,
+    date,
+    name
   );
   return (
     <ul className={styles.transactions}>

@@ -7,7 +7,6 @@ import styles from './Home.module.css';
 import { UilDollarSignAlt } from '@iconscout/react-unicons';
 import { UilCalendarAlt } from '@iconscout/react-unicons';
 import { UilLetterEnglishA } from '@iconscout/react-unicons';
-import { UilDirection } from '@iconscout/react-unicons';
 
 // components and pages
 import TransactionForm from './TransactionForm';
@@ -16,8 +15,9 @@ import CategoryFilter from './CategoryFilter';
 
 export default function Home() {
   const [currentCategory, setCurrentCategory] = useState('All');
-  const [transactionFilter, setTransactionFilter] = useState('');
-  const [isAscending, setIsAscending] = useState(true);
+  const [amount, setAmount] = useState('');
+  const [date, setDate] = useState('');
+  const [name, setName] = useState('');
   const { user } = useAuthContext();
   const { documents, error } = useCollection(
     'transactions',
@@ -79,10 +79,43 @@ export default function Home() {
 
   const handleClick = (e) => {
     e.preventDefault();
-    if (transactionFilter === e.target.value) {
-      setIsAscending((prevState) => !prevState);
-    } else {
-      setTransactionFilter(e.target.value);
+    let f = e.target.value;
+    if (f === 'amount' && amount === '') {
+      setAmount('asc');
+      setDate('');
+      setName('');
+    } else if (f === 'amount' && amount === 'asc') {
+      setAmount('desc');
+      setDate('');
+      setName('');
+    } else if (f === 'amount' && amount === 'desc') {
+      setAmount('asc');
+      setDate('');
+      setName('');
+    } else if (f === 'date' && date === '') {
+      setAmount('');
+      setDate('asc');
+      setName('');
+    } else if (f === 'date' && date === 'asc') {
+      setAmount('');
+      setDate('desc');
+      setName('');
+    } else if (f === 'date' && date === 'desc') {
+      setAmount('');
+      setDate('asc');
+      setName('');
+    } else if (f === 'name' && name === '') {
+      setAmount('');
+      setDate('');
+      setName('asc');
+    } else if (f === 'name' && name === 'asc') {
+      setAmount('');
+      setDate('');
+      setName('desc');
+    } else if (f === 'name' && name === 'desc') {
+      setAmount('');
+      setDate('');
+      setName('asc');
     }
   };
 
@@ -98,13 +131,10 @@ export default function Home() {
         {documents && documents.length > 0 && (
           <>
             <div className={styles['transaction-filter-container']}>
-              {/* <button onClick={handleClick} name="direction">
-                <UilDirection />
-              </button> */}
-              <button onClick={handleClick} name="amount">
+              <button onClick={handleClick} value="amount">
                 <UilDollarSignAlt />
               </button>
-              <button onClick={handleClick} name="date">
+              <button onClick={handleClick} value="date">
                 <UilCalendarAlt />
               </button>
               <button onClick={handleClick} value="name">
@@ -118,8 +148,9 @@ export default function Home() {
             />
             <TransactionList
               transactions={transactions}
-              transactionFilter={transactionFilter}
-              ascending={isAscending}
+              amount={amount}
+              date={date}
+              name={name}
             />
           </>
         )}
