@@ -29,15 +29,15 @@ Users have 3 options for signing up:
 
 - Create and view transactions with name, amount, date, category, and color
 - Filter transactions to view only a specific category
+- Sort transactions alphabetically, by transaction date, and by amount
 - Delete transactions
 - Lookup pricing information and other metrics using the stock symbol
-- If search query doesn't match a stock symbol a general search is performed and best results are shown to user as clickable buttons.
+- Get suggested ticker symbols if search query doesn't match a symbol
 
 ## Features to be implemented
 
 - Updating a transaction after creation
 - Additional metrics for transactions (total number per category, total amount, amount per month)
-- Sorting transactions by date, amount, name
 - Storing a list of stocks selected by user
 - Conditionally showing user stock details if the stock is up
 
