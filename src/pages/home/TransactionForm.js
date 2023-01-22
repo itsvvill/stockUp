@@ -88,11 +88,9 @@ export default function TransactionForm({ uid, categories }) {
             size="22"
             color="#000"
             style={{
-              float: 'right',
-              display: 'block',
-              position: 'fixed',
-              marginTop: '20px',
-              marginLeft: '235px',
+              position: 'absolute',
+              marginTop: '46px',
+              marginLeft: '188px',
               cursor: 'pointer',
             }}
           />
