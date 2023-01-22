@@ -131,13 +131,31 @@ export default function Home() {
         {documents && documents.length > 0 && (
           <>
             <div className={styles['transaction-filter-container']}>
-              <button onClick={handleClick} value="amount">
+              <button
+                onClick={handleClick}
+                value="amount"
+                className={
+                  amount !== '' ? styles['button-active'] : styles['button']
+                }
+              >
                 <UilDollarSignAlt />
               </button>
-              <button onClick={handleClick} value="date">
+              <button
+                onClick={handleClick}
+                value="date"
+                className={
+                  date !== '' ? styles['button-active'] : styles['button']
+                }
+              >
                 <UilCalendarAlt />
               </button>
-              <button onClick={handleClick} value="name">
+              <button
+                onClick={handleClick}
+                value="name"
+                className={
+                  name !== '' ? styles['button-active'] : styles['button']
+                }
+              >
                 <UilLetterEnglishA />
               </button>
             </div>

@@ -163,14 +163,27 @@
   background-color: #f2f2f2;
   padding-left: 10px;
 }
-.transaction-filter-container button {
+.transaction-filter-container .button {
   border: 2px solid transparent;
   padding: 5px 10px 0px 10px;
   margin: 0 10px 3px 0;
   background: none;
   cursor: pointer;
 }
-.transaction-filter-container button:hover {
+.button-active {
+  border: 2px solid transparent;
+  border-bottom: 2px solid #333;
+  padding: 5px 10px 0px 10px;
+  margin: 0 10px 3px 0;
+  background: none;
+  cursor: pointer;
+}
+.transaction-filter-container .button:hover {
+  border-bottom: 2px solid #333;
+  scale: 1.25;
+}
+
+.transaction-filter-container .button-active:hover {
   border-bottom: 2px solid #333;
   scale: 1.25;
 }
