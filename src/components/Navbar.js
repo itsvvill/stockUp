@@ -30,7 +30,7 @@ export default function Navbar() {
           <div>
             <li className={styles.stocks}>
               {location.pathname === '/stocks' ? (
-                <Link to="/stocks" style={{ borderBottom: '2px solid #333' }}>
+                <Link to="/stocks" style={{ borderBottom: '1px solid #333' }}>
                   StockUp
                 </Link>
               ) : (
@@ -39,7 +39,7 @@ export default function Navbar() {
             </li>
             <li className={styles.transactions}>
               {location.pathname === '/' ? (
-                <Link to="/" style={{ borderBottom: '2px solid #333' }}>
+                <Link to="/" style={{ borderBottom: '1px solid #333' }}>
                   Transactions
                 </Link>
               ) : (
