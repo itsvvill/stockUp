@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useLogout } from '../hooks/useLogout';
 import { useAuthContext } from '../hooks/useAuthContext';
 
@@ -8,6 +8,7 @@ import styles from './Navbar.module.css';
 export default function Navbar() {
   const { logout } = useLogout();
   const { user } = useAuthContext();
+  let location = useLocation();
 
   return (
     <nav className={styles.navbar}>
@@ -28,10 +29,22 @@ export default function Navbar() {
         <ul>
           <div>
             <li className={styles.stocks}>
-              <Link to="/stocks">StockUp</Link>
+              {location.pathname === '/stocks' ? (
+                <Link to="/stocks" style={{ borderBottom: '2px solid #333' }}>
+                  StockUp
+                </Link>
+              ) : (
+                <Link to="/stocks">StockUp</Link>
+              )}
             </li>
             <li className={styles.transactions}>
-              <Link to="/">Transactions</Link>
+              {location.pathname === '/' ? (
+                <Link to="/" style={{ borderBottom: '2px solid #333' }}>
+                  Transactions
+                </Link>
+              ) : (
+                <Link to="/">Transactions</Link>
+              )}
             </li>
           </div>
           <div>
