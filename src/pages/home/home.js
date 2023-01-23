@@ -169,6 +169,7 @@ export default function Home() {
               amount={amount}
               date={date}
               name={name}
+              categories={categoryList.slice(1)}
             />
           </>
         )}

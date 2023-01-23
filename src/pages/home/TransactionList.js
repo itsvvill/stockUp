@@ -7,7 +7,13 @@ import { UilEllipsisV } from '@iconscout/react-unicons';
 // styles
 import styles from './Home.module.css';
 
-export default function TransactionList({ transactions, amount, date, name }) {
+export default function TransactionList({
+  transactions,
+  amount,
+  date,
+  name,
+  categories,
+}) {
   const { deleteDocument } = useFirestore('transactions');
   const [deleteClicked, setDeleteClicked] = useState(false);
   // const [editClicked, setEditClicked] = useState(false);
