@@ -6,6 +6,7 @@ import { UilEllipsisV } from '@iconscout/react-unicons';
 
 // styles
 import styles from './Home.module.css';
+import EditTransaction from './EditTransaction';
 
 export default function TransactionList({
   transactions,
@@ -16,7 +17,7 @@ export default function TransactionList({
 }) {
   const { deleteDocument } = useFirestore('transactions');
   const [deleteClicked, setDeleteClicked] = useState(false);
-  // const [editClicked, setEditClicked] = useState(false);
+  const [editClicked, setEditClicked] = useState('');
 
   // sorting transactions by amount, date, name ( asc or desc)
   function getSortedTransactions(transactions, amount, date, name) {
@@ -112,37 +113,51 @@ export default function TransactionList({
   return (
     <ul className={styles.transactions}>
       {sortedTransactions.map((transaction) => (
-        <li
-          key={transaction.id}
-          style={{ borderLeft: `4px solid ${transaction.color}` }}
-        >
-          <p className={styles.name}>{transaction.name}</p>
-          <p className={styles.amount}>${transaction.amount}</p>
-          <p className={styles.date}>{transaction.date}</p>
-          <p className={styles.category}>{transaction.category}</p>
-          {deleteClicked && (
-            <>
+        <>
+          {editClicked === transaction.id ? (
+            <EditTransaction
+              key={transaction.id}
+              transaction={transaction}
+              name={transaction.name}
+              amount={transaction.amount}
+              date={transaction.date}
+              category={transaction.category}
+            />
+          ) : (
+            <li
+              key={transaction.id}
+              style={{ borderLeft: `4px solid ${transaction.color}` }}
+            >
+              <p className={styles.name}>{transaction.name}</p>
+              <p className={styles.amount}>${transaction.amount}</p>
+              <p className={styles.date}>{transaction.date}</p>
+              <p className={styles.category}>{transaction.category}</p>
+
+              {deleteClicked && (
+                <>
+                  <button
+                    className={styles.clicked}
+                    onClick={() => deleteDocument(transaction.id)}
+                  >
+                    <UilTrash size="23" color="#000" />
+                  </button>
+                  <button
+                    className={styles.edit}
+                    onClick={() => setEditClicked(transaction.id)}
+                  >
+                    <UilEdit size="23" color="#000" />
+                  </button>
+                </>
+              )}
               <button
-                className={styles.clicked}
-                onClick={() => deleteDocument(transaction.id)}
+                className={styles.delete}
+                onClick={() => setDeleteClicked(!deleteClicked)}
               >
-                <UilTrash size="23" color="#000" />
+                <UilEllipsisV size="23" color="#777" />
               </button>
-              <button
-                className={styles.edit}
-                onClick={() => deleteDocument(transaction.id)}
-              >
-                <UilEdit size="23" color="#000" />
-              </button>
-            </>
+            </li>
           )}
-          <button
-            className={styles.delete}
-            onClick={() => setDeleteClicked(!deleteClicked)}
-          >
-            <UilEllipsisV size="23" color="#777" />
-          </button>
-        </li>
+        </>
       ))}
     </ul>
   );
