@@ -122,6 +122,7 @@ export default function TransactionList({
               amount={transaction.amount}
               date={transaction.date}
               category={transaction.category}
+              color={transaction.color}
             />
           ) : (
             <li

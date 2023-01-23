@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
+import { useAuthContext } from '../../hooks/useAuthContext';
 
 // styles
 import styles from './Home.module.css';
@@ -38,48 +39,67 @@ export default function EditTransaction(
   const [newCategory, setNewCategory] = useState('');
   const [newColor, setNewColor] = useState('#effaf0');
   const { updateDocument, response } = useFirestore('transactions');
+  const { user } = useAuthContext();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let uid = user.uid;
+    // addDocument({
+    //   uid,
+    //   name,
+    //   amount,
+    //   date,
+    //   category,
+    //   color,
+    // });
+    console.log(uid, newName, newAmount, newDate, newCategory, newColor);
+  };
+
   return (
-    <li
-      key={transaction.id}
-      style={{ borderLeft: `4px solid ${transaction.color}` }}
-    >
-      <input
-        type="text"
-        required
-        placeholder={transaction.name}
-        value={newName}
-        className={styles.name}
-        onChange={(e) => setNewName(e.target.value)}
-      />
-      <input
-        type="number"
-        required
-        placeholder={'$' + transaction.amount}
-        value={newAmount}
-        className={styles.amount}
-        onChange={(e) => setNewAmount(e.target.value)}
-      />
-      <input
-        type="date"
-        required
-        value={newDate}
-        placeholder={transaction.date}
-        className={styles.date}
-        onChange={(e) => setNewDate(e.target.value)}
-      />
-      <select
-        required
-        onChange={(e) => setNewCategory(e.target.value)}
-        value={newCategory}
-        className={styles.category}
+    <form onSubmit={handleSubmit}>
+      <li
+        key={transaction.id}
+        style={{ borderLeft: `4px solid ${transaction.color}` }}
       >
-        <option value="">- Choose a category -</option>
-        {categoryList.map((c) => (
-          <option value={c} key={c}>
-            {c}
-          </option>
-        ))}
-      </select>
-    </li>
+        <input
+          type="text"
+          required
+          placeholder={transaction.name}
+          value={newName}
+          className={styles.name}
+          onChange={(e) => setNewName(e.target.value)}
+        />
+        <input
+          type="number"
+          required
+          placeholder={'$' + transaction.amount}
+          value={newAmount}
+          className={styles.amount}
+          onChange={(e) => setNewAmount(e.target.value)}
+        />
+        <input
+          type="date"
+          required
+          value={newDate}
+          placeholder={transaction.date}
+          className={styles.date}
+          onChange={(e) => setNewDate(e.target.value)}
+        />
+        <select
+          required
+          onChange={(e) => setNewCategory(e.target.value)}
+          value={newCategory}
+          className={styles.category}
+        >
+          <option value="">- Choose a category -</option>
+          {categoryList.map((c) => (
+            <option value={c} key={c}>
+              {c}
+            </option>
+          ))}
+        </select>
+        <button>Add Transaction</button>
+      </li>
+    </form>
   );
 }
