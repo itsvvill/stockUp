@@ -105,12 +105,34 @@
   font-size: 1.7em;
   font-weight: bold;
 }
+.transactions .edit-name {
+  /* background-color: #f2f2f2; */
+  width: 340px;
+  font-size: 1.7em;
+  font-weight: bold;
+  /* border: none; */
+  padding: 2px 2px;
+  margin: 5px 0px;
+  border: none;
+  border-radius: 10px;
+}
 .transactions .amount {
   margin-left: auto;
   margin-right: 40px;
   color: #777;
   font-weight: bold;
   font-size: 1.6em;
+}
+.transactions .edit-amount {
+  /* background-color: #f2f2f2; */
+  color: #777;
+  font-weight: bold;
+  font-size: 1.6em;
+  width: 150px;
+  padding: 2px 2px;
+  margin: 5px 10px;
+  border: none;
+  border-radius: 10px;
 }
 .transactions .category {
   color: #777;
@@ -132,6 +154,7 @@
   font-size: 0.9em;
   cursor: pointer;
 }
+
 .transactions .clicked {
   position: absolute;
   top: 27.5px;
@@ -154,6 +177,31 @@
   padding: 3px 4px;
   text-align: center;
   line-height: 0;
+  cursor: pointer;
+}
+.transactions .edit-button {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: #daf7dc;
+  color: #777;
+  border: none;
+  padding: 14px 4px;
+  text-align: center;
+  line-height: 0;
+  cursor: pointer;
+}
+.transactions .cancel-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #ff69614b;
+  color: #777;
+  border: none;
+  padding: 14px 4px;
+  text-align: center;
+  line-height: 0;
+  font-size: 0.9em;
   cursor: pointer;
 }
 /* transaction sorting buttons */

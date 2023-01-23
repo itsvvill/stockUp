@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
 import { useAuthContext } from '../../hooks/useAuthContext';
+import { UilTimesCircle } from '@iconscout/react-unicons';
+import { UilCheckCircle } from '@iconscout/react-unicons';
 
 // styles
 import styles from './Home.module.css';
@@ -26,13 +28,14 @@ const categoryList = [
   'Vacation',
   'Water',
 ];
-export default function EditTransaction(
+export default function EditTransaction({
   transaction,
   name,
   amount,
   date,
-  category
-) {
+  category,
+  toggleEditing,
+}) {
   const [newName, setNewName] = useState('');
   const [newAmount, setNewAmount] = useState('');
   const [newDate, setNewDate] = useState('');
@@ -54,7 +57,9 @@ export default function EditTransaction(
     // });
     console.log(uid, newName, newAmount, newDate, newCategory, newColor);
   };
-
+  const handleClick = () => {
+    toggleEditing('');
+  };
   return (
     <form onSubmit={handleSubmit}>
       <li
@@ -66,7 +71,7 @@ export default function EditTransaction(
           required
           placeholder={transaction.name}
           value={newName}
-          className={styles.name}
+          className={styles['edit-name']}
           onChange={(e) => setNewName(e.target.value)}
         />
         <input
@@ -74,7 +79,7 @@ export default function EditTransaction(
           required
           placeholder={'$' + transaction.amount}
           value={newAmount}
-          className={styles.amount}
+          className={styles['edit-amount']}
           onChange={(e) => setNewAmount(e.target.value)}
         />
         <input
@@ -98,7 +103,16 @@ export default function EditTransaction(
             </option>
           ))}
         </select>
-        <button>Add Transaction</button>
+        <button type="submit" className={styles['edit-button']}>
+          <UilCheckCircle size="23" color="#000" />
+        </button>
+        <button
+          type="button"
+          onClick={handleClick}
+          className={styles['cancel-button']}
+        >
+          <UilTimesCircle size="23" color="#000" />
+        </button>
       </li>
     </form>
   );

@@ -104,6 +104,10 @@ export default function TransactionList({
     }
   }
 
+  const toggleEditing = () => {
+    setEditClicked('');
+  };
+
   const sortedTransactions = getSortedTransactions(
     transactions,
     amount,
@@ -123,6 +127,7 @@ export default function TransactionList({
               date={transaction.date}
               category={transaction.category}
               color={transaction.color}
+              toggleEditing={toggleEditing}
             />
           ) : (
             <li
