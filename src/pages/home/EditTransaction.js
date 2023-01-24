@@ -72,8 +72,18 @@ export default function EditTransaction({
     <form onSubmit={handleSubmit}>
       <li
         key={transaction.id}
+        className={styles['edit-li']}
         style={{ borderLeft: `4px solid ${transaction.color}` }}
       >
+        <label className={styles['edit-color']}>
+          <input
+            type="color"
+            required
+            onChange={(e) => setNewColor(e.target.value)}
+            value={transaction.color}
+            className={styles['edit-color-input']}
+          />
+        </label>
         <input
           type="text"
           required

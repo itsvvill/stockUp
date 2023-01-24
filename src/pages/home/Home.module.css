@@ -55,7 +55,18 @@
 .sidebar aside li {
   margin: 10px;
 }
-
+.transactions .edit-color-input {
+  visibility: hidden;
+}
+.transactions .edit-color {
+  border-radius: 10px;
+  border: none;
+  background-color: #daf7dc;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  margin: 10px 5px 10px 0;
+}
 /* color picker styling */
 .sidebar input[type='color'] {
   -webkit-appearance: none;
@@ -93,6 +104,17 @@
   position: relative;
   overflow: hidden;
 }
+.transactions .edit-li {
+  background: #f2f2f2;
+  margin: 30px auto;
+  border: 1px solid #f2f2f2;
+  box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
+  padding: 20px 20px 20px 5px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
 .transactions .date {
   position: absolute;
   top: 0px;
@@ -116,7 +138,7 @@
   font-weight: bold;
 }
 .transactions .edit-name {
-  width: 340px;
+  width: 325px;
   font-size: 1.7em;
   font-weight: bold;
   padding: 2px 2px;
