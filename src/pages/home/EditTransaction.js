@@ -44,18 +44,26 @@ export default function EditTransaction({
   const { updateDocument, response } = useFirestore('transactions');
   const { user } = useAuthContext();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    let uid = user.uid;
-    // addDocument({
-    //   uid,
-    //   name,
-    //   amount,
-    //   date,
-    //   category,
-    //   color,
-    // });
-    console.log(uid, newName, newAmount, newDate, newCategory, newColor);
+
+    let userid = user.uid;
+    const editedDoc = {
+      amount: newAmount,
+      category: newCategory,
+      color: newColor,
+      createdAt: transaction.createdAt,
+      date: newDate,
+      id: transaction.id,
+      name: newName,
+      uid: userid,
+    };
+    await updateDocument(transaction.id, editedDoc);
+    if (!response.error) {
+      toggleEditing('');
+    } else {
+      console.log(response.error);
+    }
   };
   const handleClick = () => {
     toggleEditing('');
