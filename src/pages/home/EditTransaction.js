@@ -40,7 +40,7 @@ export default function EditTransaction({
   const [newAmount, setNewAmount] = useState('');
   const [newDate, setNewDate] = useState('');
   const [newCategory, setNewCategory] = useState('');
-  const [newColor, setNewColor] = useState('#effaf0');
+  const [newColor, setNewColor] = useState('');
   const { updateDocument, response } = useFirestore('transactions');
   const { user } = useAuthContext();
 
@@ -68,6 +68,7 @@ export default function EditTransaction({
   const handleClick = () => {
     toggleEditing('');
   };
+  let colorInput = newColor !== '' ? newColor : transaction.color;
   return (
     <form onSubmit={handleSubmit}>
       <li
@@ -75,7 +76,10 @@ export default function EditTransaction({
         className={styles['edit-li']}
         style={{ borderLeft: `4px solid ${transaction.color}` }}
       >
-        <label className={styles['edit-color']}>
+        <label
+          className={styles['edit-color']}
+          style={{ backgroundColor: `${colorInput}` }}
+        >
           <input
             type="color"
             required
