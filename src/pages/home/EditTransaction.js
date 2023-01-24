@@ -87,14 +87,14 @@ export default function EditTransaction({
           required
           value={newDate}
           placeholder={transaction.date}
-          className={styles.date}
+          className={styles['edit-date']}
           onChange={(e) => setNewDate(e.target.value)}
         />
         <select
           required
           onChange={(e) => setNewCategory(e.target.value)}
           value={newCategory}
-          className={styles.category}
+          className={styles['edit-category']}
         >
           <option value="">- Choose a category -</option>
           {categoryList.map((c) => (

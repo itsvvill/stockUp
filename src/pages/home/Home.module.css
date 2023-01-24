@@ -100,19 +100,27 @@
   color: #777;
   font-size: 0.8em;
 }
+.transactions .edit-date {
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  padding: 1px;
+  color: #777;
+  font-size: 0.8em;
+  border: none;
+  border-radius: 10px;
+}
 .transactions .name {
   color: #777;
   font-size: 1.7em;
   font-weight: bold;
 }
 .transactions .edit-name {
-  /* background-color: #f2f2f2; */
   width: 340px;
   font-size: 1.7em;
   font-weight: bold;
-  /* border: none; */
   padding: 2px 2px;
-  margin: 5px 0px;
+  margin: 3px 0px;
   border: none;
   border-radius: 10px;
 }
@@ -124,7 +132,6 @@
   font-size: 1.6em;
 }
 .transactions .edit-amount {
-  /* background-color: #f2f2f2; */
   color: #777;
   font-weight: bold;
   font-size: 1.6em;
@@ -140,6 +147,15 @@
   bottom: 0;
   left: 4px;
   font-size: 0.8em;
+}
+.transactions .edit-category {
+  color: #777;
+  position: absolute;
+  bottom: 2px;
+  left: 4px;
+  font-size: 0.8em;
+  border: none;
+  border-radius: 10px;
 }
 .transactions .delete {
   position: absolute;
@@ -181,12 +197,12 @@
 }
 .transactions .edit-button {
   position: absolute;
-  top: 50px;
+  top: 45px;
   right: 0;
   background: #daf7dc;
   color: #777;
   border: none;
-  padding: 14px 4px;
+  padding: 11px 4px;
   text-align: center;
   line-height: 0;
   cursor: pointer;
@@ -198,7 +214,7 @@
   background: #ff69614b;
   color: #777;
   border: none;
-  padding: 14px 4px;
+  padding: 11px 4px;
   text-align: center;
   line-height: 0;
   font-size: 0.9em;
