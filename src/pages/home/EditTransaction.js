@@ -36,10 +36,10 @@ export default function EditTransaction({
   category,
   toggleEditing,
 }) {
-  const [newName, setNewName] = useState('');
-  const [newAmount, setNewAmount] = useState('');
-  const [newDate, setNewDate] = useState('');
-  const [newCategory, setNewCategory] = useState('');
+  const [newName, setNewName] = useState(transaction.newName);
+  const [newAmount, setNewAmount] = useState(transaction.newAmount);
+  const [newDate, setNewDate] = useState(transaction.newDate);
+  const [newCategory, setNewCategory] = useState(transaction.newCategory);
   const [newColor, setNewColor] = useState('');
   const { updateDocument, response } = useFirestore('transactions');
   const { user } = useAuthContext();
@@ -61,8 +61,6 @@ export default function EditTransaction({
     await updateDocument(transaction.id, editedDoc);
     if (!response.error) {
       toggleEditing('');
-    } else {
-      console.log(response.error);
     }
   };
   const handleClick = () => {
@@ -118,7 +116,7 @@ export default function EditTransaction({
           value={newCategory}
           className={styles['edit-category']}
         >
-          <option value="">- Choose a category -</option>
+          <option value="">{transaction.category}</option>
           {categoryList.map((c) => (
             <option value={c} key={c}>
               {c}
