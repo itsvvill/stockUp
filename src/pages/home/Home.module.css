@@ -278,10 +278,14 @@ svg {
 
 /* category filter buttons */
 nav.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
   border: 0 1px 1px 1px solid #f2f2f2;
   box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
   background-color: #f2f2f2;
-  padding: 0 0 5px 10px;
+  padding: 2px;
 }
 .category-btn {
   border: 2px solid #daf7dc;
@@ -292,7 +296,7 @@ nav.category-filter {
   color: #333;
   font-weight: bold;
   cursor: pointer;
-  font-size: 0.6em;
+  font-size: 0.7em;
 }
 .active-btn {
   background: #daf7dc;

@@ -45,6 +45,7 @@ export default function Home() {
           case 'Miscellaneous':
           case 'Other':
           case 'Rent/Mortgage':
+          case 'Shopping':
           case 'Transportation':
           case 'Vacation':
           case 'Water':
@@ -72,6 +73,7 @@ export default function Home() {
     'Miscellaneous',
     'Other',
     'Rent/Mortgage',
+    'Shopping',
     'Transportation',
     'Vacation',
     'Water',
