@@ -7,6 +7,7 @@ import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
 import Navbar from './components/Navbar';
 import Stocks from './pages/stocks/Stocks';
+import StockWatchList from './pages/stocks/StockWatchList';
 
 function App() {
   const { authIsReady, user } = useAuthContext();
@@ -21,7 +22,12 @@ function App() {
               {!user && <Redirect to="/login" />}
             </Route>
             <Route exact path="/stocks">
-              {user && <Stocks />}
+              {user && (
+                <>
+                  <Stocks />
+                  <StockWatchList />
+                </>
+              )}
               {!user && <Redirect to="/login" />}
             </Route>
             <Route path="/login">

@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import SearchResults from './SearchResults';
-import { useFirestore } from '../../hooks/useFirestore';
-import { useAuthContext } from '../../hooks/useAuthContext';
 
 // styles
 import styles from './Stocks.module.css';
@@ -23,8 +21,6 @@ export default function Stocks() {
   const [isLoss, setIsLoss] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
   const [symbolClicked, setSymbolClicked] = useState(false);
-  const { addDocument, response } = useFirestore('stocks');
-  const { user } = useAuthContext();
 
   // let FINNHUBAPI = process.env.REACT_APP_API_KEY;
   let ALPHAVANTAGEAPI = process.env.REACT_APP_API_KEY;
@@ -101,8 +97,7 @@ export default function Stocks() {
     e.preventDefault();
     getGeneralInfo(fetchData, companyOverviewURL);
     getPricingInfo(fetchData, quoteEndpointURL);
-    // getSearchResults(fetchData, searchURL);
-    // addDocument({ name: stockName, symbol: stockSymbol, uid: user.uid });
+    getSearchResults(fetchData, searchURL);
     setSearchResults([]);
     setStockSymbol('');
   };
