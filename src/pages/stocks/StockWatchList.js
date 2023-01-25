@@ -8,37 +8,37 @@ import styles from './Stocks.module.css';
 export default function StockWatchList() {
   const { addDocument, response } = useFirestore('stocks');
   const { user } = useAuthContext();
-  const [searchQuery, setSearchQuery] = useState('');
+  //   const [searchQuery, setSearchQuery] = useState('');
   const [stockSymbol, setStockSymbol] = useState('');
   const [stockName, setStockName] = useState('');
   const [stockExchange, setStockExchange] = useState('');
 
-  let ALPHAVANTAGEAPI = process.env.REACT_APP_API_KEY;
-  // api endpoints
-  let companyOverviewURL = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${searchQuery}&apikey=${ALPHAVANTAGEAPI}`;
+  //   let ALPHAVANTAGEAPI = process.env.REACT_APP_API_KEY;
+  //   // api endpoints
+  //   let companyOverviewURL = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${searchQuery}&apikey=${ALPHAVANTAGEAPI}`;
 
-  // async fetch
-  const fetchData = async (url) => {
-    let response = await fetch(url);
-    let data = await response.json();
-    return data;
-  };
+  //   // async fetch
+  //   const fetchData = async (url) => {
+  //     let response = await fetch(url);
+  //     let data = await response.json();
+  //     return data;
+  //   };
 
   //general info api call
-  const getGeneralInfo = (fetchCall, url) => {
-    fetchCall(url).then((data) => {
-      console.log(data);
-      setStockSymbol(data.Symbol);
-      setStockName(data.Name);
-      setStockExchange(data.Exchange);
-    });
-  };
+  //   const getGeneralInfo = (fetchCall, url) => {
+  //     fetchCall(url).then((data) => {
+  //       console.log(data);
+  //       setStockSymbol(data.Symbol);
+  //       setStockName(data.Name);
+  //       setStockExchange(data.Exchange);
+  //     });
+  //   };
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    getGeneralInfo(fetchData, companyOverviewURL);
-    console.log(stockSymbol, stockName, stockExchange);
-  }
+  //   function handleSubmit(e) {
+  //     e.preventDefault();
+  //     // getGeneralInfo(fetchData, companyOverviewURL);
+  //     console.log(stockSymbol, stockName, stockExchange);
+  //   }
 
   function addToWatchList(e) {
     e.preventDefault();
@@ -47,7 +47,7 @@ export default function StockWatchList() {
   }
   return (
     <div>
-      <form id="watchListSearch" onSubmit={handleSubmit}>
+      {/* <form id="watchListSearch" onSubmit={handleSubmit}>
         <input
           placeholder="Enter a stock ticker"
           type="text"
@@ -60,7 +60,7 @@ export default function StockWatchList() {
           required
         />
         <input type="submit" value="Search" className={styles['btn']} />
-      </form>
+      </form> */}
       {stockName && (
         <form id="watchList" onSubmit={addToWatchList}>
           <input

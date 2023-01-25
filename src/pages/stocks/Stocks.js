@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import SearchResults from './SearchResults';
+import { UilPlusCircle } from '@iconscout/react-unicons';
 
 // styles
 import styles from './Stocks.module.css';
 
-export default function Stocks() {
+export default function Stocks({ toggleStockWatchList }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [stockSymbol, setStockSymbol] = useState('');
   const [stockName, setStockName] = useState('');
@@ -20,7 +21,6 @@ export default function Stocks() {
   const [percentChange, setPercentChange] = useState(0);
   const [isLoss, setIsLoss] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
-  const [symbolClicked, setSymbolClicked] = useState(false);
 
   // let FINNHUBAPI = process.env.REACT_APP_API_KEY;
   let ALPHAVANTAGEAPI = process.env.REACT_APP_API_KEY;
@@ -34,9 +34,9 @@ export default function Stocks() {
   const changeSearchQuery = (newSearch) => {
     setSearchQuery(newSearch);
   };
-  const changeSymbolClicked = (bool) => {
-    setSymbolClicked(bool);
-  };
+  // const changeSymbolClicked = (bool) => {
+  //   setSymbolClicked(bool);
+  // };
   // async fetch
   const fetchData = async (url) => {
     let response = await fetch(url);
@@ -136,8 +136,8 @@ export default function Stocks() {
           </div>
           <SearchResults
             searchResults={searchResults}
-            changeSearchQuery={changeSearchQuery}
-            changeSymbolClicked={changeSymbolClicked}
+            // changeSearchQuery={changeSearchQuery}
+            // changeSymbolClicked={changeSymbolClicked}
           />
         </div>
       )}
@@ -153,6 +153,10 @@ export default function Stocks() {
 
           <div className={styles['title-and-prices']}>
             <span className={styles['stock']}>{stockName}</span>
+            <button onClick={toggleStockWatchList}>
+              <UilPlusCircle />
+              Add to Watchlist
+            </button>
             <div className={styles['prices']}>
               <p className={styles['high-price']}>High: ${highPrice}</p>
               <p
@@ -200,8 +204,8 @@ export default function Stocks() {
             </div>
             <SearchResults
               searchResults={searchResults}
-              changeSearchQuery={changeSearchQuery}
-              changeSymbolClicked={changeSymbolClicked}
+              // changeSearchQuery={changeSearchQuery}
+              // changeSymbolClicked={changeSymbolClicked}
             />
           </div>
         </div>
