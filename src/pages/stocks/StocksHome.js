@@ -5,6 +5,7 @@ import StockWatchList from './StockWatchList';
 import SearchResults from './SearchResults';
 // styles
 import styles from './Stocks.module.css';
+import StockSearchBar from './StockSearchBar';
 
 export default function StocksHome() {
   const [showStockWatchList, setShowStockWatchList] = useState(false);
@@ -23,6 +24,7 @@ export default function StocksHome() {
   const [percentChange, setPercentChange] = useState(0);
   const [isLoss, setIsLoss] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
+  const [formSubmit, setFormSubmit] = useState(false);
 
   // let FINNHUBAPI = process.env.REACT_APP_API_KEY;
   let ALPHAVANTAGEAPI = process.env.REACT_APP_API_KEY;
@@ -101,27 +103,28 @@ export default function StocksHome() {
   const toggleStockWatchList = () => {
     setShowStockWatchList((prevState) => !prevState);
   };
+
+  const updateSearchQuery = (query) => {
+    setSearchQuery(query);
+  };
+
+  const toggleSubmit = (e) => {
+    e.preventDefault();
+    setFormSubmit((prevState) => !prevState);
+    if (formSubmit) {
+      handleSubmit(e);
+    }
+  };
+
   return (
     <div>
       {!stockName && (
         <div className={styles['container']}>
-          <h1 className={styles['title']}>Stock Prices </h1>
-          <div className={styles['search']}>
-            <form id="stockForm" onSubmit={handleSubmit}>
-              <input
-                placeholder="Enter a stock ticker"
-                type="text"
-                name="stockName"
-                className={styles['input']}
-                onChange={(e) => setSearchQuery(e.target.value.toUpperCase())}
-                minLength="1"
-                maxLength="10"
-                autoComplete="off"
-                required
-              />
-              <input type="submit" value="Search" className={styles['btn']} />
-            </form>
-          </div>
+          <StockSearchBar
+            stockName={stockName}
+            updateSearchQuery={updateSearchQuery}
+            toggleSubmit={toggleSubmit}
+          />
           <SearchResults
             searchResults={searchResults}
             // changeSearchQuery={changeSearchQuery}
@@ -144,22 +147,10 @@ export default function StocksHome() {
             stockExchange={stockExchange}
             toggleStockWatchList={toggleStockWatchList}
           />
-          <div className={styles['search']}>
-            <form id="stockForm" onSubmit={handleSubmit}>
-              <input
-                placeholder="Enter a stock ticker"
-                type="text"
-                name="stockName"
-                className={styles['input']}
-                onChange={(e) => setSearchQuery(e.target.value.toUpperCase())}
-                minLength="1"
-                maxLength="6"
-                autoComplete="off"
-                required
-              />
-              <input type="submit" value="Search" className={styles['btn']} />
-            </form>
-          </div>
+          <StockSearchBar
+            updateSearchQuery={updateSearchQuery}
+            toggleSubmit={toggleSubmit}
+          />
         </div>
       )}
       {showStockWatchList && (
