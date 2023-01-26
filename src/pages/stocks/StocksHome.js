@@ -158,6 +158,7 @@ export default function StocksHome() {
           stockSymbol={stockSymbol}
           stockName={stockName}
           stockExchange={stockExchange}
+          toggleStockWatchList={toggleStockWatchList}
         />
       )}
     </div>

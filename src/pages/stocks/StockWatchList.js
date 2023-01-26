@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
+import { useCollection } from '../../hooks/useCollection';
 import { useAuthContext } from '../../hooks/useAuthContext';
 
 // styles
@@ -9,22 +10,34 @@ export default function StockWatchList({
   stockSymbol,
   stockName,
   stockExchange,
+  toggleStockWatchList,
 }) {
   const { addDocument, response } = useFirestore('stocks');
   const { user } = useAuthContext();
+  const { documents, error } = useCollection(
+    'stocks',
+    ['uid', '==', user.uid],
+    ['name', 'desc']
+  );
   const [newStockSymbol, setNewStockSymbol] = useState('');
   const [newStockName, setNewStockName] = useState('');
   const [newStockExchange, setNewStockExchange] = useState('');
 
-  function addToWatchList(e) {
+  const uid = user.uid;
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ name: newStockName, symbol: newStockSymbol, uid: user.uid });
-    // addDocument({ name: stockName, symbol: stockSymbol, uid: user.uid });
-  }
+    addDocument({ stockName, stockSymbol, uid });
+  };
+  useEffect(() => {
+    if (response.success) {
+      toggleStockWatchList((prevState) => !prevState);
+    }
+  }, [response.success]);
   return (
     <div>
       {stockName && (
-        <form id="watchList" onSubmit={addToWatchList}>
+        <form id="watchList" onSubmit={handleSubmit}>
           <input
             type="text"
             required
@@ -41,7 +54,7 @@ export default function StockWatchList({
             // className={styles['edit-name']}
             onChange={(e) => setNewStockName(e.target.value)}
           />
-          <button type="submit">Add To WatchList</button>
+          <button>Add To WatchList</button>
         </form>
       )}
     </div>
