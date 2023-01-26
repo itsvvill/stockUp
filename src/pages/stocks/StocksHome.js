@@ -101,7 +101,6 @@ export default function StocksHome() {
   const toggleStockWatchList = () => {
     setShowStockWatchList((prevState) => !prevState);
   };
-  console.log(showStockWatchList);
   return (
     <div>
       {!stockName && (
