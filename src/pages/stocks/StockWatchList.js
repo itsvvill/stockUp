@@ -33,17 +33,17 @@ export default function StockWatchList({
     if (response.success) {
       toggleStockWatchList((prevState) => !prevState);
     }
-  }, [response.success]);
+  }, [response.success, toggleStockWatchList]);
   return (
-    <div>
+    <div className={styles['watchlist-container']}>
       {stockName && (
-        <form id="watchList" onSubmit={handleSubmit}>
+        <form className={styles['watchlist-form']} onSubmit={handleSubmit}>
           <input
             type="text"
             required
             placeholder={stockSymbol}
             value={newStockSymbol}
-            // className={styles['edit-name']}
+            className={styles['watchlist-form-input']}
             onChange={(e) => setNewStockSymbol(e.target.value)}
           />
           <input
@@ -51,10 +51,12 @@ export default function StockWatchList({
             required
             placeholder={stockName}
             value={newStockName}
-            // className={styles['edit-name']}
+            className={styles['watchlist-form-input']}
             onChange={(e) => setNewStockName(e.target.value)}
           />
-          <button>Add To WatchList</button>
+          <button className={styles['watchlist-form-btn']}>
+            Add To WatchList
+          </button>
         </form>
       )}
     </div>

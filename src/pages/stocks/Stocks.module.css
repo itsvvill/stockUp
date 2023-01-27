@@ -192,3 +192,39 @@
   margin-right: 5px;
   color: #1f9751;
 }
+.watchlist-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 10px; */
+}
+.watchlist-form {
+  background-color: #fff;
+  box-sizing: border-box;
+  text-align: center;
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 25px;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+.watchlist-form-input {
+  border: 2px solid grey;
+  border-radius: 25px;
+  font-size: 0.9em;
+  padding: 8px 10px;
+}
+.watchlist-form-btn {
+  background: #effaf0;
+  font-size: 0.9em;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.watchlist-form-btn:hover {
+  background-color: #daf7dc;
+}
