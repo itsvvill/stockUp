@@ -31,7 +31,6 @@ export default function StockWatchList({
       toggleStockWatchList((prevState) => !prevState);
     }
   }, [response.success, toggleStockWatchList]);
-  console.log(document);
   return (
     <div className={styles['watchlist-form-container']}>
       {stockName && (

@@ -3,12 +3,13 @@ import { useAuthContext } from '../../hooks/useAuthContext';
 import { useCollection } from '../../hooks/useCollection';
 
 // pages and components
-import Stocks from './Stocks';
-import StockWatchList from './StockWatchListForm';
 import SearchResults from './SearchResults';
+import Stocks from './Stocks';
+import StockSearchBar from './StockSearchBar';
+import StockWatchList from './StockWatchList';
+import StockWatchListForm from './StockWatchListForm';
 // styles
 import styles from './Stocks.module.css';
-import StockSearchBar from './StockSearchBar';
 
 export default function StocksHome() {
   const [showStockWatchList, setShowStockWatchList] = useState(false);
@@ -128,42 +129,50 @@ export default function StocksHome() {
   return (
     <div>
       {!stockName && (
-        <div className={styles['container']}>
-          <StockSearchBar
-            stockName={stockName}
-            updateSearchQuery={updateSearchQuery}
-            toggleSubmit={toggleSubmit}
-          />
-          <SearchResults
-            searchResults={searchResults}
-            // changeSearchQuery={changeSearchQuery}
-            // changeSymbolClicked={changeSymbolClicked}
-          />
+        <div className={styles['stocks-home-container']}>
+          <div className={styles['container']}>
+            <StockSearchBar
+              stockName={stockName}
+              updateSearchQuery={updateSearchQuery}
+              toggleSubmit={toggleSubmit}
+            />
+            <SearchResults
+              searchResults={searchResults}
+              // changeSearchQuery={changeSearchQuery}
+              // changeSymbolClicked={changeSymbolClicked}
+            />
+          </div>
+          {documents !== null && documents.length >= 1 && (
+            <StockWatchList stocks={documents} />
+          )}
         </div>
       )}
       {stockName && currentPrice !== 0 && (
-        <div className={styles['container']}>
-          <Stocks
-            stockName={stockName}
-            currentPrice={currentPrice}
-            sector={sector}
-            highPrice={highPrice}
-            lowPrice={lowPrice}
-            isLoss={isLoss}
-            changeAmount={changeAmount}
-            percentChange={percentChange}
-            stockSymbol={stockSymbol}
-            stockExchange={stockExchange}
-            toggleStockWatchList={toggleStockWatchList}
-          />
-          <StockSearchBar
-            updateSearchQuery={updateSearchQuery}
-            toggleSubmit={toggleSubmit}
-          />
+        <div className={styles['stocks-home-container']}>
+          <div className={styles['container']}>
+            <Stocks
+              stockName={stockName}
+              currentPrice={currentPrice}
+              sector={sector}
+              highPrice={highPrice}
+              lowPrice={lowPrice}
+              isLoss={isLoss}
+              changeAmount={changeAmount}
+              percentChange={percentChange}
+              stockSymbol={stockSymbol}
+              stockExchange={stockExchange}
+              toggleStockWatchList={toggleStockWatchList}
+            />
+            <StockSearchBar
+              updateSearchQuery={updateSearchQuery}
+              toggleSubmit={toggleSubmit}
+            />
+          </div>
+          {documents !== null && documents.length >= 1 && <StockWatchList />}
         </div>
       )}
       {showStockWatchList && (
-        <StockWatchList
+        <StockWatchListForm
           uid={user.uid}
           stockSymbol={stockSymbol}
           stockName={stockName}
