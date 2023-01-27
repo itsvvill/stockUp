@@ -33,11 +33,16 @@ export default function Stocks({
           </div>
 
           <div className={styles['title-and-prices']}>
-            <span className={styles['stock']}>{stockName}</span>
-            <button onClick={handleClick}>
-              <UilPlusCircle />
-              Add to Watchlist
-            </button>
+            <span className={styles['stock']}>
+              {stockName}
+              <button
+                onClick={handleClick}
+                className={styles['toggle-watchlist-btn']}
+              >
+                <UilPlusCircle size="22" />
+                {/* Add to Watchlist */}
+              </button>
+            </span>
             <div className={styles['prices']}>
               <p className={styles['high-price']}>High: ${highPrice}</p>
               <p

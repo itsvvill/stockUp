@@ -35,7 +35,7 @@ export default function StockWatchList({
     }
   }, [response.success, toggleStockWatchList]);
   return (
-    <div className={styles['watchlist-container']}>
+    <div className={styles['watchlist-form-container']}>
       {stockName && (
         <form className={styles['watchlist-form']} onSubmit={handleSubmit}>
           <input
