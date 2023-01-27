@@ -1,29 +1,26 @@
 import { useState, useEffect } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
 import { useCollection } from '../../hooks/useCollection';
-import { useAuthContext } from '../../hooks/useAuthContext';
 
 // styles
 import styles from './Stocks.module.css';
 
 export default function StockWatchList({
+  uid,
   stockSymbol,
   stockName,
   stockExchange,
   toggleStockWatchList,
 }) {
   const { addDocument, response } = useFirestore('stocks');
-  const { user } = useAuthContext();
   const { documents, error } = useCollection(
     'stocks',
-    ['uid', '==', user.uid],
+    ['uid', '==', uid],
     ['name', 'desc']
   );
   const [newStockSymbol, setNewStockSymbol] = useState('');
   const [newStockName, setNewStockName] = useState('');
   const [newStockExchange, setNewStockExchange] = useState('');
-
-  const uid = user.uid;
 
   const handleSubmit = (e) => {
     e.preventDefault();

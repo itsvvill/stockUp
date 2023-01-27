@@ -164,6 +164,7 @@ export default function StocksHome() {
       )}
       {showStockWatchList && (
         <StockWatchList
+          uid={user.uid}
           stockSymbol={stockSymbol}
           stockName={stockName}
           stockExchange={stockExchange}
