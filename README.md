@@ -29,18 +29,23 @@ Users have 3 options for signing up:
 
 ### Authenticated User Features
 
+#### Transactions
+
 - Create and view transactions with name, amount, date, category, and color
 - Filter transactions to view only a specific category
 - Sort transactions alphabetically, by transaction date, and by amount
 - Edit/Update a transaction
 - Delete transactions
+
+#### Stocks
+
 - Lookup pricing information and other metrics using the stock symbol
+- Add stocks to a watchlist
 - Get suggested ticker symbols if search query doesn't match a symbol
 
 ## Features to be implemented
 
 - Additional metrics for transactions (total number per category, total amount, amount per month)
-- Storing a list of stocks selected by user
 - Conditionally showing user stock details if the stock is up
 
 ## License
