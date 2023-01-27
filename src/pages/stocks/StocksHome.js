@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import { useAuthContext } from '../../hooks/useAuthContext';
+import { useCollection } from '../../hooks/useCollection';
+
 // pages and components
 import Stocks from './Stocks';
 import StockWatchList from './StockWatchList';
@@ -25,7 +28,13 @@ export default function StocksHome() {
   const [isLoss, setIsLoss] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
   const [formSubmit, setFormSubmit] = useState(false);
-
+  const { user } = useAuthContext();
+  const { documents, error } = useCollection(
+    'stocks',
+    ['uid', '==', user.uid],
+    ['name', 'desc']
+  );
+  console.log(documents);
   // let FINNHUBAPI = process.env.REACT_APP_API_KEY;
   let ALPHAVANTAGEAPI = process.env.REACT_APP_API_KEY;
 
