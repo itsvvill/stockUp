@@ -45,6 +45,7 @@ Users have 3 options for signing up:
 
 ## Features to be implemented
 
+- Ability to delete and edit stocks in stock watchlist
 - Additional metrics for transactions (total number per category, total amount, amount per month)
 - Conditionally showing user stock details if the stock is up
 
