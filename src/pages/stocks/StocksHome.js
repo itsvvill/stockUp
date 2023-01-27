@@ -168,7 +168,9 @@ export default function StocksHome() {
               toggleSubmit={toggleSubmit}
             />
           </div>
-          {documents !== null && documents.length >= 1 && <StockWatchList />}
+          {documents !== null && documents.length >= 1 && (
+            <StockWatchList stocks={documents} />
+          )}
         </div>
       )}
       {showStockWatchList && (

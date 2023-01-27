@@ -7,9 +7,11 @@ export default function StockWatchList({ stocks }) {
       <h1 className={styles['stocks-watchlist-heading']}>Stock WatchList</h1>
       {stocks &&
         stocks.map((stock) => (
-          <li>
-            <p>{stock.stockName}</p>
-            <p>{stock.stockSymbol}</p>
+          <li className={styles['stocks-watchlist-item']}>
+            <p className={styles['stocks-watchlist-symbol']}>
+              {stock.stockSymbol}
+            </p>
+            <p className={styles['stocks-watchlist-name']}>{stock.stockName}</p>
           </li>
         ))}
     </div>
