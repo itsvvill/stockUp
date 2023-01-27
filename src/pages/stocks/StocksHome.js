@@ -35,7 +35,6 @@ export default function StocksHome() {
     ['uid', '==', user.uid],
     ['createdAt', 'desc']
   );
-
   // let FINNHUBAPI = process.env.REACT_APP_API_KEY;
   let ALPHAVANTAGEAPI = process.env.REACT_APP_API_KEY;
 

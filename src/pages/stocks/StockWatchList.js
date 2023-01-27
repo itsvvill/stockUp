@@ -8,9 +8,12 @@ export default function StockWatchList({ stocks }) {
       {stocks &&
         stocks.map((stock) => (
           <li className={styles['stocks-watchlist-item']}>
-            <p className={styles['stocks-watchlist-symbol']}>
+            <button
+              // onClick={() => console.log(stock.stockSymbol)}
+              className={styles['stocks-watchlist-symbol']}
+            >
               {stock.stockSymbol}
-            </p>
+            </button>
             <p className={styles['stocks-watchlist-name']}>{stock.stockName}</p>
           </li>
         ))}
