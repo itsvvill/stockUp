@@ -4,7 +4,7 @@ import { useCollection } from '../../hooks/useCollection';
 
 // pages and components
 import Stocks from './Stocks';
-import StockWatchList from './StockWatchList';
+import StockWatchList from './StockWatchListForm';
 import SearchResults from './SearchResults';
 // styles
 import styles from './Stocks.module.css';
@@ -32,9 +32,9 @@ export default function StocksHome() {
   const { documents, error } = useCollection(
     'stocks',
     ['uid', '==', user.uid],
-    ['name', 'desc']
+    ['createdAt', 'desc']
   );
-  console.log(documents);
+
   // let FINNHUBAPI = process.env.REACT_APP_API_KEY;
   let ALPHAVANTAGEAPI = process.env.REACT_APP_API_KEY;
 

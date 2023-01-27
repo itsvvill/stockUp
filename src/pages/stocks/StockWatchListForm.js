@@ -16,7 +16,7 @@ export default function StockWatchList({
   const { documents, error } = useCollection(
     'stocks',
     ['uid', '==', uid],
-    ['name', 'desc']
+    ['createdAt', 'desc']
   );
   const [newStockSymbol, setNewStockSymbol] = useState('');
   const [newStockName, setNewStockName] = useState('');
@@ -31,6 +31,7 @@ export default function StockWatchList({
       toggleStockWatchList((prevState) => !prevState);
     }
   }, [response.success, toggleStockWatchList]);
+  console.log(document);
   return (
     <div className={styles['watchlist-form-container']}>
       {stockName && (
