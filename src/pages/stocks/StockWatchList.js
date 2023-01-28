@@ -22,12 +22,11 @@ export default function StockWatchList({ stocks }) {
               {stock.stockSymbol}
             </button>
             <p className={styles['stocks-watchlist-name']}>{stock.stockName}</p>
-            {toggleMenu === '' ||
-              (toggleMenu !== stock.id && (
-                <button onClick={(e) => setToggleMenu(stock.id)}>
-                  <UilEllipsisV />
-                </button>
-              ))}
+            {(toggleMenu === '' || toggleMenu !== stock.id) && (
+              <button onClick={(e) => setToggleMenu(stock.id)}>
+                <UilEllipsisV />
+              </button>
+            )}
             {toggleMenu === stock.id && (
               <button onClick={() => deleteDocument(stock.id)}>
                 <UilTrash />

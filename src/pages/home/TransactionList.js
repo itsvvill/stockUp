@@ -16,7 +16,7 @@ export default function TransactionList({
   categories,
 }) {
   const { deleteDocument } = useFirestore('transactions');
-  const [deleteClicked, setDeleteClicked] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState('');
   const [editClicked, setEditClicked] = useState('');
 
   // sorting transactions by amount, date, name ( asc or desc)
@@ -108,6 +108,14 @@ export default function TransactionList({
     setEditClicked('');
   };
 
+  const handleMenuClick = (id) => {
+    if (toggleMenu === '') {
+      setToggleMenu((prevState) => id);
+    } else {
+      setToggleMenu((prevState) => '');
+    }
+  };
+
   const sortedTransactions = getSortedTransactions(
     transactions,
     amount,
@@ -139,7 +147,7 @@ export default function TransactionList({
               <p className={styles.date}>{transaction.date}</p>
               <p className={styles.category}>{transaction.category}</p>
 
-              {deleteClicked && (
+              {toggleMenu === transaction.id && (
                 <>
                   <button
                     className={styles.clicked}
@@ -157,7 +165,7 @@ export default function TransactionList({
               )}
               <button
                 className={styles.delete}
-                onClick={() => setDeleteClicked(!deleteClicked)}
+                onClick={() => handleMenuClick(transaction.id)}
               >
                 <UilEllipsisV size="23" color="#777" />
               </button>
