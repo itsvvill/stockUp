@@ -304,8 +304,11 @@
   scale: 1.1;
 }
 .stocks-watchlist-name {
+  border: none;
+  background: none;
   font-weight: bold;
   font-size: 0.9em;
+  cursor: pointer;
 }
 .stock-watchlist-button-container {
   width: 60px;
@@ -337,4 +340,54 @@
   background: #e7564fa7;
   cursor: pointer;
   scale: 1.1;
+}
+.stock-watchlist-edit-form {
+  display: flex;
+  align-items: center;
+}
+.stock-watchlist-edit-symbol {
+  border: none;
+  text-align: center;
+  border-radius: 25px;
+  width: 40px;
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 0.7em;
+  margin-right: 5px;
+}
+.stock-watchlist-edit-name {
+  border: none;
+  text-align: center;
+  border-radius: 25px;
+  width: 175px;
+  padding: 5px 8px;
+  margin: 5px;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+.stock-watchlist-edit-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stock-watchlist-edit-submit {
+  border: none;
+  padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  background: none;
+}
+.stock-watchlist-edit-submit:hover {
+  cursor: pointer;
+  scale: 1.3;
+}
+.stock-watchlist-edit-cancel {
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+}
+.stock-watchlist-edit-cancel:hover {
+  cursor: pointer;
+  scale: 1.3;
 }
