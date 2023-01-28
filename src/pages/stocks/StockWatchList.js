@@ -7,7 +7,7 @@ import styles from './Stocks.module.css';
 
 export default function StockWatchList({ stocks }) {
   const { deleteDocument } = useFirestore('stocks');
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState('');
 
   return (
     <div className={styles['stock-watchlist-container']}>
@@ -22,13 +22,14 @@ export default function StockWatchList({ stocks }) {
               {stock.stockSymbol}
             </button>
             <p className={styles['stocks-watchlist-name']}>{stock.stockName}</p>
-            {!toggleMenu && (
-              <button onClick={(e) => setToggleMenu(!toggleMenu)}>
-                <UilEllipsisV />
-              </button>
-            )}
-            {toggleMenu && (
-              <button>
+            {toggleMenu === '' ||
+              (toggleMenu !== stock.id && (
+                <button onClick={(e) => setToggleMenu(stock.id)}>
+                  <UilEllipsisV />
+                </button>
+              ))}
+            {toggleMenu === stock.id && (
+              <button onClick={() => deleteDocument(stock.id)}>
                 <UilTrash />
               </button>
             )}
