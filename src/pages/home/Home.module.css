@@ -194,7 +194,7 @@
 
 .transactions .clicked {
   position: absolute;
-  top: 27.5px;
+  top: 54.5px;
   right: 0;
   background: #ff69614b;
   color: #777;
@@ -206,7 +206,7 @@
 }
 .transactions .edit {
   position: absolute;
-  top: 54.5px;
+  top: 27.5px;
   right: 0;
   background: #daf7dc;
   color: #777;
