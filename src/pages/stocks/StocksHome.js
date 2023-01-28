@@ -8,6 +8,7 @@ import Stocks from './Stocks';
 import StockSearchBar from './StockSearchBar';
 import StockWatchList from './StockWatchList';
 import StockWatchListForm from './StockWatchListForm';
+
 // styles
 import styles from './Stocks.module.css';
 
@@ -22,9 +23,6 @@ export default function StocksHome() {
   const [highPrice, setHighPrice] = useState(0);
   const [lowPrice, setLowPrice] = useState(0);
   const [changeAmount, setChangeAmount] = useState(0);
-  const [openPrice, setOpenPrice] = useState(0);
-  const [day, setDay] = useState('');
-  const [tradeVolume, setTradeVolume] = useState(0);
   const [percentChange, setPercentChange] = useState(0);
   const [isLoss, setIsLoss] = useState(false);
   const [searchResults, setSearchResults] = useState([]);
@@ -64,12 +62,9 @@ export default function StocksHome() {
   const getPricingInfo = (fetchCall, url) => {
     fetchCall(url).then((data) => {
       data = data['Global Quote'];
-      setOpenPrice(parseFloat(data['02. open']).toFixed(2));
       setHighPrice(parseFloat(data['03. high']).toFixed(2));
       setLowPrice(parseFloat(data['04. low']).toFixed(2));
       setCurrentPrice(parseFloat(data['05. price']).toFixed(2));
-      setTradeVolume(data['06 volume']);
-      setDay(data['07. latest trading day']);
       setChangeAmount(parseFloat(data['09. change']));
       setPercentChange(
         data['10. change percent']?.[0] === '-'
