@@ -307,3 +307,34 @@
   font-weight: bold;
   font-size: 0.9em;
 }
+.stock-watchlist-button-container {
+  width: 60px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.stock-watchlist-menu {
+  background: rgba(228, 227, 227, 0.643);
+  padding: 3px 1px 2px 1px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.stock-watchlist-menu:hover {
+  background: rgba(207, 205, 205, 0.643);
+  cursor: pointer;
+  scale: 1.1;
+}
+.stock-watchlist-delete {
+  background: #f75d55a7;
+  padding: 2px 1px 1px 1px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 3px;
+}
+.stock-watchlist-delete:hover {
+  background: #e7564fa7;
+  cursor: pointer;
+  scale: 1.1;
+}

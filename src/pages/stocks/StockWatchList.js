@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
 import { UilEllipsisV } from '@iconscout/react-unicons';
-import { UilTrash } from '@iconscout/react-unicons';
+import { UilTrashAlt } from '@iconscout/react-unicons';
 // styles
 import styles from './Stocks.module.css';
 
@@ -31,17 +31,22 @@ export default function StockWatchList({ stocks }) {
               {stock.stockSymbol}
             </button>
             <p className={styles['stocks-watchlist-name']}>{stock.stockName}</p>
-            {toggleMenu === stock.id && (
-              <button onClick={() => deleteDocument(stock.id)}>
-                <UilTrash />
+            <div className={styles['stock-watchlist-button-container']}>
+              {toggleMenu === stock.id && (
+                <button
+                  className={styles['stock-watchlist-delete']}
+                  onClick={() => deleteDocument(stock.id)}
+                >
+                  <UilTrashAlt size="24" />
+                </button>
+              )}
+              <button
+                className={styles['stock-watchlist-menu']}
+                onClick={() => handleToggleMenu(stock.id)}
+              >
+                <UilEllipsisV size="22" />
               </button>
-            )}
-            <button
-              className={styles['stock-watchlist-menu']}
-              onClick={() => handleToggleMenu(stock.id)}
-            >
-              <UilEllipsisV />
-            </button>
+            </div>
           </li>
         ))}
     </div>

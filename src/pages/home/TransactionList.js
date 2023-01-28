@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
-import { UilTrash } from '@iconscout/react-unicons';
+import { UilTrashAlt } from '@iconscout/react-unicons';
 import { UilEdit } from '@iconscout/react-unicons';
 import { UilEllipsisV } from '@iconscout/react-unicons';
 
@@ -153,7 +153,7 @@ export default function TransactionList({
                     className={styles.clicked}
                     onClick={() => deleteDocument(transaction.id)}
                   >
-                    <UilTrash size="23" color="#000" />
+                    <UilTrashAlt size="23" color="#000" />
                   </button>
                   <button
                     className={styles.edit}
