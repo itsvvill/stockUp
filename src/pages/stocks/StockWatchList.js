@@ -1,7 +1,14 @@
+import { useState } from 'react';
+import { useFirestore } from '../../hooks/useFirestore';
+import { UilEllipsisV } from '@iconscout/react-unicons';
+import { UilTrash } from '@iconscout/react-unicons';
 // styles
 import styles from './Stocks.module.css';
 
 export default function StockWatchList({ stocks }) {
+  const { deleteDocument } = useFirestore('stocks');
+  const [toggleMenu, setToggleMenu] = useState(false);
+
   return (
     <div className={styles['stock-watchlist-container']}>
       <h1 className={styles['stocks-watchlist-heading']}>Stock WatchList</h1>
@@ -15,6 +22,16 @@ export default function StockWatchList({ stocks }) {
               {stock.stockSymbol}
             </button>
             <p className={styles['stocks-watchlist-name']}>{stock.stockName}</p>
+            {!toggleMenu && (
+              <button onClick={(e) => setToggleMenu(!toggleMenu)}>
+                <UilEllipsisV />
+              </button>
+            )}
+            {toggleMenu && (
+              <button>
+                <UilTrash />
+              </button>
+            )}
           </li>
         ))}
     </div>
