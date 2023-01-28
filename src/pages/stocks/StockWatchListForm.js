@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
-import { useCollection } from '../../hooks/useCollection';
 
 // styles
 import styles from './Stocks.module.css';
@@ -9,18 +8,14 @@ export default function StockWatchList({
   uid,
   stockSymbol,
   stockName,
-  stockExchange,
+  // stockExchange,
   toggleStockWatchList,
 }) {
   const { addDocument, response } = useFirestore('stocks');
-  const { documents, error } = useCollection(
-    'stocks',
-    ['uid', '==', uid],
-    ['createdAt', 'desc']
-  );
+
   const [newStockSymbol, setNewStockSymbol] = useState('');
   const [newStockName, setNewStockName] = useState('');
-  const [newStockExchange, setNewStockExchange] = useState('');
+  // const [newStockExchange, setNewStockExchange] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();

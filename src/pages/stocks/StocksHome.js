@@ -30,7 +30,7 @@ export default function StocksHome() {
   const [searchResults, setSearchResults] = useState([]);
   const [formSubmit, setFormSubmit] = useState(false);
   const { user } = useAuthContext();
-  const { documents, error } = useCollection(
+  const { documents } = useCollection(
     'stocks',
     ['uid', '==', user.uid],
     ['createdAt', 'desc']

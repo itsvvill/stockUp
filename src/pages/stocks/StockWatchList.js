@@ -7,7 +7,7 @@ export default function StockWatchList({ stocks }) {
       <h1 className={styles['stocks-watchlist-heading']}>Stock WatchList</h1>
       {stocks &&
         stocks.map((stock) => (
-          <li className={styles['stocks-watchlist-item']}>
+          <li key={stock.id} className={styles['stocks-watchlist-item']}>
             <button
               // onClick={() => console.log(stock.stockSymbol)}
               className={styles['stocks-watchlist-symbol']}
