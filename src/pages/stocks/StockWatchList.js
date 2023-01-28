@@ -9,6 +9,15 @@ export default function StockWatchList({ stocks }) {
   const { deleteDocument } = useFirestore('stocks');
   const [toggleMenu, setToggleMenu] = useState('');
 
+  const handleToggleMenu = (id) => {
+    if (toggleMenu === '') {
+      setToggleMenu((prevState) => id);
+    } else if (toggleMenu !== id) {
+      setToggleMenu((prevState) => id);
+    } else {
+      setToggleMenu((prevState) => '');
+    }
+  };
   return (
     <div className={styles['stock-watchlist-container']}>
       <h1 className={styles['stocks-watchlist-heading']}>Stock WatchList</h1>
@@ -22,16 +31,17 @@ export default function StockWatchList({ stocks }) {
               {stock.stockSymbol}
             </button>
             <p className={styles['stocks-watchlist-name']}>{stock.stockName}</p>
-            {(toggleMenu === '' || toggleMenu !== stock.id) && (
-              <button onClick={(e) => setToggleMenu(stock.id)}>
-                <UilEllipsisV />
-              </button>
-            )}
             {toggleMenu === stock.id && (
               <button onClick={() => deleteDocument(stock.id)}>
                 <UilTrash />
               </button>
             )}
+            <button
+              className={styles['stock-watchlist-menu']}
+              onClick={() => handleToggleMenu(stock.id)}
+            >
+              <UilEllipsisV />
+            </button>
           </li>
         ))}
     </div>
