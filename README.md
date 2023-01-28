@@ -40,12 +40,13 @@ Users have 3 options for signing up:
 #### Stocks
 
 - Lookup pricing information and other metrics using the stock symbol
-- Add stocks to a watchlist
+- Add stocks to watchlist
+- Delete stocks from watchlist
 - Get suggested ticker symbols if search query doesn't match a symbol
 
 ## Features to be implemented
 
-- Ability to delete and edit stocks in stock watchlist
+- Ability to edit stocks in stock watchlist
 - Additional metrics for transactions (total number per category, total amount, amount per month)
 - Conditionally showing user stock details if the stock is up
 
