@@ -11,12 +11,6 @@ StockUp is a finance and stock tracker created to help the user make smarter fin
 - CSS
 - HTML5
 
-## Image
-
-![Transaction list and transaction form](./public/stockUp_transaction_list.png)
-
-![Stock component](./public/stockUp_stock_component.png)
-
 ## Usage
 
 ### Signup/Login
@@ -31,6 +25,10 @@ Users have 3 options for signing up:
 
 #### Transactions
 
+---
+
+![Transaction list and transaction form](./public/stockUp_transaction_list.png)
+
 - Create and view transactions with name, amount, date, category, and color
 - Filter transactions to view only a specific category
 - Sort transactions alphabetically, by transaction date, and by amount
@@ -38,6 +36,10 @@ Users have 3 options for signing up:
 - Delete transactions
 
 #### Stocks
+
+---
+
+![Stock component](./public/stockUp_stock_component.png)
 
 - Lookup pricing information and other metrics using the stock symbol
 - Add stocks to watchlist
