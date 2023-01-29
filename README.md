@@ -1,6 +1,8 @@
-# StockUp
+# stockUp
 
-StockUp is a finance and stock tracker created to help the user make smarter financial decisions.
+![stockUp Icon](./public/favicon.ico)
+
+stockUp is a finance and stock tracker created to help the user make smarter financial decisions.
 
 ## Technologies and Languages
 
