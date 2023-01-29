@@ -23,19 +23,29 @@ export default function StockWatchList({ stocks, user }) {
       setToggleMenu((prevState) => '');
     }
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e, idx) => {
     e.preventDefault();
-    console.log(newStockSymbol, newStockName);
-    setToggleEdit((prevState) => '');
-    setNewStockSymbol((prevState) => '');
-    setNewStockName((prevState) => '');
+    let userID = user.uid;
+    const editedDoc = {
+      createdAt: stocks[idx].createdAt,
+      id: toggleEdit,
+      stockName: newStockName,
+      stockSymbol: newStockSymbol,
+      uid: userID,
+    };
+    await updateDocument(toggleEdit, editedDoc);
+    if (!response.error) {
+      setToggleEdit((prevState) => '');
+      setNewStockSymbol((prevState) => '');
+      setNewStockName((prevState) => '');
+    }
   };
 
   return (
     <div className={styles['stock-watchlist-container']}>
       <h1 className={styles['stocks-watchlist-heading']}>Stock WatchList</h1>
       {stocks &&
-        stocks.map((stock) => (
+        stocks.map((stock, idx) => (
           <li key={stock.id} className={styles['stocks-watchlist-item']}>
             {(toggleEdit === '' || toggleEdit !== stock.id) && (
               <>
@@ -55,7 +65,7 @@ export default function StockWatchList({ stocks, user }) {
             )}
             {toggleEdit === stock.id && (
               <form
-                onSubmit={handleSubmit}
+                onSubmit={(e) => handleSubmit(e, idx)}
                 className={styles['stock-watchlist-edit-form']}
               >
                 <input
