@@ -3,10 +3,10 @@ import { useFirestore } from '../../hooks/useFirestore';
 import { UilTrashAlt } from '@iconscout/react-unicons';
 import { UilEdit } from '@iconscout/react-unicons';
 import { UilEllipsisV } from '@iconscout/react-unicons';
+import EditTransaction from './EditTransaction';
 
 // styles
 import styles from './Home.module.css';
-import EditTransaction from './EditTransaction';
 
 export default function TransactionList({
   transactions,

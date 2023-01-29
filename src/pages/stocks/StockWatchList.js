@@ -7,8 +7,8 @@ import { UilCheckCircle } from '@iconscout/react-unicons';
 // styles
 import styles from './Stocks.module.css';
 
-export default function StockWatchList({ stocks }) {
-  const { deleteDocument } = useFirestore('stocks');
+export default function StockWatchList({ stocks, user }) {
+  const { updateDocument, deleteDocument, response } = useFirestore('stocks');
   const [toggleMenu, setToggleMenu] = useState('');
   const [toggleEdit, setToggleEdit] = useState('');
   const [newStockName, setNewStockName] = useState('');
