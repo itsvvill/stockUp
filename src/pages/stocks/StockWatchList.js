@@ -47,15 +47,17 @@ export default function StockWatchList({ stocks, user, toggleStockWatchList }) {
   };
   return (
     <div className={styles['stock-watchlist-container']}>
-      <>
-        <h1 className={styles['stocks-watchlist-heading']}>Stock WatchList</h1>
+      <span className={styles['stocks-watchlist-heading']}>
+        <span className={styles['stock-watchlist-heading-title']}>
+          Stock WatchList
+        </span>
         <button
           onClick={handleClick}
-          className={styles['toggle-watchlist-btn']}
+          className={styles['watchlist-heading-btn']}
         >
           <UilPlusCircle size="22" />
         </button>
-      </>
+      </span>
       {stocks &&
         stocks.map((stock, idx) => (
           <li key={stock.id} className={styles['stocks-watchlist-item']}>

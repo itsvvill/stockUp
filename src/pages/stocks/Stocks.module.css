@@ -272,7 +272,8 @@
   font-size: 25px;
   font-weight: 600;
   width: 90%;
-  text-align: center;
+  display: flex;
+  align-items: center;
   background-color: rgba(228, 227, 227, 0.643);
   padding: 4px 20px;
   border-radius: 25px;
@@ -280,6 +281,25 @@
     5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
+.stock-watchlist-heading-title {
+  width: 100%;
+  text-align: center;
+  padding-left: 30px;
+}
+.watchlist-heading-btn {
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 10px;
+  padding: 5px 5px;
+  border-radius: 50%;
+  border: none;
+  background: #effaf0;
+  cursor: pointer;
+}
+.watchlist-heading-btn:hover {
+  background-color: #daf7dc;
+}
+
 .stocks-watchlist-item {
   list-style: none;
   display: flex;
