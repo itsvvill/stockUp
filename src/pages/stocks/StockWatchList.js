@@ -4,10 +4,12 @@ import { UilEllipsisV } from '@iconscout/react-unicons';
 import { UilTrashAlt } from '@iconscout/react-unicons';
 import { UilTimesCircle } from '@iconscout/react-unicons';
 import { UilCheckCircle } from '@iconscout/react-unicons';
+import { UilPlusCircle } from '@iconscout/react-unicons';
+
 // styles
 import styles from './Stocks.module.css';
 
-export default function StockWatchList({ stocks, user }) {
+export default function StockWatchList({ stocks, user, toggleStockWatchList }) {
   const { updateDocument, deleteDocument, response } = useFirestore('stocks');
   const [toggleMenu, setToggleMenu] = useState('');
   const [toggleEdit, setToggleEdit] = useState('');
@@ -40,10 +42,20 @@ export default function StockWatchList({ stocks, user }) {
       setNewStockName((prevState) => '');
     }
   };
-
+  const handleClick = () => {
+    toggleStockWatchList((prevState) => !prevState);
+  };
   return (
     <div className={styles['stock-watchlist-container']}>
-      <h1 className={styles['stocks-watchlist-heading']}>Stock WatchList</h1>
+      <>
+        <h1 className={styles['stocks-watchlist-heading']}>Stock WatchList</h1>
+        <button
+          onClick={handleClick}
+          className={styles['toggle-watchlist-btn']}
+        >
+          <UilPlusCircle size="22" />
+        </button>
+      </>
       {stocks &&
         stocks.map((stock, idx) => (
           <li key={stock.id} className={styles['stocks-watchlist-item']}>

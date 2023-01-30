@@ -19,7 +19,12 @@ export default function StockWatchList({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addDocument({ stockName, stockSymbol, uid });
+    const newDocument = {
+      stockName: newStockName,
+      stockSymbol: newStockSymbol,
+      uid: uid,
+    };
+    addDocument(newDocument);
   };
   useEffect(() => {
     if (response.success) {
@@ -42,6 +47,29 @@ export default function StockWatchList({
             type="text"
             required
             placeholder={stockName}
+            value={newStockName}
+            className={styles['watchlist-form-input']}
+            onChange={(e) => setNewStockName(e.target.value)}
+          />
+          <button className={styles['watchlist-form-btn']}>
+            Add To WatchList
+          </button>
+        </form>
+      )}
+      {!stockName && (
+        <form className={styles['watchlist-form']} onSubmit={handleSubmit}>
+          <input
+            type="text"
+            required
+            placeholder="Enter a stock symbol"
+            value={newStockSymbol}
+            className={styles['watchlist-form-input']}
+            onChange={(e) => setNewStockSymbol(e.target.value)}
+          />
+          <input
+            type="text"
+            required
+            placeholder="Enter a stock name"
             value={newStockName}
             className={styles['watchlist-form-input']}
             onChange={(e) => setNewStockName(e.target.value)}
