@@ -40,7 +40,6 @@ export default function Stocks({
                 className={styles['toggle-watchlist-btn']}
               >
                 <UilPlusCircle size="22" />
-                {/* Add to Watchlist */}
               </button>
             </span>
             <div className={styles['prices']}>

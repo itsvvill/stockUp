@@ -137,7 +137,11 @@ export default function StocksHome() {
             />
           </div>
           {documents !== null && documents.length >= 1 && (
-            <StockWatchList stocks={documents} user={user} />
+            <StockWatchList
+              stocks={documents}
+              user={user}
+              toggleStockWatchList={toggleStockWatchList}
+            />
           )}
         </div>
       )}
@@ -163,7 +167,11 @@ export default function StocksHome() {
             />
           </div>
           {documents !== null && documents.length >= 1 && (
-            <StockWatchList stocks={documents} user={user} />
+            <StockWatchList
+              stocks={documents}
+              user={user}
+              toggleStockWatchList={toggleStockWatchList}
+            />
           )}
         </div>
       )}
