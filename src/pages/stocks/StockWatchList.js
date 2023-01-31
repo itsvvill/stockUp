@@ -20,7 +20,7 @@ export default function StockWatchList({
   const [toggleEdit, setToggleEdit] = useState('');
   const [newStockName, setNewStockName] = useState('');
   const [newStockSymbol, setNewStockSymbol] = useState('');
-  const [percentChange, setPercentChange] = useState({});
+  const [stockData, setStockData] = useState({});
 
   const FINNHUBAPI = process.env.REACT_APP_FINNHUB;
 
@@ -56,22 +56,29 @@ export default function StockWatchList({
       let url = `https://finnhub.io/api/v1/quote?symbol=${stockSymbol}&token=${FINNHUBAPI}`;
       fetchData(url).then((data) => {
         let newData = data;
-        setPercentChange((prevState) => ({
+        let percent = newData.dp;
+        setStockData((prevState) => ({
           ...prevState,
-          [stockSymbol]: newData.dp,
+          [stockSymbol]: {
+            percent: Math.round(100 * percent) / 100,
+            price: newData.c,
+            high: newData.h,
+            low: newData.l,
+            open: newData.o,
+          },
         }));
       });
     });
   }, []);
   const getLIStyle = (stock) => {
     if (
-      percentChange[stock.stockSymbol] &&
-      percentChange[stock.stockSymbol] > 0
+      stockData[stock.stockSymbol] &&
+      stockData[stock.stockSymbol].percent > 0
     ) {
       return styles['stocks-watchlist-item-green'];
     } else if (
-      percentChange[stock.stockSymbol] &&
-      percentChange[stock.stockSymbol] < 0
+      stockData[stock.stockSymbol] &&
+      stockData[stock.stockSymbol].percent < 0
     ) {
       return styles['stocks-watchlist-item-red'];
     } else {
@@ -109,7 +116,21 @@ export default function StockWatchList({
                   onClick={() => setToggleEdit((prevState) => stock.id)}
                   className={styles['stocks-watchlist-name']}
                 >
-                  {stock.stockName}
+                  <div className={styles['stock-watchlist-name-data']}>
+                    <span className={styles['stocks-watchlist-name-span']}>
+                      {stock.stockName}
+                    </span>
+                    {stockData[stock.stockSymbol] && (
+                      <div className={styles['stock-watchlist-data-container']}>
+                        <span className={styles['stocks-watchlist-percent']}>
+                          {stockData[stock.stockSymbol].percent}%
+                        </span>
+                        <span className={styles['stocks-watchlist-price']}>
+                          ${stockData[stock.stockSymbol].price}
+                        </span>
+                      </div>
+                    )}
+                  </div>
                 </button>
               </>
             )}
@@ -128,6 +149,7 @@ export default function StockWatchList({
                 />
                 <input
                   type="text"
+                  autoFocus
                   required
                   placeholder={stock.stockName}
                   value={newStockName}
