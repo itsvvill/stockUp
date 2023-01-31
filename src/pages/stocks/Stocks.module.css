@@ -380,10 +380,11 @@
 }
 .stock-watchlist-data-container {
   display: flex;
-  padding: 1px 0;
-  justify-content: space-evenly;
-  column-gap: 3px;
+  justify-content: space-between;
   align-items: center;
+  column-gap: 3px;
+  padding: 1px 0;
+  width: 120px;
   cursor: default;
 }
 .stocks-watchlist-price {
@@ -395,6 +396,16 @@
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+.stock-watchlist-green-arrow {
+  color: green;
+  font-size: 0.8em;
+  padding: 0 2px 1px 0;
+}
+.stock-watchlist-red-arrow {
+  color: red;
+  font-size: 0.9em;
+  padding: 0 2px 1px 0;
 }
 .stocks-watchlist-percent {
   background: rgba(228, 227, 227, 0.643);
