@@ -43,16 +43,25 @@ Users have 3 options for signing up:
 
 ![Stock component](./public/stockUp_stock_component.png)
 
+##### Stock Search
+
 - Lookup pricing information and other metrics using the stock symbol
 - Add stocks to watchlist
+- Get suggested ticker symbols if search query doesn't match a symbol
+
+##### Stock Watchlist
+
+- Add stocks to watchlist with simple form inputs
 - Edit/Update stock watchlist items
 - Delete stocks from watchlist
-- Get suggested ticker symbols if search query doesn't match a symbol
+- Shows stock symbol and name
+- Shows gain or loss on day based on background color
+- Shows percentage gained or loss for each stock
+- Shows current stock prices
 
 ## Features to be implemented
 
 - Additional metrics for transactions (total number per category, total amount, amount per month)
-- Conditionally showing user stock details if the stock is up
 
 ## License
 
