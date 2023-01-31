@@ -75,14 +75,14 @@ export default function StockWatchList({
       stockData[stock.stockSymbol] &&
       stockData[stock.stockSymbol].percent > 0
     ) {
-      return styles['stocks-watchlist-item-green'];
+      return 'green';
     } else if (
       stockData[stock.stockSymbol] &&
       stockData[stock.stockSymbol].percent < 0
     ) {
-      return styles['stocks-watchlist-item-red'];
+      return 'red';
     } else {
-      return styles['stocks-watchlist-item-grey'];
+      return 'grey';
     }
   };
   const handleClick = () => {
@@ -103,7 +103,10 @@ export default function StockWatchList({
       </span>
       {stocks &&
         stocks.map((stock, idx) => (
-          <li key={stock.id} className={getLIStyle(stock)}>
+          <li
+            key={stock.id}
+            className={styles[`stocks-watchlist-item-` + getLIStyle(stock)]}
+          >
             {(toggleEdit === '' || toggleEdit !== stock.id) && (
               <>
                 <button
@@ -123,6 +126,19 @@ export default function StockWatchList({
                     {stockData[stock.stockSymbol] && (
                       <div className={styles['stock-watchlist-data-container']}>
                         <span className={styles['stocks-watchlist-percent']}>
+                          {getLIStyle(stock) == 'green' ? (
+                            <span
+                              className={styles['stock-watchlist-green-arrow']}
+                            >
+                              ⬆
+                            </span>
+                          ) : (
+                            <span
+                              className={styles['stock-watchlist-red-arrow']}
+                            >
+                              ⬇
+                            </span>
+                          )}
                           {stockData[stock.stockSymbol].percent}%
                         </span>
                         <span className={styles['stocks-watchlist-price']}>
