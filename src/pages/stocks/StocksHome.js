@@ -33,12 +33,11 @@ export default function StocksHome() {
     ['uid', '==', user.uid],
     ['createdAt', 'desc']
   );
-  // let FINNHUBAPI = process.env.REACT_APP_API_KEY;
+
   let ALPHAVANTAGEAPI = process.env.REACT_APP_API_KEY;
 
   // api endpoints
   let searchURL = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${searchQuery}&apikey=${ALPHAVANTAGEAPI}`;
-  // let searchURL = `https://finnhub.io/api/v1/search?q=${searchQuery}&token=${FINNHUBAPI}`;
   let companyOverviewURL = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${searchQuery}&apikey=${ALPHAVANTAGEAPI}`;
   let quoteEndpointURL = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${searchQuery}&apikey=${ALPHAVANTAGEAPI}`;
 
@@ -141,6 +140,7 @@ export default function StocksHome() {
               stocks={documents}
               user={user}
               toggleStockWatchList={toggleStockWatchList}
+              fetchData={fetchData}
             />
           )}
         </div>
@@ -171,6 +171,7 @@ export default function StocksHome() {
               stocks={documents}
               user={user}
               toggleStockWatchList={toggleStockWatchList}
+              fetchData={fetchData}
             />
           )}
         </div>

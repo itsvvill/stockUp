@@ -9,12 +9,19 @@ import { UilPlusCircle } from '@iconscout/react-unicons';
 // styles
 import styles from './Stocks.module.css';
 
-export default function StockWatchList({ stocks, user, toggleStockWatchList }) {
+export default function StockWatchList({
+  stocks,
+  user,
+  toggleStockWatchList,
+  fetchData,
+}) {
   const { updateDocument, deleteDocument, response } = useFirestore('stocks');
   const [toggleMenu, setToggleMenu] = useState('');
   const [toggleEdit, setToggleEdit] = useState('');
   const [newStockName, setNewStockName] = useState('');
   const [newStockSymbol, setNewStockSymbol] = useState('');
+
+  const FINNHUBAPI = process.env.REACT_APP_FINNHUB;
 
   const handleToggleMenu = (id) => {
     if (toggleMenu === '') {
@@ -42,6 +49,13 @@ export default function StockWatchList({ stocks, user, toggleStockWatchList }) {
       setNewStockName((prevState) => '');
     }
   };
+  const updateColor = (stock) => {
+    const url = `https://finnhub.io/api/v1/quote?symbol=${stock}&token=${FINNHUBAPI}`;
+    fetchData(url).then((data) => {
+      let percentChange = data.dp;
+      console.log(percentChange);
+    });
+  };
   const handleClick = () => {
     toggleStockWatchList((prevState) => !prevState);
   };
@@ -64,7 +78,7 @@ export default function StockWatchList({ stocks, user, toggleStockWatchList }) {
             {(toggleEdit === '' || toggleEdit !== stock.id) && (
               <>
                 <button
-                  // onClick={() => console.log(stock.stockName)}
+                  onClick={() => updateColor(stock.stockSymbol)}
                   className={styles['stocks-watchlist-symbol']}
                 >
                   {stock.stockSymbol}
