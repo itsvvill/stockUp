@@ -301,12 +301,34 @@
   scale: 1.1;
 }
 
-.stocks-watchlist-item {
+.stocks-watchlist-item-green {
   list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #daf7dc;
+  border-radius: 10px;
+  width: 90%;
+  margin-top: 8px;
+  padding: 5px 15px;
+}
+.stocks-watchlist-item-red {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ff69614b;
+  border-radius: 10px;
+  width: 90%;
+  margin-top: 8px;
+  padding: 5px 15px;
+}
+.stocks-watchlist-item-grey {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(228, 227, 227, 0.643);
   border-radius: 10px;
   width: 90%;
   margin-top: 8px;

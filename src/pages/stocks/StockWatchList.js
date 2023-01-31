@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
 import { UilEllipsisV } from '@iconscout/react-unicons';
 import { UilTrashAlt } from '@iconscout/react-unicons';
@@ -20,6 +20,7 @@ export default function StockWatchList({
   const [toggleEdit, setToggleEdit] = useState('');
   const [newStockName, setNewStockName] = useState('');
   const [newStockSymbol, setNewStockSymbol] = useState('');
+  const [percentChange, setPercentChange] = useState({});
 
   const FINNHUBAPI = process.env.REACT_APP_FINNHUB;
 
@@ -49,12 +50,33 @@ export default function StockWatchList({
       setNewStockName((prevState) => '');
     }
   };
-  const updateColor = (stock) => {
-    const url = `https://finnhub.io/api/v1/quote?symbol=${stock}&token=${FINNHUBAPI}`;
-    fetchData(url).then((data) => {
-      let percentChange = data.dp;
-      console.log(percentChange);
+  useEffect(() => {
+    stocks.forEach((stock) => {
+      let stockSymbol = stock.stockSymbol;
+      let url = `https://finnhub.io/api/v1/quote?symbol=${stockSymbol}&token=${FINNHUBAPI}`;
+      fetchData(url).then((data) => {
+        let newData = data;
+        setPercentChange((prevState) => ({
+          ...prevState,
+          [stockSymbol]: newData.dp,
+        }));
+      });
     });
+  }, []);
+  const getLIStyle = (stock) => {
+    if (
+      percentChange[stock.stockSymbol] &&
+      percentChange[stock.stockSymbol] > 0
+    ) {
+      return styles['stocks-watchlist-item-green'];
+    } else if (
+      percentChange[stock.stockSymbol] &&
+      percentChange[stock.stockSymbol] < 0
+    ) {
+      return styles['stocks-watchlist-item-red'];
+    } else {
+      return styles['stocks-watchlist-item-grey'];
+    }
   };
   const handleClick = () => {
     toggleStockWatchList((prevState) => !prevState);
@@ -74,11 +96,11 @@ export default function StockWatchList({
       </span>
       {stocks &&
         stocks.map((stock, idx) => (
-          <li key={stock.id} className={styles['stocks-watchlist-item']}>
+          <li key={stock.id} className={getLIStyle(stock)}>
             {(toggleEdit === '' || toggleEdit !== stock.id) && (
               <>
                 <button
-                  onClick={() => updateColor(stock.stockSymbol)}
+                  // onClick={() => updateColor(stock.stockSymbol)}
                   className={styles['stocks-watchlist-symbol']}
                 >
                   {stock.stockSymbol}
