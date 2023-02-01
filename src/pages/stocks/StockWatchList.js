@@ -69,7 +69,7 @@ export default function StockWatchList({
         }));
       });
     });
-  }, []);
+  }, [fetchData, FINNHUBAPI, stocks]);
   const getLIStyle = (stock) => {
     if (
       stockData[stock.stockSymbol] &&
@@ -126,7 +126,7 @@ export default function StockWatchList({
                     {stockData[stock.stockSymbol] && (
                       <div className={styles['stock-watchlist-data-container']}>
                         <span className={styles['stocks-watchlist-percent']}>
-                          {getLIStyle(stock) == 'green' ? (
+                          {getLIStyle(stock) === 'green' ? (
                             <span
                               className={styles['stock-watchlist-green-arrow']}
                             >
