@@ -21,6 +21,7 @@ export default function StockWatchList({
   const [toggleEdit, setToggleEdit] = useState('');
   const [newStockName, setNewStockName] = useState('');
   const [newStockSymbol, setNewStockSymbol] = useState('');
+  const [newStockExchange, setNewStockExchange] = useState('');
   const [stockData, setStockData] = useState({});
 
   const FINNHUBAPI = process.env.REACT_APP_FINNHUB;
@@ -42,6 +43,7 @@ export default function StockWatchList({
       id: toggleEdit,
       stockName: newStockName,
       stockSymbol: newStockSymbol,
+      stockExchange: newStockExchange,
       uid: userID,
     };
     await updateDocument(toggleEdit, editedDoc);
@@ -49,6 +51,7 @@ export default function StockWatchList({
       setToggleEdit((prevState) => '');
       setNewStockSymbol((prevState) => '');
       setNewStockName((prevState) => '');
+      setNewStockExchange((prevState) => '');
     }
   };
   useEffect(() => {
