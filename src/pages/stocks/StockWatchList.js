@@ -13,6 +13,7 @@ export default function StockWatchList({
   stocks,
   user,
   toggleStockWatchList,
+  toggleNewStockSymbol,
   fetchData,
 }) {
   const { updateDocument, deleteDocument, response } = useFirestore('stocks');
@@ -88,6 +89,7 @@ export default function StockWatchList({
   const handleClick = () => {
     toggleStockWatchList((prevState) => !prevState);
   };
+
   return (
     <div className={styles['stock-watchlist-container']}>
       <span className={styles['stocks-watchlist-heading']}>
@@ -95,7 +97,7 @@ export default function StockWatchList({
           Stock WatchList
         </span>
         <button
-          onClick={handleClick}
+          onClick={() => handleClick()}
           className={styles['watchlist-heading-btn']}
         >
           <UilPlusCircle size="22" />
@@ -110,7 +112,7 @@ export default function StockWatchList({
             {(toggleEdit === '' || toggleEdit !== stock.id) && (
               <>
                 <button
-                  onClick={() => console.log(stock.stockSymbol)}
+                  onClick={() => toggleNewStockSymbol(stock.stockSymbol)}
                   className={styles['stocks-watchlist-symbol']}
                 >
                   {stock.stockSymbol}

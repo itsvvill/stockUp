@@ -15,6 +15,7 @@ import styles from './Stocks.module.css';
 export default function StocksHome() {
   const [showStockWatchList, setShowStockWatchList] = useState(false);
   const [stockName, setStockName] = useState('');
+  const [newStockSymbol, setNewStockSymbol] = useState('');
   const [stockSymbol, setStockSymbol] = useState('');
   const [stockExchange, setStockExchange] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
@@ -103,6 +104,10 @@ export default function StocksHome() {
     setStockSymbol('');
   };
 
+  const toggleNewStockSymbol = (symbol) => {
+    setNewStockSymbol((prevState) => symbol);
+  };
+
   const toggleStockWatchList = () => {
     setShowStockWatchList((prevState) => !prevState);
   };
@@ -140,6 +145,7 @@ export default function StocksHome() {
               stocks={documents}
               user={user}
               toggleStockWatchList={toggleStockWatchList}
+              toggleNewStockSymbol={toggleNewStockSymbol}
               fetchData={fetchData}
             />
           )}
@@ -172,6 +178,7 @@ export default function StocksHome() {
               stocks={documents}
               user={user}
               toggleStockWatchList={toggleStockWatchList}
+              toggleNewStockSymbol={toggleNewStockSymbol}
               fetchData={fetchData}
             />
           )}
