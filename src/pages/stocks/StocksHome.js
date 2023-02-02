@@ -162,6 +162,7 @@ export default function StocksHome() {
               toggleStockWatchList={toggleStockWatchList}
             />
             <StockSearchBar
+              stockName={stockName}
               updateSearchQuery={updateSearchQuery}
               toggleSubmit={toggleSubmit}
             />

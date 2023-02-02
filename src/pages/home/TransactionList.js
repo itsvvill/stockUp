@@ -124,11 +124,10 @@ export default function TransactionList({
   );
   return (
     <ul className={styles.transactions}>
-      {sortedTransactions.map((transaction) => (
+      {sortedTransactions.map((transaction, idx) => (
         <>
           {editClicked === transaction.id ? (
             <EditTransaction
-              key={transaction.id}
               transaction={transaction}
               name={transaction.name}
               amount={transaction.amount}
@@ -139,7 +138,7 @@ export default function TransactionList({
             />
           ) : (
             <li
-              key={transaction.id}
+              key={transaction.id + idx}
               style={{ borderLeft: `4px solid ${transaction.color}` }}
             >
               <p className={styles.name}>{transaction.name}</p>

@@ -20,6 +20,7 @@ export default function StockSearchBar({
             type="text"
             name="stockName"
             className={styles['input']}
+            // value={}
             onChange={(e) => updateSearchQuery(e.target.value.toUpperCase())}
             minLength="1"
             maxLength="10"

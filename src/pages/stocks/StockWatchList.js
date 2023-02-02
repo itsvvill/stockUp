@@ -69,7 +69,7 @@ export default function StockWatchList({
         }));
       });
     });
-  }, [fetchData, FINNHUBAPI, stocks]);
+  }, []);
   const getLIStyle = (stock) => {
     if (
       stockData[stock.stockSymbol] &&
@@ -110,7 +110,7 @@ export default function StockWatchList({
             {(toggleEdit === '' || toggleEdit !== stock.id) && (
               <>
                 <button
-                  // onClick={() => updateColor(stock.stockSymbol)}
+                  onClick={() => console.log(stock.stockSymbol)}
                   className={styles['stocks-watchlist-symbol']}
                 >
                   {stock.stockSymbol}
