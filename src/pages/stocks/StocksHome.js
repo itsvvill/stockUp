@@ -15,7 +15,7 @@ import styles from './Stocks.module.css';
 export default function StocksHome() {
   const [showStockWatchList, setShowStockWatchList] = useState(false);
   const [stockName, setStockName] = useState('');
-  const [newStockSymbol, setNewStockSymbol] = useState('');
+  const [newStockSymbol, setNewStockSymbol] = useState(null);
   const [stockSymbol, setStockSymbol] = useState('');
   const [stockExchange, setStockExchange] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
@@ -131,6 +131,7 @@ export default function StocksHome() {
           <div className={styles['container']}>
             <StockSearchBar
               stockName={stockName}
+              newStockSymbol={newStockSymbol}
               updateSearchQuery={updateSearchQuery}
               toggleSubmit={toggleSubmit}
             />
@@ -169,6 +170,7 @@ export default function StocksHome() {
             />
             <StockSearchBar
               stockName={stockName}
+              newStockSymbol={newStockSymbol}
               updateSearchQuery={updateSearchQuery}
               toggleSubmit={toggleSubmit}
             />

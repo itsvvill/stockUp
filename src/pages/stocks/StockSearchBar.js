@@ -3,11 +3,12 @@ import styles from './Stocks.module.css';
 
 export default function StockSearchBar({
   stockName,
+  newStockSymbol,
   updateSearchQuery,
   toggleSubmit,
 }) {
   const handleSubmit = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     toggleSubmit(e);
   };
   return (
@@ -20,7 +21,7 @@ export default function StockSearchBar({
             type="text"
             name="stockName"
             className={styles['input']}
-            // value={}
+            // value={newStockSymbol ? newStockSymbol : undefined}
             onChange={(e) => updateSearchQuery(e.target.value.toUpperCase())}
             minLength="1"
             maxLength="10"
