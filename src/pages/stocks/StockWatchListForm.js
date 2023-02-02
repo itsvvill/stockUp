@@ -8,20 +8,21 @@ export default function StockWatchList({
   uid,
   stockSymbol,
   stockName,
-  // stockExchange,
+  stockExchange,
   toggleStockWatchList,
 }) {
   const { addDocument, response } = useFirestore('stocks');
 
   const [newStockSymbol, setNewStockSymbol] = useState('');
   const [newStockName, setNewStockName] = useState('');
-  // const [newStockExchange, setNewStockExchange] = useState('');
+  const [newStockExchange, setNewStockExchange] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newDocument = {
       stockName: newStockName,
       stockSymbol: newStockSymbol,
+      stockExchange: newStockExchange,
       uid: uid,
     };
     addDocument(newDocument);
@@ -51,6 +52,14 @@ export default function StockWatchList({
             className={styles['watchlist-form-input']}
             onChange={(e) => setNewStockName(e.target.value)}
           />
+          <input
+            type="text"
+            required
+            placeholder={stockExchange}
+            value={newStockExchange}
+            className={styles['watchlist-form-input']}
+            onChange={(e) => setNewStockExchange(e.target.value)}
+          />
           <button className={styles['watchlist-form-btn']}>
             Add To WatchList
           </button>
@@ -73,6 +82,14 @@ export default function StockWatchList({
             value={newStockName}
             className={styles['watchlist-form-input']}
             onChange={(e) => setNewStockName(e.target.value)}
+          />
+          <input
+            type="text"
+            required
+            placeholder="Enter stock exchange"
+            value={newStockExchange}
+            className={styles['watchlist-form-input']}
+            onChange={(e) => setNewStockExchange(e.target.value)}
           />
           <button className={styles['watchlist-form-btn']}>
             Add To WatchList
