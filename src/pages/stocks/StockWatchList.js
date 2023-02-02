@@ -177,6 +177,14 @@ export default function StockWatchList({
                   className={styles['stock-watchlist-edit-name']}
                   onChange={(e) => setNewStockName(e.target.value)}
                 />
+                <input
+                  type="text"
+                  required
+                  placeholder={stock.stockExchange}
+                  value={newStockExchange}
+                  className={styles['stock-watchlist-edit-exchange']}
+                  onChange={(e) => setNewStockExchange(e.target.value)}
+                />
                 <div
                   className={styles['stock-watchlist-edit-button-container']}
                 >
