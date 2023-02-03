@@ -92,7 +92,6 @@ export default function StockWatchList({
   const handleClick = () => {
     toggleStockWatchList((prevState) => !prevState);
   };
-
   return (
     <div className={styles['stock-watchlist-container']}>
       <span className={styles['stocks-watchlist-heading']}>
@@ -181,7 +180,7 @@ export default function StockWatchList({
                   type="text"
                   required
                   placeholder={
-                    stock.stockExchange ? stock.stockExhange : 'Exchange'
+                    stock.stockExchange ? stock.stockExchange : 'Exchange'
                   }
                   value={newStockExchange}
                   className={styles['stock-watchlist-edit-exchange']}
