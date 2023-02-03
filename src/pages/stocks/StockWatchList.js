@@ -163,7 +163,7 @@ export default function StockWatchList({
                 <input
                   type="text"
                   required
-                  placeholder={stock.stockSymbol}
+                  placeholder={stock.stockSymbol ? stock.stockSymbol : 'Symbol'}
                   value={newStockSymbol}
                   className={styles['stock-watchlist-edit-symbol']}
                   onChange={(e) => setNewStockSymbol(e.target.value)}
@@ -172,7 +172,7 @@ export default function StockWatchList({
                   type="text"
                   autoFocus
                   required
-                  placeholder={stock.stockName}
+                  placeholder={stock.stockName ? stock.stockName : 'Stock Name'}
                   value={newStockName}
                   className={styles['stock-watchlist-edit-name']}
                   onChange={(e) => setNewStockName(e.target.value)}
@@ -180,7 +180,9 @@ export default function StockWatchList({
                 <input
                   type="text"
                   required
-                  placeholder={stock.stockExchange}
+                  placeholder={
+                    stock.stockExchange ? stock.stockExhange : 'Exchange'
+                  }
                   value={newStockExchange}
                   className={styles['stock-watchlist-edit-exchange']}
                   onChange={(e) => setNewStockExchange(e.target.value)}
