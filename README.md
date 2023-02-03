@@ -25,18 +25,6 @@ Users have 3 options for signing up:
 
 ### Authenticated User Features
 
-#### Transactions
-
----
-
-![Transaction list and transaction form](./public/stockUp_transaction_list.png)
-
-- Create and view transactions with name, amount, date, category, and color
-- Filter transactions to view only a specific category
-- Sort transactions alphabetically, by transaction date, and by amount
-- Edit/Update a transaction
-- Delete transactions
-
 #### Stocks
 
 ---
@@ -51,13 +39,25 @@ Users have 3 options for signing up:
 
 ##### Stock Watchlist
 
-- Add stocks to watchlist with simple form inputs
+- Add stocks to watchlist using form
 - Edit/Update stock watchlist items
 - Delete stocks from watchlist
 - Shows stock symbol and name
 - Shows gain or loss on day based on background color
 - Shows percentage gained or loss for each stock
 - Shows current stock prices
+
+#### Transactions
+
+---
+
+![Transaction list and transaction form](./public/stockUp_transaction_list.png)
+
+- Create and view transactions with name, amount, date, category, and color
+- Filter transactions to view only a specific category
+- Sort transactions alphabetically, by transaction date, and by amount
+- Edit/Update a transaction
+- Delete transactions
 
 ## Features to be implemented
 
