@@ -1,11 +1,33 @@
 .login-form {
-  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
   margin: 60px auto;
-  padding: 20px;
+  border-radius: 25px;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+.login-form-h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: #fff;
+  border: none;
+  padding: 5px 1px;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  font-size: 25px;
+  font-weight: 600;
+  background-color: rgba(228, 227, 227, 0.643);
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 .login-form label {
   display: block;
-  margin: 30px auto;
+  margin: 30px auto 10px auto;
 }
 .login-form span {
   display: block;
@@ -13,13 +35,15 @@
 }
 .login-form input {
   padding: 8px 6px;
+  border-radius: 25px;
+  border: 1px solid transparent;
   font-size: 1em;
-  color: #777;
   width: 100%;
 }
 .login-form input:focus,
 .login-form textarea:focus {
   border: 1px solid #daf7dc;
+  border-radius: 25px;
   box-shadow: 0 0 3px #daf7dc;
   -moz-box-shadow: 0 0 3px #daf7dc;
   -webkit-box-shadow: 0 0 3px #daf7dc;
@@ -35,17 +59,19 @@ select:focus {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 15px 10px 0 10px;
 }
 .login-form button {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   padding: 10px 20px;
-  margin-top: 20px;
+  margin: 25px 0;
+  border-radius: 25px;
 }
 .login-form p {
   position: relative;
-  bottom: 25px;
+  bottom: 0px;
   color: #cc3333;
   font-size: 0.65em;
   text-align: center;
