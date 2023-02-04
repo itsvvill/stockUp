@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useSignup } from '../../hooks/useSignup';
-import { UilEyeSlash } from '@iconscout/react-unicons';
-import { UilEye } from '@iconscout/react-unicons';
+import { Link } from 'react-router-dom';
 
 //styles and icons
 import styles from './Signup.module.css';
 import { UilGoogle } from '@iconscout/react-unicons';
 import { UilFacebook } from '@iconscout/react-unicons';
+import { UilEye } from '@iconscout/react-unicons';
+import { UilEyeSlash } from '@iconscout/react-unicons';
 
 export default function Signup() {
   const [email, setEmail] = useState('');
@@ -30,7 +31,7 @@ export default function Signup() {
     <form onSubmit={handleSubmit} className={styles['signup-form']}>
       <h2 className={styles['signup-form-h2']}>Sign Up</h2>
       <label>
-        <span>Email:</span>
+        <span className={styles['signup-form-span']}>Email:</span>
         <input
           type="email"
           required
@@ -38,9 +39,11 @@ export default function Signup() {
           value={email}
         />
       </label>
-      {error && error.code === 'auth/invalid-email' && <p>{error.message}</p>}
+      {error && error.code === 'auth/invalid-email' && (
+        <p className={styles['signup-form-error']}>{error.message}</p>
+      )}
       <label>
-        <span>Password:</span>
+        <span className={styles['signup-form-span']}>Password:</span>
         <div className={styles['password']}>
           <input
             required
@@ -61,9 +64,11 @@ export default function Signup() {
           )}
         </div>
       </label>
-      {error && error.code === 'auth/weak-password' && <p>{error.message}</p>}
+      {error && error.code === 'auth/weak-password' && (
+        <p className={styles['signup-form-error']}>{error.message}</p>
+      )}
       <label>
-        <span>Display Name:</span>
+        <span className={styles['signup-form-span']}>Display Name:</span>
         <input
           type="text"
           required
@@ -89,6 +94,12 @@ export default function Signup() {
           Loading...
         </button>
       )}
+      <p className={styles['login-p']}>
+        Already have an account?{' '}
+        <span className={styles['login-link']}>
+          <Link to="/login">Login</Link>
+        </span>
+      </p>
     </form>
   );
 }

@@ -29,7 +29,7 @@
   display: block;
   margin: 30px auto 10px auto;
 }
-.signup-form span {
+.signup-form-span {
   display: block;
   margin-bottom: 6px;
 }
@@ -69,7 +69,7 @@ select:focus {
   margin: 25px 0;
   border-radius: 25px;
 }
-.signup-form p {
+.signup-form-error {
   position: relative;
   bottom: 0px;
   color: #cc3333;
@@ -83,4 +83,15 @@ select:focus {
   position: relative;
   right: 30px;
   top: 8px;
+}
+.login-p {
+  text-align: center;
+  font-size: 0.75em;
+  padding-bottom: 10px;
+}
+.login-link a {
+  text-decoration: none;
+  list-style: none;
+  font-weight: bold;
+  color: #333;
 }

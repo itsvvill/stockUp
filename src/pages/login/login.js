@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useLogin } from '../../hooks/useLogin';
-import { UilEyeSlash } from '@iconscout/react-unicons';
-import { UilEye } from '@iconscout/react-unicons';
+import { Link } from 'react-router-dom';
 
 // styles and icons
 import styles from './Login.module.css';
 import { UilGoogle } from '@iconscout/react-unicons';
 import { UilFacebook } from '@iconscout/react-unicons';
+import { UilEye } from '@iconscout/react-unicons';
+import { UilEyeSlash } from '@iconscout/react-unicons';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -30,16 +31,18 @@ export default function Login() {
     <form onSubmit={handleSubmit} className={styles['login-form']}>
       <h2 className={styles['login-form-h2']}>Login</h2>
       <label>
-        <span>Email:</span>
+        <span className={styles['login-form-span']}>Email:</span>
         <input
           type="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
         />
       </label>
-      {error && error.code === 'auth/invalid-email' && <p>{error.message}</p>}
+      {error && error.code === 'auth/invalid-email' && (
+        <p className={styles['login-form-p']}>{error.message}</p>
+      )}
       <label>
-        <span>Password:</span>
+        <span className={styles['login-form-span']}>Password:</span>
         <div className={styles['password']}>
           <input
             type={showPassword ? 'text' : 'password'}
@@ -59,7 +62,9 @@ export default function Login() {
           )}
         </div>
       </label>
-      {error && error.code === 'auth/wrong-password' && <p>{error.message}</p>}
+      {error && error.code === 'auth/wrong-password' && (
+        <p className={styles['login-form-p']}>{error.message}</p>
+      )}
       {!isPending && (
         <div>
           <button name="submit" value="Login" className="btn">
@@ -78,6 +83,12 @@ export default function Login() {
           Loading
         </button>
       )}
+      <p className={styles['signup-p']}>
+        First time here?{' '}
+        <span className={styles['signup-link']}>
+          <Link to="/signup">Signup</Link>
+        </span>
+      </p>
     </form>
   );
 }
