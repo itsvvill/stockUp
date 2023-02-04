@@ -13,7 +13,7 @@ export default function Signup() {
   const [password, setPassword] = useState('');
   const [displayName, setDisplayName] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const { signUp, isPending, error } = useSignup();
+  const { signUp, error, isPending } = useSignup();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,11 +28,12 @@ export default function Signup() {
   };
   return (
     <form onSubmit={handleSubmit} className={styles['signup-form']}>
-      <h2>Sign Up</h2>
+      <h2 className={styles['signup-form-h2']}>Sign Up</h2>
       <label>
         <span>Email:</span>
         <input
           type="email"
+          required
           onChange={(e) => setEmail(e.target.value)}
           value={email}
         />
@@ -42,6 +43,7 @@ export default function Signup() {
         <span>Password:</span>
         <div className={styles['password']}>
           <input
+            required
             type={showPassword ? 'text' : 'password'}
             onChange={(e) => setPassword(e.target.value)}
             value={password}
@@ -64,6 +66,7 @@ export default function Signup() {
         <span>Display Name:</span>
         <input
           type="text"
+          required
           onChange={(e) => setDisplayName(e.target.value)}
           value={displayName}
         />
