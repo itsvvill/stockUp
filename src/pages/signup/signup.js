@@ -34,7 +34,6 @@ export default function Signup() {
         <span className={styles['signup-form-span']}>Email:</span>
         <input
           type="email"
-          required
           onChange={(e) => setEmail(e.target.value)}
           value={email}
         />
@@ -46,7 +45,6 @@ export default function Signup() {
         <span className={styles['signup-form-span']}>Password:</span>
         <div className={styles['password']}>
           <input
-            required
             type={showPassword ? 'text' : 'password'}
             onChange={(e) => setPassword(e.target.value)}
             value={password}
@@ -71,7 +69,6 @@ export default function Signup() {
         <span className={styles['signup-form-span']}>Display Name:</span>
         <input
           type="text"
-          required
           onChange={(e) => setDisplayName(e.target.value)}
           value={displayName}
         />

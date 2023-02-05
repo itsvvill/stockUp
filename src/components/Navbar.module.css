@@ -17,17 +17,35 @@
   align-items: center;
 }
 .stocks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-right: auto;
   font-weight: bold;
-  letter-spacing: 1.2px;
-  font-size: 1.4em;
+  letter-spacing: 0.3px;
+  font-size: 1.2em;
+  border-bottom: 3px solid transparent;
+}
+.logo {
+  width: 40px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+.logo-transactions {
+  width: 40px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 .transactions {
   margin-right: auto;
   margin-top: 5px;
   font-weight: bold;
   letter-spacing: 1px;
-  font-size: 0.9em;
+  font-size: 1em;
 }
 .navbar button,
 .navbar a {
@@ -36,13 +54,14 @@
 .navbar a {
   color: #333;
   text-decoration: none;
+  border-bottom: 3px solid transparent;
 }
 .navbar a:hover {
-  border-bottom: 2px solid #333;
+  border-bottom: 3px solid #333;
 }
 
 .logout {
-  border: 2px solid transparent;
+  border: 3px solid transparent;
   background: none;
   padding: 6px 12px;
   font-weight: bold;
@@ -51,5 +70,5 @@
 }
 
 .logout:hover {
-  border-bottom: 2px solid #333;
+  border-bottom: 3px solid #333;
 }
