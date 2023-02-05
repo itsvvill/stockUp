@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 //styles and icons
 import styles from './Signup.module.css';
+import logo from '../../components/logo.png';
 import { UilGoogle } from '@iconscout/react-unicons';
 import { UilFacebook } from '@iconscout/react-unicons';
 import { UilEye } from '@iconscout/react-unicons';
@@ -29,7 +30,10 @@ export default function Signup() {
   };
   return (
     <form onSubmit={handleSubmit} className={styles['signup-form']}>
-      <h2 className={styles['signup-form-h2']}>Sign Up</h2>
+      <h2 className={styles['signup-form-h2']}>
+        <img src={logo} className={styles['logo']} alt="StockUp Logo" />
+        tockUp
+      </h2>
       <label>
         <span className={styles['signup-form-span']}>Email:</span>
         <input
