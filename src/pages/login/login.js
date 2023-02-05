@@ -50,15 +50,19 @@ export default function Login() {
             value={password}
           />
           {!showPassword ? (
-            <UilEyeSlash
+            <button
               className={styles['toggle-password']}
               onClick={togglePassword}
-            />
+            >
+              <UilEyeSlash />
+            </button>
           ) : (
-            <UilEye
+            <button
               className={styles['toggle-password']}
               onClick={togglePassword}
-            />
+            >
+              <UilEye />
+            </button>
           )}
         </div>
       </label>
@@ -67,13 +71,25 @@ export default function Login() {
       )}
       {!isPending && (
         <div>
-          <button name="submit" value="Login" className="btn">
+          <button
+            name="submit"
+            value="Login"
+            className={styles['login-form-button']}
+          >
             Login
           </button>
-          <button name="submit" value="Google" className="btn">
+          <button
+            name="submit"
+            value="Google"
+            className={styles['login-form-button']}
+          >
             <UilGoogle size="25" color="#121212" />
           </button>
-          <button name="submit" value="Facebook" className="btn">
+          <button
+            name="submit"
+            value="Facebook"
+            className={styles['login-form-button']}
+          >
             <UilFacebook size="25" color="#1880C5" />
           </button>
         </div>

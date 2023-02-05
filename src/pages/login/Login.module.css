@@ -61,13 +61,15 @@ select:focus {
   justify-content: space-between;
   padding: 15px 10px 0 10px;
 }
-.login-form button {
+.login-form-button {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px 20px;
   margin: 25px 0;
   border-radius: 25px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  cursor: pointer;
 }
 .login-form-p {
   position: relative;
@@ -80,9 +82,13 @@ select:focus {
   width: 111%;
 }
 .toggle-password {
+  border: none;
+  border-radius: 50%;
   position: relative;
-  right: 30px;
-  top: 8px;
+  right: 43px;
+  top: 2px;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
 }
 .signup-p {
   text-align: center;
