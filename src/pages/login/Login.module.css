@@ -79,6 +79,24 @@ select:focus {
   background: #daf7dc;
   scale: 1.1;
 }
+.login-form-button-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  margin: 25px 0;
+  border-radius: 25px;
+  cursor: pointer;
+  background: none;
+  border: 2px solid #fff;
+  color: #333;
+  font-weight: bold;
+  font-size: 1em;
+}
+.login-form-button-login:hover {
+  background: #daf7dc;
+  scale: 1.1;
+}
 .login-form-p {
   position: relative;
   bottom: 0px;
@@ -101,7 +119,7 @@ select:focus {
 .signup-p {
   text-align: center;
   font-size: 0.75em;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 }
 .signup-link a {
   text-decoration: none;

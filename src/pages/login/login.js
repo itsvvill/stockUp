@@ -74,7 +74,7 @@ export default function Login() {
           <button
             name="submit"
             value="Login"
-            className={styles['login-form-button']}
+            className={styles['login-form-button-login']}
           >
             Login
           </button>
@@ -95,7 +95,7 @@ export default function Login() {
         </div>
       )}
       {isPending && (
-        <button className="btn" disabled>
+        <button className={styles['login-form-button']} disabled>
           Loading
         </button>
       )}

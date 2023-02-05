@@ -61,13 +61,41 @@ select:focus {
   justify-content: space-between;
   padding: 15px 10px 0 10px;
 }
-.signup-form button {
+.signup-form-btn {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 30px;
   margin: 25px 0;
   border-radius: 25px;
+  cursor: pointer;
+  background: none;
+  border: 2px solid #fff;
+  color: #333;
+  font-weight: bold;
+  font-size: 1em;
+}
+.signup-form-btn:hover {
+  background: #daf7dc;
+  scale: 1.1;
+}
+.signup-form-btn-signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 16px;
+  margin: 25px 0;
+  border-radius: 25px;
+  cursor: pointer;
+  background: none;
+  border: 2px solid #fff;
+  color: #333;
+  font-weight: bold;
+  font-size: 1em;
+}
+.signup-form-btn-signup:hover {
+  background: #daf7dc;
+  scale: 1.1;
 }
 .signup-form-error {
   position: relative;
@@ -80,14 +108,18 @@ select:focus {
   width: 111%;
 }
 .toggle-password {
+  border: none;
+  border-radius: 50%;
   position: relative;
-  right: 30px;
-  top: 8px;
+  right: 43px;
+  top: 2px;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
 }
 .login-p {
   text-align: center;
   font-size: 0.75em;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 }
 .login-link a {
   text-decoration: none;

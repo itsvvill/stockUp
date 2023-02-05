@@ -50,15 +50,19 @@ export default function Signup() {
             value={password}
           />
           {!showPassword ? (
-            <UilEyeSlash
+            <button
               className={styles['toggle-password']}
               onClick={togglePassword}
-            />
+            >
+              <UilEyeSlash />
+            </button>
           ) : (
-            <UilEye
+            <button
               className={styles['toggle-password']}
               onClick={togglePassword}
-            />
+            >
+              <UilEye />
+            </button>
           )}
         </div>
       </label>
@@ -75,19 +79,31 @@ export default function Signup() {
       </label>
       {!isPending && (
         <div>
-          <button name="submit" value="Signup" className="btn">
+          <button
+            name="submit"
+            value="Signup"
+            className={styles['signup-form-btn-signup']}
+          >
             Sign Up
           </button>
-          <button name="submit" value="Google" className="btn">
+          <button
+            name="submit"
+            value="Google"
+            className={styles['signup-form-btn']}
+          >
             <UilGoogle size="25" color="#121212" />
           </button>
-          <button name="submit" value="Facebook" className="btn">
+          <button
+            name="submit"
+            value="Facebook"
+            className={styles['signup-form-btn']}
+          >
             <UilFacebook size="25" color="#1880C5" />
           </button>
         </div>
       )}
       {isPending && (
-        <button className="btn" disabled>
+        <button className={styles['signup-form-btn']} disabled>
           Loading...
         </button>
       )}
