@@ -38,7 +38,7 @@ export default function Navbar() {
                   to="/stocks"
                   className={styles.stocks}
                   style={{
-                    borderBottom: '3px solid #333',
+                    color: '#4CC49A',
                   }}
                 >
                   <img
@@ -65,7 +65,7 @@ export default function Navbar() {
                 <Link
                   to="/"
                   style={{
-                    borderBottom: '3px solid #333',
+                    color: '#4CC49A',
                   }}
                 >
                   Transactions
