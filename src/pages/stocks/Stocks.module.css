@@ -69,6 +69,9 @@
   background-color: #daf7dc;
 }
 .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 25px;
   font-weight: 600;
   background-color: rgba(228, 227, 227, 0.643);
