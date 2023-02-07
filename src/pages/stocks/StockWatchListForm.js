@@ -13,7 +13,7 @@ export default function StockWatchList({
 }) {
   const { addDocument, response } = useFirestore('stocks');
 
-  const [newStockWatchList, setNewStockWatchList] = useState('');
+  const [newStockWatchList, setNewStockWatchList] = useState('Stock Watchlist');
   const [newStockSymbol, setNewStockSymbol] = useState('');
   const [newStockName, setNewStockName] = useState('');
   const [newStockExchange, setNewStockExchange] = useState('');

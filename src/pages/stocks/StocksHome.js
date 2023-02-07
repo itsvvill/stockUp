@@ -134,6 +134,7 @@ export default function StocksHome() {
               newStockSymbol={newStockSymbol}
               updateSearchQuery={updateSearchQuery}
               toggleSubmit={toggleSubmit}
+              toggleStockWatchList={toggleStockWatchList}
             />
             <SearchResults
               searchResults={searchResults}
