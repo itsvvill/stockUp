@@ -13,6 +13,7 @@ export default function StockWatchList({
 }) {
   const { addDocument, response } = useFirestore('stocks');
 
+  const [newStockWatchList, setNewStockWatchList] = useState('Stock Watchlist');
   const [newStockSymbol, setNewStockSymbol] = useState('');
   const [newStockName, setNewStockName] = useState('');
   const [newStockExchange, setNewStockExchange] = useState('');
@@ -36,6 +37,12 @@ export default function StockWatchList({
     <div className={styles['watchlist-form-container']}>
       {stockName && (
         <form className={styles['watchlist-form']} onSubmit={handleSubmit}>
+          <input
+            type="text"
+            palceholder="Enter a watchlist name"
+            value={newStockWatchList}
+            onChange={(e) => setNewStockWatchList(e.target.value)}
+          />
           <input
             type="text"
             required
@@ -67,6 +74,12 @@ export default function StockWatchList({
       )}
       {!stockName && (
         <form className={styles['watchlist-form']} onSubmit={handleSubmit}>
+          <input
+            type="text"
+            palceholder="Enter a watchlist name"
+            value={newStockWatchList}
+            onChange={(e) => setNewStockWatchList(e.target.value)}
+          />
           <input
             type="text"
             required
