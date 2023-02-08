@@ -6,6 +6,7 @@ import styles from './Stocks.module.css';
 
 export default function StockWatchList({
   uid,
+  stocks,
   stockSymbol,
   stockName,
   stockExchange,
@@ -13,7 +14,7 @@ export default function StockWatchList({
 }) {
   const { addDocument, response } = useFirestore('stocks');
 
-  const [newStockWatchList, setNewStockWatchList] = useState('Stock Watchlist');
+  const [newStockWatchList, setNewStockWatchList] = useState('Stock WatchList');
   const [newStockSymbol, setNewStockSymbol] = useState('');
   const [newStockName, setNewStockName] = useState('');
   const [newStockExchange, setNewStockExchange] = useState('');
@@ -21,6 +22,7 @@ export default function StockWatchList({
   const handleSubmit = (e) => {
     e.preventDefault();
     const newDocument = {
+      watchList: newStockWatchList,
       stockName: newStockName,
       stockSymbol: newStockSymbol,
       stockExchange: newStockExchange,
@@ -37,13 +39,15 @@ export default function StockWatchList({
     <div className={styles['watchlist-form-container']}>
       {stockName && (
         <form className={styles['watchlist-form']} onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder={newStockWatchList}
-            value={newStockWatchList}
-            className={styles['watchlist-form-input']}
-            onChange={(e) => setNewStockWatchList(e.target.value)}
-          />
+          {stocks.length < 1 && (
+            <input
+              type="text"
+              placeholder={newStockWatchList}
+              value={newStockWatchList}
+              className={styles['watchlist-form-input']}
+              onChange={(e) => setNewStockWatchList(e.target.value)}
+            />
+          )}
           <input
             type="text"
             required
@@ -75,13 +79,15 @@ export default function StockWatchList({
       )}
       {!stockName && (
         <form className={styles['watchlist-form']} onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Enter a watchlist name"
-            value={newStockWatchList}
-            className={styles['watchlist-form-input']}
-            onChange={(e) => setNewStockWatchList(e.target.value)}
-          />
+          {stocks.length < 1 && (
+            <input
+              type="text"
+              placeholder="Enter a watchlist name"
+              value={newStockWatchList}
+              className={styles['watchlist-form-input']}
+              onChange={(e) => setNewStockWatchList(e.target.value)}
+            />
+          )}
           <input
             type="text"
             required

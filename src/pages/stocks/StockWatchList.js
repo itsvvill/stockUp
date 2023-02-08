@@ -41,6 +41,7 @@ export default function StockWatchList({
     const editedDoc = {
       createdAt: stocks[idx].createdAt,
       id: toggleEdit,
+
       stockName: newStockName,
       stockSymbol: newStockSymbol,
       stockExchange: newStockExchange,
@@ -92,11 +93,12 @@ export default function StockWatchList({
   const handleClick = () => {
     toggleStockWatchList((prevState) => !prevState);
   };
+  console.log(stocks);
   return (
     <div className={styles['stock-watchlist-container']}>
       <span className={styles['stocks-watchlist-heading']}>
         <span className={styles['stock-watchlist-heading-title']}>
-          Stock WatchList
+          {stocks[0].watchList}
         </span>
         <button
           onClick={() => handleClick()}
