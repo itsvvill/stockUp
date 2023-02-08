@@ -98,7 +98,7 @@ export default function StockWatchList({
     <div className={styles['stock-watchlist-container']}>
       <span className={styles['stocks-watchlist-heading']}>
         <span className={styles['stock-watchlist-heading-title']}>
-          {stocks[0].watchList}
+          {stocks[stocks.length - 1].watchList}
         </span>
         <button
           onClick={() => handleClick()}

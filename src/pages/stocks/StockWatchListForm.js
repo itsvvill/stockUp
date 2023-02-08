@@ -22,7 +22,9 @@ export default function StockWatchList({
   const handleSubmit = (e) => {
     e.preventDefault();
     const newDocument = {
-      watchList: newStockWatchList,
+      watchList: stocks?.[stocks.length - 1]?.watchList
+        ? stocks[stocks.length - 1].watchList
+        : newStockWatchList,
       stockName: newStockName,
       stockSymbol: newStockSymbol,
       stockExchange: newStockExchange,
