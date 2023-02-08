@@ -14,7 +14,7 @@ export default function StockWatchList({
 }) {
   const { addDocument, response } = useFirestore('stocks');
 
-  const [newStockWatchList, setNewStockWatchList] = useState('Stock WatchList');
+  const [newStockWatchList, setNewStockWatchList] = useState('');
   const [newStockSymbol, setNewStockSymbol] = useState('');
   const [newStockName, setNewStockName] = useState('');
   const [newStockExchange, setNewStockExchange] = useState('');
@@ -24,6 +24,8 @@ export default function StockWatchList({
     const newDocument = {
       watchList: stocks?.[stocks.length - 1]?.watchList
         ? stocks[stocks.length - 1].watchList
+        : newStockWatchList === ''
+        ? 'Stock Watchlist'
         : newStockWatchList,
       stockName: newStockName,
       stockSymbol: newStockSymbol,
@@ -44,7 +46,7 @@ export default function StockWatchList({
           {stocks.length < 1 && (
             <input
               type="text"
-              placeholder={newStockWatchList}
+              placeholder="Enter a watchlist name"
               value={newStockWatchList}
               className={styles['watchlist-form-input']}
               onChange={(e) => setNewStockWatchList(e.target.value)}
