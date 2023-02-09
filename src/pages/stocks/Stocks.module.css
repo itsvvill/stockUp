@@ -469,6 +469,23 @@
     5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
+.stock-watchlist-edit-title-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40px;
+}
+.stock-watchlist-edit-title {
+  border: none;
+  text-align: center;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 25px;
+  width: 350px;
+  padding: 5px 8px;
+  margin: 2px;
+}
 .stock-watchlist-edit-form {
   display: flex;
   align-items: center;

@@ -94,16 +94,20 @@ export default function StockWatchList({
   const handleClick = () => {
     toggleStockWatchList((prevState) => !prevState);
   };
-  console.log(stocks);
+  console.log(titleEdit);
   return (
     <div className={styles['stock-watchlist-container']}>
       <span className={styles['stocks-watchlist-heading']}>
-        <button
-          onClick={() => setTitleEdit((prevState) => !prevState)}
-          className={styles['stock-watchlist-heading-title']}
-        >
-          {!titleEdit && stocks[stocks.length - 1].watchList}
-          {titleEdit && (
+        {!titleEdit && (
+          <button
+            onClick={() => setTitleEdit((prevState) => true)}
+            className={styles['stock-watchlist-heading-title']}
+          >
+            {stocks[stocks.length - 1].watchList}
+          </button>
+        )}
+        {titleEdit && (
+          <div className={styles['stock-watchlist-edit-title-container']}>
             <input
               type="text"
               required
@@ -112,8 +116,23 @@ export default function StockWatchList({
               className={styles['stock-watchlist-edit-title']}
               // onChange={}
             />
-          )}
-        </button>
+            <div className={styles['stock-watchlist-edit-button-container']}>
+              <button
+                type="submit"
+                className={styles['stock-watchlist-edit-submit']}
+              >
+                <UilCheckCircle size="22" />
+              </button>
+              <button
+                type="button"
+                className={styles['stock-watchlist-edit-cancel']}
+                onClick={() => setTitleEdit((prevState) => !prevState)}
+              >
+                <UilTimesCircle color="red" size="22" />
+              </button>
+            </div>
+          </div>
+        )}
         <button
           onClick={() => handleClick()}
           className={styles['watchlist-heading-btn']}
