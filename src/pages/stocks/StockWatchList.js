@@ -97,9 +97,9 @@ export default function StockWatchList({
   return (
     <div className={styles['stock-watchlist-container']}>
       <span className={styles['stocks-watchlist-heading']}>
-        <span className={styles['stock-watchlist-heading-title']}>
+        <button className={styles['stock-watchlist-heading-title']}>
           {stocks[stocks.length - 1].watchList}
-        </span>
+        </button>
         <button
           onClick={() => handleClick()}
           className={styles['watchlist-heading-btn']}
