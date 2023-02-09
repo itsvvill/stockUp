@@ -19,6 +19,7 @@ export default function StockWatchList({
   const { updateDocument, deleteDocument, response } = useFirestore('stocks');
   const [toggleMenu, setToggleMenu] = useState('');
   const [toggleEdit, setToggleEdit] = useState('');
+  const [titleEdit, setTitleEdit] = useState(false);
   const [newStockName, setNewStockName] = useState('');
   const [newStockSymbol, setNewStockSymbol] = useState('');
   const [newStockExchange, setNewStockExchange] = useState('');
@@ -97,8 +98,21 @@ export default function StockWatchList({
   return (
     <div className={styles['stock-watchlist-container']}>
       <span className={styles['stocks-watchlist-heading']}>
-        <button className={styles['stock-watchlist-heading-title']}>
-          {stocks[stocks.length - 1].watchList}
+        <button
+          onClick={() => setTitleEdit((prevState) => !prevState)}
+          className={styles['stock-watchlist-heading-title']}
+        >
+          {!titleEdit && stocks[stocks.length - 1].watchList}
+          {titleEdit && (
+            <input
+              type="text"
+              required
+              placeholder={stocks[stocks.length - 1].watchList}
+              // value={}
+              className={styles['stock-watchlist-edit-title']}
+              // onChange={}
+            />
+          )}
         </button>
         <button
           onClick={() => handleClick()}

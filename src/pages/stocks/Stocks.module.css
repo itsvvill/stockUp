@@ -277,13 +277,14 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(228, 227, 227, 0.643);
-  padding: 4px 0px;
   border-radius: 25px;
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  padding: 4px 0px;
 }
 .stock-watchlist-heading-title {
+  padding: 4px 0px;
   width: 90%;
   font-size: 25px;
   font-weight: 600;
