@@ -40,9 +40,27 @@ export default function StockWatchList({
 
   const handleWatchListSubmit = async (e) => {
     e.preventDefault();
-    console.log(newStockWatchList);
-    setNewStockWatchList((prevState) => '');
-    setTitleEdit((prevState) => !prevState);
+    if (newStockWatchList === '') {
+      setTitleEdit((prevState) => !prevState);
+    } else {
+      await stocks.forEach((obj) => {
+        let objID = obj.id;
+        let userID = user.uid;
+        let newDocument = {
+          createdAt: obj.createdAt,
+          id: obj.id,
+          stockName: obj.stockName,
+          stockSymbol: obj.stockSymbol,
+          uid: userID,
+          watchList: newStockWatchList,
+        };
+        updateDocument(objID, newDocument);
+      });
+      if (!response.error) {
+        setNewStockWatchList((prevState) => '');
+        setTitleEdit((prevState) => !prevState);
+      }
+    }
   };
 
   const handleSubmit = async (e, idx) => {
