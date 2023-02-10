@@ -20,6 +20,7 @@ export default function StockWatchList({
   const [toggleMenu, setToggleMenu] = useState('');
   const [toggleEdit, setToggleEdit] = useState('');
   const [titleEdit, setTitleEdit] = useState(false);
+  const [newStockWatchList, setNewStockWatchList] = useState('');
   const [newStockName, setNewStockName] = useState('');
   const [newStockSymbol, setNewStockSymbol] = useState('');
   const [newStockExchange, setNewStockExchange] = useState('');
@@ -36,13 +37,20 @@ export default function StockWatchList({
       setToggleMenu((prevState) => '');
     }
   };
+
+  const handleWatchListSubmit = async (e) => {
+    e.preventDefault();
+    console.log(newStockWatchList);
+    setNewStockWatchList((prevState) => '');
+    setTitleEdit((prevState) => !prevState);
+  };
+
   const handleSubmit = async (e, idx) => {
     e.preventDefault();
     let userID = user.uid;
     const editedDoc = {
       createdAt: stocks[idx].createdAt,
       id: toggleEdit,
-
       stockName: newStockName,
       stockSymbol: newStockSymbol,
       stockExchange: newStockExchange,
@@ -56,6 +64,7 @@ export default function StockWatchList({
       setNewStockExchange((prevState) => '');
     }
   };
+
   useEffect(() => {
     stocks.forEach((stock) => {
       let stockSymbol = stock.stockSymbol;
@@ -76,6 +85,7 @@ export default function StockWatchList({
       });
     });
   }, []);
+
   const getLIStyle = (stock) => {
     if (
       stockData[stock.stockSymbol] &&
@@ -91,10 +101,11 @@ export default function StockWatchList({
       return 'grey';
     }
   };
+
   const handleClick = () => {
     toggleStockWatchList((prevState) => !prevState);
   };
-  console.log(titleEdit);
+
   return (
     <div className={styles['stock-watchlist-container']}>
       <span className={styles['stocks-watchlist-heading']}>
@@ -112,14 +123,15 @@ export default function StockWatchList({
               type="text"
               required
               placeholder={stocks[stocks.length - 1].watchList}
-              // value={}
+              value={newStockWatchList}
               className={styles['stock-watchlist-edit-title']}
-              // onChange={}
+              onChange={(e) => setNewStockWatchList(e.target.value)}
             />
             <div className={styles['stock-watchlist-edit-button-container']}>
               <button
-                type="submit"
                 className={styles['stock-watchlist-edit-submit']}
+                type="submit"
+                onClick={(e) => handleWatchListSubmit(e)}
               >
                 <UilCheckCircle size="22" />
               </button>
