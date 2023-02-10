@@ -41,6 +41,7 @@ Users have 3 options for signing up:
 
 - Add stocks to watchlist using form
 - Give watchlist a custom name
+- Update watchlist name
 - Edit/Update stock watchlist items
 - Delete stocks from watchlist
 - Shows stock symbol and name
