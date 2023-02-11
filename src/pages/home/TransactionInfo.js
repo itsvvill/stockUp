@@ -1,3 +1,6 @@
+//styles and icons
+import styles from './Home.module.css';
+
 export default function TransactionInfo({ transactions }) {
   let numberOfTransactions = transactions.length;
   let total = transactions.reduce((acc, n) => acc + parseInt(n.amount), 0);
@@ -21,12 +24,30 @@ export default function TransactionInfo({ transactions }) {
   return (
     <>
       {transactions.length >= 1 && (
-        <div>
-          Smallest Transaction: ${getMinOrMax(transactions, 'min')} Largest
-          Transaction: ${getMinOrMax(transactions, 'max')}
-          Total: {total}
-          Average: {average}
-        </div>
+        <ul className={styles['transaction-info']}>
+          <li className={styles['transaction-info-item']}>
+            Total:
+            <span className={styles['transaction-info-number']}>${total}</span>
+          </li>
+          <li className={styles['transaction-info-item']}>
+            Average:
+            <span className={styles['transaction-info-number']}>
+              ${average}
+            </span>
+          </li>
+          <li className={styles['transaction-info-item']}>
+            Smallest:
+            <span className={styles['transaction-info-number']}>
+              ${getMinOrMax(transactions, 'min')}
+            </span>
+          </li>
+          <li className={styles['transaction-info-item']}>
+            Largest:
+            <span className={styles['transaction-info-number']}>
+              ${getMinOrMax(transactions, 'max')}
+            </span>
+          </li>
+        </ul>
       )}
     </>
   );
