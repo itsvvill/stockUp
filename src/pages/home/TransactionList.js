@@ -139,7 +139,7 @@ export default function TransactionList({
           ) : (
             <li
               key={transaction.id + idx}
-              style={{ borderLeft: `4px solid ${transaction.color}` }}
+              style={{ borderLeft: `10px solid ${transaction.color}` }}
             >
               <p className={styles.name}>{transaction.name}</p>
               <p className={styles.amount}>${transaction.amount}</p>

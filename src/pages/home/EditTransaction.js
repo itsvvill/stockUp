@@ -72,7 +72,7 @@ export default function EditTransaction({
       <li
         key={transaction.id}
         className={styles['edit-li']}
-        style={{ borderLeft: `4px solid ${transaction.color}` }}
+        style={{ borderLeft: `10px solid ${transaction.color}` }}
       >
         <label
           className={styles['edit-color']}
