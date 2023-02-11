@@ -7,14 +7,17 @@ import styles from './Home.module.css';
 import { UilDollarSignAlt } from '@iconscout/react-unicons';
 import { UilCalendarAlt } from '@iconscout/react-unicons';
 import { UilLetterEnglishA } from '@iconscout/react-unicons';
+import { UilInfoCircle } from '@iconscout/react-unicons';
 
 // components and pages
 import TransactionForm from './TransactionForm';
+import TransactionInfo from './TransactionInfo';
 import TransactionList from './TransactionList';
 import CategoryFilter from './CategoryFilter';
 
 export default function Home() {
   const [currentCategory, setCurrentCategory] = useState('All');
+  const [showInfo, setShowInfo] = useState(false);
   const [amount, setAmount] = useState('');
   const [date, setDate] = useState('');
   const [name, setName] = useState('');
@@ -160,12 +163,19 @@ export default function Home() {
               >
                 <UilLetterEnglishA />
               </button>
+              <button
+                className={styles['button']}
+                onClick={() => setShowInfo((prevState) => !prevState)}
+              >
+                <UilInfoCircle />
+              </button>
             </div>
             <CategoryFilter
               currentCategory={currentCategory}
               changeCategory={changeCategory}
               categories={categoryList}
             />
+            {showInfo && <TransactionInfo transactions={transactions} />}
             <TransactionList
               transactions={transactions}
               amount={amount}
