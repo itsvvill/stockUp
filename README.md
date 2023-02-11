@@ -58,12 +58,13 @@ Users have 3 options for signing up:
 - Create and view transactions with name, amount, date, category, and color
 - Filter transactions to view only a specific category
 - Sort transactions alphabetically, by transaction date, and by amount
+- View largest, smallest, total, and average transaction amounts
 - Edit/Update a transaction
 - Delete transactions
 
 ## Features to be implemented
 
-- Additional metrics for transactions (total number per category, total amount, amount per month)
+- Additional metrics for transactions
 
 ## License
 
