@@ -163,12 +163,25 @@ export default function Home() {
               >
                 <UilLetterEnglishA />
               </button>
-              <button
-                className={styles['button']}
-                onClick={() => setShowInfo((prevState) => !prevState)}
-              >
-                <UilInfoCircle />
-              </button>
+              {transactions.length >= 1 && (
+                <button
+                  className={
+                    showInfo ? styles['button-active'] : styles['button']
+                  }
+                  onClick={() => setShowInfo((prevState) => !prevState)}
+                >
+                  <UilInfoCircle />
+                </button>
+              )}
+              {transactions.length < 1 && (
+                <button
+                  disabled
+                  className={styles['button']}
+                  onClick={() => setShowInfo((prevState) => !prevState)}
+                >
+                  <UilInfoCircle />
+                </button>
+              )}
             </div>
             <CategoryFilter
               currentCategory={currentCategory}
