@@ -21,6 +21,15 @@ export default function TransactionInfo({ transactions }) {
     }
     return minOrMax;
   }
+  function getCategoryTotal(array) {
+    let categoryMap = {};
+    array.forEach(
+      (object) =>
+        (categoryMap[object.category] =
+          (categoryMap[object.category] || 0) + Number(object.amount))
+    );
+    return categoryMap;
+  }
   return (
     <>
       {transactions.length >= 1 && (
@@ -49,6 +58,18 @@ export default function TransactionInfo({ transactions }) {
           </li>
         </ul>
       )}
+      <ul className={styles['transaction-info-categories']}>
+        {Object.entries(getCategoryTotal(transactions))
+          .sort()
+          .map((thing) => (
+            <li className={styles['transaction-info-category-item']}>
+              {thing[0]}:
+              <span className={styles['transaction-info-number']}>
+                ${thing[1]}
+              </span>
+            </li>
+          ))}
+      </ul>
     </>
   );
 }

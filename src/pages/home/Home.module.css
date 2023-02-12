@@ -285,6 +285,7 @@ svg {
   box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
 }
 .transaction-info-item {
+  border-bottom: 2px solid #333;
   list-style-type: none;
   padding: 3px 6px;
   margin: 2px;
@@ -297,6 +298,22 @@ svg {
   padding: 2px 6px;
   border-radius: 25px;
   background: #daf7dc;
+}
+.transaction-info-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #f2f2f2;
+  box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
+}
+.transaction-info-category-item {
+  list-style-type: none;
+  padding: 3px 6px;
+  margin: 2px;
+  color: #333;
+  font-weight: bold;
+  font-size: 0.8em;
 }
 
 /* category filter buttons */
