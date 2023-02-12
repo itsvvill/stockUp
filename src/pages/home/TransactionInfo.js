@@ -3,7 +3,7 @@ import styles from './Home.module.css';
 
 export default function TransactionInfo({ transactions }) {
   let numberOfTransactions = transactions.length;
-  let total = transactions.reduce((acc, n) => acc + parseInt(n.amount), 0);
+  let total = transactions.reduce((acc, n) => acc + Number(n.amount), 0);
   let average = Math.round(total / numberOfTransactions);
 
   function getMinOrMax(array, modifier) {
@@ -11,12 +11,12 @@ export default function TransactionInfo({ transactions }) {
     if (modifier === 'max') {
       minOrMax = -Infinity;
       array.forEach(
-        (object) => (minOrMax = Math.max(minOrMax, parseInt(object.amount)))
+        (object) => (minOrMax = Math.max(minOrMax, Number(object.amount)))
       );
     } else {
       minOrMax = Infinity;
       array.forEach(
-        (object) => (minOrMax = Math.min(minOrMax, parseInt(object.amount)))
+        (object) => (minOrMax = Math.min(minOrMax, Number(object.amount)))
       );
     }
     return minOrMax;
