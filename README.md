@@ -88,3 +88,7 @@ Stock prices and information are retrieved using the [Alpha Vantage API](https:/
 ## Disclaimer
 
 Any suggestions or features are not financial advice, invest at your own risk.
+
+---
+
+- [Back To Top](#stockUp)
