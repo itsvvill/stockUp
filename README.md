@@ -4,6 +4,20 @@
 
 stockUp is a finance and stock tracker created to help the user make smarter financial decisions.
 
+## Table of Contents
+
+- [Technologies and Languages](https://github.com/itsvvill/stockUp/edit/main/README.md#technologies-and-languages)
+- [Usage](https://github.com/itsvvill/stockUp/edit/main/README.md#Usage)
+  - [Signup/Login](https://github.com/itsvvill/stockUp/edit/main/README.md#signuplogin)
+  - [Authenticated User Features](https://github.com/itsvvill/stockUp/edit/main/README.md#authenticated-user-features)
+    - [Stocks](https://github.com/itsvvill/stockUp/edit/main/README.md#stocks)
+      - [Stock Search](https://github.com/itsvvill/stockUp/edit/main/README.md#stock-search)
+      - [Stock Watchlist](https://github.com/itsvvill/stockUp/edit/main/README.md#stock-watchlist)
+    - [Transactions](https://github.com/itsvvill/stockUp/edit/main/README.md#transactions)
+- [Future Features](https://github.com/itsvvill/stockUp/edit/main/README.md#future-features)
+- [License](https://github.com/itsvvill/stockUp/edit/main/README.md#license)
+- [Disclaimer](https://github.com/itsvvill/stockUp/edit/main/README.md#disclaimer)
+
 ## Technologies and Languages
 
 - ReactJS
@@ -62,9 +76,10 @@ Users have 3 options for signing up:
 - Edit/Update a transaction
 - Delete transactions
 
-## Features to be implemented
+## Future Features
 
 - Additional metrics for transactions
+- Ability to update and create new categories
 
 ## License
 
