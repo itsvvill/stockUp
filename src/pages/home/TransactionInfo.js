@@ -45,15 +45,15 @@ export default function TransactionInfo({ transactions }) {
             </span>
           </li>
           <li className={styles['transaction-info-item']}>
-            Smallest:
-            <span className={styles['transaction-info-number']}>
-              ${getMinOrMax(transactions, 'min').toFixed(2)}
-            </span>
-          </li>
-          <li className={styles['transaction-info-item']}>
             Largest:
             <span className={styles['transaction-info-number']}>
               ${getMinOrMax(transactions, 'max').toFixed(2)}
+            </span>
+          </li>
+          <li className={styles['transaction-info-item']}>
+            Smallest:
+            <span className={styles['transaction-info-number']}>
+              ${getMinOrMax(transactions, 'min').toFixed(2)}
             </span>
           </li>
         </ul>
