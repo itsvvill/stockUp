@@ -27,37 +27,7 @@ export default function Home() {
     ['uid', '==', user.uid],
     ['createdAt', 'desc']
   );
-  let transactions = documents
-    ? documents.filter((transaction) => {
-        switch (currentCategory) {
-          case 'All':
-            return true;
-          case 'Auto Maintenance':
-          case 'Cellphone':
-          case 'Eating Out':
-          case 'Education':
-          case 'Electricity':
-          case 'Entertainment':
-          case 'Gifts':
-          case 'Groceries':
-          case 'Health & Wellness':
-          case 'Hobbies':
-          case 'Home Improvement':
-          case 'Home Maintenance':
-          case 'Internet':
-          case 'Miscellaneous':
-          case 'Other':
-          case 'Rent/Mortgage':
-          case 'Shopping':
-          case 'Transportation':
-          case 'Vacation':
-          case 'Water':
-            return transaction.category === currentCategory;
-          default:
-            return true;
-        }
-      })
-    : null;
+
   const categoryList = [
     'All',
     'Auto Maintenance',
@@ -81,6 +51,16 @@ export default function Home() {
     'Vacation',
     'Water',
   ];
+
+  let transactions = documents
+    ? documents.filter((transaction) => {
+        if (currentCategory === 'All') return true;
+        else if (currentCategory === transaction.category) return true;
+        else {
+          return false;
+        }
+      })
+    : null;
 
   const handleClick = (e) => {
     e.preventDefault();
