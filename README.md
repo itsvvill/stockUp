@@ -6,17 +6,17 @@ stockUp is a finance and stock tracker created to help the user make smarter fin
 
 ## Table of Contents
 
-- [Technologies and Languages](https://github.com/itsvvill/stockUp/edit/main/README.md#technologies-and-languages)
-- [Usage](https://github.com/itsvvill/stockUp/edit/main/README.md#Usage)
-  - [Signup/Login](https://github.com/itsvvill/stockUp/edit/main/README.md#signuplogin)
-  - [Authenticated User Features](https://github.com/itsvvill/stockUp/edit/main/README.md#authenticated-user-features)
-    - [Stocks](https://github.com/itsvvill/stockUp/edit/main/README.md#stocks)
-      - [Stock Search](https://github.com/itsvvill/stockUp/edit/main/README.md#stock-search)
-      - [Stock Watchlist](https://github.com/itsvvill/stockUp/edit/main/README.md#stock-watchlist)
-    - [Transactions](https://github.com/itsvvill/stockUp/edit/main/README.md#transactions)
-- [Future Features](https://github.com/itsvvill/stockUp/edit/main/README.md#future-features)
-- [License](https://github.com/itsvvill/stockUp/edit/main/README.md#license)
-- [Disclaimer](https://github.com/itsvvill/stockUp/edit/main/README.md#disclaimer)
+- [Technologies and Languages](#technologies-and-languages)
+- [Usage](#Usage)
+  - [Signup/Login](#signuplogin)
+  - [Authenticated User Features](#authenticated-user-features)
+    - [Stocks](#stocks)
+      - [Stock Search](#stock-search)
+      - [Stock Watchlist](#stock-watchlist)
+    - [Transactions](#transactions)
+- [Future Features](#future-features)
+- [License](#license)
+- [Disclaimer](#disclaimer)
 
 ## Technologies and Languages
 
