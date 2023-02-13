@@ -4,7 +4,7 @@ import styles from './Home.module.css';
 export default function TransactionInfo({ transactions }) {
   let numberOfTransactions = transactions.length;
   let total = transactions.reduce((acc, n) => acc + Number(n.amount), 0);
-  let average = Math.round(total / numberOfTransactions);
+  let average = (total / numberOfTransactions).toFixed(2);
 
   function getMinOrMax(array, modifier) {
     let minOrMax;
@@ -47,13 +47,13 @@ export default function TransactionInfo({ transactions }) {
           <li className={styles['transaction-info-item']}>
             Smallest:
             <span className={styles['transaction-info-number']}>
-              ${getMinOrMax(transactions, 'min')}
+              ${getMinOrMax(transactions, 'min').toFixed(2)}
             </span>
           </li>
           <li className={styles['transaction-info-item']}>
             Largest:
             <span className={styles['transaction-info-number']}>
-              ${getMinOrMax(transactions, 'max')}
+              ${getMinOrMax(transactions, 'max').toFixed(2)}
             </span>
           </li>
         </ul>
@@ -65,7 +65,7 @@ export default function TransactionInfo({ transactions }) {
             <li className={styles['transaction-info-category-item']}>
               {thing[0]}:
               <span className={styles['transaction-info-number']}>
-                ${thing[1]}
+                ${thing[1].toFixed(2)}
               </span>
             </li>
           ))}
