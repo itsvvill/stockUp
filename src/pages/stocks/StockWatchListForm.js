@@ -10,10 +10,9 @@ export default function StockWatchList({
   stockSymbol,
   stockName,
   stockExchange,
-  toggleStockWatchList,
+  toggleStockWatchListForm,
 }) {
   const { addDocument, response } = useFirestore('stocks');
-
   const [newStockWatchList, setNewStockWatchList] = useState('');
   const [newStockSymbol, setNewStockSymbol] = useState('');
   const [newStockName, setNewStockName] = useState('');
@@ -36,9 +35,9 @@ export default function StockWatchList({
   };
   useEffect(() => {
     if (response.success) {
-      toggleStockWatchList((prevState) => !prevState);
+      toggleStockWatchListForm((prevState) => !prevState);
     }
-  }, [response.success, toggleStockWatchList]);
+  }, [response.success, toggleStockWatchListForm]);
   return (
     <div className={styles['watchlist-form-container']}>
       {stockName && (

@@ -1,23 +1,23 @@
 import { useState, useEffect } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
+
+// styles and icons
+import styles from './Stocks.module.css';
 import { UilEllipsisV } from '@iconscout/react-unicons';
 import { UilTrashAlt } from '@iconscout/react-unicons';
 import { UilTimesCircle } from '@iconscout/react-unicons';
 import { UilCheckCircle } from '@iconscout/react-unicons';
 import { UilPlusCircle } from '@iconscout/react-unicons';
 
-// styles
-import styles from './Stocks.module.css';
-
 export default function StockWatchList({
   stocks,
   user,
-  toggleStockWatchList,
+  toggleStockWatchListForm,
   toggleNewStockSymbol,
   fetchData,
 }) {
   const { updateDocument, deleteDocument, response } = useFirestore('stocks');
-  const [toggleMenu, setToggleMenu] = useState('');
+  const [toggleDeleteIcon, setToggleDeleteIcon] = useState('');
   const [toggleEdit, setToggleEdit] = useState('');
   const [titleEdit, setTitleEdit] = useState(false);
   const [newStockWatchList, setNewStockWatchList] = useState('');
@@ -26,15 +26,17 @@ export default function StockWatchList({
   const [newStockExchange, setNewStockExchange] = useState('');
   const [stockData, setStockData] = useState({});
 
+  // Finnhub API Key
   const FINNHUBAPI = process.env.REACT_APP_FINNHUB;
 
-  const handleToggleMenu = (id) => {
-    if (toggleMenu === '') {
-      setToggleMenu((prevState) => id);
-    } else if (toggleMenu !== id) {
-      setToggleMenu((prevState) => id);
+  // Toggles delete icon for matching ID if clicked
+  const handleToggleDeleteIcon = (id) => {
+    if (toggleDeleteIcon === '') {
+      setToggleDeleteIcon((prevState) => id);
+    } else if (toggleDeleteIcon !== id) {
+      setToggleDeleteIcon((prevState) => id);
     } else {
-      setToggleMenu((prevState) => '');
+      setToggleDeleteIcon((prevState) => '');
     }
   };
 
@@ -63,6 +65,7 @@ export default function StockWatchList({
     }
   };
 
+  // Updates information of a single stock after editing
   const handleSubmit = async (e, idx) => {
     e.preventDefault();
     let userID = user.uid;
@@ -83,6 +86,7 @@ export default function StockWatchList({
     }
   };
 
+  // Finnhub stock data fetch - fires on initial load
   useEffect(() => {
     stocks.forEach((stock) => {
       let stockSymbol = stock.stockSymbol;
@@ -104,6 +108,7 @@ export default function StockWatchList({
     });
   }, []);
 
+  // Returns a color based on stock percentage as gain, loss, or no data
   const getLIStyle = (stock) => {
     if (
       stockData[stock.stockSymbol] &&
@@ -120,8 +125,9 @@ export default function StockWatchList({
     }
   };
 
+  // shows stock watchlist form on click
   const handleClick = () => {
-    toggleStockWatchList((prevState) => !prevState);
+    toggleStockWatchListForm((prevState) => !prevState);
   };
 
   return (
@@ -271,7 +277,7 @@ export default function StockWatchList({
               </form>
             )}
             <div className={styles['stock-watchlist-button-container']}>
-              {toggleMenu === stock.id && (
+              {toggleDeleteIcon === stock.id && (
                 <button
                   className={styles['stock-watchlist-delete']}
                   onClick={() => deleteDocument(stock.id)}
@@ -281,7 +287,7 @@ export default function StockWatchList({
               )}
               <button
                 className={styles['stock-watchlist-menu']}
-                onClick={() => handleToggleMenu(stock.id)}
+                onClick={() => handleToggleDeleteIcon(stock.id)}
               >
                 <UilEllipsisV size="22" />
               </button>

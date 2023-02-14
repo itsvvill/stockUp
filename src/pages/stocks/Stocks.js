@@ -14,10 +14,10 @@ export default function Stocks({
   percentChange,
   stockSymbol,
   stockExchange,
-  toggleStockWatchList,
+  toggleStockWatchListForm,
 }) {
   const handleClick = () => {
-    toggleStockWatchList((prevState) => !prevState);
+    toggleStockWatchListForm((prevState) => !prevState);
   };
 
   return (

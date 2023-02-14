@@ -13,7 +13,7 @@ import StockWatchListForm from './StockWatchListForm';
 import styles from './Stocks.module.css';
 
 export default function StocksHome() {
-  const [showStockWatchList, setShowStockWatchList] = useState(false);
+  const [showStockWatchListForm, setShowStockWatchListForm] = useState(false);
   const [stockName, setStockName] = useState('');
   const [newStockSymbol, setNewStockSymbol] = useState(null);
   const [stockSymbol, setStockSymbol] = useState('');
@@ -34,7 +34,7 @@ export default function StocksHome() {
     ['uid', '==', user.uid],
     ['createdAt', 'desc']
   );
-
+  // Alpha Vantage API Key
   let ALPHAVANTAGEAPI = process.env.REACT_APP_API_KEY;
 
   // api endpoints
@@ -108,8 +108,8 @@ export default function StocksHome() {
     setNewStockSymbol((prevState) => symbol);
   };
 
-  const toggleStockWatchList = () => {
-    setShowStockWatchList((prevState) => !prevState);
+  const toggleStockWatchListForm = () => {
+    setShowStockWatchListForm((prevState) => !prevState);
   };
 
   const updateSearchQuery = (query) => {
@@ -134,7 +134,7 @@ export default function StocksHome() {
               newStockSymbol={newStockSymbol}
               updateSearchQuery={updateSearchQuery}
               toggleSubmit={toggleSubmit}
-              toggleStockWatchList={toggleStockWatchList}
+              toggleStockWatchListForm={toggleStockWatchListForm}
             />
             <SearchResults
               searchResults={searchResults}
@@ -146,7 +146,7 @@ export default function StocksHome() {
             <StockWatchList
               stocks={documents}
               user={user}
-              toggleStockWatchList={toggleStockWatchList}
+              toggleStockWatchListForm={toggleStockWatchListForm}
               toggleNewStockSymbol={toggleNewStockSymbol}
               fetchData={fetchData}
             />
@@ -167,7 +167,7 @@ export default function StocksHome() {
               percentChange={percentChange}
               stockSymbol={stockSymbol}
               stockExchange={stockExchange}
-              toggleStockWatchList={toggleStockWatchList}
+              toggleStockWatchListForm={toggleStockWatchListForm}
             />
             <StockSearchBar
               stockName={stockName}
@@ -180,21 +180,21 @@ export default function StocksHome() {
             <StockWatchList
               stocks={documents}
               user={user}
-              toggleStockWatchList={toggleStockWatchList}
+              toggleStockWatchListForm={toggleStockWatchListForm}
               toggleNewStockSymbol={toggleNewStockSymbol}
               fetchData={fetchData}
             />
           )}
         </div>
       )}
-      {showStockWatchList && (
+      {showStockWatchListForm && (
         <StockWatchListForm
           uid={user.uid}
           stocks={documents}
           stockSymbol={stockSymbol}
           stockName={stockName}
           stockExchange={stockExchange}
-          toggleStockWatchList={toggleStockWatchList}
+          toggleStockWatchListForm={toggleStockWatchListForm}
         />
       )}
     </div>

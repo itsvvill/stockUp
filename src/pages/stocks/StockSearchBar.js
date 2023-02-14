@@ -8,14 +8,14 @@ export default function StockSearchBar({
   newStockSymbol,
   updateSearchQuery,
   toggleSubmit,
-  toggleStockWatchList,
+  toggleStockWatchListForm,
 }) {
   const handleSubmit = (e) => {
     // e.preventDefault();
     toggleSubmit(e);
   };
   const handleClick = () => {
-    toggleStockWatchList((prevState) => !prevState);
+    toggleStockWatchListForm((prevState) => !prevState);
   };
   return (
     <>
