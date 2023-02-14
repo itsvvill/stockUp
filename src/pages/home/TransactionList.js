@@ -1,25 +1,21 @@
 import { useState } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
-import { UilTrashAlt } from '@iconscout/react-unicons';
-import { UilEdit } from '@iconscout/react-unicons';
-import { UilEllipsisV } from '@iconscout/react-unicons';
+
+// components and pages
 import EditTransaction from './EditTransaction';
 
 // styles
 import styles from './Home.module.css';
+import { UilTrashAlt } from '@iconscout/react-unicons';
+import { UilEdit } from '@iconscout/react-unicons';
+import { UilEllipsisV } from '@iconscout/react-unicons';
 
-export default function TransactionList({
-  transactions,
-  amount,
-  date,
-  name,
-  categories,
-}) {
+export default function TransactionList({ transactions, amount, date, name }) {
   const { deleteDocument } = useFirestore('transactions');
   const [toggleMenu, setToggleMenu] = useState('');
   const [editClicked, setEditClicked] = useState('');
 
-  // sorting transactions by amount, date, name ( asc or desc)
+  // sorting transactions by amount, date, name (asc or desc)
   function getSortedTransactions(transactions, amount, date, name) {
     // early return for original state
     if (amount === '' && date === '' && name === '') return transactions;
@@ -32,6 +28,7 @@ export default function TransactionList({
             Number(a['date'].split('-').join('')) -
             Number(b['date'].split('-').join(''))
         );
+
       // date descending
     } else if (date === 'desc') {
       return transactions
@@ -41,6 +38,7 @@ export default function TransactionList({
             Number(b['date'].split('-').join('')) -
             Number(a['date'].split('-').join(''))
         );
+
       // name ascending
     } else if (name === 'asc') {
       return transactions
@@ -56,6 +54,7 @@ export default function TransactionList({
           }
           return 0;
         });
+
       // name descending
     } else if (name === 'desc') {
       return transactions
@@ -71,6 +70,7 @@ export default function TransactionList({
           }
           return 0;
         });
+
       // amount ascending
     } else if (amount === 'asc') {
       return transactions
@@ -86,6 +86,7 @@ export default function TransactionList({
           }
           return Number(aNum) - Number(bNum);
         });
+
       // amount descending
     } else if (amount === 'desc') {
       return transactions
@@ -104,10 +105,12 @@ export default function TransactionList({
     }
   }
 
+  // returns to a non-editing state
   const toggleEditing = () => {
     setEditClicked('');
   };
 
+  // toggles edit and delete buttons for matching id
   const handleMenuClick = (id) => {
     if (toggleMenu === '') {
       setToggleMenu((prevState) => id);
@@ -116,16 +119,19 @@ export default function TransactionList({
     }
   };
 
+  // returns a list of sorted transactions
   const sortedTransactions = getSortedTransactions(
     transactions,
     amount,
     date,
     name
   );
+
   return (
     <ul className={styles.transactions}>
       {sortedTransactions.map((transaction, idx) => (
         <>
+          {/* conditionally show EditTransaction component if ID matches transaction item */}
           {editClicked === transaction.id ? (
             <EditTransaction
               transaction={transaction}
@@ -145,7 +151,7 @@ export default function TransactionList({
               <p className={styles.amount}>${transaction.amount}</p>
               <p className={styles.date}>{transaction.date}</p>
               <p className={styles.category}>{transaction.category}</p>
-
+              {/* conditionally show menu buttons if toggleMenu set to id */}
               {toggleMenu === transaction.id && (
                 <>
                   <button

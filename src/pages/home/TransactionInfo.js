@@ -2,10 +2,16 @@
 import styles from './Home.module.css';
 
 export default function TransactionInfo({ transactions }) {
+  // total number of transactions
   let numberOfTransactions = transactions.length;
+
+  // total amount of all transactions
   let total = transactions.reduce((acc, n) => acc + Number(n.amount), 0);
+
+  // average amount of all transactions
   let average = (total / numberOfTransactions).toFixed(2);
 
+  // finds min or max transaction, given "min"/"max" as modifier
   function getMinOrMax(array, modifier) {
     let minOrMax;
     if (modifier === 'max') {
@@ -21,6 +27,8 @@ export default function TransactionInfo({ transactions }) {
     }
     return minOrMax;
   }
+
+  // finds total number of transactions per category
   function getCategoryTotal(array) {
     let categoryMap = {};
     array.forEach(
@@ -30,6 +38,7 @@ export default function TransactionInfo({ transactions }) {
     );
     return categoryMap;
   }
+
   return (
     <>
       {transactions.length >= 1 && (

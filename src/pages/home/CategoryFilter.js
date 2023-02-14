@@ -6,6 +6,7 @@ export default function CategoryFilter({
   changeCategory,
   categories,
 }) {
+  // if category name is clicked category state changed in Home.js
   const handleClick = (newCategory) => {
     changeCategory(newCategory);
   };

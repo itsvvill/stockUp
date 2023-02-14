@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
+
+// icon
 import { UilPalette } from '@iconscout/react-unicons';
 
 export default function TransactionForm({ uid, categories }) {
@@ -10,6 +12,7 @@ export default function TransactionForm({ uid, categories }) {
   const [color, setColor] = useState('#effaf0');
   const { addDocument, response } = useFirestore('transactions');
 
+  // submits a new transaction item
   const handleSubmit = (e) => {
     e.preventDefault();
     addDocument({
