@@ -1,33 +1,12 @@
 import { useState } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
 import { useAuthContext } from '../../hooks/useAuthContext';
+
+// styles and icons
+import styles from './Home.module.css';
 import { UilTimesCircle } from '@iconscout/react-unicons';
 import { UilCheckCircle } from '@iconscout/react-unicons';
 
-// styles
-import styles from './Home.module.css';
-const categoryList = [
-  'All',
-  'Auto Maintenance',
-  'Cellphone',
-  'Eating Out',
-  'Education',
-  'Electricity',
-  'Entertainment',
-  'Gifts',
-  'Groceries',
-  'Health & Wellness',
-  'Hobbies',
-  'Home Improvement',
-  'Home Maintenance',
-  'Internet',
-  'Miscellaneous',
-  'Other',
-  'Rent/Mortgage',
-  'Transportation',
-  'Vacation',
-  'Water',
-];
 export default function EditTransaction({
   transaction,
   name,
@@ -44,9 +23,33 @@ export default function EditTransaction({
   const { updateDocument, response } = useFirestore('transactions');
   const { user } = useAuthContext();
 
+  // all categories
+  const categoryList = [
+    'All',
+    'Auto Maintenance',
+    'Cellphone',
+    'Eating Out',
+    'Education',
+    'Electricity',
+    'Entertainment',
+    'Gifts',
+    'Groceries',
+    'Health & Wellness',
+    'Hobbies',
+    'Home Improvement',
+    'Home Maintenance',
+    'Internet',
+    'Miscellaneous',
+    'Other',
+    'Rent/Mortgage',
+    'Transportation',
+    'Vacation',
+    'Water',
+  ];
+
+  // updates single transaction with edited information
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     let userid = user.uid;
     const editedDoc = {
       amount: newAmount,
@@ -63,10 +66,15 @@ export default function EditTransaction({
       toggleEditing('');
     }
   };
+
+  // cancel editing of transaction item
   const handleClick = () => {
     toggleEditing('');
   };
+
+  // sets new border color if one is selected
   let colorInput = newColor !== '' ? newColor : transaction.color;
+
   return (
     <form onSubmit={handleSubmit}>
       <li

@@ -39,7 +39,7 @@ export default function StockWatchList({
       setToggleDeleteIcon((prevState) => '');
     }
   };
-
+  // start new watchlist, or add stock to watchlist if it exists
   const handleWatchListSubmit = async (e) => {
     e.preventDefault();
     if (newStockWatchList === '') {

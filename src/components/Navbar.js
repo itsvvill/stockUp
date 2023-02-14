@@ -1,10 +1,10 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useLogout } from '../hooks/useLogout';
 import { useAuthContext } from '../hooks/useAuthContext';
-import logo from './logo.png';
 
-// styles
+// styles and logo
 import styles from './Navbar.module.css';
+import logo from './logo.png';
 
 export default function Navbar() {
   const { logout } = useLogout();
