@@ -37,7 +37,7 @@ export default function StocksHome() {
   // Alpha Vantage API Key
   let ALPHAVANTAGEAPI = process.env.REACT_APP_API_KEY;
 
-  // api endpoints
+  // api URLs
   let searchURL = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${searchQuery}&apikey=${ALPHAVANTAGEAPI}`;
   let companyOverviewURL = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${searchQuery}&apikey=${ALPHAVANTAGEAPI}`;
   let quoteEndpointURL = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${searchQuery}&apikey=${ALPHAVANTAGEAPI}`;
@@ -48,6 +48,7 @@ export default function StocksHome() {
     let data = await response.json();
     return data;
   };
+
   //general info api call
   const getGeneralInfo = (fetchCall, url) => {
     fetchCall(url).then((data) => {
@@ -78,6 +79,7 @@ export default function StocksHome() {
       }
     });
   };
+
   //search info api call
   const getSearchResults = (fetchCall, url) => {
     fetchCall(url).then((data) => {
@@ -95,6 +97,8 @@ export default function StocksHome() {
       );
     });
   };
+
+  // api request for general, pricing, and search information
   const handleSubmit = (e) => {
     e.preventDefault();
     getGeneralInfo(fetchData, companyOverviewURL);
@@ -104,18 +108,22 @@ export default function StocksHome() {
     setStockSymbol('');
   };
 
+  // sets new stock symbol on click
   const toggleNewStockSymbol = (symbol) => {
     setNewStockSymbol((prevState) => symbol);
   };
 
+  // toggles stock watchlist form visibility on click
   const toggleStockWatchListForm = () => {
     setShowStockWatchListForm((prevState) => !prevState);
   };
 
+  // updates search to a new query
   const updateSearchQuery = (query) => {
     setSearchQuery(query);
   };
 
+  // toggles stock search bar if submitted
   const toggleSubmit = (e) => {
     e.preventDefault();
     setFormSubmit((prevState) => !prevState);

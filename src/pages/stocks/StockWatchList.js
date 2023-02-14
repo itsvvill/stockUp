@@ -133,6 +133,7 @@ export default function StockWatchList({
   return (
     <div className={styles['stock-watchlist-container']}>
       <span className={styles['stocks-watchlist-heading']}>
+        {/* stock watchlist title normal state */}
         {!titleEdit && (
           <button
             onClick={() => setTitleEdit((prevState) => true)}
@@ -141,6 +142,7 @@ export default function StockWatchList({
             {stocks[stocks.length - 1].watchList}
           </button>
         )}
+        {/* stock watchlist title editing state */}
         {titleEdit && (
           <div className={styles['stock-watchlist-edit-title-container']}>
             <input
@@ -176,6 +178,7 @@ export default function StockWatchList({
           <UilPlusCircle size="22" />
         </button>
       </span>
+      {/* if stocks exist in the watchlist */}
       {stocks &&
         stocks.map((stock, idx) => (
           <li
@@ -225,6 +228,7 @@ export default function StockWatchList({
                 </button>
               </>
             )}
+            {/* editing a single stock in the watchlist */}
             {toggleEdit === stock.id && (
               <form
                 onSubmit={(e) => handleSubmit(e, idx)}
@@ -277,6 +281,7 @@ export default function StockWatchList({
               </form>
             )}
             <div className={styles['stock-watchlist-button-container']}>
+              {/* menu is clicked on stock */}
               {toggleDeleteIcon === stock.id && (
                 <button
                   className={styles['stock-watchlist-delete']}

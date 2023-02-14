@@ -1,7 +1,6 @@
-import { UilPlusCircle } from '@iconscout/react-unicons';
-
-// styles
+// styles and icons
 import styles from './Stocks.module.css';
+import { UilPlusCircle } from '@iconscout/react-unicons';
 
 export default function StockSearchBar({
   stockName,
@@ -14,6 +13,7 @@ export default function StockSearchBar({
     // e.preventDefault();
     toggleSubmit(e);
   };
+  // toggles stock watchlist form visibility on click
   const handleClick = () => {
     toggleStockWatchListForm((prevState) => !prevState);
   };
