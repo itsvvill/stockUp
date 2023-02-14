@@ -4,7 +4,7 @@ import { useFirestore } from '../../hooks/useFirestore';
 // components and pages
 import EditTransaction from './EditTransaction';
 
-// styles
+// styles and icons
 import styles from './Home.module.css';
 import { UilTrashAlt } from '@iconscout/react-unicons';
 import { UilEdit } from '@iconscout/react-unicons';

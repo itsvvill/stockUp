@@ -16,13 +16,14 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const { login, error, isPending } = useLogin();
 
+  // fires useLogin hook
   const handleSubmit = (e) => {
     e.preventDefault();
     let buttonType = e.nativeEvent.submitter.value;
-
     login(email, password, buttonType);
   };
 
+  // toggles password visibility from hidden to visible
   const togglePassword = (e) => {
     e.preventDefault();
     setShowPassword((prevState) => !prevState);
@@ -42,6 +43,7 @@ export default function Login() {
           value={email}
         />
       </label>
+      {/* email related error */}
       {error && error.code === 'auth/invalid-email' && (
         <p className={styles['login-form-p']}>{error.message}</p>
       )}
@@ -53,6 +55,7 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           />
+          {/* hide password visibility */}
           {!showPassword ? (
             <button
               className={styles['toggle-password']}
@@ -70,9 +73,11 @@ export default function Login() {
           )}
         </div>
       </label>
+      {/* password related error */}
       {error && error.code === 'auth/wrong-password' && (
         <p className={styles['login-form-p']}>{error.message}</p>
       )}
+      {/* normal state */}
       {!isPending && (
         <div>
           <button
@@ -98,6 +103,7 @@ export default function Login() {
           </button>
         </div>
       )}
+      {/* pending state */}
       {isPending && (
         <button className={styles['login-form-button']} disabled>
           Loading...
