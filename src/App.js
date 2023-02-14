@@ -6,8 +6,6 @@ import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
 import Navbar from './components/Navbar';
-// import Stocks from './pages/stocks/Stocks';
-// import StockWatchList from './pages/stocks/StockWatchList';
 import StocksHome from './pages/stocks/StocksHome';
 
 function App() {

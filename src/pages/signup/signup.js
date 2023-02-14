@@ -17,17 +17,18 @@ export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
   const { signUp, error, isPending } = useSignup();
 
+  // fires useSignup hook
   const handleSubmit = (e) => {
     e.preventDefault();
     let buttonType = e.nativeEvent.submitter.value;
-
     signUp(email, password, displayName, buttonType);
   };
-
+  // toggles password from hidden to visible
   const togglePassword = (e) => {
     e.preventDefault();
     setShowPassword((prevState) => !prevState);
   };
+
   return (
     <form onSubmit={handleSubmit} className={styles['signup-form']}>
       <h2 className={styles['signup-form-h2']}>
@@ -42,6 +43,7 @@ export default function Signup() {
           value={email}
         />
       </label>
+      {/* email related error */}
       {error && error.code === 'auth/invalid-email' && (
         <p className={styles['signup-form-error']}>{error.message}</p>
       )}
@@ -53,6 +55,7 @@ export default function Signup() {
             onChange={(e) => setPassword(e.target.value)}
             value={password}
           />
+          {/* password visibility is hidden/visible */}
           {!showPassword ? (
             <button
               className={styles['toggle-password']}
@@ -70,6 +73,7 @@ export default function Signup() {
           )}
         </div>
       </label>
+      {/* password related error */}
       {error && error.code === 'auth/weak-password' && (
         <p className={styles['signup-form-error']}>{error.message}</p>
       )}
@@ -81,6 +85,7 @@ export default function Signup() {
           value={displayName}
         />
       </label>
+      {/* normal state */}
       {!isPending && (
         <div>
           <button
@@ -106,6 +111,7 @@ export default function Signup() {
           </button>
         </div>
       )}
+      {/* pending state */}
       {isPending && (
         <button className={styles['signup-form-btn']} disabled>
           Loading...
