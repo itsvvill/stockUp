@@ -33,9 +33,9 @@ export default function Navbar() {
         <ul>
           <div>
             <li className={styles.stocks}>
-              {location.pathname === '/stocks' ? (
+              {location.pathname === '/' ? (
                 <Link
-                  to="/stocks"
+                  to="/"
                   className={styles.stocks}
                   style={{
                     color: '#4CC49A',
@@ -49,7 +49,7 @@ export default function Navbar() {
                   tockUp
                 </Link>
               ) : (
-                <Link to="/stocks" className={styles.stocks}>
+                <Link to="/" className={styles.stocks}>
                   {' '}
                   <img
                     src={logo}
@@ -61,7 +61,7 @@ export default function Navbar() {
               )}
             </li>
             <li className={styles.transactions}>
-              {location.pathname === '/' ? (
+              {location.pathname === '/transactions' ? (
                 <Link
                   to="/"
                   style={{
@@ -71,7 +71,7 @@ export default function Navbar() {
                   Transactions
                 </Link>
               ) : (
-                <Link to="/">Transactions</Link>
+                <Link to="/transactions">Transactions</Link>
               )}
             </li>
           </div>

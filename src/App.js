@@ -17,13 +17,13 @@ function App() {
           <Navbar />
           <Switch>
             <Route exact path="/">
-              {user && <Home />}
+              {user && <StocksHome />}
               {!user && <Redirect to="/login" />}
             </Route>
-            <Route exact path="/stocks">
+            <Route exact path="/transactions">
               {user && (
                 <>
-                  <StocksHome />
+                  <Home />
                 </>
               )}
               {!user && <Redirect to="/login" />}
