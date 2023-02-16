@@ -18,6 +18,7 @@ export default function StockWatchList({
   const [newStockName, setNewStockName] = useState('');
   const [newStockExchange, setNewStockExchange] = useState('');
 
+  // either starts a new stock watchlist, or adds a new stock to watchlist
   const handleSubmit = (e) => {
     e.preventDefault();
     const newDocument = {
@@ -33,13 +34,17 @@ export default function StockWatchList({
     };
     addDocument(newDocument);
   };
+
+  // waits for response and hides stock watchlist form
   useEffect(() => {
     if (response.success) {
       toggleStockWatchListForm((prevState) => !prevState);
     }
   }, [response.success, toggleStockWatchListForm]);
+
   return (
     <div className={styles['watchlist-form-container']}>
+      {/* watchlist already exists */}
       {stockName && (
         <form className={styles['watchlist-form']} onSubmit={handleSubmit}>
           {stocks.length < 1 && (
@@ -80,6 +85,7 @@ export default function StockWatchList({
           </button>
         </form>
       )}
+      {/* watchlist not yet created */}
       {!stockName && (
         <form className={styles['watchlist-form']} onSubmit={handleSubmit}>
           {stocks.length < 1 && (
