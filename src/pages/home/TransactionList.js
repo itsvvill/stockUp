@@ -118,7 +118,6 @@ export default function TransactionList({ transactions, amount, date, name }) {
       setToggleMenu((prevState) => '');
     }
   };
-
   // returns a list of sorted transactions
   const sortedTransactions = getSortedTransactions(
     transactions,
@@ -126,7 +125,12 @@ export default function TransactionList({ transactions, amount, date, name }) {
     date,
     name
   );
-
+  // gets unique years of transactions
+  let years = [
+    ...new Set(
+      sortedTransactions.map((transaction) => transaction.date.slice(0, 4))
+    ),
+  ];
   return (
     <ul className={styles.transactions}>
       {sortedTransactions.map((transaction, idx) => (
