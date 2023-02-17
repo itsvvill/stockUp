@@ -28,6 +28,7 @@ export default function Home() {
     ['createdAt', 'desc']
   );
 
+  // default category list
   const categoryList = [
     'All',
     'Auto Maintenance',
@@ -52,6 +53,7 @@ export default function Home() {
     'Water',
   ];
 
+  // returns only transactions which match filtered category
   let transactions = documents
     ? documents.filter((transaction) => {
         if (currentCategory === 'All') return true;
@@ -62,6 +64,7 @@ export default function Home() {
       })
     : null;
 
+  // sorts transactions based on which icon is clicked
   const handleClick = (e) => {
     e.preventDefault();
     let f = e.target.value;
@@ -104,6 +107,7 @@ export default function Home() {
     }
   };
 
+  // sets a new category to filter by
   const changeCategory = (newCategory) => {
     setCurrentCategory(newCategory);
   };
@@ -112,7 +116,7 @@ export default function Home() {
     <div className={styles.container}>
       <div className={styles.content}>
         {error && <p>{error}</p>}
-
+        {/* shows category filter if 1 or more documents */}
         {documents && documents.length > 0 && (
           <>
             <div className={styles['transaction-filter-container']}>
