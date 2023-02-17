@@ -128,7 +128,17 @@ export default function TransactionList({ transactions, amount, date, name }) {
   // gets unique years of transactions
   let years = [
     ...new Set(
-      sortedTransactions.map((transaction) => transaction.date.slice(0, 4))
+      sortedTransactions.map((transaction) =>
+        Number(transaction.date.slice(0, 4))
+      )
+    ),
+  ];
+  // gets unique months of transactions
+  let months = [
+    ...new Set(
+      sortedTransactions.map((transaction) =>
+        Number(transaction.date.slice(5, 7))
+      )
     ),
   ];
   return (
