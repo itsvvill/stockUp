@@ -14,6 +14,7 @@ import TransactionForm from './TransactionForm';
 import TransactionInfo from './TransactionInfo';
 import TransactionList from './TransactionList';
 import CategoryFilter from './CategoryFilter';
+import { categoryList } from './categoryList';
 
 export default function Home() {
   const [currentCategory, setCurrentCategory] = useState('All');
@@ -22,42 +23,21 @@ export default function Home() {
   const [date, setDate] = useState('');
   const [name, setName] = useState('');
   const { user } = useAuthContext();
+
+  //get collection of transactions
   const { documents, error } = useCollection(
     'transactions',
     ['uid', '==', user.uid],
     ['createdAt', 'desc']
   );
+
+  //get collection of categories
   const categories = useCollection(
     'categories',
     ['__name__', '==', '0'],
     ['__name__', 'asc']
   );
-  const defaultCategories = categories.documents[0].categoryList;
-
-  // default category list
-  // const categoryList = [
-  //   'All',
-  //   'Auto Maintenance',
-  //   'Cellphone',
-  //   'Eating Out',
-  //   'Education',
-  //   'Electricity',
-  //   'Entertainment',
-  //   'Gifts',
-  //   'Groceries',
-  //   'Health & Wellness',
-  //   'Hobbies',
-  //   'Home Improvement',
-  //   'Home Maintenance',
-  //   'Internet',
-  //   'Miscellaneous',
-  //   'Other',
-  //   'Rent/Mortgage',
-  //   'Shopping',
-  //   'Transportation',
-  //   'Vacation',
-  //   'Water',
-  // ];
+  const defaultCategories = categories.documents?.[0].categoryList;
 
   // returns only transactions which match filtered category
   let transactions = documents
@@ -176,7 +156,7 @@ export default function Home() {
             <CategoryFilter
               currentCategory={currentCategory}
               changeCategory={changeCategory}
-              categories={defaultCategories}
+              categories={defaultCategories ? defaultCategories : categoryList}
             />
             {showInfo && <TransactionInfo transactions={transactions} />}
             <TransactionList
@@ -191,7 +171,11 @@ export default function Home() {
       <div className={styles.sidebar}>
         <TransactionForm
           uid={user.uid}
-          categories={defaultCategories.slice(1)}
+          categories={
+            defaultCategories
+              ? defaultCategories.slice(1)
+              : categoryList.slice(1)
+          }
         />
       </div>
     </div>
