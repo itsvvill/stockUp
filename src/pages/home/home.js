@@ -27,31 +27,37 @@ export default function Home() {
     ['uid', '==', user.uid],
     ['createdAt', 'desc']
   );
+  const categories = useCollection(
+    'categories',
+    ['__name__', '==', '0'],
+    ['__name__', 'asc']
+  );
+  const defaultCategories = categories.documents[0].categoryList;
 
   // default category list
-  const categoryList = [
-    'All',
-    'Auto Maintenance',
-    'Cellphone',
-    'Eating Out',
-    'Education',
-    'Electricity',
-    'Entertainment',
-    'Gifts',
-    'Groceries',
-    'Health & Wellness',
-    'Hobbies',
-    'Home Improvement',
-    'Home Maintenance',
-    'Internet',
-    'Miscellaneous',
-    'Other',
-    'Rent/Mortgage',
-    'Shopping',
-    'Transportation',
-    'Vacation',
-    'Water',
-  ];
+  // const categoryList = [
+  //   'All',
+  //   'Auto Maintenance',
+  //   'Cellphone',
+  //   'Eating Out',
+  //   'Education',
+  //   'Electricity',
+  //   'Entertainment',
+  //   'Gifts',
+  //   'Groceries',
+  //   'Health & Wellness',
+  //   'Hobbies',
+  //   'Home Improvement',
+  //   'Home Maintenance',
+  //   'Internet',
+  //   'Miscellaneous',
+  //   'Other',
+  //   'Rent/Mortgage',
+  //   'Shopping',
+  //   'Transportation',
+  //   'Vacation',
+  //   'Water',
+  // ];
 
   // returns only transactions which match filtered category
   let transactions = documents
@@ -170,7 +176,7 @@ export default function Home() {
             <CategoryFilter
               currentCategory={currentCategory}
               changeCategory={changeCategory}
-              categories={categoryList}
+              categories={defaultCategories}
             />
             {showInfo && <TransactionInfo transactions={transactions} />}
             <TransactionList
@@ -183,7 +189,10 @@ export default function Home() {
         )}
       </div>
       <div className={styles.sidebar}>
-        <TransactionForm uid={user.uid} categories={categoryList.slice(1)} />
+        <TransactionForm
+          uid={user.uid}
+          categories={defaultCategories.slice(1)}
+        />
       </div>
     </div>
   );
