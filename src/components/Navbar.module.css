@@ -5,14 +5,23 @@
   padding: 20px 10px;
   box-sizing: border-box;
 }
-.navbar ul {
+.navbar a {
+  color: #333;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+.navbar a:hover {
+  color: #1f8a58;
+  scale: 1.1;
+}
+.navbar .ul {
   display: flex;
   margin: 0 auto;
   max-width: 960px;
   align-items: center;
   justify-content: space-between;
 }
-.navbar div {
+.navbar .div {
   display: flex;
   align-items: center;
 }
@@ -25,6 +34,20 @@
   letter-spacing: 0.3px;
   font-size: 1.2em;
   border-bottom: 3px solid transparent;
+}
+.navbar .login {
+  border: 1px solid #1f8a58;
+  padding: 6px 8px;
+  border-radius: 25px;
+  font-weight: 600;
+  background: #4cc49a;
+  color: #edf9ef;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+.navbar .login:hover {
+  scale: 1.1;
 }
 .logo {
   width: 40px;
@@ -42,6 +65,7 @@
 }
 .transactions {
   margin-right: auto;
+  margin-left: 25px;
   margin-top: 5px;
   font-weight: bold;
   letter-spacing: 1px;
@@ -51,30 +75,22 @@
   color: #1f8a58;
   scale: 1.1;
 }
-.navbar button,
-.navbar a {
-  margin-left: 25px;
-}
-.navbar a {
-  color: #333;
-  text-decoration: none;
-  border-bottom: 3px solid transparent;
-}
-.navbar a:hover {
-  color: #1f8a58;
-  scale: 1.1;
-}
-
 .logout {
-  border: 3px solid transparent;
-  background: none;
-  padding: 6px 12px;
-  font-weight: bold;
-  cursor: pointer;
+  font-family: Poppins, sans-serif;
   font-size: 1em;
+  border: 1px solid #1f8a58;
+  padding: 6px 46.57px;
+  border-radius: 25px;
+  font-weight: 600;
+  background: #4cc49a;
+  color: #333;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  margin-left: 25px;
 }
 
 .logout:hover {
-  color: #1f8a58;
   scale: 1.1;
 }

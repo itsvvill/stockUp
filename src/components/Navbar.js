@@ -14,24 +14,19 @@ export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       {!user && (
-        <ul>
+        <ul className={styles.ul}>
           <li className={styles.stocks}>
             <img src={logo} className={styles.logo} alt="StockUp Logo" />
             tockUp
           </li>
-          <>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/signup">Signup</Link>
-            </li>
-          </>
+          <li className={styles.login}>
+            <Link to="/login">Login / Register</Link>
+          </li>
         </ul>
       )}
       {user && (
-        <ul>
-          <div>
+        <ul className={styles.ul}>
+          <div className={styles.div}>
             <li className={styles.stocks}>
               {location.pathname === '/' ? (
                 <Link
@@ -63,7 +58,7 @@ export default function Navbar() {
             <li className={styles.transactions}>
               {location.pathname === '/transactions' ? (
                 <Link
-                  to="/"
+                  to="/transactions"
                   style={{
                     color: '#4CC49A',
                   }}
@@ -75,7 +70,7 @@ export default function Navbar() {
               )}
             </li>
           </div>
-          <div>
+          <div className={styles.div}>
             <li>Hello, {user.displayName}!</li>
             <li>
               <button className={styles.logout} onClick={logout}>
