@@ -9,6 +9,7 @@ import { UilGoogle } from '@iconscout/react-unicons';
 import { UilFacebook } from '@iconscout/react-unicons';
 import { UilEye } from '@iconscout/react-unicons';
 import { UilEyeSlash } from '@iconscout/react-unicons';
+import { UilUserCircle } from '@iconscout/react-unicons';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -79,7 +80,7 @@ export default function Login() {
       )}
       {/* normal state */}
       {!isPending && (
-        <div className={styles['login-form-div-buttons']}>
+        <>
           <button
             name="submit"
             value="Login"
@@ -87,21 +88,47 @@ export default function Login() {
           >
             Login
           </button>
+          <p className={styles['login-option-p']}>
+            <span className={styles['login-option-span']}>
+              OR LOGIN WITH A SOCIAL ACCOUNT
+            </span>
+          </p>
           <button
             name="submit"
             value="Google"
             className={styles['login-form-button']}
           >
-            <UilGoogle size="25" color="#121212" />
+            Login with{' '}
+            <UilGoogle size="22" color="#121212" className={styles['icon']} />
+            oogle
           </button>
           <button
             name="submit"
             value="Facebook"
             className={styles['login-form-button']}
           >
-            <UilFacebook size="25" color="#1880C5" />
+            Login with{' '}
+            <UilFacebook size="22" color="#1880C5" className={styles['icon']} />
+            acebook
           </button>
-        </div>
+          <p className={styles['login-option-p']}>
+            <span className={styles['login-option-span']}>
+              OR LOGIN WITH GUEST ACCOUNT
+            </span>
+          </p>
+          <button
+            name="submit"
+            value="Facebook"
+            className={styles['login-form-button']}
+          >
+            Try with Guest Acount{' '}
+            <UilUserCircle
+              size="22"
+              color="#1f8a58"
+              className={styles['icon']}
+            />
+          </button>
+        </>
       )}
       {/* pending state */}
       {isPending && (
