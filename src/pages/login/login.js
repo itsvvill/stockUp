@@ -62,14 +62,14 @@ export default function Login() {
             className={styles['toggle-password']}
             onClick={togglePassword}
           >
-            <UilEyeSlash />
+            <UilEyeSlash size="20" />
           </button>
         ) : (
           <button
             className={styles['toggle-password']}
             onClick={togglePassword}
           >
-            <UilEye />
+            <UilEye size="20" />
           </button>
         )}
       </div>

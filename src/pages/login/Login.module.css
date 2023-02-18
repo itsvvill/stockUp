@@ -42,21 +42,13 @@
   font-size: 0.8em;
   padding: 1px;
 }
-/* .login-form label {
-  display: block;
-  margin: 30px auto 10px auto;
-} */
-/* .login-form-span {
-  display: block;
-  margin-bottom: 6px;
-} */
 .login-form input {
   padding: 10px 8px;
   border-radius: 25px;
   border: 1px solid transparent;
   font-size: 1em;
   max-width: 450px;
-  width: 325px;
+  width: 250px;
 }
 .login-form input:focus,
 .login-form textarea:focus {
@@ -66,7 +58,6 @@
   -moz-box-shadow: 0 0 3px #daf7dc;
   -webkit-box-shadow: 0 0 3px #daf7dc;
 }
-
 input:focus,
 textarea:focus,
 select:focus {
@@ -74,12 +65,9 @@ select:focus {
   outline: none;
 }
 .login-form-div {
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* justify-content: center; */
-  margin: 0 auto;
-  padding: 15px 10px 0 10px;
-  /* margin-left: 10px; */
+  display: inline-block;
+  margin: 5px 0 5px 60px;
+  padding: 10px 10px 0 10px;
 }
 .login-form-div-buttons {
   display: flex;
@@ -130,15 +118,12 @@ select:focus {
   font-size: 0.65em;
   text-align: center;
 }
-/* .password {
-  width: 111%;
-} */
 .toggle-password {
   border: none;
   border-radius: 50%;
   position: relative;
-  right: 5;
-  top: 36%;
+  right: 38px;
+  top: 4px;
   background-color: rgba(0, 0, 0, 0);
   cursor: pointer;
 }

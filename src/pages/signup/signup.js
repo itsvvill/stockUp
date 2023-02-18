@@ -35,59 +35,59 @@ export default function Signup() {
         <img src={logo} className={styles['logo']} alt="StockUp Logo" />
         tockUp
       </h2>
-      <label>
-        <span className={styles['signup-form-span']}>Email:</span>
+      <h3 className={styles['signup-form-h3']}>Welcome!</h3>
+      <p className={styles['signup-form-p']}>Create your account.</p>
+      <div className={styles['signup-form-div']}>
         <input
           type="email"
+          placeholder="Email address"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
         />
-      </label>
+      </div>
       {/* email related error */}
       {error && error.code === 'auth/invalid-email' && (
         <p className={styles['signup-form-error']}>{error.message}</p>
       )}
-      <label>
-        <span className={styles['signup-form-span']}>Password:</span>
-        <div className={styles['password']}>
-          <input
-            type={showPassword ? 'text' : 'password'}
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-          />
-          {/* password visibility is hidden/visible */}
-          {!showPassword ? (
-            <button
-              className={styles['toggle-password']}
-              onClick={togglePassword}
-            >
-              <UilEyeSlash />
-            </button>
-          ) : (
-            <button
-              className={styles['toggle-password']}
-              onClick={togglePassword}
-            >
-              <UilEye />
-            </button>
-          )}
-        </div>
-      </label>
+      <div className={styles['signup-form-div']}>
+        <input
+          type={showPassword ? 'text' : 'password'}
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+        />
+        {/* password visibility is hidden/visible */}
+        {!showPassword ? (
+          <button
+            className={styles['toggle-password']}
+            onClick={togglePassword}
+          >
+            <UilEyeSlash size="20" />
+          </button>
+        ) : (
+          <button
+            className={styles['toggle-password']}
+            onClick={togglePassword}
+          >
+            <UilEye size="20" />
+          </button>
+        )}
+      </div>
       {/* password related error */}
       {error && error.code === 'auth/weak-password' && (
         <p className={styles['signup-form-error']}>{error.message}</p>
       )}
-      <label>
-        <span className={styles['signup-form-span']}>Display Name:</span>
+      <div className={styles['signup-form-div']}>
         <input
           type="text"
+          placeholder="Display Name"
           onChange={(e) => setDisplayName(e.target.value)}
           value={displayName}
         />
-      </label>
+      </div>
       {/* normal state */}
       {!isPending && (
-        <div>
+        <div className={styles['signup-form-div-buttons']}>
           <button
             name="submit"
             value="Signup"
