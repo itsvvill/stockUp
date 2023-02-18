@@ -35,7 +35,7 @@ export default function Login() {
         <img src={logo} className={styles['logo']} alt="StockUp Logo" />
         tockUp
       </h2>
-      <h3 className={styles['login-form-h3']}>Welcome back.</h3>
+      <h3 className={styles['login-form-h3']}>Welcome back!</h3>
       <p className={styles['login-form-p']}>Login to your account.</p>
       <div className={styles['login-form-div']}>
         <input

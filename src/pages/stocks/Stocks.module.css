@@ -93,6 +93,7 @@
 }
 .toggle-watchlist-btn:hover {
   background-color: #daf7dc;
+  scale: 1.1;
 }
 
 .title-and-prices {
