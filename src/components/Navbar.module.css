@@ -41,13 +41,15 @@
   border-radius: 25px;
   font-weight: 600;
   background: #4cc49a;
-  color: #edf9ef;
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
     5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
-.navbar .login:hover {
+.login:hover {
   scale: 1.1;
+}
+.login > a:hover {
+  color: #333;
 }
 .logo {
   width: 40px;
