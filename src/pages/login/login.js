@@ -93,24 +93,28 @@ export default function Login() {
               OR LOGIN WITH A SOCIAL ACCOUNT
             </span>
           </p>
-          <button
-            name="submit"
-            value="Google"
-            className={styles['login-form-button']}
-          >
-            Login with{' '}
-            <UilGoogle size="22" color="#121212" className={styles['icon']} />
-            oogle
-          </button>
-          <button
-            name="submit"
-            value="Facebook"
-            className={styles['login-form-button']}
-          >
-            Login with{' '}
-            <UilFacebook size="22" color="#1880C5" className={styles['icon']} />
-            acebook
-          </button>
+          <div className={styles['login-form-button-social-container']}>
+            <button
+              name="submit"
+              value="Google"
+              className={styles['login-form-button-social']}
+            >
+              <UilGoogle size="22" color="#121212" className={styles['icon']} />
+              oogle
+            </button>
+            <button
+              name="submit"
+              value="Facebook"
+              className={styles['login-form-button-social']}
+            >
+              <UilFacebook
+                size="22"
+                color="#1880C5"
+                className={styles['icon']}
+              />
+              acebook
+            </button>
+          </div>
           <p className={styles['login-option-p']}>
             <span className={styles['login-option-span']}>
               OR LOGIN WITH GUEST ACCOUNT
@@ -119,7 +123,7 @@ export default function Login() {
           <button
             name="submit"
             value="Facebook"
-            className={styles['login-form-button']}
+            className={styles['login-form-button-guest']}
           >
             Try with Guest Acount{' '}
             <UilUserCircle

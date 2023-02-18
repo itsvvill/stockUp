@@ -98,12 +98,14 @@ select:focus {
   background: #f8f8f8;
   padding: 0 3px;
 }
-.login-form-button {
+.login-form-button-social-container {
+  display: flex;
+}
+.login-form-button-social {
   display: block;
-  width: 268px;
-  max-width: 400px;
+  width: 138px;
   padding: 7px 20px;
-  margin: 3px auto;
+  margin: 10px auto;
   border-radius: 25px;
   cursor: pointer;
   background: none;
@@ -112,12 +114,29 @@ select:focus {
   font-weight: bold;
   font-size: 1em;
 }
-.login-form-button:hover {
+.login-form-button-social:hover {
+  background: #daf7dc;
+}
+.login-form-button-guest {
+  display: block;
+  width: 268px;
+  max-width: 400px;
+  padding: 7px 20px;
+  margin: 10px auto;
+  border-radius: 25px;
+  cursor: pointer;
+  background: none;
+  border: 2px solid #1f8a58;
+  color: #333;
+  font-weight: bold;
+  font-size: 1em;
+}
+.login-form-button-guest:hover {
   background: #daf7dc;
 }
 .icon {
   position: relative;
-  top: 5px;
+  top: 4px;
 }
 .login-form-error {
   position: relative;
@@ -138,7 +157,10 @@ select:focus {
 .signup-p {
   text-align: center;
   font-size: 0.75em;
+  margin-top: 5px;
   padding: 15px;
+  background: rgba(228, 227, 227, 0.643);
+  border-radius: 0 0 25px 25px;
 }
 .signup-link a {
   text-decoration: none;
