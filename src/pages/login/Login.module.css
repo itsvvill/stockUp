@@ -32,20 +32,31 @@
     5px 5px 15px 5px rgba(0, 0, 0, 0);
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
-.login-form label {
+.login-form-h3 {
+  font-size: 23px;
+  text-align: center;
+  padding: 5px;
+}
+.login-form-p {
+  text-align: center;
+  font-size: 0.8em;
+  padding: 1px;
+}
+/* .login-form label {
   display: block;
   margin: 30px auto 10px auto;
-}
-.login-form-span {
+} */
+/* .login-form-span {
   display: block;
   margin-bottom: 6px;
-}
+} */
 .login-form input {
-  padding: 8px 6px;
+  padding: 10px 8px;
   border-radius: 25px;
   border: 1px solid transparent;
   font-size: 1em;
-  width: 100%;
+  max-width: 450px;
+  width: 325px;
 }
 .login-form input:focus,
 .login-form textarea:focus {
@@ -62,11 +73,19 @@ select:focus {
   outline-offset: 0px;
   outline: none;
 }
-.login-form div {
+.login-form-div {
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* justify-content: center; */
+  margin: 0 auto;
+  padding: 15px 10px 0 10px;
+  /* margin-left: 10px; */
+}
+.login-form-div-buttons {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 15px 10px 0 10px;
+  padding: 10px 10px 0 10px;
 }
 .login-form-button {
   display: flex;
@@ -104,22 +123,22 @@ select:focus {
   background: #daf7dc;
   scale: 1.1;
 }
-.login-form-p {
+.login-form-error {
   position: relative;
   bottom: 0px;
   color: #cc3333;
   font-size: 0.65em;
   text-align: center;
 }
-.password {
+/* .password {
   width: 111%;
-}
+} */
 .toggle-password {
   border: none;
   border-radius: 50%;
   position: relative;
-  right: 43px;
-  top: 2px;
+  right: 5;
+  top: 36%;
   background-color: rgba(0, 0, 0, 0);
   cursor: pointer;
 }

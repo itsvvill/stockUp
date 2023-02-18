@@ -35,51 +35,51 @@ export default function Login() {
         <img src={logo} className={styles['logo']} alt="StockUp Logo" />
         tockUp
       </h2>
-      <label>
-        <span className={styles['login-form-span']}>Email:</span>
+      <h3 className={styles['login-form-h3']}>Welcome back.</h3>
+      <p className={styles['login-form-p']}>Login to your account.</p>
+      <div className={styles['login-form-div']}>
         <input
           type="email"
+          placeholder="Email Address"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
         />
-      </label>
+      </div>
       {/* email related error */}
       {error && error.code === 'auth/invalid-email' && (
-        <p className={styles['login-form-p']}>{error.message}</p>
+        <p className={styles['login-form-error']}>{error.message}</p>
       )}
-      <label>
-        <span className={styles['login-form-span']}>Password:</span>
-        <div className={styles['password']}>
-          <input
-            type={showPassword ? 'text' : 'password'}
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-          />
-          {/* hide password visibility */}
-          {!showPassword ? (
-            <button
-              className={styles['toggle-password']}
-              onClick={togglePassword}
-            >
-              <UilEyeSlash />
-            </button>
-          ) : (
-            <button
-              className={styles['toggle-password']}
-              onClick={togglePassword}
-            >
-              <UilEye />
-            </button>
-          )}
-        </div>
-      </label>
+      <div className={styles['login-form-div']}>
+        <input
+          type={showPassword ? 'text' : 'password'}
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+        />
+        {/* hide password visibility */}
+        {!showPassword ? (
+          <button
+            className={styles['toggle-password']}
+            onClick={togglePassword}
+          >
+            <UilEyeSlash />
+          </button>
+        ) : (
+          <button
+            className={styles['toggle-password']}
+            onClick={togglePassword}
+          >
+            <UilEye />
+          </button>
+        )}
+      </div>
       {/* password related error */}
       {error && error.code === 'auth/wrong-password' && (
-        <p className={styles['login-form-p']}>{error.message}</p>
+        <p className={styles['login-form-error']}>{error.message}</p>
       )}
       {/* normal state */}
       {!isPending && (
-        <div>
+        <div className={styles['login-form-div-buttons']}>
           <button
             name="submit"
             value="Login"
