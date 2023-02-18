@@ -99,7 +99,7 @@ export default function Login() {
               value="Google"
               className={styles['login-form-button-social']}
             >
-              <UilGoogle size="22" color="#121212" className={styles['icon']} />
+              <UilGoogle size="21" color="#121212" className={styles['icon']} />
               oogle
             </button>
             <button
@@ -108,7 +108,7 @@ export default function Login() {
               className={styles['login-form-button-social']}
             >
               <UilFacebook
-                size="22"
+                size="21"
                 color="#1880C5"
                 className={styles['icon']}
               />

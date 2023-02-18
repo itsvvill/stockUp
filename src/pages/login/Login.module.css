@@ -77,7 +77,7 @@ select:focus {
   margin: 10px auto 10px auto;
   border-radius: 25px;
   cursor: pointer;
-  background: none;
+  background: #effaf0;
   border: 2px solid #1f8a58;
   color: #333;
   font-weight: bold;
@@ -100,15 +100,16 @@ select:focus {
 }
 .login-form-button-social-container {
   display: flex;
+  justify-content: center;
 }
 .login-form-button-social {
   display: block;
-  width: 138px;
+  width: 137px;
   padding: 7px 20px;
-  margin: 10px auto;
+  margin: 10px 1px;
   border-radius: 25px;
   cursor: pointer;
-  background: none;
+  background: #effaf0;
   border: 2px solid #1f8a58;
   color: #333;
   font-weight: bold;
@@ -125,7 +126,7 @@ select:focus {
   margin: 10px auto;
   border-radius: 25px;
   cursor: pointer;
-  background: none;
+  background: #effaf0;
   border: 2px solid #1f8a58;
   color: #333;
   font-weight: bold;
