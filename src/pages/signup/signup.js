@@ -9,6 +9,7 @@ import { UilGoogle } from '@iconscout/react-unicons';
 import { UilFacebook } from '@iconscout/react-unicons';
 import { UilEye } from '@iconscout/react-unicons';
 import { UilEyeSlash } from '@iconscout/react-unicons';
+import { UilUserCircle } from '@iconscout/react-unicons';
 
 export default function Signup() {
   const [email, setEmail] = useState('');
@@ -87,33 +88,56 @@ export default function Signup() {
       </div>
       {/* normal state */}
       {!isPending && (
-        <div className={styles['signup-form-div-buttons']}>
+        <>
           <button
             name="submit"
             value="Signup"
-            className={styles['signup-form-btn-signup']}
+            className={styles['signup-form-button-signup']}
           >
             Sign Up
           </button>
-          <button
-            name="submit"
-            value="Google"
-            className={styles['signup-form-btn']}
-          >
-            <UilGoogle size="25" color="#121212" />
-          </button>
+          <div className={styles['signup-form-button-social-container']}>
+            <button
+              name="submit"
+              value="Google"
+              className={styles['signup-form-button-social']}
+            >
+              <UilGoogle size="21" color="#121212" className={styles['icon']} />
+              oogle
+            </button>
+            <button
+              name="submit"
+              value="Facebook"
+              className={styles['signup-form-button-social']}
+            >
+              <UilFacebook
+                size="21"
+                color="#1880C5"
+                className={styles['icon']}
+              />
+              acebook
+            </button>
+          </div>
+          <p className={styles['signup-option-p']}>
+            <span className={styles['signup-option-span']}> OR</span>
+          </p>
           <button
             name="submit"
             value="Facebook"
-            className={styles['signup-form-btn']}
+            className={styles['signup-form-button-guest']}
           >
-            <UilFacebook size="25" color="#1880C5" />
+            Guest Acount{' '}
+            <UilUserCircle
+              size="22"
+              color="#1f8a58"
+              className={styles['icon']}
+            />
           </button>
-        </div>
+        </>
       )}
       {/* pending state */}
       {isPending && (
-        <button className={styles['signup-form-btn']} disabled>
+        <button className={styles['signup-form-loading']} disabled>
           Loading...
         </button>
       )}

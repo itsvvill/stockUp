@@ -65,8 +65,8 @@ select:focus {
   outline: none;
 }
 .login-form-div {
-  display: inline-block;
-  margin: 0px 0 0px 60px;
+  display: block;
+  margin: 0 0 0 60px;
   padding: 10px 10px 0 10px;
 }
 .login-form-button-login {
@@ -84,7 +84,6 @@ select:focus {
 }
 .login-form-button-login:hover {
   background: #daf7dc;
-  font-weight: bold;
 }
 .login-option-p {
   font-size: 0.75em;
