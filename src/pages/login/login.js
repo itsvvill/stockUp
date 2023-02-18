@@ -88,11 +88,6 @@ export default function Login() {
           >
             Login
           </button>
-          <p className={styles['login-option-p']}>
-            <span className={styles['login-option-span']}>
-              OR LOGIN WITH A SOCIAL ACCOUNT
-            </span>
-          </p>
           <div className={styles['login-form-button-social-container']}>
             <button
               name="submit"
@@ -116,16 +111,14 @@ export default function Login() {
             </button>
           </div>
           <p className={styles['login-option-p']}>
-            <span className={styles['login-option-span']}>
-              OR LOGIN WITH GUEST ACCOUNT
-            </span>
+            <span className={styles['login-option-span']}> OR</span>
           </p>
           <button
             name="submit"
             value="Facebook"
             className={styles['login-form-button-guest']}
           >
-            Try with Guest Acount{' '}
+            Guest Acount{' '}
             <UilUserCircle
               size="22"
               color="#1f8a58"
