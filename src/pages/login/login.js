@@ -129,7 +129,7 @@ export default function Login() {
       )}
       {/* pending state */}
       {isPending && (
-        <button className={styles['login-form-button']} disabled>
+        <button className={styles['login-form-loading']} disabled>
           Loading...
         </button>
       )}
