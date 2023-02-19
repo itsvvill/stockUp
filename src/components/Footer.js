@@ -20,6 +20,7 @@ export default function Footer() {
                 href="https://www.github.com/itsvvill"
                 className={styles['link']}
                 target="blank"
+                alt="Will Eason's Github"
               >
                 <UilGithub size="23" />
               </a>
@@ -27,11 +28,59 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/itsvvill"
                 className={styles['link']}
                 target="blank"
+                alt="Will Eason's LinkedIn"
               >
                 <UilExternalLinkAlt size="20" />
               </a>
             </div>
           </div>
+        </div>
+        <div className={styles['footer-links']}>
+          <p>INFO</p>
+          <a href="#" className={styles['link']} target="blank">
+            Guide
+          </a>
+          <a href="#" className={styles['link']} target="blank">
+            Careers
+          </a>
+        </div>
+        <div className={styles['footer-links']}>
+          <p>STACK</p>
+          <a
+            href="https://reactjs.org/docs/getting-started.html"
+            className={styles['link']}
+            target="blank"
+            alt="React Documentation"
+          >
+            ReactJS
+          </a>
+          <a
+            href="https://firebase.google.com/docs"
+            className={styles['link']}
+            target="blank"
+            alt="Firebase Documentation"
+          >
+            Firebase
+          </a>
+        </div>
+        <div className={styles['footer-links']}>
+          <p>PORTFOLIO</p>
+          <a
+            href="https://www.github.com/itsvvill"
+            className={styles['link']}
+            target="blank"
+            alt="Will Eason's Github"
+          >
+            Github
+          </a>
+          <a
+            href="#"
+            className={styles['link']}
+            target="blank"
+            alt="Will Eason's Portfolio"
+          >
+            Personal Site
+          </a>
         </div>
       </div>
       <div className={styles.copyright}>
