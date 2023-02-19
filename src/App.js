@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 function App() {
   const { authIsReady, user } = useAuthContext();
   return (
-    <div className="App">
+    <div className="app">
       {authIsReady && (
         <BrowserRouter>
           <Navbar />
@@ -32,13 +32,14 @@ function App() {
             <Route path="/login">
               {user && <Redirect to="/" />}
               {!user && <Login />}
+              <Footer />
             </Route>
             <Route path="/signup">
               {user && <Redirect to="/" />}
               {!user && <Signup />}
+              <Footer />
             </Route>
           </Switch>
-          <Footer />
         </BrowserRouter>
       )}
     </div>

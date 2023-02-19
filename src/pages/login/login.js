@@ -31,114 +31,120 @@ export default function Login() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles['login-form']}>
-      <h2 className={styles['login-form-h2']}>
-        <img src={logo} className={styles['logo']} alt="StockUp Logo" />
-        tockUp
-      </h2>
-      <h3 className={styles['login-form-h3']}>Welcome back!</h3>
-      <p className={styles['login-form-p']}>Login to your account.</p>
-      <div className={styles['login-form-div']}>
-        <input
-          type="email"
-          placeholder="Email Address"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        />
-      </div>
-      {/* email related error */}
-      {error && error.code === 'auth/invalid-email' && (
-        <p className={styles['login-form-error']}>{error.message}</p>
-      )}
-      <div className={styles['login-form-div']}>
-        <input
-          type={showPassword ? 'text' : 'password'}
-          placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-        />
-        {/* hide password visibility */}
-        {!showPassword ? (
-          <button
-            className={styles['toggle-password']}
-            onClick={togglePassword}
-          >
-            <UilEyeSlash size="20" />
-          </button>
-        ) : (
-          <button
-            className={styles['toggle-password']}
-            onClick={togglePassword}
-          >
-            <UilEye size="20" />
-          </button>
+    <div className={styles['form-container']}>
+      <form onSubmit={handleSubmit} className={styles['login-form']}>
+        <h2 className={styles['login-form-h2']}>
+          <img src={logo} className={styles['logo']} alt="StockUp Logo" />
+          tockUp
+        </h2>
+        <h3 className={styles['login-form-h3']}>Welcome back!</h3>
+        <p className={styles['login-form-p']}>Login to your account.</p>
+        <div className={styles['login-form-div']}>
+          <input
+            type="email"
+            placeholder="Email Address"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+          />
+        </div>
+        {/* email related error */}
+        {error && error.code === 'auth/invalid-email' && (
+          <p className={styles['login-form-error']}>{error.message}</p>
         )}
-      </div>
-      {/* password related error */}
-      {error && error.code === 'auth/wrong-password' && (
-        <p className={styles['login-form-error']}>{error.message}</p>
-      )}
-      {/* normal state */}
-      {!isPending && (
-        <>
-          <button
-            name="submit"
-            value="Login"
-            className={styles['login-form-button-login']}
-          >
-            Login
-          </button>
-          <div className={styles['login-form-button-social-container']}>
+        <div className={styles['login-form-div']}>
+          <input
+            type={showPassword ? 'text' : 'password'}
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+          />
+          {/* hide password visibility */}
+          {!showPassword ? (
+            <button
+              className={styles['toggle-password']}
+              onClick={togglePassword}
+            >
+              <UilEyeSlash size="20" />
+            </button>
+          ) : (
+            <button
+              className={styles['toggle-password']}
+              onClick={togglePassword}
+            >
+              <UilEye size="20" />
+            </button>
+          )}
+        </div>
+        {/* password related error */}
+        {error && error.code === 'auth/wrong-password' && (
+          <p className={styles['login-form-error']}>{error.message}</p>
+        )}
+        {/* normal state */}
+        {!isPending && (
+          <>
             <button
               name="submit"
-              value="Google"
-              className={styles['login-form-button-social']}
+              value="Login"
+              className={styles['login-form-button-login']}
             >
-              <UilGoogle size="21" color="#121212" className={styles['icon']} />
-              oogle
+              Login
             </button>
+            <div className={styles['login-form-button-social-container']}>
+              <button
+                name="submit"
+                value="Google"
+                className={styles['login-form-button-social']}
+              >
+                <UilGoogle
+                  size="21"
+                  color="#121212"
+                  className={styles['icon']}
+                />
+                oogle
+              </button>
+              <button
+                name="submit"
+                value="Facebook"
+                className={styles['login-form-button-social']}
+              >
+                <UilFacebook
+                  size="21"
+                  color="#1880C5"
+                  className={styles['icon']}
+                />
+                acebook
+              </button>
+            </div>
+            <p className={styles['login-option-p']}>
+              <span className={styles['login-option-span']}> OR</span>
+            </p>
             <button
               name="submit"
               value="Facebook"
-              className={styles['login-form-button-social']}
+              className={styles['login-form-button-guest']}
             >
-              <UilFacebook
-                size="21"
-                color="#1880C5"
+              Guest Acount{' '}
+              <UilUserCircle
+                size="22"
+                color="#1f8a58"
                 className={styles['icon']}
               />
-              acebook
             </button>
-          </div>
-          <p className={styles['login-option-p']}>
-            <span className={styles['login-option-span']}> OR</span>
-          </p>
-          <button
-            name="submit"
-            value="Facebook"
-            className={styles['login-form-button-guest']}
-          >
-            Guest Acount{' '}
-            <UilUserCircle
-              size="22"
-              color="#1f8a58"
-              className={styles['icon']}
-            />
+          </>
+        )}
+        {/* pending state */}
+        {isPending && (
+          <button className={styles['login-form-loading']} disabled>
+            Loading...
           </button>
-        </>
-      )}
-      {/* pending state */}
-      {isPending && (
-        <button className={styles['login-form-loading']} disabled>
-          Loading...
-        </button>
-      )}
-      <p className={styles['signup-p']}>
-        First time here?{' '}
-        <span className={styles['signup-link']}>
-          <Link to="/signup">Signup</Link>
-        </span>
-      </p>
-    </form>
+        )}
+        <p className={styles['signup-p']}>
+          First time here?{' '}
+          <span className={styles['signup-link']}>
+            <Link to="/signup">Signup</Link>
+          </span>
+        </p>
+      </form>
+    </div>
   );
 }

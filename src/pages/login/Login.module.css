@@ -1,3 +1,6 @@
+.form-container {
+  height: calc(100vh - 295px);
+}
 .login-form {
   display: flex;
   flex-direction: column;
