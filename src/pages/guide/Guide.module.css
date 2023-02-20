@@ -1,0 +1,16 @@
+.container {
+  width: 100%;
+  height: calc(100vh - 228px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.logo {
+  position: relative;
+  top: 8px;
+  width: 60px;
+  border-radius: 50%;
+  -webkit-box-shadow: var(--webkit-box-shadow);
+  box-shadow: var(--box-shadow);
+}
