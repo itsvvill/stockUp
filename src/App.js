@@ -2,12 +2,15 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext';
 
 // pages & components
-import TransactionsHome from './pages/transactions/TransactionsHome';
-import Login from './pages/login/Login';
-import Signup from './pages/signup/Signup';
-import Navbar from './components/Navbar';
-import StocksHome from './pages/stocks/StocksHome';
+import Careers from './pages/careers/Careers';
 import Footer from './components/Footer';
+import Guide from './pages/guide/Guide';
+import Home from './pages/home/Home';
+import Login from './pages/login/Login';
+import Navbar from './components/Navbar';
+import Signup from './pages/signup/Signup';
+import StocksHome from './pages/stocks/StocksHome';
+import TransactionsHome from './pages/transactions/TransactionsHome';
 
 function App() {
   const { authIsReady, user } = useAuthContext();
@@ -20,6 +23,18 @@ function App() {
             <Route exact path="/">
               {user && <StocksHome />}
               {!user && <Redirect to="/login" />}
+            </Route>
+            <Route exact path="/home">
+              <Home />
+              <Footer />
+            </Route>
+            <Route exact path="/guide">
+              <Guide />
+              <Footer />
+            </Route>
+            <Route exact path="/careers">
+              <Careers />
+              <Footer />
             </Route>
             <Route exact path="/transactions">
               {user && (
@@ -37,7 +52,6 @@ function App() {
             <Route path="/signup">
               {user && <Redirect to="/" />}
               {!user && <Signup />}
-              <Footer />
             </Route>
           </Switch>
         </BrowserRouter>
