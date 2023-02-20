@@ -15,10 +15,18 @@ export default function Navbar() {
     <nav className={styles.navbar}>
       {!user && (
         <ul className={styles.ul}>
-          <li className={styles.stocks}>
-            <img src={logo} className={styles.logo} alt="StockUp Logo" />
-            tockUp
-          </li>
+          <div className={styles.leftnav}>
+            <li className={styles.stocks}>
+              <img src={logo} className={styles.logo} alt="StockUp Logo" />
+              <Link to="/home">tockUP</Link>
+            </li>
+            <li className={styles.links}>
+              <Link to="/home">Home</Link>
+            </li>
+            <li className={styles.links}>
+              <Link to="/guide">Guide</Link>
+            </li>
+          </div>
           <li className={styles.login}>
             <Link to="/login">Login / Register</Link>
           </li>

@@ -38,6 +38,11 @@
   justify-content: space-between;
   align-items: center;
 }
+.footer-title {
+  font-weight: 600;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
 .link {
   text-decoration: none;
   color: #333;

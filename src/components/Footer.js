@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 // styles and icons
 import styles from './Footer.module.css';
 import { UilCopyright } from '@iconscout/react-unicons';
@@ -36,16 +38,16 @@ export default function Footer() {
           </div>
         </div>
         <div className={styles['footer-links']}>
-          <p>INFO</p>
-          <a href="#" className={styles['link']} target="blank">
+          <p className={styles['footer-title']}>INFO</p>
+          <Link to="/guide" className={styles['link']}>
             Guide
-          </a>
-          <a href="#" className={styles['link']} target="blank">
+          </Link>
+          <Link to="/careers" className={styles['link']}>
             Careers
-          </a>
+          </Link>
         </div>
         <div className={styles['footer-links']}>
-          <p>STACK</p>
+          <p className={styles['footer-title']}>STACK</p>
           <a
             href="https://reactjs.org/docs/getting-started.html"
             className={styles['link']}
@@ -64,7 +66,7 @@ export default function Footer() {
           </a>
         </div>
         <div className={styles['footer-links']}>
-          <p>PORTFOLIO</p>
+          <p className={styles['footer-title']}>PORTFOLIO</p>
           <a
             href="https://www.github.com/itsvvill"
             className={styles['link']}
