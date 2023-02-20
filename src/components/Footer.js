@@ -17,6 +17,9 @@ export default function Footer() {
               <img src={logo} className={styles.logo} alt="StockUp Logo" />
               tockUp
             </span>
+            <p className={styles.motto}>
+              A financial website for smarter decision making.
+            </p>
             <div className={styles['links-div']}>
               <a
                 href="https://www.github.com/itsvvill"

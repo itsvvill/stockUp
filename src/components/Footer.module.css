@@ -43,6 +43,12 @@
   font-size: 0.8em;
   margin-top: 5px;
 }
+.motto {
+  text-align: center;
+  font-weight: 400;
+  font-size: 0.75em;
+  width: 400px;
+}
 .link {
   text-decoration: none;
   color: #333;
