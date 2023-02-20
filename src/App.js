@@ -2,7 +2,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext';
 
 // pages & components
-import Home from './pages/home/Home';
+import TransactionsHome from './pages/transactions/TransactionsHome';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
 import Navbar from './components/Navbar';
@@ -24,7 +24,7 @@ function App() {
             <Route exact path="/transactions">
               {user && (
                 <>
-                  <Home />
+                  <TransactionsHome />
                 </>
               )}
               {!user && <Redirect to="/login" />}

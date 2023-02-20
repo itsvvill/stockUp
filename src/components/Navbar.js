@@ -18,7 +18,7 @@ export default function Navbar() {
           <div className={styles.leftnav}>
             <li className={styles.stocks}>
               <img src={logo} className={styles.logo} alt="StockUp Logo" />
-              <Link to="/home">tockUP</Link>
+              <Link to="/home">tockUp</Link>
             </li>
             <li className={styles.links}>
               <Link to="/home">Home</Link>
