@@ -11,7 +11,6 @@ export default function Navbar() {
   const { user } = useAuthContext();
   let location = useLocation();
 
-  console.log(location.pathname);
   return (
     <nav className={styles.navbar}>
       {!user && (
