@@ -81,7 +81,7 @@ select:focus {
   font-size: 1em;
 }
 .signup-form-button-signup:hover {
-  background: #daf7dc;
+  background: #4cc49a;
 }
 .signup-form-button-social-container {
   display: flex;
@@ -101,7 +101,7 @@ select:focus {
   font-size: 1em;
 }
 .signup-form-button-social:hover {
-  background: #daf7dc;
+  background: #4cc49a;
 }
 .signup-form-button-guest {
   display: block;
@@ -117,7 +117,7 @@ select:focus {
   font-size: 1em;
 }
 .signup-form-button-guest:hover {
-  background: #daf7dc;
+  background: #4cc49a;
 }
 .signup-option-p {
   font-size: 0.75em;

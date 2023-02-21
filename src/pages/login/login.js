@@ -126,7 +126,7 @@ export default function Login() {
               Guest Acount{' '}
               <UilUserCircle
                 size="22"
-                color="#1f8a58"
+                color="#121212"
                 className={styles['icon']}
               />
             </button>
