@@ -34,7 +34,12 @@
   -webkit-box-shadow: var(--webkit-box-shadow);
   box-shadow: var(--box-shadow);
 }
-
+.error {
+  padding-bottom: 10px;
+  font-weight: 600;
+  color: red;
+  font-size: 0.8em;
+}
 .search {
   margin: 50px 50px 25px 50px;
   display: flex;

@@ -18,7 +18,7 @@ export default function StockSearchBar({
   };
   return (
     <>
-      {stockName === '' && (
+      {(stockName === '' || stockName === undefined) && (
         <span className={styles['title']}>
           Stock Prices{' '}
           <button
@@ -45,6 +45,11 @@ export default function StockSearchBar({
           <input type="submit" value="Search" className={styles['btn']} />
         </form>
       </div>
+      {stockName === undefined && (
+        <p className={styles.error}>
+          Sorry, no results found. Try another search.
+        </p>
+      )}
     </>
   );
 }
