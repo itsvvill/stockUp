@@ -12,6 +12,7 @@ export default function Stocks({
   changeAmount,
   percentChange,
   stockSymbol,
+  logoURL,
   stockExchange,
   toggleStockWatchListForm,
 }) {
@@ -35,6 +36,11 @@ export default function Stocks({
 
           <div className={styles['title-and-prices']}>
             <span className={styles['stock']}>
+              <img
+                className={styles.logo}
+                src={logoURL}
+                alt={`${stockName} logo`}
+              />
               {stockName}
               <button
                 onClick={handleClick}

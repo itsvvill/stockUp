@@ -23,6 +23,7 @@ export default function StocksHome() {
   const [currentPrice, setCurrentPrice] = useState(0);
   const [highPrice, setHighPrice] = useState(0);
   const [lowPrice, setLowPrice] = useState(0);
+  const [logoURL, setLogoURL] = useState('');
   const [changeAmount, setChangeAmount] = useState(0);
   const [percentChange, setPercentChange] = useState(0);
   const [isLoss, setIsLoss] = useState(false);
@@ -34,13 +35,12 @@ export default function StocksHome() {
     ['uid', '==', user.uid],
     ['createdAt', 'desc']
   );
-  // Alpha Vantage API Key
-  let ALPHAVANTAGEAPI = process.env.REACT_APP_API_KEY;
+  // FINNHUBAPI KEY
+  const FINNHUBAPI = process.env.REACT_APP_FINNHUB;
 
   // api URLs
-  let searchURL = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${searchQuery}&apikey=${ALPHAVANTAGEAPI}`;
-  let companyOverviewURL = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${searchQuery}&apikey=${ALPHAVANTAGEAPI}`;
-  let quoteEndpointURL = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${searchQuery}&apikey=${ALPHAVANTAGEAPI}`;
+  let companyOverviewURL = `https://finnhub.io/api/v1/stock/profile2?symbol=${searchQuery}&token=${FINNHUBAPI}`;
+  let quoteEndpointURL = `https://finnhub.io/api/v1/quote?symbol=${searchQuery}&token=${FINNHUBAPI}`;
 
   // async fetch
   const fetchData = async (url) => {
@@ -52,27 +52,34 @@ export default function StocksHome() {
   //general info api call
   const getGeneralInfo = (fetchCall, url) => {
     fetchCall(url).then((data) => {
-      setStockSymbol(data.Symbol);
-      setStockName(data.Name);
-      setStockExchange(data.Exchange);
-      setSector(data.Sector);
+      setStockSymbol(data.ticker);
+      setStockName(data.name);
+      setStockExchange(
+        data.exchange?.split(' ')[0] === 'NASDAQ'
+          ? data.exchange?.split(' ')[0]
+          : data.exchange?.split(' ')[0] === 'NEW'
+          ? 'NYSE'
+          : data.exchange
+      );
+      setSector(data.finnhubIndustry.toUpperCase());
+      setLogoURL(data.logo);
     });
   };
 
   //pricing info api call
   const getPricingInfo = (fetchCall, url) => {
     fetchCall(url).then((data) => {
-      data = data['Global Quote'];
-      setHighPrice(parseFloat(data['03. high']).toFixed(2));
-      setLowPrice(parseFloat(data['04. low']).toFixed(2));
-      setCurrentPrice(parseFloat(data['05. price']).toFixed(2));
-      setChangeAmount(parseFloat(data['09. change']));
+      console.log(data);
+      setHighPrice(data.h);
+      setLowPrice(data.l);
+      setCurrentPrice(data.c);
+      setChangeAmount(parseFloat(data.d).toFixed(2));
       setPercentChange(
-        data['10. change percent']?.[0] === '-'
-          ? data['10. change percent'].slice(0, 5)
-          : data['10. change percent'].slice(0, 4)
+        ('' + data.dp)?.[0] === '-'
+          ? ('' + data.dp)?.slice(0, 5)
+          : ('' + data.dp)?.slice(0, 4)
       );
-      if (data['10. change percent']?.[0] === '-') {
+      if (data.dp < 0) {
         setIsLoss(true);
       } else {
         setIsLoss(false);
@@ -103,8 +110,8 @@ export default function StocksHome() {
     e.preventDefault();
     getGeneralInfo(fetchData, companyOverviewURL);
     getPricingInfo(fetchData, quoteEndpointURL);
-    getSearchResults(fetchData, searchURL);
-    setSearchResults([]);
+    // getSearchResults(fetchData, searchURL);
+    // setSearchResults([]);
     setStockSymbol('');
   };
 
@@ -131,7 +138,6 @@ export default function StocksHome() {
       handleSubmit(e);
     }
   };
-
   return (
     <div>
       {!stockName && (
@@ -144,11 +150,11 @@ export default function StocksHome() {
               toggleSubmit={toggleSubmit}
               toggleStockWatchListForm={toggleStockWatchListForm}
             />
-            <SearchResults
+            {/* <SearchResults
               searchResults={searchResults}
               // changeSearchQuery={changeSearchQuery}
               // changeSymbolClicked={changeSymbolClicked}
-            />
+            /> */}
           </div>
           {documents !== null && documents.length >= 1 && (
             <StockWatchList
@@ -173,6 +179,7 @@ export default function StocksHome() {
               isLoss={isLoss}
               changeAmount={changeAmount}
               percentChange={percentChange}
+              logoURL={logoURL}
               stockSymbol={stockSymbol}
               stockExchange={stockExchange}
               toggleStockWatchListForm={toggleStockWatchListForm}

@@ -67,6 +67,11 @@
 .btn:hover {
   background-color: #daf7dc;
 }
+.logo {
+  width: 30px;
+  padding: 0 10px;
+  border-radius: 50%;
+}
 .title {
   display: flex;
   justify-content: center;
