@@ -31,11 +31,12 @@ stockUp is a finance and stock tracker created to help the user make smarter fin
 
 ### Signup/Login
 
-Users have 3 options for signing up:
+Users have 4 options for signing up:
 
 - manually enter email, password, display name
 - using their Google account
 - using their Facebook account
+- try it out anonymously with a Guest account
 
 ### Authenticated User Features
 
