@@ -106,75 +106,88 @@ export default function StocksHome() {
     getPricingInfo(fetchData, quoteEndpointURL);
     setStockSymbol('');
   };
-
   return (
-    <div>
+    <div className={styles['stocks-home-container']}>
       {!stockName && (
-        <div className={styles['stocks-home-container']}>
-          <div className={styles['container']}>
-            <StockSearchBar
-              stockName={stockName}
-              newStockSymbol={newStockSymbol}
-              updateSearchQuery={updateSearchQuery}
-              toggleSubmit={toggleSubmit}
-              toggleStockWatchListForm={toggleStockWatchListForm}
-            />
+        <div className={styles['stocks-components-container']}>
+          <div className={styles.flex}>
+            <div className={styles['container']}>
+              <StockSearchBar
+                stockName={stockName}
+                newStockSymbol={newStockSymbol}
+                updateSearchQuery={updateSearchQuery}
+                toggleSubmit={toggleSubmit}
+                toggleStockWatchListForm={toggleStockWatchListForm}
+              />
+            </div>
+            {documents !== null && documents.length >= 1 && (
+              <StockWatchList
+                stocks={documents}
+                user={user}
+                toggleStockWatchListForm={toggleStockWatchListForm}
+                toggleNewStockSymbol={toggleNewStockSymbol}
+                fetchData={fetchData}
+              />
+            )}
           </div>
-          {documents !== null && documents.length >= 1 && (
-            <StockWatchList
+          {showStockWatchListForm && (
+            <StockWatchListForm
+              uid={user.uid}
               stocks={documents}
-              user={user}
+              stockSymbol={stockSymbol}
+              stockName={stockName}
+              stockExchange={stockExchange}
               toggleStockWatchListForm={toggleStockWatchListForm}
-              toggleNewStockSymbol={toggleNewStockSymbol}
-              fetchData={fetchData}
             />
           )}
         </div>
       )}
       {stockName && currentPrice !== 0 && (
-        <div className={styles['stocks-home-container']}>
-          <div className={styles['container']}>
-            <Stocks
-              stockName={stockName}
-              currentPrice={currentPrice}
-              sector={sector}
-              highPrice={highPrice}
-              lowPrice={lowPrice}
-              isLoss={isLoss}
-              changeAmount={changeAmount}
-              percentChange={percentChange}
-              logoURL={logoURL}
+        <div className={styles['stocks-components-container']}>
+          <div className={styles.flex}>
+            <div className={styles['container']}>
+              <Stocks
+                stockName={stockName}
+                currentPrice={currentPrice}
+                sector={sector}
+                highPrice={highPrice}
+                lowPrice={lowPrice}
+                isLoss={isLoss}
+                changeAmount={changeAmount}
+                percentChange={percentChange}
+                logoURL={logoURL}
+                stockSymbol={stockSymbol}
+                stockExchange={stockExchange}
+                toggleStockWatchListForm={toggleStockWatchListForm}
+              />
+              <StockSearchBar
+                stockName={stockName}
+                newStockSymbol={newStockSymbol}
+                updateSearchQuery={updateSearchQuery}
+                toggleSubmit={toggleSubmit}
+              />
+            </div>
+            {documents !== null && documents.length >= 1 && (
+              <StockWatchList
+                stocks={documents}
+                user={user}
+                toggleStockWatchListForm={toggleStockWatchListForm}
+                toggleNewStockSymbol={toggleNewStockSymbol}
+                fetchData={fetchData}
+              />
+            )}
+          </div>
+          {showStockWatchListForm && (
+            <StockWatchListForm
+              uid={user.uid}
+              stocks={documents}
               stockSymbol={stockSymbol}
+              stockName={stockName}
               stockExchange={stockExchange}
               toggleStockWatchListForm={toggleStockWatchListForm}
             />
-            <StockSearchBar
-              stockName={stockName}
-              newStockSymbol={newStockSymbol}
-              updateSearchQuery={updateSearchQuery}
-              toggleSubmit={toggleSubmit}
-            />
-          </div>
-          {documents !== null && documents.length >= 1 && (
-            <StockWatchList
-              stocks={documents}
-              user={user}
-              toggleStockWatchListForm={toggleStockWatchListForm}
-              toggleNewStockSymbol={toggleNewStockSymbol}
-              fetchData={fetchData}
-            />
           )}
         </div>
-      )}
-      {showStockWatchListForm && (
-        <StockWatchListForm
-          uid={user.uid}
-          stocks={documents}
-          stockSymbol={stockSymbol}
-          stockName={stockName}
-          stockExchange={stockExchange}
-          toggleStockWatchListForm={toggleStockWatchListForm}
-        />
       )}
     </div>
   );

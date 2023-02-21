@@ -22,6 +22,7 @@ function App() {
           <Switch>
             <Route exact path="/stocks">
               {user && <StocksHome />}
+              <Footer />
               {!user && <Redirect to="/login" />}
             </Route>
             <Route exact path="/">
@@ -52,6 +53,7 @@ function App() {
             <Route path="/signup">
               {user && <Redirect to="/stocks" />}
               {!user && <Signup />}
+              <Footer />
             </Route>
           </Switch>
         </BrowserRouter>
