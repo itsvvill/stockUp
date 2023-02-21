@@ -4,6 +4,8 @@
 
 stockUp is a finance and stock tracker created to help the user make smarter financial decisions.
 
+![stockUp Home Page](./public/stockUp_Home.png)
+
 ## Table of Contents
 
 - [Technologies and Languages](#technologies-and-languages)
@@ -37,6 +39,8 @@ Users have 4 options for signing up:
 - using their Google account
 - using their Facebook account
 - try it out anonymously with a Guest account
+
+![stockUp Sign Up Page](./public/stockUp_Sign_Up.png)
 
 ### Authenticated User Features
 
