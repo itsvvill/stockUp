@@ -34,12 +34,12 @@
 }
 .links {
   font-weight: 600;
+  /* padding-left: 10px; */
 }
 .stocks {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* margin-right: auto; */
   font-weight: bold;
   letter-spacing: 0.3px;
   font-size: 1.2em;

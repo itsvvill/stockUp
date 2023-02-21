@@ -11,21 +11,61 @@ export default function Navbar() {
   const { user } = useAuthContext();
   let location = useLocation();
 
+  console.log(location.pathname);
   return (
     <nav className={styles.navbar}>
       {!user && (
         <ul className={styles.ul}>
           <div className={styles.leftnav}>
-            <li className={styles.stocks}>
-              <img src={logo} className={styles.logo} alt="StockUp Logo" />
-              <Link to="/home">tockUp</Link>
-            </li>
-            <li className={styles.links}>
-              <Link to="/home">Home</Link>
-            </li>
-            <li className={styles.links}>
-              <Link to="/guide">Guide</Link>
-            </li>
+            {location.pathname === '/' ? (
+              <>
+                <li className={styles.stocks}>
+                  <img src={logo} className={styles.logo} alt="StockUp Logo" />
+                  <Link
+                    to="/"
+                    style={{
+                      color: '#4CC49A',
+                    }}
+                  >
+                    tockUp
+                  </Link>
+                </li>
+                <Link
+                  to="/"
+                  className={styles.links}
+                  style={{
+                    color: '#4CC49A',
+                  }}
+                >
+                  Home
+                </Link>
+              </>
+            ) : (
+              <>
+                <li className={styles.stocks}>
+                  <img src={logo} className={styles.logo} alt="StockUp Logo" />
+                  <Link to="/">tockUp</Link>
+                </li>
+                <Link to="/" className={styles.links}>
+                  Home
+                </Link>
+              </>
+            )}
+            {location.pathname === '/guide' ? (
+              <Link
+                to="/guide"
+                style={{
+                  color: '#4CC49A',
+                }}
+                className={styles.links}
+              >
+                Guide
+              </Link>
+            ) : (
+              <Link to="/guide" className={styles.links}>
+                Guide
+              </Link>
+            )}
           </div>
           <li className={styles.login}>
             <Link to="/login">Login / Register</Link>
@@ -35,48 +75,57 @@ export default function Navbar() {
       {user && (
         <ul className={styles.ul}>
           <div className={styles.div}>
-            <li className={styles.stocks}>
+            <div className={styles.leftnav}>
               {location.pathname === '/' ? (
-                <Link
-                  to="/"
-                  className={styles.stocks}
-                  style={{
-                    color: '#4CC49A',
-                  }}
-                >
-                  <img
-                    src={logo}
-                    className={styles['logo-transactions']}
-                    alt="StockUp Logo"
-                  />
-                  tockUp
-                </Link>
+                <li className={styles.stocks}>
+                  <img src={logo} className={styles.logo} alt="StockUp Logo" />
+                  <Link
+                    to="/"
+                    style={{
+                      color: '#4CC49A',
+                    }}
+                  >
+                    tockUp
+                  </Link>
+                </li>
               ) : (
-                <Link to="/" className={styles.stocks}>
-                  {' '}
-                  <img
-                    src={logo}
-                    className={styles['logo-transactions']}
-                    alt="StockUp Logo"
-                  />
-                  tockUp
-                </Link>
+                <li className={styles.stocks}>
+                  <img src={logo} className={styles.logo} alt="StockUp Logo" />
+                  <Link to="/">tockUp</Link>
+                </li>
               )}
-            </li>
-            <li className={styles.transactions}>
-              {location.pathname === '/transactions' ? (
-                <Link
-                  to="/transactions"
-                  style={{
-                    color: '#4CC49A',
-                  }}
-                >
-                  Transactions
-                </Link>
-              ) : (
-                <Link to="/transactions">Transactions</Link>
-              )}
-            </li>
+              <li className={styles.links}>
+                {location.pathname === '/stocks' ? (
+                  <Link
+                    to="/stocks"
+                    className={styles.links}
+                    style={{
+                      color: '#4CC49A',
+                    }}
+                  >
+                    Stocks
+                  </Link>
+                ) : (
+                  <Link to="/stocks" className={styles.links}>
+                    Stocks
+                  </Link>
+                )}
+              </li>
+              <li className={styles.links}>
+                {location.pathname === '/transactions' ? (
+                  <Link
+                    to="/transactions"
+                    style={{
+                      color: '#4CC49A',
+                    }}
+                  >
+                    Transactions
+                  </Link>
+                ) : (
+                  <Link to="/transactions">Transactions</Link>
+                )}
+              </li>
+            </div>
           </div>
           <div className={styles.div}>
             <li>Hello, {user.displayName}!</li>

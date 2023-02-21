@@ -20,11 +20,11 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/stocks">
               {user && <StocksHome />}
               {!user && <Redirect to="/login" />}
             </Route>
-            <Route exact path="/home">
+            <Route exact path="/">
               <Home />
               <Footer />
             </Route>
@@ -45,12 +45,12 @@ function App() {
               {!user && <Redirect to="/login" />}
             </Route>
             <Route path="/login">
-              {user && <Redirect to="/" />}
+              {user && <Redirect to="/stocks" />}
               {!user && <Login />}
               <Footer />
             </Route>
             <Route path="/signup">
-              {user && <Redirect to="/" />}
+              {user && <Redirect to="/stocks" />}
               {!user && <Signup />}
             </Route>
           </Switch>
