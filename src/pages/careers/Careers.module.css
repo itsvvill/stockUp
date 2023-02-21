@@ -5,14 +5,6 @@
   flex-direction: column;
   justify-content: space-evenly;
 }
-.logo {
-  position: relative;
-  top: 8px;
-  width: 60px;
-  border-radius: 50%;
-  -webkit-box-shadow: var(--webkit-box-shadow);
-  box-shadow: var(--box-shadow);
-}
 .heading {
   display: flex;
   justify-content: center;
@@ -23,6 +15,15 @@
 }
 .h1 {
   padding-bottom: 20px;
+  font-size: 2.8em;
+}
+.logo {
+  position: relative;
+  top: 26px;
+  width: 80px;
+  border-radius: 50%;
+  -webkit-box-shadow: var(--webkit-box-shadow);
+  box-shadow: var(--box-shadow);
 }
 .jobs-container {
   margin: 0 auto;
