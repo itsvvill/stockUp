@@ -33,6 +33,25 @@ export const useLogin = (type) => {
           setIsPending(false);
         }
       }
+      // Guest user login
+    } else if (type === 'guest') {
+      try {
+        //log the user in
+        const res = await projectAuth.signInAnonymously();
+        // dispatch login action
+        dispatch({ type: 'LOGIN', payload: res.user });
+
+        // update state
+        if (!isCancelled) {
+          setIsPending(false);
+          setError(null);
+        }
+      } catch (err) {
+        if (!isCancelled) {
+          setError(err);
+          setIsPending(false);
+        }
+      }
       // Google OAuth login
     } else if (type === 'Google') {
       try {

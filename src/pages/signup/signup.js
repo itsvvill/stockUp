@@ -128,7 +128,7 @@ export default function Signup() {
             </p>
             <button
               name="submit"
-              value="Facebook"
+              value="guest"
               className={styles['signup-form-button-guest']}
             >
               Guest Acount{' '}

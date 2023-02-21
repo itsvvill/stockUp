@@ -120,7 +120,7 @@ export default function Login() {
             </p>
             <button
               name="submit"
-              value="Facebook"
+              value="guest"
               className={styles['login-form-button-guest']}
             >
               Guest Acount{' '}
