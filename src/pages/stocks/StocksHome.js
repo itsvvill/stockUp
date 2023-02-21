@@ -3,7 +3,7 @@ import { useAuthContext } from '../../hooks/useAuthContext';
 import { useCollection } from '../../hooks/useCollection';
 
 // pages and components
-import SearchResults from './SearchResults';
+// import SearchResults from './SearchResults';
 import Stocks from './Stocks';
 import StockSearchBar from './StockSearchBar';
 import StockWatchList from './StockWatchList';
@@ -27,8 +27,6 @@ export default function StocksHome() {
   const [changeAmount, setChangeAmount] = useState(0);
   const [percentChange, setPercentChange] = useState(0);
   const [isLoss, setIsLoss] = useState(false);
-  const [searchResults, setSearchResults] = useState([]);
-  const [formSubmit, setFormSubmit] = useState(false);
   const { user } = useAuthContext();
   const { documents } = useCollection(
     'stocks',
@@ -69,7 +67,6 @@ export default function StocksHome() {
   //pricing info api call
   const getPricingInfo = (fetchCall, url) => {
     fetchCall(url).then((data) => {
-      console.log(data);
       setHighPrice(data.h);
       setLowPrice(data.l);
       setCurrentPrice(data.c);
@@ -87,34 +84,6 @@ export default function StocksHome() {
     });
   };
 
-  //search info api call
-  const getSearchResults = (fetchCall, url) => {
-    fetchCall(url).then((data) => {
-      setSearchResults(
-        data.bestMatches
-          .filter((item, count = 0) => {
-            if (count < 3 && !item['1. symbol'].split('').includes('.')) {
-              count++;
-              return true;
-            } else {
-              return false;
-            }
-          })
-          .map((arr) => [arr['1. symbol'], arr['2. name']])
-      );
-    });
-  };
-
-  // api request for general, pricing, and search information
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    getGeneralInfo(fetchData, companyOverviewURL);
-    getPricingInfo(fetchData, quoteEndpointURL);
-    // getSearchResults(fetchData, searchURL);
-    // setSearchResults([]);
-    setStockSymbol('');
-  };
-
   // sets new stock symbol on click
   const toggleNewStockSymbol = (symbol) => {
     setNewStockSymbol((prevState) => symbol);
@@ -130,14 +99,14 @@ export default function StocksHome() {
     setSearchQuery(query);
   };
 
-  // toggles stock search bar if submitted
+  // api request for general, pricing, and search information
   const toggleSubmit = (e) => {
     e.preventDefault();
-    setFormSubmit((prevState) => !prevState);
-    if (formSubmit) {
-      handleSubmit(e);
-    }
+    getGeneralInfo(fetchData, companyOverviewURL);
+    getPricingInfo(fetchData, quoteEndpointURL);
+    setStockSymbol('');
   };
+
   return (
     <div>
       {!stockName && (
@@ -150,11 +119,6 @@ export default function StocksHome() {
               toggleSubmit={toggleSubmit}
               toggleStockWatchListForm={toggleStockWatchListForm}
             />
-            {/* <SearchResults
-              searchResults={searchResults}
-              // changeSearchQuery={changeSearchQuery}
-              // changeSymbolClicked={changeSymbolClicked}
-            /> */}
           </div>
           {documents !== null && documents.length >= 1 && (
             <StockWatchList

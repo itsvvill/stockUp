@@ -10,7 +10,6 @@ export default function StockSearchBar({
   toggleStockWatchListForm,
 }) {
   const handleSubmit = (e) => {
-    // e.preventDefault();
     toggleSubmit(e);
   };
   // toggles stock watchlist form visibility on click
@@ -37,7 +36,6 @@ export default function StockSearchBar({
             type="text"
             name="stockName"
             className={styles['input']}
-            // value={newStockSymbol ? newStockSymbol : undefined}
             onChange={(e) => updateSearchQuery(e.target.value.toUpperCase())}
             minLength="1"
             maxLength="10"
