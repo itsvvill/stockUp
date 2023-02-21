@@ -12,7 +12,6 @@
 }
 .navbar a:hover {
   color: #1f8a58;
-  scale: 1.1;
 }
 .navbar .ul {
   display: flex;
@@ -34,7 +33,6 @@
 }
 .links {
   font-weight: 600;
-  /* padding-left: 10px; */
 }
 .stocks {
   display: flex;
@@ -65,6 +63,7 @@
   border-radius: 50%;
   -webkit-box-shadow: var(--webkit-box-shadow);
   box-shadow: var(--box-shadow);
+  cursor: pointer;
 }
 .logo-transactions {
   width: 40px;
@@ -82,7 +81,6 @@
 }
 .transactions:hover {
   color: #1f8a58;
-  scale: 1.1;
 }
 .logout {
   font-family: Poppins, sans-serif;
