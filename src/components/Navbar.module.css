@@ -127,17 +127,25 @@
   .navbar li {
     font-size: 1em;
   }
-  .navbar .transactions {
+  .transactions {
     font-size: 0.9em;
   }
-  .navbar .links {
+  .navbar .links,
+  a {
     font-size: 0.9em;
   }
-  .navbar ul {
-    width: 400px;
+  .leftnav {
+    max-width: 300px;
+    justify-content: space-between;
+  }
+  .navbar .ul {
+    width: 90%;
+    display: flex;
+    justify-content: center;
   }
 
   .navbar .login {
+    margin-left: 1em;
     font-size: 0.9em;
     padding: 4px 8px;
   }
