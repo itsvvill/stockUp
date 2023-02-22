@@ -182,3 +182,41 @@ select:focus {
   font-weight: bold;
   color: #1f8a58;
 }
+
+@media screen and (max-height: 900px) {
+  .logo {
+    width: 35px;
+  }
+  .login-form-h2 {
+    font-size: 1em;
+  }
+  .login-form {
+    margin: 10px auto;
+  }
+  .login-form-h2 {
+    margin-bottom: 10px;
+  }
+  .login-form-h3 {
+    display: none;
+  }
+  .login-form input {
+    font-size: 0.8em;
+  }
+  .login-form-button-login {
+    font-size: 0.8em;
+    padding: 4px 20px;
+  }
+  .login-form-button-social {
+    font-size: 0.8em;
+    padding: 0 10px 2px 10px;
+  }
+  .login-form-button-guest {
+    font-size: 0.8em;
+    margin: 0 auto 5px auto;
+    padding: 0 10px 2px 10px;
+  }
+  .signup-p {
+    margin-top: 2px;
+    padding: 5px;
+  }
+}
