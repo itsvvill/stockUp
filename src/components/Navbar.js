@@ -127,7 +127,9 @@ export default function Navbar() {
             </div>
           </div>
           <div className={styles.div}>
-            <li>Hello, {user.displayName ? user.displayName : 'Guest'}!</li>
+            <li className={styles.username}>
+              Hello, {user.displayName ? user.displayName : 'Guest'}!
+            </li>
             <li>
               <button className={styles.logout} onClick={logout}>
                 Logout

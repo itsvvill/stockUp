@@ -16,7 +16,7 @@ const apiSettings = {
     let data = await response.json();
     return data;
   },
-  fetchQuote: async (searchQuery) => {
+  fetchQuote: async (stockSymbol) => {
     const endpoint = `${stockSymbol}&token=${FINN_HUB_API_KEY}`;
     let response = await fetch(url);
     let data = await response.json();
