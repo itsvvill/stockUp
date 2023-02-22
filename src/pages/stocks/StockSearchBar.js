@@ -42,7 +42,9 @@ export default function StockSearchBar({
             autoComplete="off"
             required
           />
-          <input type="submit" value="Search" className={styles['btn']} />
+          <button type="submit" value="Search" className={styles['btn']}>
+            Search
+          </button>
         </form>
       </div>
       {stockName === undefined && (

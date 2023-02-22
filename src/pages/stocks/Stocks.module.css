@@ -78,6 +78,7 @@
   font-weight: 600;
   font-size: 0.9em;
   background: #4cc49a;
+  cursor: pointer;
 }
 .btn:hover {
   scale: 1.1;
@@ -551,4 +552,6 @@
 .stock-watchlist-edit-cancel:hover {
   cursor: pointer;
   scale: 1.3;
+}
+@media screen and (min-width: 780px) {
 }

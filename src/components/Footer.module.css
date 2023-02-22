@@ -83,3 +83,5 @@
   position: relative;
   top: 4px;
 }
+@media screen and (max-width: 780px) {
+}
