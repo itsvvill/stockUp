@@ -84,6 +84,9 @@
   top: 4px;
 }
 @media screen and (max-width: 1200px) {
+  .footer {
+    padding: 10px 0 10px 0;
+  }
   .container {
     flex-direction: column;
   }
@@ -92,5 +95,18 @@
     width: 300px;
     justify-content: space-evenly;
     align-items: center;
+  }
+}
+@media screen and (max-height: 700px) {
+  .footer {
+    padding: 5px 0 5px 0;
+  }
+  .container {
+    justify-content: center;
+  }
+  .footer-links,
+  .break-line,
+  .copyright {
+    display: none;
   }
 }

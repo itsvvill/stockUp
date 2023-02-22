@@ -81,3 +81,72 @@
   font-size: 0.7em;
   font-weight: 600;
 }
+
+@media screen and (max-width: 1200px) {
+  .container {
+    justify-content: flex-start;
+  }
+  .heading {
+    font-size: 0.75em;
+    padding-bottom: 5px;
+  }
+  .logo {
+    top: 12px;
+    width: 55px;
+  }
+  .jobs-container {
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+  }
+  .job-card {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 5px;
+    padding: 15px 15px;
+  }
+  .department {
+    margin: 0 auto;
+  }
+  .title {
+    font-size: 0.8em;
+  }
+  .status,
+  .status-span,
+  .date {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .heading {
+    font-size: 0.5em;
+    padding-bottom: 5px;
+  }
+  .logo {
+    top: 10px;
+    width: 40px;
+  }
+  .jobs-container {
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+  }
+  .job-card {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 5px;
+    padding: 15px 15px;
+  }
+  .title {
+    font-size: 0.8em;
+  }
+  .department,
+  .status,
+  .status-span,
+  .date,
+  .recruiter-container {
+    display: none;
+  }
+}

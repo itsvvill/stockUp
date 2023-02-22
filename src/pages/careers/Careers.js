@@ -66,7 +66,7 @@ export default function Careers() {
             <div>
               <div>
                 <p className={styles.status}>
-                  Position Status:{' '}
+                  Status:{' '}
                   <span className={styles['status-span']}>
                     {job.available ? 'Available' : 'Unavailable'}
                   </span>
