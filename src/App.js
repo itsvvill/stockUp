@@ -41,6 +41,7 @@ function App() {
               {user && (
                 <>
                   <TransactionsHome />
+                  <Footer />
                 </>
               )}
               {!user && <Redirect to="/login" />}

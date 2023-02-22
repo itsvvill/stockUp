@@ -12,7 +12,7 @@ export default function CategoryFilter({
   };
 
   return (
-    <div>
+    <div className={styles['category-filter-container']}>
       <nav className={styles['category-filter']}>
         {categories.map((c) => (
           <button

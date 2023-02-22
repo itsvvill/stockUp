@@ -264,15 +264,18 @@
   margin: 0 5px;
 }
 .watchlist-form-btn {
-  background: #effaf0;
-  font-size: 0.8em;
-  border: none;
-  padding: 14px 20px;
-  border-radius: 25px;
   cursor: pointer;
+  margin-left: 3px;
+  border: none;
+  padding: 10px 12px;
+  border-radius: 25px;
+  font-weight: 600;
+  background: #4cc49a;
+  -webkit-box-shadow: var(--webkit-box-shadow);
+  box-shadow: var(--box-shadow);
 }
 .watchlist-form-btn:hover {
-  background-color: #daf7dc;
+  scale: 1.1;
 }
 /* Stock WatchList */
 .stock-watchlist-container {
