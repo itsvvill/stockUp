@@ -1,11 +1,11 @@
 /* footer styles */
 
 .footer {
-  display: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 145px;
+  /* height: 100%; */
   background: #effaf0;
   padding: 15px 0 15px 0;
   box-sizing: border-box;
@@ -83,5 +83,14 @@
   position: relative;
   top: 4px;
 }
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+  }
+  .footer-links {
+    flex-direction: row;
+    width: 300px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 }
