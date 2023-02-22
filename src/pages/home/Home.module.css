@@ -48,3 +48,53 @@
 .button:hover {
   scale: 1.1;
 }
+
+@media screen and (max-width: 1200px) {
+  .header {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  .logo {
+    top: 16px;
+    width: 60px;
+  }
+  .slogan {
+    text-align: center;
+    font-size: 1.1em;
+  }
+  .blurb {
+    margin-top: 2px;
+    font-size: 0.9em;
+    max-width: 500px;
+  }
+  .button-container {
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+  }
+  .button {
+    padding: 6px 20px;
+    font-size: 0.9em;
+  }
+}
+@media screen and (max-width: 500px) {
+  .header {
+    font-size: 1.6em;
+  }
+  .slogan {
+    text-align: center;
+    font-size: 1em;
+  }
+  .logo {
+    top: 14px;
+    width: 50px;
+  }
+  .blurb {
+    display: none;
+  }
+}
+@media screen and (max-height: 700px) {
+  .container {
+    justify-content: flex-start;
+  }
+}

@@ -14,7 +14,9 @@ export default function Home() {
             tockUp!
           </span>
         </h1>
-        <h2>A financial website for smarter decision making.</h2>
+        <h2 className={styles.slogan}>
+          A financial website for smarter decision making.
+        </h2>
         <ul className={styles.blurb}>
           <li>Search for real-time stock prices and information.</li>
           <li>Create a custom watchlist of the stocks you care about.</li>
