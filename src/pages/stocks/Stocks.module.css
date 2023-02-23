@@ -337,7 +337,7 @@
   justify-content: space-between;
   align-items: center;
   background: #daf7dc;
-  border-radius: 10px;
+  border-radius: 25px;
   width: 90%;
   margin-top: 8px;
   padding: 5px 15px;
@@ -348,7 +348,7 @@
   justify-content: space-between;
   align-items: center;
   background: #ff69614b;
-  border-radius: 10px;
+  border-radius: 25px;
   width: 90%;
   margin-top: 8px;
   padding: 5px 15px;
@@ -359,7 +359,7 @@
   justify-content: space-between;
   align-items: center;
   background: rgba(228, 227, 227, 0.643);
-  border-radius: 10px;
+  border-radius: 25px;
   width: 90%;
   margin-top: 8px;
   padding: 5px 15px;
@@ -611,7 +611,114 @@
     font-size: 0.8em;
   }
 }
+@media screen and (max-width: 800px) {
+  .stock-watchlist-container {
+    width: 350px;
+  }
+  .stocks-watchlist-item-green,
+  .stocks-watchlist-item-grey,
+  .stocks-watchlist-item-red {
+    justify-content: space-between;
+    column-gap: 5px;
+  }
+  .stock-watchlist-button-container {
+  }
+  .stock-watchlist-name-data {
+    justify-content: flex-start;
+    width: 150px;
+    margin: 0;
+    column-gap: 5px;
+  }
+  .stock-watchlist-data-container {
+    justify-content: flex-start;
+  }
+}
 @media screen and (max-height: 900px) {
+  .title,
+  .stock-watchlist-heading-title {
+    font-size: 0.8em;
+  }
+  .watchlist-heading-btn,
+  .toggle-watchlist-btn {
+    width: 30px;
+    height: 30px;
+  }
+  .stock {
+    font-size: 1.2em;
+    margin-top: 10px;
+    padding: 5px;
+  }
+  .logo {
+    width: 30px;
+  }
+  .container {
+    justify-content: flex-start;
+    height: fit-content;
+    max-height: 500px;
+  }
+  .prices {
+    margin: 10px;
+    padding: 4px;
+    font-size: 0.9em;
+    justify-content: center;
+    column-gap: 10px;
+  }
+  .search {
+    margin: 12px 5px;
+  }
+  .input {
+    padding: 0;
+    font-size: 0.9em;
+    margin: 0 10px;
+  }
+  .btn {
+    padding: 10px;
+  }
+  .change-in-price-gain,
+  .change-in-price-loss,
+  .high-price,
+  .low-price {
+    margin: 2px;
+  }
+  .percent-is-gain,
+  .percent-is-loss {
+    flex-direction: row;
+    padding: 10px;
+    margin: 1px;
+  }
+  .current-price {
+    font-size: 0.8em;
+  }
+  .arrow-gain,
+  .arrow-loss {
+    font-size: 0.8em;
+    margin: 0 2px;
+  }
+  .percent-change {
+    font-size: 0.8em;
+  }
+  .stocks-watchlist-symbol {
+    font-size: 0.8em;
+  }
+  .stock-watchlist-menu,
+  .stock-watchlist-delete {
+    font-size: 0.9em;
+  }
+  .stocks-watchlist-name-span,
+  .stocks-watchlist-symbol,
+  .stocks-watchlist-percent,
+  .stocks-watchlist-price {
+    padding: 3px;
+  }
+  .stocks-watchlist-item-green,
+  .stocks-watchlist-item-grey,
+  .stocks-watchlist-item-red {
+    margin: 3px;
+    padding: 2px 15px;
+    font-size: 0.9em;
+  }
+}
+@media screen and (max-height: 700px) {
   .title,
   .stock-watchlist-heading-title {
     font-size: 0.8em;
@@ -620,5 +727,59 @@
   .toggle-watchlist-btn {
     width: 25px;
     height: 25px;
+  }
+  .stock {
+    font-size: 0.9em;
+    margin-top: 5px;
+    padding: 2px;
+  }
+  .logo {
+    width: 25px;
+  }
+  .container {
+    justify-content: flex-start;
+    height: fit-content;
+    max-height: 500px;
+  }
+  .prices {
+    margin: 5px;
+    padding: 2px;
+    font-size: 0.8em;
+    justify-content: center;
+    column-gap: 5px;
+  }
+  .search {
+    margin: 12px 5px;
+  }
+  .input {
+    padding: 0;
+    font-size: 0.8em;
+    margin: 0 10px;
+  }
+  .btn {
+    padding: 8px;
+  }
+  .change-in-price-gain,
+  .change-in-price-loss,
+  .high-price,
+  .low-price {
+    margin: 0px;
+  }
+  .percent-is-gain,
+  .percent-is-loss {
+    flex-direction: row;
+    padding: 5px;
+    margin: 0px;
+  }
+  .current-price {
+    font-size: 0.8em;
+  }
+  .arrow-gain,
+  .arrow-loss {
+    font-size: 0.8em;
+    margin: 0 2px;
+  }
+  .percent-change {
+    font-size: 0.8em;
   }
 }
