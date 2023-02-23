@@ -36,6 +36,7 @@
   scale: 1.1;
 }
 .card {
+  background: rgba(228, 227, 227, 0.643);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -54,4 +55,59 @@
   padding: 0 10px;
   font-size: 0.9em;
   text-align: center;
+}
+@media screen and (max-width: 1200px) {
+  .container {
+    justify-content: flex-start;
+    row-gap: 20px;
+  }
+  .card {
+    height: 75px;
+  }
+  .p {
+    display: none;
+  }
+}
+@media screen and (max-width: 770px) {
+  .header {
+    font-size: 1.4em;
+    text-align: center;
+  }
+  .instructions {
+    font-size: 0.8em;
+  }
+  .logo {
+    top: 12px;
+    width: 40px;
+  }
+  .card {
+    height: 75px;
+    width: 300px;
+  }
+  .card-heading {
+    font-size: 0.9em;
+  }
+}
+@media screen and (max-height: 900px) {
+  .header {
+    font-size: 1.4em;
+    text-align: center;
+  }
+  .instructions {
+    font-size: 0.8em;
+  }
+  .logo {
+    top: 12px;
+    width: 40px;
+  }
+  .card {
+    height: 75px;
+    width: 300px;
+  }
+  .card-heading {
+    font-size: 0.9em;
+  }
+  .p {
+    display: none;
+  }
 }
