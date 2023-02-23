@@ -582,10 +582,10 @@
   .input {
     padding: 0;
     font-size: 0.8em;
-    margin: 0 5px;
+    margin: 0 10px;
   }
   .btn {
-    padding: 10px;
+    padding: 6px;
   }
   .change-in-price-gain,
   .change-in-price-loss,
@@ -609,5 +609,16 @@
   }
   .percent-change {
     font-size: 0.8em;
+  }
+}
+@media screen and (max-height: 900px) {
+  .title,
+  .stock-watchlist-heading-title {
+    font-size: 0.8em;
+  }
+  .watchlist-heading-btn,
+  .toggle-watchlist-btn {
+    width: 25px;
+    height: 25px;
   }
 }
