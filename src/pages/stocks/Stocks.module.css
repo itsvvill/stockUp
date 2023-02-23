@@ -553,5 +553,61 @@
   cursor: pointer;
   scale: 1.3;
 }
-@media screen and (min-width: 780px) {
+@media screen and (max-width: 1000px) {
+  .flex {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+  }
+  .stock {
+    font-size: 1em;
+    margin-top: 5px;
+    padding: 3px;
+  }
+  .container {
+    justify-content: flex-start;
+    height: fit-content;
+    max-height: 500px;
+  }
+  .prices {
+    margin: 5px;
+    padding: 2px;
+    font-size: 0.8em;
+    justify-content: center;
+    column-gap: 5px;
+  }
+  .search {
+    margin: 12px 5px;
+  }
+  .input {
+    padding: 0;
+    font-size: 0.8em;
+    margin: 0 5px;
+  }
+  .btn {
+    padding: 10px;
+  }
+  .change-in-price-gain,
+  .change-in-price-loss,
+  .high-price,
+  .low-price {
+    margin: 2px;
+  }
+  .percent-is-gain,
+  .percent-is-loss {
+    flex-direction: row;
+    padding: 4px;
+    margin: 0;
+  }
+  .current-price {
+    font-size: 0.8em;
+  }
+  .arrow-gain,
+  .arrow-loss {
+    font-size: 0.8em;
+    margin: 0 2px;
+  }
+  .percent-change {
+    font-size: 0.8em;
+  }
 }

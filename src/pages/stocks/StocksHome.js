@@ -67,9 +67,9 @@ export default function StocksHome() {
   //pricing info api call
   const getPricingInfo = (fetchCall, url) => {
     fetchCall(url).then((data) => {
-      setHighPrice(data.h);
-      setLowPrice(data.l);
-      setCurrentPrice(data.c);
+      setHighPrice(parseFloat(data.h).toFixed(2));
+      setLowPrice(parseFloat(data.l).toFixed(2));
+      setCurrentPrice(parseFloat(data.c).toFixed(2));
       setChangeAmount(parseFloat(data.d).toFixed(2));
       setPercentChange(
         ('' + data.dp)?.[0] === '-'
