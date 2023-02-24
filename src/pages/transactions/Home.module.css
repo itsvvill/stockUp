@@ -106,9 +106,11 @@
   border-radius: 10px;
   border: none;
 }
-.brush {
+.sidebar .brush {
   position: absolute;
-  top: 5px;
+  margin-top: 46px;
+  margin-left: 188px;
+  cursor: pointer;
 }
 
 /* transactions */
@@ -385,4 +387,46 @@ nav.category-filter {
   background: #daf7dc;
   border: 2px solid #333;
   scale: 1.3;
+}
+
+@media screen and (max-height: 920px) {
+  /* .sidebar {
+    margin: 0;
+  } */
+  .sidebar h3 {
+    font-size: 1em;
+    margin: 5px;
+  }
+  .sidebar form {
+    height: 360px;
+    padding: 10px;
+  }
+  .sidebar label {
+    margin: 0;
+    padding: 2px;
+    font-size: 0.9em;
+  }
+  .sidebar input,
+  .sidebar select {
+    padding: 5px;
+    font-size: 0.8em;
+  }
+  .sidebar input[type='color'] {
+    height: 30px;
+    padding-right: 30px;
+  }
+  .sidebar span {
+    font-size: 0.8em;
+  }
+  .sidebar button {
+    font-size: 0.8em;
+    padding: 5px;
+    margin-top: 15px;
+  }
+  .sidebar .brush {
+    position: absolute;
+    margin-top: 37px;
+    margin-left: 204px;
+    cursor: pointer;
+  }
 }

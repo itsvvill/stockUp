@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
 
-// icon
+// styles and icons
+import styles from './Home.module.css';
 import { UilPalette } from '@iconscout/react-unicons';
 
 export default function TransactionForm({ uid, categories }) {
@@ -86,17 +87,7 @@ export default function TransactionForm({ uid, categories }) {
         </label>
         <label>
           <span>Color:</span>
-          <UilPalette
-            className={'brush'}
-            size="22"
-            color="#000"
-            style={{
-              position: 'absolute',
-              marginTop: '46px',
-              marginLeft: '188px',
-              cursor: 'pointer',
-            }}
-          />
+          <UilPalette className={styles.brush} size="22" color="#000" />
           <input
             type="color"
             required
