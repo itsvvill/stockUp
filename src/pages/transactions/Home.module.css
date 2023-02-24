@@ -390,9 +390,6 @@ nav.category-filter {
 }
 
 @media screen and (max-height: 920px) {
-  /* .sidebar {
-    margin: 0;
-  } */
   .sidebar h3 {
     font-size: 1em;
     margin: 5px;
@@ -424,9 +421,82 @@ nav.category-filter {
     margin-top: 15px;
   }
   .sidebar .brush {
-    position: absolute;
     margin-top: 37px;
     margin-left: 204px;
+  }
+  /* .transaction-filter-container {
+    width: 400px;
+  } */
+  .transactions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-between;
+  }
+  .transactions li {
+    margin: 2px;
+    padding: 0 20%;
+  }
+  .transactions .amount,
+  .transactions .name {
+    font-size: 0.7em;
+    padding: 7px 20px;
+    margin: 0;
+  }
+  .transactions .amount {
+    margin: 0;
+  }
+  .transactions .name {
+    width: 150px;
+  }
+  .transactions .date,
+  .transactions .category {
+    font-size: 0.7em;
+    /* padding: 5px; */
+  }
+  .transactions .delete {
+    padding: 4px;
+  }
+  .transactions .edit {
+    padding: 4px;
+    top: 0;
+    right: 31px;
+  }
+  .transactions .clicked {
+    padding: 4px;
+    top: 0;
+    right: 63px;
+  }
+}
+@media screen and (max-height: 700px) {
+  .sidebar h3 {
+    font-size: 0.8em;
+    margin: 2px;
+  }
+  .sidebar form {
+    height: 300px;
+    padding: 10px;
+  }
+  .sidebar label {
+    padding: 1px;
+    font-size: 0.75em;
+  }
+  .sidebar input,
+  .sidebar select {
+    padding: 3px;
+    font-size: 0.75em;
+  }
+  .sidebar span {
+    font-size: 0.75em;
+  }
+  .sidebar button {
+    font-size: 0.74em;
+    padding: 4px;
+    margin-top: 20px;
+  }
+  .sidebar .brush {
+    margin-top: 33px;
+    margin-left: 208px;
     cursor: pointer;
   }
 }
