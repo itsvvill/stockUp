@@ -91,7 +91,7 @@ export default function StockWatchList({
           {stocks.length < 1 && (
             <input
               type="text"
-              placeholder="Watchlist Name"
+              placeholder="Watchlist"
               value={newStockWatchList}
               className={styles['watchlist-form-input']}
               onChange={(e) => setNewStockWatchList(e.target.value)}
@@ -100,7 +100,7 @@ export default function StockWatchList({
           <input
             type="text"
             required
-            placeholder="Stock Symbol"
+            placeholder="Symbol"
             value={newStockSymbol}
             className={styles['watchlist-form-input']}
             onChange={(e) => setNewStockSymbol(e.target.value)}
@@ -108,7 +108,7 @@ export default function StockWatchList({
           <input
             type="text"
             required
-            placeholder="Stock Name"
+            placeholder="Name"
             value={newStockName}
             className={styles['watchlist-form-input']}
             onChange={(e) => setNewStockName(e.target.value)}
@@ -116,14 +116,12 @@ export default function StockWatchList({
           <input
             type="text"
             required
-            placeholder="Stock Exchange"
+            placeholder="Exchange"
             value={newStockExchange}
             className={styles['watchlist-form-input']}
             onChange={(e) => setNewStockExchange(e.target.value)}
           />
-          <button className={styles['watchlist-form-btn']}>
-            Add To WatchList
-          </button>
+          <button className={styles['watchlist-form-btn']}>Add</button>
         </form>
       )}
     </div>
