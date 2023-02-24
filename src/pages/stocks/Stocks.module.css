@@ -613,12 +613,9 @@
   .watchlist-form {
     display: grid;
     grid-template-columns: 120px 120px 120px;
-    /* justify-content: flex-start;
-    align-items: center; */
     justify-items: center;
     align-items: center;
-    /* column-gap: 2px; */
-    row-gap: 5px;
+    row-gap: 2px;
     max-width: 450px;
     padding: 4px;
   }
@@ -653,11 +650,16 @@
   .stock-watchlist-data-container {
     justify-content: flex-start;
   }
+  .stock-watchlist-edit-title {
+    width: 200px;
+  }
 }
 @media screen and (max-height: 900px) {
   .title,
-  .stock-watchlist-heading-title {
+  .stock-watchlist-heading-title,
+  .stock-watchlist-edit-title {
     font-size: 0.8em;
+    padding: 2px;
   }
   .watchlist-heading-btn,
   .toggle-watchlist-btn {
@@ -738,12 +740,36 @@
     padding: 2px 15px;
     font-size: 0.9em;
   }
+  .watchlist-form {
+    display: grid;
+    grid-template-columns: 120px 120px 120px;
+    justify-items: center;
+    align-items: center;
+    row-gap: 2px;
+    max-width: 450px;
+    padding: 4px;
+  }
+  .watchlist-form-input {
+    text-align: center;
+    width: 110px;
+    font-size: 0.75em;
+    padding: 2px;
+    margin: 0;
+  }
+  .watchlist-form-btn {
+    padding: 5px 100px;
+    grid-column: 2 / span 2;
+  }
+  .stock-watchlist-edit-submit,
+  .stock-watchlist-edit-cancel {
+    font-size: 0.6em;
+  }
+  .stock-watchlist-menu,
+  .stock-watchlist-delete {
+    padding: 0;
+  }
 }
 @media screen and (max-height: 700px) {
-  .title,
-  .stock-watchlist-heading-title {
-    font-size: 0.8em;
-  }
   .watchlist-heading-btn,
   .toggle-watchlist-btn {
     width: 25px;
