@@ -22,26 +22,21 @@ function App() {
           <Switch>
             <Route exact path="/stocks">
               {user && <StocksHome />}
-              <Footer />
               {!user && <Redirect to="/login" />}
             </Route>
             <Route exact path="/">
               <Home />
-              <Footer />
             </Route>
             <Route exact path="/guide">
               <Guide />
-              <Footer />
             </Route>
             <Route exact path="/careers">
               <Careers />
-              <Footer />
             </Route>
             <Route exact path="/transactions">
               {user && (
                 <>
                   <TransactionsHome />
-                  <Footer />
                 </>
               )}
               {!user && <Redirect to="/login" />}
@@ -49,14 +44,13 @@ function App() {
             <Route path="/login">
               {user && <Redirect to="/stocks" />}
               {!user && <Login />}
-              <Footer />
             </Route>
             <Route path="/signup">
               {user && <Redirect to="/stocks" />}
               {!user && <Signup />}
-              <Footer />
             </Route>
           </Switch>
+          <Footer />
         </BrowserRouter>
       )}
     </div>
