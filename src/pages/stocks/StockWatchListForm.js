@@ -50,7 +50,7 @@ export default function StockWatchList({
           {stocks.length < 1 && (
             <input
               type="text"
-              placeholder="Watchlist Name"
+              placeholder="Watchlist"
               value={newStockWatchList}
               className={styles['watchlist-form-input']}
               onChange={(e) => setNewStockWatchList(e.target.value)}
@@ -80,9 +80,7 @@ export default function StockWatchList({
             className={styles['watchlist-form-input']}
             onChange={(e) => setNewStockExchange(e.target.value)}
           />
-          <button className={styles['watchlist-form-btn']}>
-            Add To WatchList
-          </button>
+          <button className={styles['watchlist-form-btn']}>Add</button>
         </form>
       )}
       {/* watchlist not yet created */}
