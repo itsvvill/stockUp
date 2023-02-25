@@ -64,7 +64,7 @@
 .input {
   border: none;
   border-radius: 25px;
-  font-size: 0.9em;
+  font-size: 0.8em;
   padding: 14px 20px;
 }
 
@@ -74,7 +74,7 @@
 .btn {
   border: none;
   padding: 14px 20px;
-  border-radius: 25px;
+  border-radius: 23px;
   font-weight: 600;
   font-size: 0.9em;
   background: #4cc49a;
