@@ -424,9 +424,7 @@ nav.category-filter {
     margin-top: 37px;
     margin-left: 204px;
   }
-  /* .transaction-filter-container {
-    width: 400px;
-  } */
+
   .transactions {
     display: flex;
     flex-direction: column;
@@ -452,7 +450,6 @@ nav.category-filter {
   .transactions .date,
   .transactions .category {
     font-size: 0.7em;
-    /* padding: 5px; */
   }
   .transactions .delete {
     padding: 4px;
@@ -466,6 +463,18 @@ nav.category-filter {
     padding: 4px;
     top: 0;
     right: 63px;
+  }
+  .category-btn {
+    font-size: 0.7em;
+    padding: 1px 0;
+  }
+  .transaction-info-item,
+  .transaction-info-number {
+    font-size: 0.8em;
+  }
+  .transaction-info-categories {
+    justify-content: center;
+    font-size: 0.8em;
   }
 }
 @media screen and (max-height: 700px) {
@@ -498,5 +507,61 @@ nav.category-filter {
     margin-top: 33px;
     margin-left: 208px;
     cursor: pointer;
+  }
+}
+@media screen and (max-height: 600px) {
+  .sidebar h3 {
+    display: none;
+  }
+}
+@media screen and (max-width: 700px) {
+  .content {
+    padding-right: 10px;
+  }
+  .category-filter-container,
+  .transaction-filter-container {
+    display: none;
+  }
+  .sidebar {
+    width: 150px;
+    padding: 0;
+  }
+  .sidebar input[type='color'] {
+    width: 130px;
+    height: 20px;
+  }
+  .transactions li {
+    margin: 2px;
+    padding: 10px 0;
+  }
+  .sidebar .brush {
+    height: 15px;
+    margin-top: 31px;
+    margin-left: 78px;
+  }
+  .transactions .delete {
+    padding: 0.5px;
+  }
+  .transactions .edit {
+    padding: 0.5px;
+    top: 0;
+    right: 24px;
+  }
+  .transactions .clicked {
+    padding: 0.5px;
+    top: 0;
+    right: 48px;
+  }
+  .transactions .name {
+    width: 50px;
+    font-size: 0.6em;
+  }
+  .tranasction .amount {
+    padding-top: 10px;
+  }
+  .transaction .amount,
+  .transactions .date,
+  .transactions .category {
+    font-size: 0.6em;
   }
 }
