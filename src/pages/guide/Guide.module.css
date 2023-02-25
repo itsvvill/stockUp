@@ -127,16 +127,47 @@
   }
   .card {
     height: 75px;
-    width: 300px;
+    width: 250px;
   }
   .card-heading {
-    font-size: 0.9em;
+    font-size: 0.75em;
   }
   .p {
     display: none;
   }
   .button {
+    font-size: 0.75em;
     margin-top: 5px;
     padding: 4px 10px;
+  }
+}
+@media screen and (max-height: 500px) {
+  .container {
+    justify-content: flex-start;
+  }
+  .header {
+    font-size: 1em;
+    margin: 0;
+  }
+  .instructions {
+    display: none;
+  }
+  .logo {
+    top: 5px;
+    width: 25px;
+  }
+  .card {
+    height: 60px;
+  }
+  .card-heading {
+    font-size: 0.7em;
+  }
+  .p {
+    display: none;
+  }
+  .button {
+    font-size: 0.7em;
+    margin-top: 5px;
+    padding: 2px 10px;
   }
 }

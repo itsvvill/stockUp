@@ -79,10 +79,10 @@ export default function Footer() {
             Github
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/itsvvill"
             className={styles['link']}
             target="blank"
-            alt="Will Eason's Portfolio"
+            alt="Will Eason's LinkedIn"
           >
             Personal Site
           </a>
