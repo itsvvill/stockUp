@@ -2,7 +2,7 @@
 
 ![stockUp Icon](./public/favicon.ico)
 
-stockUp is a finance and stock tracker created to help the user make smarter financial decisions.
+[stockUp](https://stockupfinance.app) is a finance and stock tracker created to help the user make smarter financial decisions.
 
 ---
 
