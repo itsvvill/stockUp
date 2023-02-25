@@ -66,9 +66,9 @@ export default function Navbar() {
               </Link>
             )}
           </div>
-          <li className={styles.login}>
-            <Link to="/login">Login</Link>
-          </li>
+          <Link className={styles.login} to="/login">
+            Login
+          </Link>
         </ul>
       )}
       {user && (
