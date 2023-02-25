@@ -64,6 +64,7 @@ export default function TransactionForm({ uid, categories }) {
         <label>
           <span>Date:</span>
           <input
+            className={styles.date}
             type="date"
             required
             onChange={(e) => setDate(e.target.value)}
@@ -74,6 +75,7 @@ export default function TransactionForm({ uid, categories }) {
           <span>Category:</span>
           <select
             required
+            className={styles.category}
             onChange={(e) => setCategory(e.target.value)}
             value={category}
           >
