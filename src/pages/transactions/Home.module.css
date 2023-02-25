@@ -405,11 +405,11 @@ nav.category-filter {
 
 @media screen and (max-height: 920px) {
   .sidebar h3 {
-    font-size: 1em;
+    font-size: 0.9em;
     margin: 5px;
   }
   .sidebar form {
-    height: 360px;
+    height: 370px;
     padding: 10px;
   }
   .sidebar label {
@@ -430,9 +430,9 @@ nav.category-filter {
     font-size: 0.8em;
   }
   .sidebar button {
-    font-size: 0.8em;
-    padding: 5px;
-    margin-top: 15px;
+    font-size: 0.75em;
+    padding: 4px;
+    margin-top: 10px;
   }
   .sidebar .brush {
     margin-top: 37px;
@@ -515,7 +515,7 @@ nav.category-filter {
 }
 @media screen and (max-height: 700px) {
   .sidebar h3 {
-    font-size: 0.8em;
+    font-size: 0.75em;
     margin: 2px;
   }
   .sidebar form {
@@ -535,9 +535,9 @@ nav.category-filter {
     font-size: 0.75em;
   }
   .sidebar button {
-    font-size: 0.74em;
-    padding: 4px;
-    margin-top: 20px;
+    font-size: 0.6em;
+    padding: 2px;
+    margin-top: 10px;
   }
   .sidebar .brush {
     margin-top: 33px;
