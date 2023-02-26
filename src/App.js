@@ -3,6 +3,7 @@ import { useAuthContext } from './hooks/useAuthContext';
 
 // pages & components
 import Careers from './pages/careers/Careers';
+import DataDeletion from './pages/privacy/DataDeletion';
 import Footer from './components/Footer';
 import Guide from './pages/guide/Guide';
 import Home from './pages/home/Home';
@@ -50,8 +51,11 @@ function App() {
               {user && <Redirect to="/stocks" />}
               {!user && <Signup />}
             </Route>
-            <Route path="/privacy">
+            <Route exact path="/privacy">
               <Privacy />
+            </Route>
+            <Route path="/privacy/data">
+              <DataDeletion />
             </Route>
           </Switch>
           <Footer />

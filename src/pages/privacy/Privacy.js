@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 //styles
 import styles from './Privacy.module.css';
 
@@ -12,6 +14,7 @@ export default function Privacy() {
         Service and tells You about Your privacy rights and how the law protects
         You.
       </p>
+      <Link to="/privacy/data">Click here for our Data Deletion Policy</Link>
       <p>
         We use Your Personal data to provide and improve the Service. By using
         the Service, You agree to the collection and use of information in
