@@ -12,6 +12,7 @@ import Navbar from './components/Navbar';
 import Privacy from './pages/privacy/Privacy';
 import Signup from './pages/signup/Signup';
 import StocksHome from './pages/stocks/StocksHome';
+import TermsOfService from './pages/privacy/TermsOfService';
 import TransactionsHome from './pages/transactions/TransactionsHome';
 
 function App() {
@@ -56,6 +57,9 @@ function App() {
             </Route>
             <Route path="/privacy/data">
               <DataDeletion />
+            </Route>
+            <Route path="/privacy/terms-of-service">
+              <TermsOfService />
             </Route>
           </Switch>
           <Footer />
