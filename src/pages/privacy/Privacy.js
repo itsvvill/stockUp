@@ -1,6 +1,9 @@
+//styles
+import styles from './Privacy.module.css';
+
 export default function Privacy() {
   return (
-    <>
+    <div className={styles.container}>
       <h1>Privacy Policy</h1>
       <p>Last updated: February 26, 2023</p>
       <p>
@@ -12,15 +15,7 @@ export default function Privacy() {
       <p>
         We use Your Personal data to provide and improve the Service. By using
         the Service, You agree to the collection and use of information in
-        accordance with this Privacy Policy. This Privacy Policy has been
-        created with the help of the
-        <a
-          href="https://www.freeprivacypolicy.com/free-privacy-policy-generator/"
-          target="_blank"
-        >
-          Free Privacy Policy Generator
-        </a>
-        .
+        accordance with this Privacy Policy.
       </p>
       <h1>Interpretation and Definitions</h1>
       <h2>Interpretation</h2>
@@ -114,7 +109,7 @@ export default function Privacy() {
             <strong>Website</strong> refers to StockUp, accessible from
             <a
               href="https://stockupfinance.app"
-              rel="external nofollow noopener"
+              rel="external nofollow noopener noreferrer"
               target="_blank"
             >
               https://stockupfinance.app
@@ -179,8 +174,6 @@ export default function Privacy() {
       <ul>
         <li>Google</li>
         <li>Facebook</li>
-        <li>Twitter</li>
-        <li>LinkedIn</li>
       </ul>
       <p>
         If You decide to register through or otherwise grant us access to a
@@ -230,6 +223,7 @@ export default function Privacy() {
         <a
           href="https://www.freeprivacypolicy.com/blog/sample-privacy-policy-template/#Use_Of_Cookies_And_Tracking"
           target="_blank"
+          rel="noreferrer"
         >
           Free Privacy Policy website
         </a>
@@ -542,6 +536,6 @@ export default function Privacy() {
       <ul>
         <li>By email: itvvillwork@gmail.com</li>
       </ul>
-    </>
+    </div>
   );
 }

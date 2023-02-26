@@ -1,12 +1,12 @@
-# stockUp
+# StockUp
 
-![stockUp Icon](./public/favicon.ico)
+![StockUp Icon](./public/favicon.ico)
 
-[stockUp](https://stockupfinance.app) is a finance and stock tracker created to help the user make smarter financial decisions.
+[StockUp](https://stockupfinance.app) is a finance and stock tracker created to help the user make smarter financial decisions.
 
 ---
 
-![stockUp Home Page](./public/stockUp_Home.png)
+![StockUp Home Page](./public/stockUp_Home.png)
 
 ## Table of Contents
 
@@ -44,7 +44,7 @@ Users have 4 options for signing up:
 
 ---
 
-![stockUp Sign Up Page](./public/stockUp_Sign_Up.png)
+![StockUp Sign Up Page](./public/stockUp_Sign_Up.png)
 
 ### Authenticated User Features
 
@@ -92,7 +92,7 @@ Users have 4 options for signing up:
 
 ## License
 
-Stock prices and information are retrieved using the [Alpha Vantage API](https://www.alphavantage.co/) and the [Finnhubb API](https://finnhub.io/docs/api).
+Stock prices and information are retrieved using the [Finnhubb API](https://finnhub.io/docs/api).
 
 ## Disclaimer
 
@@ -100,4 +100,4 @@ Any suggestions or features are not financial advice, invest at your own risk.
 
 ---
 
-- [Back To Top](#stockUp)
+- [Back To Top](#StockUp)

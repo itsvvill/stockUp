@@ -1,0 +1,6 @@
+.container {
+  padding: 30px;
+  height: calc(100vh - 300px);
+  font-size: 0.7vw;
+  overflow: auto;
+}

@@ -8,6 +8,7 @@ import Guide from './pages/guide/Guide';
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import Navbar from './components/Navbar';
+import Privacy from './pages/privacy/Privacy';
 import Signup from './pages/signup/Signup';
 import StocksHome from './pages/stocks/StocksHome';
 import TransactionsHome from './pages/transactions/TransactionsHome';
@@ -48,6 +49,9 @@ function App() {
             <Route path="/signup">
               {user && <Redirect to="/stocks" />}
               {!user && <Signup />}
+            </Route>
+            <Route path="/privacy">
+              <Privacy />
             </Route>
           </Switch>
           <Footer />
