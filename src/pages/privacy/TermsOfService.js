@@ -234,7 +234,36 @@ export default function TermsOfService() {
         corruption of any such data, and you hearby waive any right of action
         against us arising from any such loss or corruption of such data.
       </p>
-      <h2>7. PRIVACY POLICY</h2>
+      <h2>8. USER GENERATED CONTRIBUTIONS</h2>
+      <p>
+        The Site may invite you to chat, contribute to, or participate in blogs,
+        message boards, online forums, and other functionality, and may provide
+        you with the opportunity to create, submit, post, display, transmit,
+        perform, publish, distribute, or broadcast content and materials to us
+        or on the Site, including but not limited to text, writings, video,
+        audio, photographs, graphics, comments, suggestions, or personal
+        information or other material (collectively "Contributions").
+        Contributions may be viewable by other users of the Site and through
+        third-party websites. As such, any Contributions you transmit may be
+        treated as non-confidential and non-proprietary. When you create or make
+        available any Contributions, you thereby represent and warrant that:
+      </p>
+      <ul>
+        <li>
+          The creation, distribution, transmission, public display, or
+          performance, and the accessing, downloading, or copying of your
+          Contributions do not and will not infringe the proprietary rights,
+          including to but not limited to copyright, patent, trademark, trade
+          secret, or moral rights of any third party.
+        </li>
+        <li>Your Contributions are not false, inaccurate, or misleading.</li>
+        <li>
+          You Contributions are not unsolicited or unauthorized advertising,
+          promotional materials, pyramid schemes, chain letters, spam, mass
+          mailings, or other forms of solicitation.
+        </li>
+      </ul>
+      <h2>8. PRIVACY POLICY</h2>
       <p>
         We care about privacy and security. Please review our Privacy Policy:{' '}
         <a
@@ -252,7 +281,7 @@ export default function TermsOfService() {
         transferring your data to the United Staates, and you agree to have your
         data transferred and processed in the United States.
       </p>
-      <h2>8. MISCELLANEOUS</h2>
+      <h2>9. MISCELLANEOUS</h2>
       <p>
         These Terms of Use and policies or operating rules posted by us on the
         Site or in respect to the Site constitute the entire agreement and
@@ -274,7 +303,7 @@ export default function TermsOfService() {
         form of these Terms of Use and the lack of signing by the parties hereto
         to execute these Terms of Use.
       </p>
-      <h2>9. CONTACT US</h2>
+      <h2>10. CONTACT US</h2>
       <p>
         In order to resolve a complaint regarding the Site or to recieve further
         information regarding use of the Site, please contact us at:
