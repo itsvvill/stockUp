@@ -184,6 +184,44 @@ export default function TermsOfService() {
           Interfere with, disrupt, or create an undue burden on the Site or the
           networks or services connected to the Site.
         </li>
+        <li>
+          Harass, annoy, intimidate, or threaten any of our employees or agents
+          engaged in providing any portion of the Site to you.
+        </li>
+        <li>
+          Attempt to bypass any measures of the Site designed to prevent or
+          restrict access to the Site, or any portion of the Site.
+        </li>
+        <li>
+          Copy or adapt the Site's software including but not limited to Flash,
+          PHP, HTML, Javascript, or other code.
+        </li>
+        <li>
+          Except as permitted by applicable law, decipher, decompile,
+          disassemble, or reverse engineer any of the software comprising or in
+          any way making up a part of the Site.
+        </li>
+        <li>
+          Except as may be the result of standard search engine or Internet
+          browser usage, use launch, develop, or distribute any automated
+          system, including without limitation, any spider, robot, cheat
+          utility, scraper, or offline reader that accesses the Site, or using
+          or launching any unauthorized script or other software.
+        </li>
+        <li>
+          Use a buying agent or purchasing agent to make purchases on the Site.
+        </li>
+        <li>
+          Make any unauthorized use of the Site, including collecting usernames
+          and/or email addresses of users by electronic or other means for the
+          purpose of sending unsolicited email, or creating user accounts by
+          automated means or under false pretenses.
+        </li>
+        <li>
+          Use the Site as part of any effort to compete with us or otherwise use
+          the Site and/or the Content for any revenue-generating endeavor or
+          commercial enterprise.
+        </li>
       </ul>
       <h2>6. USER DATA</h2>
       <p>
@@ -214,7 +252,29 @@ export default function TermsOfService() {
         transferring your data to the United Staates, and you agree to have your
         data transferred and processed in the United States.
       </p>
-      <h2>8. CONTACT US</h2>
+      <h2>8. MISCELLANEOUS</h2>
+      <p>
+        These Terms of Use and policies or operating rules posted by us on the
+        Site or in respect to the Site constitute the entire agreement and
+        understanding between you and us. Our failure to exercise or enforce any
+        right or provision of these Terms of Use shall not operate as a waiver
+        of such right or provision. These Terms of Use operate to the fullest
+        extent permissible by law. We may assign any or all of our rights and
+        obligations to others at any time. We shall not be responsible or liable
+        for any loss, damage, delay, or failure to act caused by any cause
+        beyond our reasonable control. If any provision or part of a provision
+        of these Terms of Use is determined to be unlawful, void, or
+        uneforceable, that provision or part of the provision is deemed
+        severable form these Terms of Use and does not affect the validity and
+        eforceability of any remaining provisions. There is no join venture,
+        partnership, employment or agency between you and us as a result of
+        these Terms of Use or use of the Site. You agree that these Terms of Use
+        will not be construed against us by virtue of having drafted them. You
+        hereby waive any and all defenses you may have based on the electronic
+        form of these Terms of Use and the lack of signing by the parties hereto
+        to execute these Terms of Use.
+      </p>
+      <h2>9. CONTACT US</h2>
       <p>
         In order to resolve a complaint regarding the Site or to recieve further
         information regarding use of the Site, please contact us at:
