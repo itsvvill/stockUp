@@ -29,8 +29,12 @@ export default function StockSearchBar({
           </button>
         </span>
       )}
-      <div className={styles['search']}>
-        <form id="stockForm" onSubmit={handleSubmit}>
+      <div>
+        <form
+          id="stockForm"
+          onSubmit={handleSubmit}
+          className={styles['search']}
+        >
           <input
             placeholder="Enter a stock ticker"
             type="text"

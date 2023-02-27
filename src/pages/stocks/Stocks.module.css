@@ -54,7 +54,7 @@
   margin: 50px 50px 25px 50px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   border: 2px solid grey;
   border-radius: 25px;
 }
