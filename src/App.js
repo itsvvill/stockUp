@@ -61,6 +61,13 @@ function App() {
             <Route path="/privacy/terms-of-service">
               <TermsOfService />
             </Route>
+            <Route
+              exact
+              path="/normal_redirect"
+              render={() => {
+                window.location.href = 'googlef65ed685ac309b13.html';
+              }}
+            />
           </Switch>
           <Footer />
         </BrowserRouter>

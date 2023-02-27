@@ -830,3 +830,12 @@
     font-size: 0.8em;
   }
 }
+@media screen and (max-width: 400px) {
+  .btn {
+    font-size: 0.6em;
+    padding: 8px;
+  }
+  .input {
+    font-size: 0.6em;
+  }
+}

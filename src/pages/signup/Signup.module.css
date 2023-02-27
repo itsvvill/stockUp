@@ -184,12 +184,10 @@ select:focus {
   }
   .signup-form-h2 {
     font-size: 1em;
+    margin-bottom: 10px;
   }
   .signup-form {
     margin: 10px auto;
-  }
-  .signup-form-h2 {
-    margin-bottom: 10px;
   }
   .signup-form-h3 {
     display: none;
@@ -213,5 +211,38 @@ select:focus {
   .login-p {
     margin-top: 2px;
     padding: 5px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .signup-form {
+    width: 250px;
+  }
+  .signup-form-h2 {
+    font-size: 0.7;
+  }
+  .logo {
+    width: 28px;
+  }
+  .signup-form input {
+    font-size: 0.6em;
+    padding: 4px 4px 0px 15px;
+    width: 100px;
+  }
+  .signup-form-div {
+    padding: 0;
+  }
+  .signup-form-button-signup,
+  .signup-form-button-guest,
+  .signup-form-button-social {
+    width: 130px;
+    font-size: 0.6em;
+  }
+  .icon {
+    width: 15px;
+    padding: 0px;
+  }
+  .toggle-password {
+    top: 7px;
+    right: 40px;
   }
 }

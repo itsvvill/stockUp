@@ -103,11 +103,7 @@ export default function Signup() {
                 value="Google"
                 className={styles['signup-form-button-social']}
               >
-                <UilGoogle
-                  size="21"
-                  color="#121212"
-                  className={styles['icon']}
-                />
+                <UilGoogle size="21" color="#121212" className={styles.icon} />
                 oogle
               </button>
               <button
@@ -118,7 +114,7 @@ export default function Signup() {
                 <UilFacebook
                   size="21"
                   color="#1880C5"
-                  className={styles['icon']}
+                  className={styles.icon}
                 />
                 acebook
               </button>
@@ -135,7 +131,7 @@ export default function Signup() {
               <UilUserCircle
                 size="22"
                 color="#121212"
-                className={styles['icon']}
+                className={styles.icon}
               />
             </button>
           </>

@@ -95,11 +95,7 @@ export default function Login() {
                 value="Google"
                 className={styles['login-form-button-social']}
               >
-                <UilGoogle
-                  size="21"
-                  color="#121212"
-                  className={styles['icon']}
-                />
+                <UilGoogle size="21" color="#121212" className={styles.icon} />
                 oogle
               </button>
               <button
@@ -110,7 +106,7 @@ export default function Login() {
                 <UilFacebook
                   size="21"
                   color="#1880C5"
-                  className={styles['icon']}
+                  className={styles.icon}
                 />
                 acebook
               </button>
@@ -127,7 +123,7 @@ export default function Login() {
               <UilUserCircle
                 size="22"
                 color="#121212"
-                className={styles['icon']}
+                className={styles.icon}
               />
             </button>
           </>
