@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import { useLogin } from '../../hooks/useLogin';
+import { useLogin } from '../../../hooks/useLogin';
 import { Link } from 'react-router-dom';
 
 // styles and icons
 import styles from './Login.module.css';
-import logo from '../../components/logo.png';
-import { UilGoogle } from '@iconscout/react-unicons';
-import { UilFacebook } from '@iconscout/react-unicons';
+import logo from '../../../components/logo.png';
+import google from '../images/google_login.svg';
+import facebook from '../images/facebook_login.svg';
 import { UilEye } from '@iconscout/react-unicons';
 import { UilEyeSlash } from '@iconscout/react-unicons';
 import { UilUserCircle } from '@iconscout/react-unicons';
@@ -39,41 +39,43 @@ export default function Login() {
         </h2>
         <h3 className={styles['login-form-h3']}>Welcome back!</h3>
         <p className={styles['login-form-p']}>Login to your account.</p>
-        <div className={styles['login-form-div']}>
-          <input
-            type="email"
-            placeholder="Email Address"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-          />
-        </div>
-        {/* email related error */}
-        {error && error.code === 'auth/invalid-email' && (
-          <p className={styles['login-form-error']}>{error.message}</p>
-        )}
-        <div className={styles['login-form-div']}>
-          <input
-            type={showPassword ? 'text' : 'password'}
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-          />
-          {/* hide password visibility */}
-          {!showPassword ? (
-            <button
-              className={styles['toggle-password']}
-              onClick={togglePassword}
-            >
-              <UilEyeSlash size="20" />
-            </button>
-          ) : (
-            <button
-              className={styles['toggle-password']}
-              onClick={togglePassword}
-            >
-              <UilEye size="20" />
-            </button>
+        <div className={styles['div-container']}>
+          <div className={styles['login-form-div']}>
+            <input
+              type="email"
+              placeholder="Email Address"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            />
+          </div>
+          {/* email related error */}
+          {error && error.code === 'auth/invalid-email' && (
+            <p className={styles['login-form-error']}>{error.message}</p>
           )}
+          <div className={styles['login-form-div']}>
+            <input
+              type={showPassword ? 'text' : 'password'}
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+            />
+            {/* hide password visibility */}
+            {!showPassword ? (
+              <button
+                className={styles['toggle-password']}
+                onClick={togglePassword}
+              >
+                <UilEyeSlash size="20" />
+              </button>
+            ) : (
+              <button
+                className={styles['toggle-password']}
+                onClick={togglePassword}
+              >
+                <UilEye size="20" />
+              </button>
+            )}
+          </div>
         </div>
         {/* password related error */}
         {error && error.code === 'auth/wrong-password' && (
@@ -95,20 +97,14 @@ export default function Login() {
                 value="Google"
                 className={styles['login-form-button-social']}
               >
-                <UilGoogle size="21" color="#121212" className={styles.icon} />
-                oogle
+                <img src={google} alt="continue with google" />
               </button>
               <button
                 name="submit"
                 value="Facebook"
                 className={styles['login-form-button-social']}
               >
-                <UilFacebook
-                  size="21"
-                  color="#1880C5"
-                  className={styles.icon}
-                />
-                acebook
+                <img src={facebook} alt="continue with facebook" />
               </button>
             </div>
             <p className={styles['login-option-p']}>

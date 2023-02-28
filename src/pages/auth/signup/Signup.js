@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { useSignup } from '../../hooks/useSignup';
+import { useSignup } from '../../../hooks/useSignup';
 import { Link } from 'react-router-dom';
 
 //styles and icons
 import styles from './Signup.module.css';
-import logo from '../../components/logo.png';
+import logo from '../../../components/logo.png';
 import { UilGoogle } from '@iconscout/react-unicons';
 import { UilFacebook } from '@iconscout/react-unicons';
 import { UilEye } from '@iconscout/react-unicons';
