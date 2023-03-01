@@ -5,7 +5,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-  /* height: 100%; */
   background: #effaf0;
   padding: 15px 0 15px 0;
   box-sizing: border-box;
@@ -106,6 +105,7 @@
     align-items: center;
   }
 }
+
 @media screen and (max-height: 800px) {
   .footer {
     padding: 5px 0 5px 0;
@@ -117,5 +117,13 @@
   .break-line,
   .copyright {
     display: none;
+  }
+}
+@media screen and (max-width: 330px) {
+  .motto {
+    display: none;
+  }
+  .footer {
+    padding: 5px 0 0 0;
   }
 }
