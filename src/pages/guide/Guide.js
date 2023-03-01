@@ -8,8 +8,8 @@ export default function Guide() {
   return (
     <div className={styles.container}>
       <div>
-        <h1 className={styles.header}>
-          The Official{' '}
+        <h1 className={styles.header}>The Official</h1>
+        <h1 className={styles['header-logo']}>
           <img src={logo} className={styles['logo']} alt="StockUp Logo" />
           tockUp Guide.
         </h1>
