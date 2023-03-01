@@ -7,12 +7,10 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <div className={styles.intro}>
-        <h1 className={styles.header}>
-          Welcome to{' '}
-          <span>
-            <img src={logo} className={styles['logo']} alt="StockUp Logo" />
-            tockUp!
-          </span>
+        <h1 className={styles.header}>Welcome to</h1>
+        <h1 className={styles['header-logo']}>
+          <img src={logo} className={styles.logo} alt="StockUp Logo" />
+          tockUp!
         </h1>
         <h2 className={styles.slogan}>
           A financial website for smarter decision making.

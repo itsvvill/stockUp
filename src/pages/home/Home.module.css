@@ -11,14 +11,17 @@
   flex-direction: column;
   align-items: center;
 }
-.header {
-  font-size: 2.8em;
+.header,
+.header-logo {
+  font-size: 2.6em;
+}
+.header-logo {
   margin-bottom: 20px;
 }
 .logo {
   position: relative;
-  top: 26px;
-  width: 80px;
+  top: 20px;
+  width: 75px;
   border-radius: 50%;
   -webkit-box-shadow: var(--webkit-box-shadow);
   box-shadow: var(--box-shadow);
@@ -50,13 +53,16 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .header {
+  .header,
+  .header-logo {
     font-size: 2em;
+  }
+  .header-logo {
     margin-bottom: 10px;
   }
   .logo {
-    top: 16px;
-    width: 60px;
+    top: 14px;
+    width: 50px;
   }
   .slogan {
     text-align: center;
@@ -78,9 +84,12 @@
   }
 }
 @media screen and (max-width: 500px) {
+  .header,
+  .header-logo {
+    font-size: 1.4em;
+  }
   .header {
     margin-top: 30px;
-    font-size: 1.4em;
   }
   .slogan {
     text-align: center;
