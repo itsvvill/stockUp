@@ -74,7 +74,8 @@ select:focus {
 .login-form-div {
   padding: 10px 10px 0 10px;
 }
-.login-form-button-login {
+.login-form-button-login,
+.login-form-button-guest {
   display: block;
   width: 220px;
   padding: 6px 20px;
@@ -87,8 +88,12 @@ select:focus {
   font-weight: 600;
   font-size: 0.9em;
 }
-.login-form-button-login:hover {
+.login-form-button-login:hover,
+.login-form-button-guest:hover {
   background: #4cc49a;
+}
+.login-form-button-guest {
+  margin-bottom: 5px;
 }
 .login-option-p {
   font-size: 0.75em;
@@ -116,22 +121,6 @@ select:focus {
   cursor: pointer;
   background: none;
   border: none;
-}
-.login-form-button-guest {
-  display: block;
-  width: 220px;
-  padding: 5px 20px;
-  margin: 10px auto;
-  border-radius: 25px;
-  cursor: pointer;
-  background: #effaf0;
-  border: 1px solid #1f8a58;
-  color: #333;
-  font-weight: 600;
-  font-size: 0.9em;
-}
-.login-form-button-guest:hover {
-  background: #4cc49a;
 }
 .login-form-loading {
   cursor: wait;
@@ -197,18 +186,16 @@ select:focus {
   .login-form input {
     font-size: 0.8em;
   }
-  .login-form-button-login {
+  .login-form-button-login,
+  .login-form-button-guest {
     font-size: 0.8em;
     padding: 4px 20px;
   }
-  .login-form-button-social {
-    font-size: 0.8em;
-    padding: 0 10px 2px 10px;
-  }
   .login-form-button-guest {
-    font-size: 0.8em;
     margin: 0 auto 5px auto;
-    padding: 0 10px 2px 10px;
+  }
+  .login-form-button-social {
+    margin-bottom: 0px;
   }
   .signup-p {
     margin-top: 2px;
@@ -225,26 +212,38 @@ select:focus {
   .logo {
     width: 28px;
   }
+  .div-container {
+    width: 75%;
+    margin-left: 22%;
+  }
   .login-form input {
     font-size: 0.6em;
     padding: 4px 4px 0px 15px;
-    width: 100px;
+    width: 120px;
   }
   .login-form-div {
     padding: 0;
   }
   .login-form-button-login,
-  .login-form-button-guest,
-  .login-form-button-social {
+  .login-form-button-guest {
     width: 130px;
     font-size: 0.6em;
+    padding: 4px 20px;
+  }
+  .login-form-button-social {
+    width: 120px;
+    padding: 0px;
+    margin-bottom: 0px;
+  }
+  .login-form-button-social-container img {
+    width: 115px;
   }
   .icon {
     width: 15px;
     padding: 0px;
   }
   .toggle-password {
-    top: 7px;
-    right: 40px;
+    top: 5px;
+    right: 30px;
   }
 }
