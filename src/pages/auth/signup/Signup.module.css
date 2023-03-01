@@ -4,7 +4,7 @@
 .signup-form {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
+  max-width: 22em;
   margin: 60px auto;
   border-radius: 25px;
   -webkit-box-shadow: var(--webkit-box-shadow);
@@ -42,11 +42,12 @@
   padding: 1px;
 }
 .signup-form input {
-  padding: 8px 6px;
+  padding: 6px 4px;
   border-radius: 25px;
   border: 1px solid transparent;
   font-size: 1em;
-  width: 250px;
+  max-width: 450px;
+  width: 215px;
 }
 .signup-form input:focus,
 .signup-form textarea:focus {
@@ -62,15 +63,20 @@ select:focus {
   outline-offset: 0px;
   outline: none;
 }
+.div-container {
+  width: 75%;
+  margin-left: 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 .signup-form-div {
-  display: block;
-  margin: 0 0 0 60px;
   padding: 10px 10px 0 10px;
 }
 .signup-form-button-signup {
   display: block;
-  width: 268px;
-  padding: 10px 20px;
+  width: 220px;
+  padding: 6px 20px;
   margin: 10px auto 0px auto;
   border-radius: 25px;
   cursor: pointer;
@@ -85,28 +91,24 @@ select:focus {
 }
 .signup-form-button-social-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.signup-form-button-social-container img {
+  width: 185px;
 }
 .signup-form-button-social {
-  display: block;
-  width: 137px;
-  padding: 7px 20px;
-  margin: 10px 1px;
-  border-radius: 25px;
+  padding: 0;
+  margin: 8px 1px;
   cursor: pointer;
-  background: #effaf0;
-  border: 1px solid #1f8a58;
-  color: #333;
-  font-weight: 600;
-  font-size: 0.9em;
+  background: none;
+  border: none;
 }
-.signup-form-button-social:hover {
-  background: #4cc49a;
-}
+
 .signup-form-button-guest {
   display: block;
-  width: 268px;
-  padding: 7px 20px;
+  width: 220px;
+  padding: 5px 20px;
   margin: 10px auto;
   border-radius: 25px;
   cursor: pointer;

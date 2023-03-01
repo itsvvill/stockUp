@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 //styles and icons
 import styles from './Signup.module.css';
 import logo from '../../../components/logo.png';
-import { UilGoogle } from '@iconscout/react-unicons';
-import { UilFacebook } from '@iconscout/react-unicons';
+import google from '../images/google_signup.svg';
+import facebook from '../images/facebook_signup.svg';
 import { UilEye } from '@iconscout/react-unicons';
 import { UilEyeSlash } from '@iconscout/react-unicons';
 import { UilUserCircle } from '@iconscout/react-unicons';
@@ -39,53 +39,55 @@ export default function Signup() {
         </h2>
         <h3 className={styles['signup-form-h3']}>Welcome!</h3>
         <p className={styles['signup-form-p']}>Create your account.</p>
-        <div className={styles['signup-form-div']}>
-          <input
-            type="email"
-            placeholder="Email address"
-            onChange={(e) => setEmail(e.target.value)}
-            value={email}
-          />
-        </div>
-        {/* email related error */}
-        {error && error.code === 'auth/invalid-email' && (
-          <p className={styles['signup-form-error']}>{error.message}</p>
-        )}
-        <div className={styles['signup-form-div']}>
-          <input
-            type={showPassword ? 'text' : 'password'}
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-          />
-          {/* password visibility is hidden/visible */}
-          {!showPassword ? (
-            <button
-              className={styles['toggle-password']}
-              onClick={togglePassword}
-            >
-              <UilEyeSlash size="20" />
-            </button>
-          ) : (
-            <button
-              className={styles['toggle-password']}
-              onClick={togglePassword}
-            >
-              <UilEye size="20" />
-            </button>
+        <div className={styles['div-container']}>
+          <div className={styles['signup-form-div']}>
+            <input
+              type="email"
+              placeholder="Email address"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            />
+          </div>
+          {/* email related error */}
+          {error && error.code === 'auth/invalid-email' && (
+            <p className={styles['signup-form-error']}>{error.message}</p>
           )}
-        </div>
-        {/* password related error */}
-        {error && error.code === 'auth/weak-password' && (
-          <p className={styles['signup-form-error']}>{error.message}</p>
-        )}
-        <div className={styles['signup-form-div']}>
-          <input
-            type="text"
-            placeholder="Display Name"
-            onChange={(e) => setDisplayName(e.target.value)}
-            value={displayName}
-          />
+          <div className={styles['signup-form-div']}>
+            <input
+              type={showPassword ? 'text' : 'password'}
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+            />
+            {/* password visibility is hidden/visible */}
+            {!showPassword ? (
+              <button
+                className={styles['toggle-password']}
+                onClick={togglePassword}
+              >
+                <UilEyeSlash size="20" />
+              </button>
+            ) : (
+              <button
+                className={styles['toggle-password']}
+                onClick={togglePassword}
+              >
+                <UilEye size="20" />
+              </button>
+            )}
+          </div>
+          {/* password related error */}
+          {error && error.code === 'auth/weak-password' && (
+            <p className={styles['signup-form-error']}>{error.message}</p>
+          )}
+          <div className={styles['signup-form-div']}>
+            <input
+              type="text"
+              placeholder="Display Name"
+              onChange={(e) => setDisplayName(e.target.value)}
+              value={displayName}
+            />
+          </div>
         </div>
         {/* normal state */}
         {!isPending && (
@@ -103,20 +105,14 @@ export default function Signup() {
                 value="Google"
                 className={styles['signup-form-button-social']}
               >
-                <UilGoogle size="21" color="#121212" className={styles.icon} />
-                oogle
+                <img src={google} alt="signup with google" />
               </button>
               <button
                 name="submit"
                 value="Facebook"
                 className={styles['signup-form-button-social']}
               >
-                <UilFacebook
-                  size="21"
-                  color="#1880C5"
-                  className={styles.icon}
-                />
-                acebook
+                <img src={facebook} alt="signup with facebook" />
               </button>
             </div>
             <p className={styles['signup-option-p']}>
