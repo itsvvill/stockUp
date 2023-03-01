@@ -238,10 +238,6 @@ select:focus {
   .login-form-button-social-container img {
     width: 115px;
   }
-  .icon {
-    width: 15px;
-    padding: 0px;
-  }
   .toggle-password {
     top: 5px;
     right: 30px;

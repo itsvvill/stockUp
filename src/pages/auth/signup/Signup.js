@@ -9,7 +9,6 @@ import google from '../images/google_signup.svg';
 import facebook from '../images/facebook_signup.svg';
 import { UilEye } from '@iconscout/react-unicons';
 import { UilEyeSlash } from '@iconscout/react-unicons';
-import { UilUserCircle } from '@iconscout/react-unicons';
 
 export default function Signup() {
   const [email, setEmail] = useState('');
@@ -123,12 +122,7 @@ export default function Signup() {
               value="guest"
               className={styles['signup-form-button-guest']}
             >
-              Guest Acount{' '}
-              <UilUserCircle
-                size="22"
-                color="#121212"
-                className={styles.icon}
-              />
+              Guest Acount
             </button>
           </>
         )}
