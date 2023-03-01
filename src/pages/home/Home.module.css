@@ -79,15 +79,16 @@
 }
 @media screen and (max-width: 500px) {
   .header {
-    font-size: 1.6em;
+    margin-top: 30px;
+    font-size: 1.4em;
   }
   .slogan {
     text-align: center;
-    font-size: 1em;
+    font-size: 0.9em;
   }
   .logo {
-    top: 14px;
-    width: 50px;
+    top: 4px;
+    width: 30px;
   }
   .blurb {
     display: none;
