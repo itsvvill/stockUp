@@ -256,11 +256,57 @@ export default function TermsOfService() {
           including to but not limited to copyright, patent, trademark, trade
           secret, or moral rights of any third party.
         </li>
+        <li>
+          You are the creator and owner of or have the necessary licenses,
+          rights, consents, releases, and permissions to use and to authroize
+          us, the Site and other users of the Site to use your Contributions in
+          any manner contemplated by the Site and these Terms of Use.
+        </li>
         <li>Your Contributions are not false, inaccurate, or misleading.</li>
         <li>
-          You Contributions are not unsolicited or unauthorized advertising,
+          You have the written consent, release, and/or permission of each and
+          every identifiable individual person in your Contributions to use the
+          name or likeness of each and every such indentifiable individual
+          person to enable inclusion and use of your Contributions in any manner
+          contemplated by the Site and these Terms of Use.
+        </li>
+        <li>Your Contributions are not false, inaccurate, or misleading.</li>
+        <li>
+          Your Contributions are not unsolicited or unauthorized advertising,
           promotional materials, pyramid schemes, chain letters, spam, mass
           mailings, or other forms of solicitation.
+        </li>
+        <li>
+          Your Contributions are not obscene, lewd, lascivious, filthy, violent,
+          harassing, libelous, slanderous, or otherwise objectionable (as
+          determined by us).
+        </li>
+        <li>
+          Your Contributions do not ridicule, mock, disparage, intimidate, or
+          abuse anyone.
+        </li>
+        <li>
+          Your Contributions are not used to harass or threaten (in the legal
+          sense of those terms) any other person and to promote violence against
+          a specific person or class of people.
+        </li>
+        <li>
+          Your Contributions do not violate any applicable law, regulation, or
+          rule.
+        </li>
+        <li>
+          Your Contributions do not violate the privacy or publicity rights of
+          any third party.
+        </li>
+        <li>
+          Your Contributions do not include any offensive comments that are
+          connected to race, national origin, gender, sexual preference, or
+          physical handicap.
+        </li>
+        <li>
+          Your Contributions do not otherwise violate, or link to material that
+          violates, any provision of these Terms of Use, or any applicable law
+          or regulation.
         </li>
       </ul>
       <h2>8. PRIVACY POLICY</h2>
