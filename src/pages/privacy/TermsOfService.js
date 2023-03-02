@@ -309,7 +309,30 @@ export default function TermsOfService() {
           or regulation.
         </li>
       </ul>
-      <h2>8. PRIVACY POLICY</h2>
+      <p>
+        Any use of the Site in violation of the foregoing violates these Terms
+        of Use and may result in, among other things, termination or suspension
+        of your rights to use the Site.
+      </p>
+      <h2>8. CONTRIBUTION LICENSE</h2>
+      <p>
+        By posting your Contributions to any part of the Site or making
+        Contributions to the Site by linking your account from the Site to any
+        of your social networking accounts, you automatically grant, and you
+        represent and warrant that you have the right to grant, to us an
+        unrestricted, unlimited, irrevocable, perpetual, non-exclusive,
+        transferable, royalty-free, fully-paid, worldwide right, and license to
+        host, use, copy, reproduce, disclose, sell, resell, publish, broadcast,
+        retitle, archive, store, cache, publicly perform, publicly display,
+        reformat, translate, transmit, excerpt (in whole or in part), and
+        distribute such Contributions (including, without limitation, your image
+        and voice) for any purpose, commercial, advertising, or otherwise, and
+        to prepare derivative works of, or incorporate into other works, such
+        Contributions, and grant and authorize sublicenses of the foregoing. The
+        use and distribution may occur in any media formats and through any
+        media channels.
+      </p>
+      <h2>9. PRIVACY POLICY</h2>
       <p>
         We care about privacy and security. Please review our Privacy Policy:{' '}
         <a
@@ -327,7 +350,7 @@ export default function TermsOfService() {
         transferring your data to the United Staates, and you agree to have your
         data transferred and processed in the United States.
       </p>
-      <h2>9. MISCELLANEOUS</h2>
+      <h2>10. MISCELLANEOUS</h2>
       <p>
         These Terms of Use and policies or operating rules posted by us on the
         Site or in respect to the Site constitute the entire agreement and
@@ -349,7 +372,7 @@ export default function TermsOfService() {
         form of these Terms of Use and the lack of signing by the parties hereto
         to execute these Terms of Use.
       </p>
-      <h2>10. CONTACT US</h2>
+      <h2>11. CONTACT US</h2>
       <p>
         In order to resolve a complaint regarding the Site or to recieve further
         information regarding use of the Site, please contact us at:
