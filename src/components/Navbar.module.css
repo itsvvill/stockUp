@@ -1,9 +1,14 @@
 /* navbar styles */
 .navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   background: #effaf0;
   padding: 20px 10px;
   box-sizing: border-box;
+  z-index: 2;
 }
 .navbar a {
   color: #333;

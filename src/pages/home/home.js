@@ -29,6 +29,9 @@ export default function Home() {
           </Link>
         </div>
       </div>
+      <ul className={styles['logos-container']}>
+        <img src={logo} className={styles.logos} alt="StockUp Logo" />
+      </ul>
     </div>
   );
 }

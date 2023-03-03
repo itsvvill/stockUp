@@ -8,6 +8,7 @@
   background: #effaf0;
   padding: 15px 0 15px 0;
   box-sizing: border-box;
+  z-index: 2;
 }
 .container {
   display: flex;
