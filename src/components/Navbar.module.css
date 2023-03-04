@@ -8,7 +8,7 @@
   background: #effaf0;
   padding: 20px 10px;
   box-sizing: border-box;
-  z-index: 2;
+  z-index: 3;
 }
 .navbar a {
   color: #333;
@@ -130,69 +130,44 @@
     padding: 6px 10px;
   }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
   .menu {
     display: block;
   }
-  .navbar .logo {
-    width: 30px;
+  .navbar {
+    z-index: 3;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
   }
-  .navbar li {
+  .navbar-menu {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #effaf0;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    z-index: 2;
+  }
+  .navbar-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    letter-spacing: 0.3px;
     font-size: 1em;
   }
-  .transactions {
-    font-size: 0.9em;
-  }
-  .navbar .links,
-  a {
-    font-size: 0.9em;
-  }
-  .leftnav {
-    max-width: 300px;
-    justify-content: space-between;
-  }
-  .navbar .ul {
-    width: 90%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .navbar .login {
-    margin-left: 1em;
-    font-size: 0.9em;
-    padding: 4px 8px;
-  }
-  .logout {
-    font-size: 0.9em;
-    padding: 4px 8px;
-  }
-}
-@media screen and (max-width: 400px) {
-  .navbar {
-    width: 100%;
-  }
-  .navbar .logo {
-    width: 20px;
-  }
-  .navbar li {
-    font-size: 0.8em;
-  }
-  .navbar .transactions {
-    font-size: 0.8em;
-  }
-  .navbar .links {
-    font-size: 0.8em;
-  }
-  .navbar ul {
-    width: 300px;
-  }
-
-  .navbar .login {
-    font-size: 0.8em;
-    padding: 2px 6px;
-  }
-  .logout {
-    font-size: 0.8em;
-    padding: 2px 6px;
+  .stocks a {
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
   }
 }
