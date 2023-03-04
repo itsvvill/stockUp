@@ -51,6 +51,21 @@ export default function Guide() {
           Transactions
         </Link>
       </div>
+      {/* Home page animation */}
+      <ul className={styles['logos-container']}>
+        <img src={logo} className={styles.logos} alt="StockUp Logo" />
+        <img src={logo} className={styles.logos} alt="StockUp Logo" />
+        <img src={logo} className={styles.logos} alt="StockUp Logo" />
+        <img src={logo} className={styles.logos} alt="StockUp Logo" />
+        <img src={logo} className={styles.logos} alt="StockUp Logo" />
+        <img src={logo} className={styles.logos} alt="StockUp Logo" />
+        <img src={logo} className={styles.logos} alt="StockUp Logo" />
+        <img src={logo} className={styles.logos} alt="StockUp Logo" />
+        <img src={logo} className={styles.logos} alt="StockUp Logo" />
+        <img src={logo} className={styles.logos} alt="StockUp Logo" />
+        <img src={logo} className={styles.logos} alt="StockUp Logo" />
+        <img src={logo} className={styles.logos} alt="StockUp Logo" />
+      </ul>
     </div>
   );
 }
