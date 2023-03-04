@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLogout } from '../hooks/useLogout';
 import { useAuthContext } from '../hooks/useAuthContext';
@@ -12,11 +12,9 @@ import { UilMultiply } from '@iconscout/react-unicons';
 export default function Navbar() {
   const { logout } = useLogout();
   const { user } = useAuthContext();
-  const windowSize = useRef([window.innerWidth, window.innerHeight]);
   let location = useLocation();
   const [toggleMenu, setToggleMenu] = useState(false);
 
-  console.log(windowSize.current[0] <= 750);
   return (
     <nav className={styles.navbar}>
       {!user && (
