@@ -89,7 +89,7 @@
   left: 10%;
 }
 .logos-container img:nth-child(2) {
-  left: 20%;
+  left: 15%;
   width: 80px;
   height: 80px;
   animation-delay: 2s;
@@ -110,10 +110,10 @@
   animation-duration: 15s;
 }
 .logos-container img:nth-child(5) {
-  left: 30%;
+  left: 45%;
   width: 60px;
   height: 60px;
-  animation-delay: 1s;
+  animation-delay: 2s;
   animation-duration: 22s;
 }
 .logos-container img:nth-child(6) {
@@ -168,18 +168,18 @@
 
 @-webkit-keyframes logomation {
   0% {
-    transform: translateY(0);
+    transform: translateY(10vh);
   }
   100% {
-    transform: translateY(-100vh) rotate(600deg);
+    transform: translateY(-110vh) rotate(600deg);
   }
 }
 @keyframes logomation {
   0% {
-    transform: translateY(5vh);
+    transform: translateY(10vh);
   }
   100% {
-    transform: translateY(-98vh) rotate(600deg);
+    transform: translateY(-110vh) rotate(600deg);
   }
 }
 @media screen and (max-width: 1200px) {
