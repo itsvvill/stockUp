@@ -332,6 +332,33 @@ export default function TermsOfService() {
         use and distribution may occur in any media formats and through any
         media channels.
       </p>
+      <p>
+        This license will apply to any form, media, technology now known or
+        hereafter developed, and includes our use of your name, company name,
+        and franchise name, as applicable, and any of the trademarks, service
+        marks, trade names, logos, and personal and commercial images you
+        provide. You waive all moral rights in your Contributions, and you
+        warrant that moral rights have not otherwise been asserted in your
+        Contributions.
+      </p>
+      <p>
+        We do not assert any ownership over your Contributions. You retain full
+        ownership of all your Contributions and any intellectual property rights
+        or other propietary rights associated with your Contributions. We are
+        not liable for any statements or representations in your Contributions
+        provided by you in any are of the Site. You are solely responsible for
+        your Contributions to the Site and you expressly agree to exonerate us
+        from any and all responsibility and to refrain from any legal action
+        against us regarding your Contributions.
+      </p>
+      <p>
+        We have the right, in our sole and absolute discretion, (1) to edit,
+        redact, or otherwise change any Contributions; (2) to re-categorize any
+        Contributions to place them in more appropriate locations on the Site;
+        and (3) to pre-screen or delete any Contributions at any time and for
+        any reason, without notice. We have no obligataion to monitor your
+        Contributions.
+      </p>
       <h2>9. PRIVACY POLICY</h2>
       <p>
         We care about privacy and security. Please review our Privacy Policy:{' '}
