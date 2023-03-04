@@ -100,9 +100,15 @@
   -webkit-box-shadow: var(--webkit-box-shadow);
   box-shadow: var(--box-shadow);
 }
-
 .logout:hover {
   scale: 1.1;
+}
+.menu {
+  display: none;
+  cursor: pointer;
+  border-radius: 50%;
+  background: none;
+  border: none;
 }
 
 @media screen and (max-width: 1200px) {
@@ -125,6 +131,9 @@
   }
 }
 @media screen and (max-width: 700px) {
+  .menu {
+    display: block;
+  }
   .navbar .logo {
     width: 30px;
   }

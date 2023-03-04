@@ -1,3 +1,4 @@
+import { useState, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLogout } from '../hooks/useLogout';
 import { useAuthContext } from '../hooks/useAuthContext';
@@ -5,12 +6,17 @@ import { useAuthContext } from '../hooks/useAuthContext';
 // styles and logo
 import styles from './Navbar.module.css';
 import logo from './logo.png';
+import { UilBars } from '@iconscout/react-unicons';
+import { UilMultiply } from '@iconscout/react-unicons';
 
 export default function Navbar() {
   const { logout } = useLogout();
   const { user } = useAuthContext();
+  const windowSize = useRef([window.innerWidth, window.innerHeight]);
   let location = useLocation();
+  const [toggleMenu, setToggleMenu] = useState(false);
 
+  console.log(windowSize.current[0] <= 750);
   return (
     <nav className={styles.navbar}>
       {!user && (
@@ -69,6 +75,23 @@ export default function Navbar() {
           <Link className={styles.login} to="/login">
             Login
           </Link>
+          {/* nav for mobile */}
+          {!toggleMenu && (
+            <button
+              onClick={() => setToggleMenu(!toggleMenu)}
+              className={styles.menu}
+            >
+              <UilBars color="#4cc49a" />
+            </button>
+          )}
+          {toggleMenu && (
+            <button
+              onClick={() => setToggleMenu(!toggleMenu)}
+              className={styles.menu}
+            >
+              <UilMultiply color="#4cc49a" />
+            </button>
+          )}
         </ul>
       )}
       {user && (
@@ -136,6 +159,7 @@ export default function Navbar() {
               </button>
             </li>
           </div>
+          {!toggleMenu && <UilBars className={styles.menu} color="1f8a58" />}
         </ul>
       )}
     </nav>
