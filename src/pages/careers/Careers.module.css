@@ -1,9 +1,10 @@
 .container {
   width: 100%;
-  height: calc(100vh - 228px);
+  height: 80vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
+  margin: 20px 0;
 }
 .heading {
   display: flex;
@@ -83,9 +84,6 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .container {
-    justify-content: flex-start;
-  }
   .heading {
     font-size: 0.75em;
     padding-bottom: 5px;

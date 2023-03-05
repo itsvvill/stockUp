@@ -17,7 +17,7 @@ export default function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   useEffect(() => {
-    setToggleMenu((toggleMenu) => !toggleMenu);
+    setToggleMenu(() => false);
   }, [location]);
 
   function toggleState() {

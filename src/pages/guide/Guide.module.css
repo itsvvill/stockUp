@@ -1,10 +1,12 @@
 .container {
   width: 100%;
-  height: calc(100vh - 228px);
+  height: 80vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  row-gap: 10px;
+  margin: 40px 0;
 }
 .header,
 .header-logo {
@@ -184,7 +186,7 @@
 }
 @media screen and (max-width: 1200px) {
   .container {
-    justify-content: flex-start;
+    justify-content: center;
     row-gap: 20px;
   }
   .card {
@@ -278,7 +280,7 @@
 }
 @media screen and (max-height: 500px) {
   .container {
-    justify-content: flex-start;
+    justify-content: center;
   }
   .header,
   .header-logo {
