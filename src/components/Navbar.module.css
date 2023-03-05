@@ -177,8 +177,10 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    row-gap: 10px;
   }
-  .div a {
+  .div a,
+  .logout {
     display: block;
     width: 300px;
     text-decoration: none;
@@ -190,5 +192,18 @@
   }
   .div a:hover {
     background: #4cc49a;
+  }
+  .logout,
+  .login {
+    width: 315px;
+    background: #4cc49a;
+    -webkit-box-shadow: var(--webkit-box-shadow);
+    box-shadow: var(--box-shadow);
+    background: 1px solid #1f8a58;
+    margin-left: 0px;
+  }
+  .login:hover,
+  .logout:hover {
+    scale: 1.1;
   }
 }

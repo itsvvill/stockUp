@@ -256,10 +256,12 @@ export default function Navbar() {
                         <Link to="/transactions">Transactions</Link>
                       </div>
                       <div className={styles.username}>
-                        Hello, {user.displayName ? user.displayName : 'Guest'}!
+                        <Link to="/user">
+                          {user.displayName ? user.displayName : 'Guest'}
+                        </Link>
                       </div>
                       <div>
-                        <button className={styles.logout} onClick={logout}>
+                        <button onClick={logout} className={styles.logout}>
                           Logout
                         </button>
                       </div>
