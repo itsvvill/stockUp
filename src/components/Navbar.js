@@ -177,6 +177,7 @@ export default function Navbar() {
                 )}
               </nav>
             )}
+            {/* nav for mobile */}
             {matches.small && !toggleMenu && (
               <nav className={styles.navbar}>
                 <div className={styles.stocks}>
@@ -190,7 +191,6 @@ export default function Navbar() {
                     tockUp
                   </Link>
                 </div>
-                {/* nav for mobile */}
                 <button onClick={() => toggleState()} className={styles.menu}>
                   <UilBars color="#4cc49a" />
                 </button>
