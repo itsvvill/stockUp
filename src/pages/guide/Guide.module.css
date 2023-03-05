@@ -53,7 +53,7 @@
   box-shadow: var(--box-shadow);
   -webkit-box-shadow: var(--webkit-box-shadow);
   border-radius: 25px;
-  z-index: 2;
+  z-index: 1;
 }
 .card-heading {
   font-size: 1.1em;

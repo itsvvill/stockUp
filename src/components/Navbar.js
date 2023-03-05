@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLogout } from '../hooks/useLogout';
 import { useAuthContext } from '../hooks/useAuthContext';
@@ -15,6 +15,10 @@ export default function Navbar() {
   const { user } = useAuthContext();
   let location = useLocation();
   const [toggleMenu, setToggleMenu] = useState(false);
+
+  useEffect(() => {
+    setToggleMenu((toggleMenu) => !toggleMenu);
+  }, [location]);
 
   function toggleState() {
     setToggleMenu((toggleMenu) => !toggleMenu);
