@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
+import StockWatchListForm from './StockWatchListForm';
 
 // styles and icons
 import styles from './Stocks.module.css';
@@ -12,11 +13,11 @@ import { UilPlusCircle } from '@iconscout/react-unicons';
 export default function StockWatchList({
   stocks,
   user,
-  toggleStockWatchListForm,
   toggleNewStockSymbol,
   fetchData,
 }) {
   const { updateDocument, deleteDocument, response } = useFirestore('stocks');
+  const [showStockWatchListForm, setShowStockWatchListForm] = useState(false);
   const [toggleDeleteIcon, setToggleDeleteIcon] = useState('');
   const [toggleEdit, setToggleEdit] = useState('');
   const [titleEdit, setTitleEdit] = useState(false);
@@ -126,8 +127,8 @@ export default function StockWatchList({
   };
 
   // shows stock watchlist form on click
-  const handleClick = () => {
-    toggleStockWatchListForm((prevState) => !prevState);
+  const toggleWatchListVisibility = () => {
+    setShowStockWatchListForm((prevState) => !prevState);
   };
 
   return (
@@ -172,7 +173,7 @@ export default function StockWatchList({
           </div>
         )}
         <button
-          onClick={() => handleClick()}
+          onClick={() => toggleWatchListVisibility()}
           className={styles['watchlist-heading-btn']}
         >
           <UilPlusCircle size="22" />
@@ -299,6 +300,13 @@ export default function StockWatchList({
             </div>
           </li>
         ))}
+      {showStockWatchListForm && (
+        <StockWatchListForm
+          uid={user.uid}
+          stocks={stocks}
+          toggleStockWatchListForm={toggleWatchListVisibility}
+        />
+      )}
     </div>
   );
 }

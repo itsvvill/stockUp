@@ -7,15 +7,12 @@ import { useCollection } from '../../hooks/useCollection';
 import Stocks from './Stocks';
 import StockSearchBar from './StockSearchBar';
 import StockWatchList from './StockWatchList';
-import StockWatchListForm from './StockWatchListForm';
 
 // styles
 import styles from './Stocks.module.css';
 
 export default function StocksHome() {
-  const [showStockWatchListForm, setShowStockWatchListForm] = useState(false);
   const [stockName, setStockName] = useState('');
-  const [newStockSymbol, setNewStockSymbol] = useState(null);
   const [stockSymbol, setStockSymbol] = useState('');
   const [stockExchange, setStockExchange] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
@@ -84,15 +81,10 @@ export default function StocksHome() {
     });
   };
 
-  // sets new stock symbol on click
-  const toggleNewStockSymbol = (symbol) => {
-    setNewStockSymbol((prevState) => symbol);
-  };
-
-  // toggles stock watchlist form visibility on click
-  const toggleStockWatchListForm = () => {
-    setShowStockWatchListForm((prevState) => !prevState);
-  };
+  // // sets new stock symbol on click
+  // const toggleNewStockSymbol = (symbol) => {
+  //   setNewStockSymbol((prevState) => symbol);
+  // };
 
   // updates search to a new query
   const updateSearchQuery = (query) => {
@@ -114,32 +106,18 @@ export default function StocksHome() {
             <div className={styles['container']}>
               <StockSearchBar
                 stockName={stockName}
-                newStockSymbol={newStockSymbol}
                 updateSearchQuery={updateSearchQuery}
                 toggleSubmit={toggleSubmit}
-                toggleStockWatchListForm={toggleStockWatchListForm}
               />
             </div>
             {documents !== null && documents.length >= 1 && (
               <StockWatchList
                 stocks={documents}
                 user={user}
-                toggleStockWatchListForm={toggleStockWatchListForm}
-                toggleNewStockSymbol={toggleNewStockSymbol}
                 fetchData={fetchData}
               />
             )}
           </div>
-          {showStockWatchListForm && (
-            <StockWatchListForm
-              uid={user.uid}
-              stocks={documents}
-              stockSymbol={stockSymbol}
-              stockName={stockName}
-              stockExchange={stockExchange}
-              toggleStockWatchListForm={toggleStockWatchListForm}
-            />
-          )}
         </div>
       )}
       {stockName && currentPrice !== 0 && (
@@ -163,7 +141,6 @@ export default function StocksHome() {
               />
               <StockSearchBar
                 stockName={stockName}
-                newStockSymbol={newStockSymbol}
                 updateSearchQuery={updateSearchQuery}
                 toggleSubmit={toggleSubmit}
               />
@@ -172,22 +149,10 @@ export default function StocksHome() {
               <StockWatchList
                 stocks={documents}
                 user={user}
-                toggleStockWatchListForm={toggleStockWatchListForm}
-                toggleNewStockSymbol={toggleNewStockSymbol}
                 fetchData={fetchData}
               />
             )}
           </div>
-          {showStockWatchListForm && (
-            <StockWatchListForm
-              uid={user.uid}
-              stocks={documents}
-              stockSymbol={stockSymbol}
-              stockName={stockName}
-              stockExchange={stockExchange}
-              toggleStockWatchListForm={toggleStockWatchListForm}
-            />
-          )}
         </div>
       )}
     </div>
