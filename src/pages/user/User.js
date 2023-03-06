@@ -1,10 +1,19 @@
+import { useDeleteUser } from '../../hooks/useDeleteUser';
 import { useAuthContext } from '../../hooks/useAuthContext';
 // styles
 import styles from './User.module.css';
 
 export default function User() {
+  const { deleteUser, error, isPending } = useDeleteUser();
   const { user } = useAuthContext();
-  console.log(user);
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    if (!user.isAnonymous) {
+      deleteUser();
+      if (error) console.log(error);
+    }
+  };
   return (
     <div className={styles.container}>
       <div className={styles.card}>
@@ -31,9 +40,21 @@ export default function User() {
         </button>
 
         <h2 className={styles.section}>Account Management</h2>
-        <button className={styles.delete} disabled>
-          Delete Account
-        </button>
+        {!isPending && (
+          <button className={styles.delete} onClick={(e) => handleDelete(e)}>
+            Delete Account
+          </button>
+        )}
+        {isPending && (
+          <button
+            className={styles.delete}
+            disabled
+            onClick={(e) => handleDelete(e)}
+          >
+            Deleting...
+          </button>
+        )}
+        {error && <p>Sorry, something went wrong...</p>}
       </div>
     </div>
   );

@@ -64,7 +64,7 @@ function App() {
             </Route>
             <Route path="/user">
               {user && <User />}
-              {!user && <Home />}
+              {!user && <Redirect to="/" />}
             </Route>
             <Route
               exact
