@@ -1,21 +1,25 @@
 .stocks-home-container {
+  display: flex;
+  flex-direction: column;
   max-height: 90vh;
   max-width: 100vw;
 }
+.toggle {
+  margin: 100px auto 10px auto;
+  width: 100px;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 25px;
+  background: #4cc49a;
+  cursor: pointer;
+}
 .stocks-components-container {
-  height: 80vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding: 50px 0 0 0;
-}
-.flex {
-  display: flex;
-  width: 100vw;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding-bottom: 20px;
+  /* padding: 50px 0 0 0; */
 }
 .container {
   background-color: #fff;
@@ -30,7 +34,6 @@
   -webkit-box-shadow: var(--webkit-box-shadow);
   box-shadow: var(--box-shadow);
 }
-
 .heading {
   display: flex;
   justify-content: space-evenly;
@@ -554,11 +557,6 @@
   scale: 1.3;
 }
 @media screen and (max-width: 1000px) {
-  .flex {
-    flex-direction: column;
-    align-items: center;
-    row-gap: 10px;
-  }
   .stock {
     font-size: 1em;
     margin-top: 5px;

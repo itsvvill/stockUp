@@ -10,8 +10,10 @@ import StockWatchList from './StockWatchList';
 
 // styles
 import styles from './Stocks.module.css';
+import { UilSearch, UilListUl } from '@iconscout/react-unicons';
 
 export default function StocksHome() {
+  const [toggleView, setToggleView] = useState(false);
   const [stockName, setStockName] = useState('');
   const [stockSymbol, setStockSymbol] = useState('');
   const [stockExchange, setStockExchange] = useState('');
@@ -81,11 +83,6 @@ export default function StocksHome() {
     });
   };
 
-  // // sets new stock symbol on click
-  // const toggleNewStockSymbol = (symbol) => {
-  //   setNewStockSymbol((prevState) => symbol);
-  // };
-
   // updates search to a new query
   const updateSearchQuery = (query) => {
     setSearchQuery(query);
@@ -100,59 +97,59 @@ export default function StocksHome() {
   };
   return (
     <div className={styles['stocks-home-container']}>
-      {!stockName && (
+      <button
+        className={styles.toggle}
+        onClick={() => setToggleView(!toggleView)}
+      >
+        <UilSearch size="20" />
+        <UilListUl size="20" />
+      </button>
+      {!toggleView && !stockName && (
         <div className={styles['stocks-components-container']}>
-          <div className={styles.flex}>
-            <div className={styles['container']}>
-              <StockSearchBar
-                stockName={stockName}
-                updateSearchQuery={updateSearchQuery}
-                toggleSubmit={toggleSubmit}
-              />
-            </div>
-            {documents !== null && documents.length >= 1 && (
-              <StockWatchList
-                stocks={documents}
-                user={user}
-                fetchData={fetchData}
-              />
-            )}
+          <div className={styles['container']}>
+            <StockSearchBar
+              stockName={stockName}
+              updateSearchQuery={updateSearchQuery}
+              toggleSubmit={toggleSubmit}
+            />
           </div>
         </div>
       )}
-      {stockName && currentPrice !== 0 && (
+      {!toggleView && stockName && currentPrice !== 0 && (
         <div className={styles['stocks-components-container']}>
-          <div className={styles.flex}>
-            <div className={styles['container']}>
-              <Stocks
-                stocks={documents}
-                stockName={stockName}
-                currentPrice={currentPrice}
-                sector={sector}
-                highPrice={highPrice}
-                lowPrice={lowPrice}
-                isLoss={isLoss}
-                changeAmount={changeAmount}
-                percentChange={percentChange}
-                logoURL={logoURL}
-                stockSymbol={stockSymbol}
-                stockExchange={stockExchange}
-                uid={user.uid}
-              />
-              <StockSearchBar
-                stockName={stockName}
-                updateSearchQuery={updateSearchQuery}
-                toggleSubmit={toggleSubmit}
-              />
-            </div>
-            {documents !== null && documents.length >= 1 && (
-              <StockWatchList
-                stocks={documents}
-                user={user}
-                fetchData={fetchData}
-              />
-            )}
+          <div className={styles['container']}>
+            <Stocks
+              stocks={documents}
+              stockName={stockName}
+              currentPrice={currentPrice}
+              sector={sector}
+              highPrice={highPrice}
+              lowPrice={lowPrice}
+              isLoss={isLoss}
+              changeAmount={changeAmount}
+              percentChange={percentChange}
+              logoURL={logoURL}
+              stockSymbol={stockSymbol}
+              stockExchange={stockExchange}
+              uid={user.uid}
+            />
+            <StockSearchBar
+              stockName={stockName}
+              updateSearchQuery={updateSearchQuery}
+              toggleSubmit={toggleSubmit}
+            />
           </div>
+        </div>
+      )}
+      {toggleView && documents !== null && documents.length >= 1 && (
+        <div className={styles['stocks-components-container']}>
+          {documents !== null && documents.length >= 1 && (
+            <StockWatchList
+              stocks={documents}
+              user={user}
+              fetchData={fetchData}
+            />
+          )}
         </div>
       )}
     </div>
