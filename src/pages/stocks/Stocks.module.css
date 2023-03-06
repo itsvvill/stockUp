@@ -241,27 +241,27 @@
 }
 /* StockWatchList Form */
 .watchlist-form-container {
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .watchlist-form {
-  background-color: #fff;
+  background-color: none;
   box-sizing: border-box;
   text-align: center;
-  max-width: 1000px;
+  max-width: 500px;
   display: flex;
   justify-content: space-evenly;
-  padding: 15px;
   border-radius: 25px;
-  -webkit-box-shadow: var(--webkit-box-shadow);
-  box-shadow: var(--box-shadow);
 }
 .watchlist-form-input {
   border: 2px solid grey;
   border-radius: 25px;
   font-size: 0.8em;
-  padding: 8px 10px;
+  padding: 4px 0px;
+  width: 120px;
+  text-align: center;
   margin: 0 5px;
 }
 .watchlist-form-btn {

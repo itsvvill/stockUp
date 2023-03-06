@@ -3,7 +3,6 @@ import styles from './Stocks.module.css';
 
 export default function StockSearchBar({
   stockName,
-  newStockSymbol,
   updateSearchQuery,
   toggleSubmit,
 }) {
