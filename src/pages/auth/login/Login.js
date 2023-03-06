@@ -83,8 +83,8 @@ export default function Login() {
           <p className={styles['login-form-error']}>{error.message}</p>
         )}
         {/* normal state */}
-        {!isPending && (
-          <>
+        <>
+          {!isPending && (
             <button
               name="submit"
               value="Login"
@@ -92,6 +92,18 @@ export default function Login() {
             >
               Login
             </button>
+          )}
+          {isPending && (
+            <button
+              name="submit"
+              value="Login"
+              disabled
+              className={styles['login-form-button-login-loading']}
+            >
+              Loading...
+            </button>
+          )}
+          {!isPending && (
             <div className={styles['login-form-button-social-container']}>
               <button
                 name="submit"
@@ -108,9 +120,31 @@ export default function Login() {
                 <img src={facebook} alt="continue with facebook" />
               </button>
             </div>
-            <p className={styles['login-option-p']}>
-              <span className={styles['login-option-span']}> OR</span>
-            </p>
+          )}
+          {isPending && (
+            <div className={styles['login-form-button-social-container']}>
+              <button
+                name="submit"
+                value="Google"
+                disabled
+                className={styles['login-form-button-social-loading']}
+              >
+                <img src={google} alt="continue with google" />
+              </button>
+              <button
+                name="submit"
+                value="Facebook"
+                disabled
+                className={styles['login-form-button-social-loading']}
+              >
+                <img src={facebook} alt="continue with facebook" />
+              </button>
+            </div>
+          )}
+          <p className={styles['login-option-p']}>
+            <span className={styles['login-option-span']}> OR</span>
+          </p>
+          {!isPending && (
             <button
               name="submit"
               value="guest"
@@ -118,14 +152,19 @@ export default function Login() {
             >
               Guest Acount
             </button>
-          </>
-        )}
-        {/* pending state */}
-        {isPending && (
-          <button className={styles['login-form-loading']} disabled>
-            Loading...
-          </button>
-        )}
+          )}
+          {isPending && (
+            <button
+              name="submit"
+              value="guest"
+              disabled
+              style={{}}
+              className={styles['login-form-button-guest-loading']}
+            >
+              Loading...
+            </button>
+          )}
+        </>
         <p className={styles['signup-p']}>
           First time here?{' '}
           <span className={styles['signup-link']}>

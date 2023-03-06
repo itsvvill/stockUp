@@ -14,6 +14,7 @@ import Signup from './pages/auth/signup/Signup';
 import StocksHome from './pages/stocks/StocksHome';
 import TermsOfService from './pages/privacy/TermsOfService';
 import TransactionsHome from './pages/transactions/TransactionsHome';
+import User from './pages/user/User';
 
 function App() {
   const { authIsReady, user } = useAuthContext();
@@ -60,6 +61,9 @@ function App() {
             </Route>
             <Route path="/privacy/terms-of-service">
               <TermsOfService />
+            </Route>
+            <Route path="/user">
+              <User />
             </Route>
             <Route
               exact

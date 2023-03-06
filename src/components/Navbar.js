@@ -7,8 +7,7 @@ import Media from 'react-media';
 // styles and logo
 import styles from './Navbar.module.css';
 import logo from './logo.png';
-import { UilBars } from '@iconscout/react-unicons';
-import { UilMultiply } from '@iconscout/react-unicons';
+import { UilBars, UilMultiply, UilUserCircle } from '@iconscout/react-unicons';
 
 export default function Navbar() {
   const { logout } = useLogout();
@@ -165,8 +164,21 @@ export default function Navbar() {
                       </div>
                     </div>
                     <div className={styles.div}>
+                      <Link to="/user">
+                        <li>
+                          {user.photoURL ? (
+                            <img
+                              className={styles.profileimg}
+                              src={user.photoURL}
+                              alt={`${user} profile`}
+                            />
+                          ) : (
+                            <UilUserCircle className={styles.profileimg} />
+                          )}
+                        </li>
+                      </Link>
                       <li className={styles.username}>
-                        Hello, {user.displayName ? user.displayName : 'Guest'}!
+                        {user.displayName ? user.displayName : 'Guest'}
                       </li>
                       <li>
                         <button className={styles.logout} onClick={logout}>
@@ -255,11 +267,20 @@ export default function Navbar() {
                       <div>
                         <Link to="/transactions">Transactions</Link>
                       </div>
-                      <div className={styles.username}>
-                        <Link to="/user">
+                      <Link to="/user" className={styles.user}>
+                        {user.photoURL ? (
+                          <img
+                            className={styles.profileimg}
+                            src={user.photoURL}
+                            alt={`${user} profile`}
+                          />
+                        ) : (
+                          <UilUserCircle className={styles.profileimg} />
+                        )}
+                        <div className={styles.username}>
                           {user.displayName ? user.displayName : 'Guest'}
-                        </Link>
-                      </div>
+                        </div>
+                      </Link>
                       <div>
                         <button onClick={logout} className={styles.logout}>
                           Logout
