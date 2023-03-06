@@ -81,7 +81,9 @@ select:focus {
   padding: 10px 10px 0 10px;
 }
 .login-form-button-login,
-.login-form-button-guest {
+.login-form-button-guest,
+.login-form-button-login-loading,
+.login-form-button-guest-loading {
   display: block;
   width: 220px;
   padding: 6px 20px;
@@ -100,17 +102,7 @@ select:focus {
 }
 .login-form-button-login-loading,
 .login-form-button-guest-loading {
-  display: block;
-  width: 220px;
-  padding: 6px 20px;
-  margin: 10px auto 0px auto;
-  border-radius: 25px;
-  cursor: not-allowed;
-  background: #effaf0;
-  border: 1px solid #1f8a58;
-  color: #333;
-  font-weight: 600;
-  font-size: 0.9em;
+  cursor: pointer;
 }
 .login-form-button-login:hover,
 .login-form-button-guest:hover {
@@ -139,7 +131,8 @@ select:focus {
 .login-form-button-social-container img {
   width: 185px;
 }
-.login-form-button-social {
+.login-form-button-social,
+.login-form-button-social-loading {
   padding: 0px;
   margin: 8px 1px;
   cursor: pointer;
@@ -147,23 +140,7 @@ select:focus {
   border: none;
 }
 .login-form-button-social-loading {
-  padding: 0px;
-  margin: 8px 1px;
   cursor: not-allowed;
-  background: none;
-  border: none;
-}
-.login-form-loading {
-  cursor: wait;
-  background: #effaf0;
-  border: 1px solid #4cc49a;
-  color: #333;
-  font-weight: 600;
-  font-size: 1em;
-  width: 268px;
-  padding: 7px 20px;
-  margin: 10px auto;
-  border-radius: 25px;
 }
 .icon {
   position: relative;
@@ -218,14 +195,18 @@ select:focus {
     font-size: 0.8em;
   }
   .login-form-button-login,
-  .login-form-button-guest {
+  .login-form-button-guest,
+  .login-form-button-login-loading,
+  .login-form-button-guest-loading {
     font-size: 0.8em;
     padding: 4px 20px;
   }
-  .login-form-button-guest {
+  .login-form-button-guest,
+  .login-form-button-guest-loading {
     margin: 0 auto 5px auto;
   }
-  .login-form-button-social {
+  .login-form-button-social,
+  .login-form-button-social-loading {
     margin-bottom: 0px;
   }
   .signup-p {

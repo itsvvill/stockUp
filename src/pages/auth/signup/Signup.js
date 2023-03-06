@@ -92,8 +92,8 @@ export default function Signup() {
           </div>
         </div>
         {/* normal state */}
-        {!isPending && (
-          <>
+        <>
+          {!isPending && (
             <button
               name="submit"
               value="Signup"
@@ -101,6 +101,18 @@ export default function Signup() {
             >
               Sign Up
             </button>
+          )}
+          {isPending && (
+            <button
+              name="submit"
+              value="Signup"
+              disabled
+              className={styles['signup-form-button-signup-loading']}
+            >
+              Loading...
+            </button>
+          )}
+          {!isPending && (
             <div className={styles['signup-form-button-social-container']}>
               <button
                 name="submit"
@@ -117,9 +129,31 @@ export default function Signup() {
                 <img src={facebook} alt="signup with facebook" />
               </button>
             </div>
-            <p className={styles['signup-option-p']}>
-              <span className={styles['signup-option-span']}> OR</span>
-            </p>
+          )}
+          {isPending && (
+            <div className={styles['signup-form-button-social-container']}>
+              <button
+                name="submit"
+                value="Google"
+                disabled
+                className={styles['signup-form-button-social-loading']}
+              >
+                <img src={google} alt="signup with google" />
+              </button>
+              <button
+                name="submit"
+                value="Facebook"
+                disabled
+                className={styles['signup-form-button-social-loading']}
+              >
+                <img src={facebook} alt="signup with facebook" />
+              </button>
+            </div>
+          )}
+          <p className={styles['signup-option-p']}>
+            <span className={styles['signup-option-span']}> OR</span>
+          </p>
+          {!isPending && (
             <button
               name="submit"
               value="guest"
@@ -127,14 +161,18 @@ export default function Signup() {
             >
               Guest Acount
             </button>
-          </>
-        )}
-        {/* pending state */}
-        {isPending && (
-          <button className={styles['signup-form-loading']} disabled>
-            Loading...
-          </button>
-        )}
+          )}
+          {isPending && (
+            <button
+              name="submit"
+              value="guest"
+              disabled
+              className={styles['signup-form-button-guest-loading']}
+            >
+              Loading...
+            </button>
+          )}
+        </>
         <p className={styles['login-p']}>
           Already have an account?{' '}
           <span className={styles['login-link']}>

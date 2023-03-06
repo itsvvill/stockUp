@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   max-width: 22em;
+  min-width: 300px;
   margin: 60px auto;
   border-radius: 25px;
   -webkit-box-shadow: var(--webkit-box-shadow);
@@ -80,7 +81,9 @@ select:focus {
   padding: 10px 10px 0 10px;
 }
 .signup-form-button-signup,
-.signup-form-button-guest {
+.signup-form-button-guest,
+.signup-form-button-signup-loading,
+.signup-form-button-guest-loading {
   display: block;
   width: 220px;
   padding: 6px 20px;
@@ -92,6 +95,10 @@ select:focus {
   color: #333;
   font-weight: 600;
   font-size: 0.9em;
+}
+.signup-form-button-signup-loading,
+.signup-form-button-guest-loading {
+  cursor: not-allowed;
 }
 .signup-form-button-signup:hover,
 .signup-form-button-guest:hover {
@@ -108,12 +115,16 @@ select:focus {
 .signup-form-button-social-container img {
   width: 185px;
 }
-.signup-form-button-social {
+.signup-form-button-social,
+.signup-form-button-social-loading {
   padding: 0;
   margin: 8px 1px;
   cursor: pointer;
   background: none;
   border: none;
+}
+.signup-form-button-social-loading {
+  cursor: not-allowed;
 }
 .signup-form-button-guest:hover {
   background: #4cc49a;
@@ -136,18 +147,6 @@ select:focus {
   color: #cc3333;
   font-size: 0.65em;
   text-align: center;
-}
-.signup-form-loading {
-  cursor: wait;
-  background: #effaf0;
-  border: 1px solid #1f8a58;
-  color: #333;
-  font-weight: 600;
-  font-size: 1em;
-  width: 268px;
-  padding: 7px 20px;
-  margin: 10px auto;
-  border-radius: 25px;
 }
 .icon {
   position: relative;
@@ -195,14 +194,18 @@ select:focus {
     font-size: 0.8em;
   }
   .signup-form-button-signup,
-  .signup-form-button-guest {
+  .signup-form-button-guest,
+  .signup-form-button-signup-loading,
+  .signup-form-button-guest-loading {
     font-size: 0.8em;
     padding: 4px 20px;
   }
-  .signup-form-button-guest {
+  .signup-form-button-guest,
+  .signup-form-button-guest-loading {
     margin: 0 auto 5px auto;
   }
-  .signup-form-button-social {
+  .signup-form-button-social,
+  .signup-form-button-social-loading {
     margin-bottom: 0px;
   }
   .login-p {
@@ -213,6 +216,7 @@ select:focus {
 @media screen and (max-width: 400px) {
   .signup-form {
     width: 250px;
+    min-width: 250px;
   }
   .signup-form-h2 {
     font-size: 0.7;
@@ -233,17 +237,21 @@ select:focus {
     padding: 0;
   }
   .signup-form-button-signup,
-  .signup-form-button-guest {
+  .signup-form-button-guest,
+  .signup-form-button-guest-loading,
+  .signup-form-button-signup-loading {
     width: 130px;
     font-size: 0.6em;
     padding: 4px 20px;
   }
-  .signup-form-button-social {
+  .signup-form-button-social,
+  .signup-form-button-social-loading {
     width: 120px;
     padding: 0px;
     margin-bottom: 0px;
   }
-  .signup-form-button-social img {
+  .signup-form-button-social img,
+  .signup-form-button-social-loading img {
     width: 115px;
   }
   .toggle-password {
