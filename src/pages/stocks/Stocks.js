@@ -1,8 +1,11 @@
+import { useFirestore } from '../../hooks/useFirestore';
+
 // styles and icons
 import styles from './Stocks.module.css';
 import { UilPlusCircle } from '@iconscout/react-unicons';
 
 export default function Stocks({
+  stocks,
   stockName,
   currentPrice,
   sector,
@@ -14,11 +17,23 @@ export default function Stocks({
   stockSymbol,
   logoURL,
   stockExchange,
-  toggleStockWatchListForm,
+  uid,
 }) {
-  // toggles stock watchlist form visibility on click
-  const handleClick = () => {
-    toggleStockWatchListForm((prevState) => !prevState);
+  const { addDocument, response } = useFirestore('stocks');
+
+  // adds a stock to the watchlist
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newDocument = {
+      watchList: stocks?.[stocks.length - 1]?.watchList
+        ? stocks[stocks.length - 1].watchList
+        : 'Stock Watchlist',
+      stockName: stockName,
+      stockSymbol: stockSymbol,
+      stockExchange: stockExchange,
+      uid: uid,
+    };
+    addDocument(newDocument);
   };
 
   return (
@@ -43,7 +58,7 @@ export default function Stocks({
               />
               {stockName}
               <button
-                onClick={handleClick}
+                onClick={(e) => handleSubmit(e)}
                 className={styles['toggle-watchlist-btn']}
               >
                 <UilPlusCircle size="22" />

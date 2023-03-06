@@ -1,33 +1,19 @@
 // styles and icons
 import styles from './Stocks.module.css';
-import { UilPlusCircle } from '@iconscout/react-unicons';
 
 export default function StockSearchBar({
   stockName,
   newStockSymbol,
   updateSearchQuery,
   toggleSubmit,
-  toggleStockWatchListForm,
 }) {
   const handleSubmit = (e) => {
     toggleSubmit(e);
   };
-  // toggles stock watchlist form visibility on click
-  const handleClick = () => {
-    toggleStockWatchListForm((prevState) => !prevState);
-  };
   return (
     <>
       {(stockName === '' || stockName === undefined) && (
-        <span className={styles['title']}>
-          Stock Prices{' '}
-          <button
-            onClick={handleClick}
-            className={styles['toggle-watchlist-btn']}
-          >
-            <UilPlusCircle size="22" />
-          </button>
-        </span>
+        <span className={styles['title']}>Stock Prices</span>
       )}
       <div>
         <form

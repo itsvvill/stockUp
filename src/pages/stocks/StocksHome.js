@@ -147,6 +147,7 @@ export default function StocksHome() {
           <div className={styles.flex}>
             <div className={styles['container']}>
               <Stocks
+                stocks={documents}
                 stockName={stockName}
                 currentPrice={currentPrice}
                 sector={sector}
@@ -158,7 +159,7 @@ export default function StocksHome() {
                 logoURL={logoURL}
                 stockSymbol={stockSymbol}
                 stockExchange={stockExchange}
-                toggleStockWatchListForm={toggleStockWatchListForm}
+                uid={user.uid}
               />
               <StockSearchBar
                 stockName={stockName}
