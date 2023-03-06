@@ -63,7 +63,8 @@ function App() {
               <TermsOfService />
             </Route>
             <Route path="/user">
-              <User />
+              {user && <User />}
+              {!user && <Home />}
             </Route>
             <Route
               exact

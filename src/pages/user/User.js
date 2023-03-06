@@ -17,13 +17,18 @@ export default function User() {
         </p>
         <h2 className={styles.section}>Change Name</h2>
         <input
+          className={styles.input}
           type="text"
           required
           placeholder={user.displayName ? user.displayName : 'Guest'}
         />
-        <button disabled>Update Name</button>
+        <button className={styles.button} disabled>
+          Update Name
+        </button>
         <h2 className={styles.section}>Add Profile Image</h2>
-        <button disabled>Add New Image</button>
+        <button className={styles.button} disabled>
+          Add New Image
+        </button>
 
         <h2 className={styles.section}>Account Management</h2>
         <button className={styles.delete} disabled>
