@@ -170,6 +170,7 @@ export default function Navbar() {
                             <img
                               className={styles.profileimg}
                               src={user.photoURL}
+                              referrerPolicy="no-referrer"
                               alt={`${user} profile`}
                             />
                           ) : (
@@ -272,6 +273,7 @@ export default function Navbar() {
                           <img
                             className={styles.profileimg}
                             src={user.photoURL}
+                            referrerPolicy="no-referrer"
                             alt={`${user} profile`}
                           />
                         ) : (
