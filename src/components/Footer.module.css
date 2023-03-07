@@ -122,13 +122,14 @@
 }
 @media screen and (max-width: 500px), screen and (max-height: 500px) {
   .container {
-    height: 45px;
-    justify-content: flex-start;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
   }
   .motto {
     display: none;
   }
   .footer {
-    padding: 0 0 15px 0;
+    padding: 10px 0 0 0;
   }
 }
