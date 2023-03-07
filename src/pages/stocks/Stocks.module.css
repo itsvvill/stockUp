@@ -559,7 +559,7 @@
 @media screen and (max-width: 550px) {
   .stock {
     font-size: 1em;
-    margin-top: 5px;
+    margin-top: 50px;
     padding: 3px;
   }
   .container {
@@ -567,8 +567,8 @@
     max-height: 500px;
   }
   .prices {
-    margin: 5px;
-    padding: 2px;
+    margin: 40px 5px 20px 5px;
+    padding: 0px;
     font-size: 0.8em;
     justify-content: center;
     column-gap: 5px;
@@ -579,12 +579,13 @@
   .high-price,
   .low-price {
     margin: 2px;
+    padding: 6px 8px;
   }
   .percent-is-gain,
   .percent-is-loss {
     flex-direction: row;
-    padding: 4px;
-    margin: 0;
+    padding: 8px 12px;
+    margin-bottom: 10px;
   }
   .current-price {
     font-size: 0.8em;
