@@ -120,11 +120,15 @@
     display: none;
   }
 }
-@media screen and (max-width: 330px) {
+@media screen and (max-width: 500px), screen and (max-height: 500px) {
+  .container {
+    height: 45px;
+    justify-content: flex-start;
+  }
   .motto {
     display: none;
   }
   .footer {
-    padding: 5px 0 0 0;
+    padding: 0 0 15px 0;
   }
 }
