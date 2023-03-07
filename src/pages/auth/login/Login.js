@@ -82,7 +82,6 @@ export default function Login() {
         {error && error.code === 'auth/wrong-password' && (
           <p className={styles['login-form-error']}>{error.message}</p>
         )}
-        {/* normal state */}
         <>
           {!isPending && (
             <button

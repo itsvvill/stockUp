@@ -16,7 +16,7 @@ export default function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   useEffect(() => {
-    setToggleMenu(() => false);
+    setToggleMenu(false);
   }, [location]);
 
   function toggleState() {
@@ -208,7 +208,7 @@ export default function Navbar() {
                     tockUp
                   </Link>
                 </div>
-                <button onClick={() => toggleState()} className={styles.menu}>
+                <button onClick={toggleState} className={styles.menu}>
                   <UilBars color="#4cc49a" />
                 </button>
               </nav>
@@ -284,7 +284,10 @@ export default function Navbar() {
                         </div>
                       </Link>
                       <div>
-                        <button onClick={logout} className={styles.logout}>
+                        <button
+                          onClick={() => logout()}
+                          className={styles.logout}
+                        >
                           Logout
                         </button>
                       </div>
