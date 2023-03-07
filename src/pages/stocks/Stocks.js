@@ -31,6 +31,7 @@ export default function Stocks({
       stockName: stockName,
       stockSymbol: stockSymbol,
       stockExchange: stockExchange,
+      stockLogo: logoURL,
       uid: uid,
     };
     addDocument(newDocument);
