@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   max-width: 960px;
-  margin: 50px auto;
+  margin: 100px auto;
   height: calc(100vh - 328px);
 }
 .content {
@@ -320,7 +320,7 @@ svg {
 .transaction-info {
   position: sticky;
   top: 157px;
-  z-index: 2;
+  z-index: 1;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -363,7 +363,7 @@ svg {
 .category-filter-container {
   position: sticky;
   top: 41px;
-  z-index: 2;
+  z-index: 1;
 }
 nav.category-filter {
   display: flex;
