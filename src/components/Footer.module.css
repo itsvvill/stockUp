@@ -121,11 +121,6 @@
   }
 }
 @media screen and (max-width: 500px), screen and (max-height: 500px) {
-  .container {
-    height: 50px;
-    justify-content: center;
-    align-items: center;
-  }
   .motto {
     display: none;
   }
