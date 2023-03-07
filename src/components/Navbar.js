@@ -20,7 +20,7 @@ export default function Navbar() {
   }, [location]);
 
   function toggleState() {
-    setToggleMenu((toggleMenu) => !toggleMenu);
+    setToggleMenu(!toggleMenu);
   }
   return (
     <>

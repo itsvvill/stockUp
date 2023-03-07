@@ -99,7 +99,7 @@ export default function StockWatchList({
           ...prevState,
           [stockSymbol]: {
             percent: Math.round(100 * percent) / 100,
-            price: newData.c,
+            price: parseFloat(data.c).toFixed(2),
             high: newData.h,
             low: newData.l,
             open: newData.o,
