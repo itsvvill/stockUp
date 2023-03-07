@@ -18,6 +18,7 @@
       - [Stock Search](#stock-search)
       - [Stock Watchlist](#stock-watchlist)
     - [Transactions](#transactions)
+    - [User Features](#user-features)
 - [Future Features](#future-features)
 - [License](#license)
 - [Disclaimer](#disclaimer)
@@ -57,12 +58,11 @@ Users have 4 options for signing up:
 ##### Stock Search
 
 - Lookup pricing information and other metrics using the stock symbol
-- Add stocks to watchlist
-- Get suggested ticker symbols if search query doesn't match a symbol
+- Add stock to watchlist from symbol lookup with single button press
 
 ##### Stock Watchlist
 
-- Add stocks to watchlist using form
+- Add stocks to watchlist using a form
 - Give watchlist a custom name
 - Update watchlist name
 - Edit/Update stock watchlist items
@@ -85,8 +85,14 @@ Users have 4 options for signing up:
 - Edit/Update a transaction
 - Delete transactions
 
+## User Features
+
+- Ability to delete account
+
 ## Future Features
 
+- Ability to change user name
+- Ability to change or add profile picture
 - Additional metrics for transactions
 - Ability to update and create new categories
 
