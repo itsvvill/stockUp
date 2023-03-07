@@ -61,17 +61,20 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border: 2px solid grey;
+  background-color: rgba(228, 227, 227, 0.7);
   border-radius: 25px;
-}
-.search:focus-within {
-  outline: 1px solid #effaf0;
 }
 .input {
   border: none;
-  border-radius: 25px;
+  border-radius: 25px 0 0 25px;
   font-size: 0.8em;
+  color: #000;
+  font-weight: 600;
   padding: 14px 20px;
+  background-color: rgba(228, 227, 227, 0.03);
+}
+.input::placeholder {
+  color: #000;
 }
 
 .input:focus {
@@ -658,7 +661,7 @@
 @media screen and (max-width: 400px), screen and (max-height: 700px) {
   .stock-watchlist-container {
     overflow: auto;
-    max-width: 350px;
+    max-width: 330px;
   }
   .watchlist-form-input {
     font-size: 0.6em;
