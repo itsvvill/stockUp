@@ -106,8 +106,23 @@ export default function StocksHome() {
         className={styles.toggle}
         onClick={() => setToggleView(!toggleView)}
       >
-        <UilSearch size="20" />
-        <UilListUl size="20" />
+        <span
+          className={
+            !toggleView
+              ? styles['toggle-search-active']
+              : styles['toggle-search']
+          }
+        >
+          <UilSearch size="20" color={!toggleView ? 'white' : '#333'} />
+        </span>
+        <span className={styles.line}>|</span>
+        <span
+          className={
+            toggleView ? styles['toggle-list-active'] : styles['toggle-list']
+          }
+        >
+          <UilListUl size="20" color={toggleView ? 'white' : '#333'} />
+        </span>
       </button>
       {!toggleView && !stockName && (
         <div className={styles['stocks-components-container']}>
