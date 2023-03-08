@@ -14,9 +14,9 @@ export default function CategoryFilter({
   return (
     <div className={styles['category-filter-container']}>
       <nav className={styles['category-filter']}>
-        {categories.map((c) => (
+        {categories.map((c, idx) => (
           <button
-            key={c}
+            key={`${c}_${idx}`}
             onClick={() => handleClick(c)}
             className={
               currentCategory === c

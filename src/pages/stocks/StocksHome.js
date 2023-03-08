@@ -7,10 +7,15 @@ import { useCollection } from '../../hooks/useCollection';
 import Stocks from './Stocks';
 import StockSearchBar from './StockSearchBar';
 import StockWatchList from './StockWatchList';
+import btn from './btn.png';
 
 // styles
 import styles from './Stocks.module.css';
-import { UilSearch, UilListUl } from '@iconscout/react-unicons';
+import {
+  UilSearch,
+  UilListUl,
+  UilExclamationTriangle,
+} from '@iconscout/react-unicons';
 
 export default function StocksHome() {
   const [toggleView, setToggleView] = useState(false);
@@ -138,6 +143,36 @@ export default function StocksHome() {
               updateSearchQuery={updateSearchQuery}
               toggleSubmit={toggleSubmit}
             />
+          </div>
+        </div>
+      )}
+      {toggleView && documents.length < 1 && (
+        <div className={styles.flex}>
+          <div className={styles['no-watchlist']}>
+            <h1>
+              <UilExclamationTriangle
+                className={styles.oops}
+                size="35"
+                color="red"
+              />
+              Oops!
+              <UilExclamationTriangle
+                className={styles.oops}
+                size="35"
+                color="red"
+              />
+            </h1>
+            <p>Your watchlist is currently empty.</p>
+            <p>
+              To start new list, click the "
+              <UilSearch className={styles.magnifying} size="15" />" icon to go
+              back to the stock lookup tool.
+            </p>
+            <p>
+              Then search for a symbol and press{' '}
+              <img src={btn} className={styles.img} alt="button" /> to add that
+              stock to a new list.
+            </p>
           </div>
         </div>
       )}

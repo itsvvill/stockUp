@@ -158,7 +158,7 @@ export default function TransactionList({ transactions, amount, date, name }) {
             />
           ) : (
             <li
-              key={transaction.id + idx}
+              key={`${transaction.id}_${idx}`}
               style={{ borderLeft: `10px solid ${transaction.color}` }}
             >
               <p className={styles.name}>{transaction.name}</p>
