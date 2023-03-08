@@ -113,7 +113,7 @@ export default function StocksHome() {
               : styles['toggle-search']
           }
         >
-          <UilSearch size="20" color={!toggleView ? 'white' : '#333'} />
+          <UilSearch size="20" color={!toggleView ? '#333' : '#333'} />
         </span>
         <span className={styles.line}>|</span>
         <span
@@ -121,7 +121,7 @@ export default function StocksHome() {
             toggleView ? styles['toggle-list-active'] : styles['toggle-list']
           }
         >
-          <UilListUl size="20" color={toggleView ? 'white' : '#333'} />
+          <UilListUl size="20" color={toggleView ? '#333' : '#333'} />
         </span>
       </button>
       {!toggleView && !stockName && (

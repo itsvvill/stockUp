@@ -1,8 +1,9 @@
+import { useState, useEffect } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
 
 // styles and icons
 import styles from './Stocks.module.css';
-import { UilPlusCircle } from '@iconscout/react-unicons';
+import { UilPlusCircle, UilCheckCircle } from '@iconscout/react-unicons';
 
 export default function Stocks({
   stocks,
@@ -19,22 +20,37 @@ export default function Stocks({
   stockExchange,
   uid,
 }) {
-  const { addDocument, response } = useFirestore('stocks');
+  const { addDocument } = useFirestore('stocks');
+  const [inWatchList, setInWatchList] = useState(false);
+
+  //checks if stock already exists in watchlist
+  useEffect(() => {
+    setInWatchList(false);
+    let duplicateCheck = stocks.filter(
+      (stock) => stock.stockSymbol === stockSymbol
+    );
+    if (duplicateCheck.length >= 1) {
+      setInWatchList(true);
+    }
+  }, [stockSymbol, stocks]);
 
   // adds a stock to the watchlist
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newDocument = {
-      watchList: stocks?.[stocks.length - 1]?.watchList
-        ? stocks[stocks.length - 1].watchList
-        : 'Stock Watchlist',
-      stockName: stockName,
-      stockSymbol: stockSymbol,
-      stockExchange: stockExchange,
-      stockLogo: logoURL,
-      uid: uid,
-    };
-    addDocument(newDocument);
+
+    if (!inWatchList) {
+      const newDocument = {
+        watchList: stocks?.[stocks.length - 1]?.watchList
+          ? stocks[stocks.length - 1].watchList
+          : 'Stock Watchlist',
+        stockName: stockName,
+        stockSymbol: stockSymbol,
+        stockExchange: stockExchange,
+        stockLogo: logoURL,
+        uid: uid,
+      };
+      addDocument(newDocument);
+    }
   };
 
   return (
@@ -58,12 +74,22 @@ export default function Stocks({
                 alt={`${stockName} logo`}
               />
               {stockName}
-              <button
-                onClick={(e) => handleSubmit(e)}
-                className={styles['toggle-watchlist-btn']}
-              >
-                <UilPlusCircle size="22" />
-              </button>
+              {inWatchList && (
+                <button
+                  onClick={(e) => handleSubmit(e)}
+                  className={styles['toggle-watchlist-btn-added']}
+                >
+                  <UilCheckCircle size="22" />
+                </button>
+              )}
+              {!inWatchList && (
+                <button
+                  onClick={(e) => handleSubmit(e)}
+                  className={styles['toggle-watchlist-btn']}
+                >
+                  <UilPlusCircle size="22" />
+                </button>
+              )}
             </span>
             <div className={styles['prices']}>
               <p className={styles['high-price']}>High: ${highPrice}</p>
