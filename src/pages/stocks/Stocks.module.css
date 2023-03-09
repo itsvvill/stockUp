@@ -788,11 +788,6 @@
     font-size: 1em;
     padding: 2px;
   }
-  .watchlist-heading-btn,
-  .toggle-watchlist-btn {
-    width: 25px;
-    height: 25px;
-  }
   .stocks-watchlist-symbol {
     font-size: 0.6em;
   }
