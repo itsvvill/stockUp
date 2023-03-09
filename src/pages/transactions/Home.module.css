@@ -1,25 +1,12 @@
 .container {
   display: flex;
   flex-direction: column;
-  max-height: 80vh;
+  max-height: 85vh;
   max-width: 100vw;
 }
 .content {
   overflow: auto;
 }
-/* .content::-webkit-scrollbar {
-  width: 0.5em;
-}
-
-.content::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  border-radius: 25px;
-} */
-/*
-.content::-webkit-scrollbar-thumb {
-  background-color: #dddddd;
-  border-radius: 25px;
-} */
 .toggle {
   display: flex;
   justify-content: space-between;
@@ -171,10 +158,11 @@
   height: fit-content;
 }
 .transactions li {
+  z-index: -1;
   background: none;
   box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
   border-bottom: 0.5px solid #5555555c;
-  padding: 20px;
+  padding: 20px 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -186,7 +174,7 @@
   margin: 0px auto;
   border: 1px solid #f2f2f2;
   box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
-  padding: 20px 20px 20px 5px;
+  padding: 15px 15px 15px 5px;
   display: flex;
   align-items: center;
   position: relative;
@@ -197,7 +185,7 @@
   top: 0px;
   left: 5px;
   color: #777;
-  font-size: 0.8em;
+  font-size: 0.75em;
 }
 .transactions .edit-date {
   position: absolute;
@@ -213,13 +201,14 @@
   cursor: pointer;
 }
 .transactions .name {
-  color: #777;
-  font-size: 1.4em;
-  font-weight: bold;
+  margin-left: 25px;
+  color: #333;
+  font-size: 1em;
+  font-weight: 500;
 }
 .transactions .edit-name {
   width: 250px;
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-weight: bold;
   padding: 2px 2px;
   margin: 3px 0px;
@@ -227,11 +216,10 @@
   border-radius: 10px;
 }
 .transactions .amount {
-  margin-left: auto;
-  margin-right: 40px;
-  color: #777;
-  font-weight: bold;
-  font-size: 1.4em;
+  margin-right: 50px;
+  color: #333;
+  font-weight: 500;
+  font-size: 1em;
 }
 .transactions .edit-amount {
   color: #777;
@@ -335,9 +323,7 @@
   justify-content: center;
   align-items: center;
   box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
-  /* border-radius: 25px 25px 0 0; */
   border-bottom: 0.5px solid #5555555c;
-  border-bottom-style: ridge;
   background-color: #f2f2f2;
   padding-top: 2px;
 }
@@ -459,14 +445,14 @@ nav.category-filter {
   scale: 1.3;
 }
 
-@media screen and (max-height: 920px) {
+@media screen and (max-height: 950px) {
   .sidebar h3 {
     font-size: 0.9em;
     margin: 5px;
   }
   .sidebar form {
-    height: 370px;
-    padding: 10px;
+    height: 340px;
+    padding: 0 10px 0 10px;
   }
   .sidebar label {
     margin: 0;
@@ -491,8 +477,8 @@ nav.category-filter {
     margin-top: 10px;
   }
   .sidebar .brush {
-    margin-top: 37px;
-    margin-left: 204px;
+    margin-top: 30px;
+    margin-left: 202px;
   }
 
   .transactions {
@@ -570,13 +556,16 @@ nav.category-filter {
   }
 }
 @media screen and (max-height: 700px) {
+  .toggle {
+    margin-top: 90px;
+    padding: 10px;
+  }
   .sidebar h3 {
-    font-size: 0.75em;
+    font-size: 0.6em;
     margin: 2px;
   }
   .sidebar form {
-    height: 300px;
-    padding: 10px;
+    height: 270px;
   }
   .sidebar label {
     padding: 1px;
@@ -596,7 +585,7 @@ nav.category-filter {
     margin-top: 10px;
   }
   .sidebar .brush {
-    margin-top: 33px;
+    margin-top: 24px;
     margin-left: 208px;
     cursor: pointer;
   }
@@ -604,6 +593,18 @@ nav.category-filter {
 @media screen and (max-height: 600px) {
   .sidebar h3 {
     display: none;
+  }
+  .sidebar form {
+    height: 260px;
+  }
+  .sidebar input[type='color'] {
+    height: 25px;
+    padding-right: 30px;
+  }
+  .sidebar .brush {
+    margin-top: 22px;
+    margin-left: 208px;
+    cursor: pointer;
   }
 }
 /* @media screen and (max-width: 510px) { */
