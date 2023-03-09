@@ -9,6 +9,7 @@ import {
   UilCalendarAlt,
   UilLetterEnglishA,
   UilInfoCircle,
+  UilAngleDoubleDown,
   UilEdit,
   UilListUl,
 } from '@iconscout/react-unicons';
@@ -24,6 +25,7 @@ export default function TransactionsHome() {
   const [toggleView, setToggleView] = useState(false);
   const [currentCategory, setCurrentCategory] = useState('All');
   const [showInfo, setShowInfo] = useState(false);
+  const [showDropDown, setShowDropDown] = useState(false);
   const [amount, setAmount] = useState('');
   const [date, setDate] = useState('');
   const [name, setName] = useState('');
@@ -95,6 +97,8 @@ export default function TransactionsHome() {
       setAmount('');
       setDate('');
       setName('asc');
+    } else if (f === 'drop-down') {
+      setShowDropDown((prevState) => !prevState);
     }
   };
 
@@ -135,12 +139,19 @@ export default function TransactionsHome() {
             <div className={styles['transaction-filter-container']}>
               <button
                 onClick={handleClick}
+                value="drop-down"
+                className={styles['button']}
+              >
+                <UilAngleDoubleDown size="20" />
+              </button>
+              <button
+                onClick={handleClick}
                 value="amount"
                 className={
                   amount !== '' ? styles['button-active'] : styles['button']
                 }
               >
-                <UilDollarSignAlt />
+                <UilDollarSignAlt size="20" />
               </button>
               <button
                 onClick={handleClick}
@@ -149,7 +160,7 @@ export default function TransactionsHome() {
                   date !== '' ? styles['button-active'] : styles['button']
                 }
               >
-                <UilCalendarAlt />
+                <UilCalendarAlt size="20" />
               </button>
               <button
                 onClick={handleClick}
@@ -158,7 +169,7 @@ export default function TransactionsHome() {
                   name !== '' ? styles['button-active'] : styles['button']
                 }
               >
-                <UilLetterEnglishA />
+                <UilLetterEnglishA size="20" />
               </button>
               {transactions.length >= 1 && (
                 <button
@@ -167,7 +178,7 @@ export default function TransactionsHome() {
                   }
                   onClick={() => setShowInfo((prevState) => !prevState)}
                 >
-                  <UilInfoCircle />
+                  <UilInfoCircle size="20" />
                 </button>
               )}
               {transactions.length < 1 && (
@@ -176,15 +187,19 @@ export default function TransactionsHome() {
                   className={styles['button']}
                   onClick={() => setShowInfo((prevState) => !prevState)}
                 >
-                  <UilInfoCircle />
+                  <UilInfoCircle size="20" />
                 </button>
               )}
             </div>
-            <CategoryFilter
-              currentCategory={currentCategory}
-              changeCategory={changeCategory}
-              categories={defaultCategories ? defaultCategories : categoryList}
-            />
+            {showDropDown && (
+              <CategoryFilter
+                currentCategory={currentCategory}
+                changeCategory={changeCategory}
+                categories={
+                  defaultCategories ? defaultCategories : categoryList
+                }
+              />
+            )}
             {showInfo && <TransactionInfo transactions={transactions} />}
             <TransactionList
               transactions={transactions}
