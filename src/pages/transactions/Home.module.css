@@ -169,20 +169,13 @@
 
 /* transactions */
 .transactions {
-  width: 100%;
+  margin: 0 auto;
+  width: 400px;
   height: 400px;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-}
-.transaction-filter-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: sticky;
-  top: 0px;
+  align-items: center; */
 }
 .transactions li {
   background: #f2f2f2;
@@ -342,14 +335,17 @@
 }
 /* transaction sorting buttons */
 .transaction-filter-container {
-  width: 100%;
+  /* position: sticky; */
+  /* top: 0px; */
+  margin: 0 auto;
+  width: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid #f2f2f2;
   box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
   background-color: #f2f2f2;
-  padding-left: 15px;
+  padding-top: 10px;
 }
 .transaction-filter-container .button {
   border: 2px solid transparent;
