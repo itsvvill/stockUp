@@ -150,7 +150,38 @@
   margin-left: 188px;
   cursor: pointer;
 }
-
+/* no transactions */
+.no-transaction-list {
+  margin: 10px auto 20px auto;
+  background: rgba(228, 227, 227, 0.643);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 330px;
+  height: 250px;
+  border: none;
+  border-radius: 25px;
+  text-align: center;
+  --webkit-box-shadow: var(--webkit-box-shadow);
+  box-shadow: var(--box-shadow);
+}
+.no-watchlist h1 {
+  font-size: 1.4em;
+}
+.no-watchlist p {
+  font-size: 0.9em;
+}
+.oops {
+  position: relative;
+  top: 12px;
+  padding: 0 5px 0 5px;
+}
+.form-edit {
+  position: relative;
+  top: 1px;
+  left: 1px;
+}
 /* transactions */
 .transactions {
   margin: 0 auto;
