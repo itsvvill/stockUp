@@ -6,6 +6,8 @@ import { useCollection } from '../../hooks/useCollection';
 import styles from './Home.module.css';
 import {
   UilDollarSignAlt,
+  UilAngleUp,
+  UilAngleDown,
   UilCalendarAlt,
   UilLetterEnglishA,
   UilInfoCircle,
@@ -152,6 +154,12 @@ export default function TransactionsHome() {
                 }
               >
                 <UilDollarSignAlt size="20" />
+                {amount === 'desc' && (
+                  <UilAngleUp className={styles.up} size="12" />
+                )}
+                {amount === 'asc' && (
+                  <UilAngleDown className={styles.down} size="12" />
+                )}
               </button>
               <button
                 onClick={handleClick}
@@ -161,6 +169,12 @@ export default function TransactionsHome() {
                 }
               >
                 <UilCalendarAlt size="20" />
+                {date === 'desc' && (
+                  <UilAngleUp className={styles.up} size="12" />
+                )}
+                {date === 'asc' && (
+                  <UilAngleDown className={styles.down} size="12" />
+                )}
               </button>
               <button
                 onClick={handleClick}
@@ -170,6 +184,12 @@ export default function TransactionsHome() {
                 }
               >
                 <UilLetterEnglishA size="20" />
+                {name === 'desc' && (
+                  <UilAngleUp className={styles.up} size="12" />
+                )}
+                {name === 'asc' && (
+                  <UilAngleDown className={styles.down} size="12" />
+                )}
               </button>
               {transactions.length >= 1 && (
                 <button
