@@ -1,6 +1,5 @@
 .container {
   display: flex;
-  /* grid-template-columns: 2fr 1fr; */
   flex-direction: column;
   max-height: 90vh;
   max-width: 100vw;
@@ -81,7 +80,6 @@
   display: block;
   width: 100%;
   padding: 10px;
-  /* margin-top: 8px; */
   box-sizing: border-box;
   border: 0;
   border-radius: 10px;
@@ -170,16 +168,11 @@
 /* transactions */
 .transactions {
   margin: 0 auto;
-  width: 400px;
-  height: 400px;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
+  width: 500px;
+  height: fit-content;
 }
 .transactions li {
   background: #f2f2f2;
-  /* margin: 30px auto; */
   border: 1px solid #f2f2f2;
   box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
   padding: 20px;
@@ -191,7 +184,7 @@
 }
 .transactions .edit-li {
   background: #f2f2f2;
-  margin: 30px auto;
+  margin: 0px auto;
   border: 1px solid #f2f2f2;
   box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
   padding: 20px 20px 20px 5px;
@@ -335,10 +328,8 @@
 }
 /* transaction sorting buttons */
 .transaction-filter-container {
-  /* position: sticky; */
-  /* top: 0px; */
   margin: 0 auto;
-  width: 400px;
+  width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -375,8 +366,8 @@ svg {
   pointer-events: none;
 }
 .transaction-info {
-  position: sticky;
-  top: 157px;
+  margin: 0 auto;
+  width: 500px;
   z-index: 1;
   display: flex;
   justify-content: space-around;
@@ -400,6 +391,8 @@ svg {
   background: #daf7dc;
 }
 .transaction-info-categories {
+  margin: 0 auto;
+  width: 500px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -418,8 +411,10 @@ svg {
 
 /* category filter buttons */
 .category-filter-container {
-  position: sticky;
-  top: 41px;
+  /* position: sticky; */
+  /* top: 41px; */
+  width: 500px;
+  margin: 0 auto;
   z-index: 1;
 }
 nav.category-filter {
@@ -430,7 +425,7 @@ nav.category-filter {
   border: 0 1px 1px 1px solid #f2f2f2;
   box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
   background-color: #f2f2f2;
-  padding: 2px;
+  padding: 3px 0;
 }
 .category-btn {
   border: 2px solid #daf7dc;
