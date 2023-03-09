@@ -6,6 +6,7 @@
 }
 .content {
   overflow: auto;
+  z-index: 0;
 }
 .toggle {
   display: flex;
@@ -184,12 +185,14 @@
 }
 /* transactions */
 .transactions {
+  /* z-index: -1; */
   margin: 0 auto;
   width: 500px;
   height: fit-content;
 }
 .transactions li {
-  z-index: -1;
+  z-index: 0;
+  /* z-index: 0; */
   background: none;
   box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
   border-bottom: 0.5px solid #5555555c;
@@ -346,6 +349,7 @@
 }
 /* transaction sorting buttons */
 .transaction-filter-container {
+  z-index: 1;
   position: sticky;
   top: 0;
   margin: 0 auto;
