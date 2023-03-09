@@ -378,15 +378,15 @@ svg {
 .transaction-info-item {
   border-bottom: 2px solid #333;
   list-style-type: none;
-  padding: 3px 6px;
-  margin: 2px;
+  padding: 2px 6px;
+  margin: 1px;
   color: #333;
   font-weight: bold;
-  font-size: 0.8em;
+  font-size: 0.7em;
 }
 .transaction-info-number {
-  margin-left: 2px;
-  padding: 2px 6px;
+  margin-left: 1px;
+  padding: 1px 6px;
   border-radius: 25px;
   background: #daf7dc;
 }
@@ -402,19 +402,17 @@ svg {
 }
 .transaction-info-category-item {
   list-style-type: none;
-  padding: 3px 6px;
-  margin: 2px;
+  padding: 1px 6px;
+  margin: 1px;
   color: #333;
   font-weight: bold;
-  font-size: 0.8em;
+  font-size: 0.7em;
 }
 
 /* category filter buttons */
 .category-filter-container {
-  /* position: sticky; */
-  /* top: 41px; */
-  width: 500px;
   margin: 0 auto;
+  width: 500px;
   z-index: 1;
 }
 nav.category-filter {
