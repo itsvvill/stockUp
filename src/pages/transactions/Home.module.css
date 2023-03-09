@@ -1,9 +1,9 @@
 .container {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  max-width: 960px;
-  margin: 100px auto;
-  height: calc(100vh - 328px);
+  display: flex;
+  /* grid-template-columns: 2fr 1fr; */
+  flex-direction: column;
+  max-height: 90vh;
+  max-width: 100vw;
 }
 .content {
   overflow: auto;
@@ -22,20 +22,66 @@
   background-color: #dddddd;
   border-radius: 25px;
 }
+.toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 100px auto 20px auto;
+  width: 120px;
+  border: none;
+  padding: 10px 8px;
+  border-radius: 25px;
+  background: rgba(207, 205, 205, 0.643);
+  cursor: pointer;
+  --webkit-box-shadow: var(--webkit-box-shadow);
+  box-shadow: var(--box-shadow);
+}
+.line {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0 4px;
+  color: rgba(207, 205, 205, 1);
+}
+.toggle-search,
+.toggle-search-active,
+.toggle-list,
+.toggle-list-active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 30px;
+  border-radius: 25px;
+}
+.toggle-search-active,
+.toggle-list-active {
+  background: #4cc49a;
+  --webkit-box-shadow: var(--webkit-box-shadow);
+  box-shadow: var(--box-shadow);
+}
+.toggle:hover {
+  scale: 1.1;
+}
 .sidebar {
-  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 .sidebar form {
   padding: 30px;
   background: #daf7dc;
   border-radius: 25px;
+  --webkit-box-shadow: var(--webkit-box-shadow);
+  box-shadow: var(--box-shadow);
 }
 .sidebar input,
 .sidebar select {
   display: block;
   width: 100%;
   padding: 10px;
-  margin-top: 8px;
+  /* margin-top: 8px; */
   box-sizing: border-box;
   border: 0;
   border-radius: 10px;
@@ -122,17 +168,30 @@
 }
 
 /* transactions */
+.transactions {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .transaction-filter-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: sticky;
   top: 0px;
 }
 .transactions li {
   background: #f2f2f2;
-  margin: 30px auto;
+  /* margin: 30px auto; */
   border: 1px solid #f2f2f2;
   box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
   padding: 20px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   overflow: hidden;
@@ -283,8 +342,10 @@
 }
 /* transaction sorting buttons */
 .transaction-filter-container {
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   border: 1px solid #f2f2f2;
   box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
   background-color: #f2f2f2;

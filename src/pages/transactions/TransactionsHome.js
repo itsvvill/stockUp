@@ -4,10 +4,14 @@ import { useCollection } from '../../hooks/useCollection';
 
 //styles and icons
 import styles from './Home.module.css';
-import { UilDollarSignAlt } from '@iconscout/react-unicons';
-import { UilCalendarAlt } from '@iconscout/react-unicons';
-import { UilLetterEnglishA } from '@iconscout/react-unicons';
-import { UilInfoCircle } from '@iconscout/react-unicons';
+import {
+  UilDollarSignAlt,
+  UilCalendarAlt,
+  UilLetterEnglishA,
+  UilInfoCircle,
+  UilEdit,
+  UilListUl,
+} from '@iconscout/react-unicons';
 
 // components and pages
 import TransactionForm from './TransactionForm';
@@ -17,6 +21,7 @@ import CategoryFilter from './CategoryFilter';
 import { categoryList } from './categoryList';
 
 export default function TransactionsHome() {
+  const [toggleView, setToggleView] = useState(false);
   const [currentCategory, setCurrentCategory] = useState('All');
   const [showInfo, setShowInfo] = useState(false);
   const [amount, setAmount] = useState('');
@@ -100,10 +105,32 @@ export default function TransactionsHome() {
 
   return (
     <div className={styles.container}>
+      <button
+        className={styles.toggle}
+        onClick={() => setToggleView(!toggleView)}
+      >
+        <span
+          className={
+            !toggleView
+              ? styles['toggle-search-active']
+              : styles['toggle-search']
+          }
+        >
+          <UilEdit size="20" color={!toggleView ? '#333' : '#333'} />
+        </span>
+        <span className={styles.line}>|</span>
+        <span
+          className={
+            toggleView ? styles['toggle-list-active'] : styles['toggle-list']
+          }
+        >
+          <UilListUl size="20" color={toggleView ? '#333' : '#333'} />
+        </span>
+      </button>
       <div className={styles.content}>
         {error && <p>{error}</p>}
         {/* shows category filter if 1 or more documents */}
-        {documents && documents.length > 0 && (
+        {toggleView && documents && documents.length > 0 && (
           <>
             <div className={styles['transaction-filter-container']}>
               <button
@@ -168,16 +195,18 @@ export default function TransactionsHome() {
           </>
         )}
       </div>
-      <div className={styles.sidebar}>
-        <TransactionForm
-          uid={user.uid}
-          categories={
-            defaultCategories
-              ? defaultCategories.slice(1)
-              : categoryList.slice(1)
-          }
-        />
-      </div>
+      {!toggleView && (
+        <div className={styles.sidebar}>
+          <TransactionForm
+            uid={user.uid}
+            categories={
+              defaultCategories
+                ? defaultCategories.slice(1)
+                : categoryList.slice(1)
+            }
+          />
+        </div>
+      )}
     </div>
   );
 }
