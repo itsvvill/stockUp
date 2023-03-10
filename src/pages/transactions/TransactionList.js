@@ -6,9 +6,7 @@ import EditTransaction from './EditTransaction';
 
 // styles and icons
 import styles from './Home.module.css';
-import { UilTrashAlt } from '@iconscout/react-unicons';
-import { UilEdit } from '@iconscout/react-unicons';
-import { UilEllipsisV } from '@iconscout/react-unicons';
+import { UilEdit, UilEllipsisV, UilTrashAlt } from '@iconscout/react-unicons';
 
 export default function TransactionList({ transactions, amount, date, name }) {
   const { deleteDocument } = useFirestore('transactions');

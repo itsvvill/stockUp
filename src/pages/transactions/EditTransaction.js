@@ -4,8 +4,7 @@ import { useAuthContext } from '../../hooks/useAuthContext';
 
 // styles and icons
 import styles from './Home.module.css';
-import { UilTimesCircle } from '@iconscout/react-unicons';
-import { UilCheckCircle } from '@iconscout/react-unicons';
+import { UilTimesCircle, UilCheckCircle } from '@iconscout/react-unicons';
 
 export default function EditTransaction({
   transaction,
@@ -132,14 +131,14 @@ export default function EditTransaction({
           ))}
         </select>
         <button type="submit" className={styles['edit-button']}>
-          <UilCheckCircle size="23" color="#000" />
+          <UilCheckCircle size="20" color="#000" />
         </button>
         <button
           type="button"
           onClick={handleClick}
           className={styles['cancel-button']}
         >
-          <UilTimesCircle size="23" color="#000" />
+          <UilTimesCircle size="20" color="#000" />
         </button>
       </li>
     </form>
