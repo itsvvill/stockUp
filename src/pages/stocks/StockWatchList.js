@@ -24,7 +24,6 @@ export default function StockWatchList({
   const [newStockWatchList, setNewStockWatchList] = useState('');
   const [newStockName, setNewStockName] = useState('');
   const [newStockSymbol, setNewStockSymbol] = useState('');
-  const [newStockExchange, setNewStockExchange] = useState('');
   const [stockData, setStockData] = useState({});
 
   // Finnhub API Key
@@ -75,7 +74,6 @@ export default function StockWatchList({
       id: toggleEdit,
       stockName: newStockName,
       stockSymbol: newStockSymbol,
-      stockExchange: newStockExchange,
       uid: userID,
     };
     await updateDocument(toggleEdit, editedDoc);
@@ -83,7 +81,6 @@ export default function StockWatchList({
       setToggleEdit((prevState) => '');
       setNewStockSymbol((prevState) => '');
       setNewStockName((prevState) => '');
-      setNewStockExchange((prevState) => '');
     }
   };
 
@@ -251,16 +248,6 @@ export default function StockWatchList({
                   value={newStockName}
                   className={styles['stock-watchlist-edit-name']}
                   onChange={(e) => setNewStockName(e.target.value)}
-                />
-                <input
-                  type="text"
-                  required
-                  placeholder={
-                    stock.stockExchange ? stock.stockExchange : 'Exchange'
-                  }
-                  value={newStockExchange}
-                  className={styles['stock-watchlist-edit-exchange']}
-                  onChange={(e) => setNewStockExchange(e.target.value)}
                 />
                 <div
                   className={styles['stock-watchlist-edit-button-container']}

@@ -13,7 +13,6 @@ export default function StockWatchListForm({
   const [newStockWatchList, setNewStockWatchList] = useState('');
   const [newStockSymbol, setNewStockSymbol] = useState('');
   const [newStockName, setNewStockName] = useState('');
-  const [newStockExchange, setNewStockExchange] = useState('');
 
   // either starts a new stock watchlist, or adds a new stock to watchlist
   const handleSubmit = (e) => {
@@ -26,7 +25,6 @@ export default function StockWatchListForm({
         : newStockWatchList.trim(),
       stockName: newStockName.trim(),
       stockSymbol: newStockSymbol.trim().toUpperCase(),
-      stockExchange: newStockExchange.trim(),
       uid: uid,
     };
     addDocument(newDocument);
@@ -69,14 +67,6 @@ export default function StockWatchListForm({
             className={styles['watchlist-form-input']}
             onChange={(e) => setNewStockName(e.target.value)}
           />
-          <input
-            type="text"
-            required
-            placeholder="Exchange"
-            value={newStockExchange}
-            className={styles['watchlist-form-input']}
-            onChange={(e) => setNewStockExchange(e.target.value)}
-          />
           <button className={styles['watchlist-form-btn']}>Add</button>
         </form>
       )}
@@ -111,14 +101,6 @@ export default function StockWatchListForm({
               value={newStockName}
               className={styles['watchlist-form-input']}
               onChange={(e) => setNewStockName(e.target.value)}
-            />
-            <input
-              type="text"
-              required
-              placeholder="Exchange"
-              value={newStockExchange}
-              className={styles['watchlist-form-input']}
-              onChange={(e) => setNewStockExchange(e.target.value)}
             />
             <button className={styles['watchlist-form-btn']}>Add</button>
           </form>

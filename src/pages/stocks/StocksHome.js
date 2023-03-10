@@ -7,7 +7,6 @@ import { useCollection } from '../../hooks/useCollection';
 import Stocks from './Stocks';
 import StockSearchBar from './StockSearchBar';
 import StockWatchList from './StockWatchList';
-import btn from './btn.png';
 
 // styles
 import styles from './Stocks.module.css';
@@ -180,14 +179,9 @@ export default function StocksHome() {
             </h1>
             <p>Your watchlist is currently empty.</p>
             <p>
-              To start new list, click the "
+              To start new list, fill out the form below or click the "
               <UilSearch className={styles.magnifying} size="15" />" icon to go
               back to the stock lookup tool.
-            </p>
-            <p>
-              Then search for a symbol and press{' '}
-              <img src={btn} className={styles.img} alt="button" /> to add that
-              stock to a new list.
             </p>
           </div>
           <StockWatchListForm stocks={documents} uid={user.uid} />

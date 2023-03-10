@@ -45,7 +45,6 @@ export default function Stocks({
           : 'Stock Watchlist',
         stockName: stockName,
         stockSymbol: stockSymbol,
-        stockExchange: stockExchange,
         stockLogo: logoURL,
         uid: uid,
       };
