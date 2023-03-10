@@ -16,6 +16,7 @@ import {
   UilListUl,
   UilExclamationTriangle,
 } from '@iconscout/react-unicons';
+import StockWatchListForm from './StockWatchListForm';
 
 export default function StocksHome() {
   const [toggleView, setToggleView] = useState(false);
@@ -189,6 +190,7 @@ export default function StocksHome() {
               stock to a new list.
             </p>
           </div>
+          <StockWatchListForm stocks={documents} uid={user.uid} />
         </div>
       )}
       {toggleView && documents !== null && documents.length >= 1 && (

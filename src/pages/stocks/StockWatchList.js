@@ -107,7 +107,7 @@ export default function StockWatchList({
         }));
       });
     });
-  }, []);
+  }, [stocks]);
 
   // Returns a color based on stock percentage as gain, loss, or no data
   const getLIStyle = (stock) => {

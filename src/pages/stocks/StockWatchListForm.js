@@ -82,42 +82,47 @@ export default function StockWatchListForm({
       )}
       {/* watchlist not yet created */}
       {!stocks?.[stocks.length - 1]?.watchList && (
-        <form className={styles['watchlist-form']} onSubmit={handleSubmit}>
-          {stocks.length < 1 && (
+        <div className={styles['new-watchlist-form-container']}>
+          <form
+            className={styles['new-watchlist-form']}
+            onSubmit={handleSubmit}
+          >
+            {stocks.length < 1 && (
+              <input
+                type="text"
+                placeholder="Watchlist"
+                value={newStockWatchList}
+                className={styles['watchlist-form-input']}
+                onChange={(e) => setNewStockWatchList(e.target.value)}
+              />
+            )}
             <input
               type="text"
-              placeholder="Watchlist"
-              value={newStockWatchList}
+              required
+              placeholder="Symbol"
+              value={newStockSymbol}
               className={styles['watchlist-form-input']}
-              onChange={(e) => setNewStockWatchList(e.target.value)}
+              onChange={(e) => setNewStockSymbol(e.target.value)}
             />
-          )}
-          <input
-            type="text"
-            required
-            placeholder="Symbol"
-            value={newStockSymbol}
-            className={styles['watchlist-form-input']}
-            onChange={(e) => setNewStockSymbol(e.target.value)}
-          />
-          <input
-            type="text"
-            required
-            placeholder="Name"
-            value={newStockName}
-            className={styles['watchlist-form-input']}
-            onChange={(e) => setNewStockName(e.target.value)}
-          />
-          <input
-            type="text"
-            required
-            placeholder="Exchange"
-            value={newStockExchange}
-            className={styles['watchlist-form-input']}
-            onChange={(e) => setNewStockExchange(e.target.value)}
-          />
-          <button className={styles['watchlist-form-btn']}>Add</button>
-        </form>
+            <input
+              type="text"
+              required
+              placeholder="Name"
+              value={newStockName}
+              className={styles['watchlist-form-input']}
+              onChange={(e) => setNewStockName(e.target.value)}
+            />
+            <input
+              type="text"
+              required
+              placeholder="Exchange"
+              value={newStockExchange}
+              className={styles['watchlist-form-input']}
+              onChange={(e) => setNewStockExchange(e.target.value)}
+            />
+            <button className={styles['watchlist-form-btn']}>Add</button>
+          </form>
+        </div>
       )}
     </div>
   );
