@@ -170,7 +170,7 @@ export default function StocksHome() {
                 size="25"
                 color="red"
               />
-              Your watchlist is currently empty
+              Your watchlist is empty
               <UilExclamationCircle
                 className={styles.oops}
                 size="25"
@@ -178,12 +178,6 @@ export default function StocksHome() {
               />
             </h1>
             <p>To start a new list, fill out the form below.</p>
-            <p>
-              {' '}
-              OR click the "
-              <UilSearch className={styles.magnifying} size="15" />" icon to go
-              back to the stock lookup tool.
-            </p>
             <StockWatchListForm stocks={documents} uid={user.uid} />
           </div>
         </div>

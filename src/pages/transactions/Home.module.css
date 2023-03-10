@@ -159,23 +159,32 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  width: 330px;
-  height: 250px;
+  width: 340px;
+  height: 150px;
   border: none;
   border-radius: 25px;
   text-align: center;
   --webkit-box-shadow: var(--webkit-box-shadow);
   box-shadow: var(--box-shadow);
 }
-.no-watchlist h1 {
-  font-size: 1.4em;
+.no-transaction-list h1 {
+  font-size: 1em;
 }
-.no-watchlist p {
-  font-size: 0.9em;
+.click {
+  font-size: 1em;
+  cursor: pointer;
+  width: 50%;
+  border: 1px solid #1f8a58;
+  padding: 10px 12px;
+  border-radius: 25px;
+  font-weight: 600;
+  background: #4cc49a;
+  -webkit-box-shadow: var(--webkit-box-shadow);
+  box-shadow: var(--box-shadow);
 }
 .oops {
   position: relative;
-  top: 12px;
+  top: 8px;
   padding: 0 5px 0 5px;
 }
 .form-edit {

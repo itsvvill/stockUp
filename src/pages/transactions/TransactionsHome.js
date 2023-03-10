@@ -13,7 +13,7 @@ import {
   UilInfoCircle,
   UilAngleDoubleDown,
   UilEdit,
-  UilExclamationTriangle,
+  UilExclamationCircle,
   UilListUl,
 } from '@iconscout/react-unicons';
 
@@ -140,25 +140,24 @@ export default function TransactionsHome() {
           <div className={styles.container}>
             <div className={styles['no-transaction-list']}>
               <h1>
-                <UilExclamationTriangle
+                <UilExclamationCircle
                   className={styles.oops}
-                  size="35"
+                  size="25"
                   color="red"
                 />
-                Oops!
-                <UilExclamationTriangle
+                Your transaction list is empty
+                <UilExclamationCircle
                   className={styles.oops}
-                  size="35"
+                  size="25"
                   color="red"
                 />
               </h1>
-              <p>Your transaction list is currently empty.</p>
-              <p>
-                To start new list, click the "
-                <UilEdit className={styles['form-edit']} size="15" />" icon to
-                go back to the transaction form.
-              </p>
-              <p>Then fill out the form to create a new list.</p>
+              <button
+                className={styles.click}
+                onClick={() => setToggleView(false)}
+              >
+                Start a new list
+              </button>
             </div>
           </div>
         )}
