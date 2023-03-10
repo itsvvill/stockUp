@@ -185,14 +185,12 @@
 }
 /* transactions */
 .transactions {
-  /* z-index: -1; */
   margin: 0 auto;
   width: 500px;
   height: fit-content;
 }
 .transactions li {
   z-index: 0;
-  /* z-index: 0; */
   background: none;
   box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
   border-bottom: 0.5px solid #5555555c;
@@ -642,77 +640,41 @@ nav.category-filter {
     cursor: pointer;
   }
 }
-/* @media screen and (max-width: 510px) { */
-/* .content {
-    padding-right: 10px;
-  } */
-/* .category-filter-container,
-  .transaction-filter-container {
-    display: none;
-  } */
-/* .sidebar {
-    width: 150px;
-    padding: 0;
+@media screen and (max-width: 530px) {
+  .transactions,
+  .transaction-filter-container,
+  .category-filter-container,
+  .transaction-info-categories,
+  .transaction-info {
+    width: 330px;
   }
-  .sidebar input[type='color'] {
-    width: 130px;
-    height: 20px;
+  .transaction-filter-container .button {
+    padding: 5px 10px 0px 10px;
+    margin-bottom: 2px;
   }
-  .transactions li {
-    margin: 2px;
-    padding: 10px 0;
+  .trasaction-filter-container .button:hover {
+    scale: 1.1;
   }
-  .sidebar .brush {
-    height: 15px;
-    margin-top: 31px;
-    margin-left: 78px;
+  .button-active {
+    padding: 5px 10px 0px 10px;
+    margin-bottom: 2px;
   }
-  .transactions .delete {
-    padding: 0.5px;
-  }
-  .transactions .edit {
-    padding: 0.5px;
-    top: 0;
-    right: 24px;
-  }
-  .transactions .clicked {
-    padding: 0.5px;
-    top: 0;
-    right: 48px;
-  }
-  .transactions .name {
-    width: 50px;
+  .active-btn {
+    padding: 1px 4px;
     font-size: 0.6em;
   }
-  .tranasction .amount {
-    padding-top: 10px;
-  }
-  .transaction .amount,
   .transactions .date,
+  .transactions .name,
+  .transactions .amount,
   .transactions .category {
     font-size: 0.6em;
   }
-  .transactions .edit-li {
-    margin: 2px;
-    padding: 10px;
-    /* justify-content: center; */
-/* } */
-/* .transactions .edit-name,
-  .transactions .edit-amount {
-    font-size: 0.8em;
-    padding: 2px;
-    width: 150px;
+  .transaction-info {
+    justify-content: center;
+    flex-wrap: wrap;
   }
-  .transactions .edit-color {
-    height: 20px;
-    width: 20px;
-    margin: 15px 5px 15px 0;
+  .transaction-info-item {
+    font-size: 0.6em;
+    padding: 0px;
   }
-  .transactions .cancel-button {
-    padding: 5px;
-  }
-  .transactions .edit-button {
-    padding: 5px;
-    top: 32px;
-  } */
-/* }  */
+}
