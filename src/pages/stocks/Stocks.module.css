@@ -736,11 +736,13 @@
   .stock-watchlist-edit-exchange {
     width: 90px;
   }
+  .no-watchlist,
   .watchlist-form {
     max-width: 380px;
     font-size: 0.8em;
     align-items: center;
   }
+  .new-watchlist-form-input,
   .watchlist-form-input {
     width: 100px;
     padding: 4px 0;
@@ -755,6 +757,18 @@
   .stock-watchlist-container {
     overflow: auto;
     max-width: 330px;
+  }
+  .no-watchlist {
+    width: 330px;
+  }
+  .no-watchlist h1 {
+    font-size: 0.9em;
+  }
+  .oops {
+    top: 8px;
+  }
+  .new-watchlist-form-input {
+    width: 80px;
   }
   .watchlist-form-input {
     font-size: 0.6em;
