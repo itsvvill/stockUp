@@ -13,7 +13,7 @@ import styles from './Stocks.module.css';
 import {
   UilSearch,
   UilListUl,
-  UilExclamationTriangle,
+  UilExclamationCircle,
 } from '@iconscout/react-unicons';
 import StockWatchListForm from './StockWatchListForm';
 
@@ -165,26 +165,27 @@ export default function StocksHome() {
         <div className={styles.flex}>
           <div className={styles['no-watchlist']}>
             <h1>
-              <UilExclamationTriangle
+              <UilExclamationCircle
                 className={styles.oops}
-                size="35"
+                size="25"
                 color="red"
               />
-              Oops!
-              <UilExclamationTriangle
+              Your watchlist is currently empty
+              <UilExclamationCircle
                 className={styles.oops}
-                size="35"
+                size="25"
                 color="red"
               />
             </h1>
-            <p>Your watchlist is currently empty.</p>
+            <p>To start a new list, fill out the form below.</p>
             <p>
-              To start new list, fill out the form below or click the "
+              {' '}
+              OR click the "
               <UilSearch className={styles.magnifying} size="15" />" icon to go
               back to the stock lookup tool.
             </p>
+            <StockWatchListForm stocks={documents} uid={user.uid} />
           </div>
-          <StockWatchListForm stocks={documents} uid={user.uid} />
         </div>
       )}
       {toggleView && documents !== null && documents.length >= 1 && (

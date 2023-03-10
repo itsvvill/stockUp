@@ -82,7 +82,7 @@ export default function StockWatchListForm({
                 type="text"
                 placeholder="Watchlist"
                 value={newStockWatchList}
-                className={styles['watchlist-form-input']}
+                className={styles['new-watchlist-form-input']}
                 onChange={(e) => setNewStockWatchList(e.target.value)}
               />
             )}
@@ -91,7 +91,7 @@ export default function StockWatchListForm({
               required
               placeholder="Symbol"
               value={newStockSymbol}
-              className={styles['watchlist-form-input']}
+              className={styles['new-watchlist-form-input']}
               onChange={(e) => setNewStockSymbol(e.target.value)}
             />
             <input
@@ -99,7 +99,7 @@ export default function StockWatchListForm({
               required
               placeholder="Name"
               value={newStockName}
-              className={styles['watchlist-form-input']}
+              className={styles['new-watchlist-form-input']}
               onChange={(e) => setNewStockName(e.target.value)}
             />
             <button className={styles['watchlist-form-btn']}>Add</button>
