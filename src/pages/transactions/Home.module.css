@@ -289,7 +289,7 @@
   background: #ddd;
   color: #777;
   border: none;
-  padding: 2.5px 4px;
+  padding: 2px 4px;
   text-align: center;
   line-height: 0;
   font-size: 0.9em;
@@ -298,19 +298,19 @@
 
 .transactions .clicked {
   position: absolute;
-  top: 54.5px;
+  top: 44.5px;
   right: 0;
   background: #ff69614b;
   color: #777;
   border: none;
-  padding: 2.5px 4px;
+  padding: 2px 4px;
   text-align: center;
   line-height: 0;
   cursor: pointer;
 }
 .transactions .edit {
   position: absolute;
-  top: 27.5px;
+  top: 20.5px;
   right: 0;
   background: #daf7dc;
   color: #777;
@@ -541,17 +541,17 @@ nav.category-filter {
     font-size: 0.7em;
   }
   .transactions .delete {
-    padding: 4px;
+    padding: 7.25px 6px;
   }
   .transactions .edit {
-    padding: 4px;
+    padding: 7.25px 6px;
     top: 0;
-    right: 31px;
+    right: 30px;
   }
   .transactions .clicked {
-    padding: 4px;
+    padding: 7.25px 6px;
     top: 0;
-    right: 63px;
+    right: 60px;
   }
   .category-btn {
     font-size: 0.6em;
@@ -647,6 +647,23 @@ nav.category-filter {
   .transaction-info-categories,
   .transaction-info {
     width: 330px;
+  }
+  .transaction-filter-container {
+    /* padding: 4px; */
+  }
+  .transactions li {
+    margin: 0px;
+  }
+  .transactions .delete {
+    padding: 6px 2px;
+  }
+  .transactions .edit {
+    padding: 6px 2px;
+    right: 22px;
+  }
+  .transactions .clicked {
+    padding: 6px 2px;
+    right: 44px;
   }
   .transaction-filter-container .button {
     padding: 5px 10px 0px 10px;

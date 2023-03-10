@@ -172,13 +172,13 @@ export default function TransactionList({ transactions, amount, date, name }) {
                     className={styles.clicked}
                     onClick={() => deleteDocument(transaction.id)}
                   >
-                    <UilTrashAlt size="23" color="#000" />
+                    <UilTrashAlt size="18" color="#000" />
                   </button>
                   <button
                     className={styles.edit}
                     onClick={() => setEditClicked(transaction.id)}
                   >
-                    <UilEdit size="23" color="#000" />
+                    <UilEdit size="18" color="#000" />
                   </button>
                 </>
               )}
@@ -186,7 +186,7 @@ export default function TransactionList({ transactions, amount, date, name }) {
                 className={styles.delete}
                 onClick={() => handleMenuClick(transaction.id)}
               >
-                <UilEllipsisV size="23" color="#777" />
+                <UilEllipsisV size="18" color="#777" />
               </button>
             </li>
           )}
