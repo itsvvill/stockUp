@@ -9,22 +9,6 @@
   justify-content: space-between;
   align-items: center;
   margin: 100px auto 20px auto;
-  margin: 0;
-  width: 120px;
-  border: none;
-  padding: 10px 8px;
-  border-radius: 25px;
-  background: rgba(207, 205, 205, 0.643);
-  cursor: pointer;
-  --webkit-box-shadow: var(--webkit-box-shadow);
-  box-shadow: var(--box-shadow);
-}
-#animate {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 100px auto 20px auto;
-  margin: 0;
   width: 120px;
   border: none;
   padding: 10px 8px;
