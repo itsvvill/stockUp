@@ -754,6 +754,9 @@
   }
 }
 @media screen and (max-width: 400px), screen and (max-height: 700px) {
+  .container {
+    max-width: 330px;
+  }
   .stock-watchlist-container {
     overflow: auto;
     max-width: 330px;
