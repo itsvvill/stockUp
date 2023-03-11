@@ -104,12 +104,10 @@ export default function TransactionsHome() {
       setShowDropDown((prevState) => !prevState);
     }
   };
-
   // sets a new category to filter by
   const changeCategory = (newCategory) => {
     setCurrentCategory(newCategory);
   };
-
   return (
     <div className={styles.container}>
       <button

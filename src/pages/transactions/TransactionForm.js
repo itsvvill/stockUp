@@ -10,8 +10,9 @@ export default function TransactionForm({ uid, categories }) {
   const [amount, setAmount] = useState('');
   const [date, setDate] = useState('');
   const [category, setCategory] = useState('');
+  const [formSuccess, setFormSuccess] = useState('');
   const [color, setColor] = useState('#effaf0');
-  const { addDocument, response } = useFirestore('transactions');
+  const { addDocument, response, error } = useFirestore('transactions');
 
   // submits a new transaction item
   const handleSubmit = (e) => {
@@ -24,6 +25,9 @@ export default function TransactionForm({ uid, categories }) {
       category,
       color,
     });
+    if (!error) {
+      setFormSuccess(name);
+    }
   };
 
   // reset the form fields
@@ -35,11 +39,14 @@ export default function TransactionForm({ uid, categories }) {
       setCategory('');
       setColor('#effaf0');
     }
+    const timer = setTimeout(() => setFormSuccess(''), 3000);
+    return () => clearTimeout(timer);
   }, [response.success]);
 
   return (
     <>
-      <h3>Add a Transaction</h3>
+      {formSuccess === '' && <h3>Add a Transaction</h3>}
+      {formSuccess && <h3>"{formSuccess}" added!</h3>}
       <form onSubmit={handleSubmit}>
         <label>
           <span>Transaction name:</span>
