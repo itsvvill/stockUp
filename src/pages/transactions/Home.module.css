@@ -486,7 +486,7 @@ nav.category-filter {
   scale: 1.3;
 }
 
-@media screen and (max-height: 750px) {
+@media screen and (max-height: 750px), screen and (max-width: 1200px) {
   .sidebar h3 {
     font-size: 0.9em;
     margin: 5px;
@@ -646,65 +646,5 @@ nav.category-filter {
     margin-top: 22px;
     margin-left: 208px;
     cursor: pointer;
-  }
-}
-@media screen and (max-width: 530px) {
-  .transactions,
-  .transaction-filter-container,
-  .category-filter-container,
-  .transaction-info-categories,
-  .transaction-info {
-    width: 330px;
-  }
-  .transactions li {
-    margin: 0px;
-  }
-  .transactions .delete {
-    padding: 6px 2px;
-  }
-  .transactions .edit {
-    padding: 6px 2px;
-    right: 22px;
-  }
-  .transactions .clicked {
-    padding: 6px 2px;
-    right: 44px;
-  }
-  .transactions .name {
-    width: 200px;
-    padding: 7px 0px 7px 15px;
-  }
-  .transactions .amount {
-    margin-right: 0px;
-    padding: 7px 10px 7px 0px;
-  }
-  .transaction-filter-container .button {
-    padding: 5px 10px 0px 10px;
-    margin-bottom: 2px;
-  }
-  .trasaction-filter-container .button:hover {
-    scale: 1.1;
-  }
-  .button-active {
-    padding: 5px 10px 0px 10px;
-    margin-bottom: 2px;
-  }
-  .active-btn {
-    padding: 1px 4px;
-    font-size: 0.6em;
-  }
-  .transactions .date,
-  .transactions .name,
-  .transactions .amount,
-  .transactions .category {
-    font-size: 0.6em;
-  }
-  .transaction-info {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .transaction-info-item {
-    font-size: 0.6em;
-    padding: 0px;
   }
 }
