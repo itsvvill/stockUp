@@ -22,7 +22,6 @@ export default function Login() {
     let buttonType = e.nativeEvent.submitter.value;
     login(email, password, buttonType);
   };
-
   // toggles password visibility from hidden to visible
   const togglePassword = (e) => {
     e.preventDefault();
@@ -38,6 +37,18 @@ export default function Login() {
         </h2>
         <h3 className={styles['login-form-h3']}>Welcome back!</h3>
         <p className={styles['login-form-p']}>Login to your account.</p>
+        {error &&
+          (error.code === 'auth/wrong-password' ||
+            error.code === 'auth/invalid-email') && (
+            <p className={styles['login-form-error']}>
+              Your email and password don't match. Please try again.
+            </p>
+          )}
+        {error && error.code === 'auth/user-not-found' && (
+          <p className={styles['login-form-error']}>
+            User does not exist or may have been deleted.
+          </p>
+        )}
         <div className={styles['div-container']}>
           <div className={styles['login-form-div']}>
             <input
@@ -48,10 +59,6 @@ export default function Login() {
               value={email}
             />
           </div>
-          {/* email related error */}
-          {error && error.code === 'auth/invalid-email' && (
-            <p className={styles['login-form-error']}>{error.message}</p>
-          )}
           <div className={styles['login-form-div']}>
             <input
               type={showPassword ? 'text' : 'password'}
@@ -78,10 +85,6 @@ export default function Login() {
             )}
           </div>
         </div>
-        {/* password related error */}
-        {error && error.code === 'auth/wrong-password' && (
-          <p className={styles['login-form-error']}>{error.message}</p>
-        )}
         <>
           {!isPending && (
             <button

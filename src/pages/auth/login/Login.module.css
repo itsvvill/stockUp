@@ -147,9 +147,7 @@ select:focus {
   top: 4px;
 }
 .login-form-error {
-  position: relative;
-  left: 15px;
-  bottom: -4px;
+  text-align: center;
   color: #cc3333;
   font-size: 0.65em;
 }
