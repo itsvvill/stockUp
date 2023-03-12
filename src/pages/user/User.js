@@ -10,6 +10,7 @@ export default function User() {
   const { updateUser } = useUpdateUser();
   const { user, userError, userPending } = useAuthContext();
   const [name, setName] = useState('');
+  // const [password, setPassword] = useState('');
 
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -21,7 +22,6 @@ export default function User() {
     deleteUser();
     if (error) console.log(error);
   };
-  // console.log(user.providerData[0].providerId);
   return (
     <>
       {!user.isAnonymous && (
@@ -42,6 +42,16 @@ export default function User() {
               required
               placeholder={user.displayName ? user.displayName : 'Guest'}
             />
+            {/* {setName !== '' &&
+              user.providerData[0].providerId === 'password' && (
+                <input
+                  className={styles.input}
+                  onChange={(e) => setPassword(e.target.value)}
+                  type="password"
+                  required
+                  placeholder={'Password'}
+                />
+              )} */}
             {!userPending && (
               <button
                 className={styles.button}
