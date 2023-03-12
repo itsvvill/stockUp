@@ -12,7 +12,6 @@ export const useSignup = () => {
     setError(null);
     setIsPending(true);
     // main signup button
-    console.log(email, password, displayName, type);
     if (type === 'Signup') {
       try {
         //signup user
