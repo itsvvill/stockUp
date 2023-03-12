@@ -102,6 +102,20 @@
 .sidebar button:hover {
   scale: 1.1;
 }
+.sidebar button:disabled {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sidebar button:disabled:hover {
+  scale: 1;
+  cursor: default;
+}
+
+.check {
+  /* position: relative;
+  top: 5px; */
+}
 .sidebar h3 {
   color: #000;
   margin-bottom: 20px;

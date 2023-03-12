@@ -3,7 +3,7 @@ import { useFirestore } from '../../hooks/useFirestore';
 
 // styles and icons
 import styles from './Home.module.css';
-import { UilPalette } from '@iconscout/react-unicons';
+import { UilCheckCircle, UilPalette } from '@iconscout/react-unicons';
 
 export default function TransactionForm({ uid, categories }) {
   const [name, setName] = useState('');
@@ -104,7 +104,13 @@ export default function TransactionForm({ uid, categories }) {
             value={color}
           />
         </label>
-        <button>Add Transaction</button>
+        {formSuccess === '' && <button>Add Transaction</button>}
+        {formSuccess && (
+          <button disabled>
+            <UilCheckCircle size="25" />
+            Added <UilCheckCircle size="25" />
+          </button>
+        )}
       </form>
     </>
   );
