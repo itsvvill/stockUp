@@ -38,6 +38,14 @@ export default function Signup() {
         </h2>
         <h3 className={styles['signup-form-h3']}>Welcome!</h3>
         <p className={styles['signup-form-p']}>Create your account.</p>
+        {/* email related error */}
+        {error && error.code === 'auth/invalid-email' && (
+          <p className={styles['signup-form-error']}>{error.message}</p>
+        )}
+        {/* password related error */}
+        {error && error.code === 'auth/weak-password' && (
+          <p className={styles['signup-form-error']}>{error.message}</p>
+        )}
         <div className={styles['div-container']}>
           <div className={styles['signup-form-div']}>
             <input
@@ -48,10 +56,6 @@ export default function Signup() {
               value={email}
             />
           </div>
-          {/* email related error */}
-          {error && error.code === 'auth/invalid-email' && (
-            <p className={styles['signup-form-error']}>{error.message}</p>
-          )}
           <div className={styles['signup-form-div']}>
             <input
               type={showPassword ? 'text' : 'password'}
@@ -77,10 +81,6 @@ export default function Signup() {
               </button>
             )}
           </div>
-          {/* password related error */}
-          {error && error.code === 'auth/weak-password' && (
-            <p className={styles['signup-form-error']}>{error.message}</p>
-          )}
           <div className={styles['signup-form-div']}>
             <input
               type="text"

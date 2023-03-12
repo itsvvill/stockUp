@@ -142,8 +142,6 @@ select:focus {
   padding: 0 3px;
 }
 .signup-form-error {
-  position: relative;
-  bottom: 0px;
   color: #cc3333;
   font-size: 0.65em;
   text-align: center;
