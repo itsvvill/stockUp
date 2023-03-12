@@ -12,7 +12,8 @@ export const useSignup = () => {
     setError(null);
     setIsPending(true);
     // main signup button
-    if (type === 'Login') {
+    console.log(email, password, displayName, type);
+    if (type === 'Signup') {
       try {
         //signup user
         const res = await projectAuth.createUserWithEmailAndPassword(

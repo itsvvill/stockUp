@@ -1,26 +1,35 @@
 import { useState, useEffect } from 'react';
 import { useAuthContext } from './useAuthContext';
+// import { projectAuth } from '../config';
 
-export const useDeleteUser = () => {
+export const useUpdateUser = () => {
   const [isCancelled, setIsCancelled] = useState(false);
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const { dispatch } = useAuthContext();
   const { user } = useAuthContext();
 
-  const deleteUser = async () => {
+  const updateUser = async (userName) => {
     setError(null);
     setIsPending(true);
 
     //delete the user
     try {
-      await user.delete();
+      await user.updateProfile({
+        displayName: userName,
+      });
 
-      //dispatch delete action
-      dispatch({ type: 'DELETE_USER' });
+      //dispatch update action
+      dispatch({ type: 'UPDATE_USER' });
 
       // update state
       if (!isCancelled) {
+        // const credential = projectAuth.EmailAuthProvider.credential(
+        //   user.email,
+        //   user.ProvidedPassword
+        // );
+        // // Now you can use that to reauthenticate
+        // user.reauthenticateWithCredential(credential);
         setError(null);
         setIsPending(false);
       }
@@ -37,5 +46,5 @@ export const useDeleteUser = () => {
     return () => setIsCancelled(true);
   }, []);
 
-  return { deleteUser, error, isPending };
+  return { updateUser, error, isPending };
 };
