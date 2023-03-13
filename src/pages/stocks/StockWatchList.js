@@ -28,6 +28,7 @@ export default function StockWatchList({
 
   // Finnhub API Key
   const FINNHUBAPI = process.env.REACT_APP_FINNHUB;
+
   // Toggles delete icon for matching ID if clicked
   const handleToggleDeleteIcon = (id) => {
     if (toggleDeleteIcon === '') {
@@ -38,6 +39,7 @@ export default function StockWatchList({
       setToggleDeleteIcon((prevState) => '');
     }
   };
+
   // start new watchlist, or add stock to watchlist if it exists
   const handleWatchListSubmit = async (e) => {
     e.preventDefault();
@@ -83,6 +85,25 @@ export default function StockWatchList({
     }
   };
 
+  const handleUpdateLogo = async (e, idx) => {
+    e.preventDefault();
+    let userID = user.uid;
+    let id = stocks[idx].id;
+    let stockSymbol = stocks[idx].stockSymbol;
+    let logo = await fetchData(
+      `https://finnhub.io/api/v1/stock/profile2?symbol=${stockSymbol}&token=${FINNHUBAPI}`
+    ).then((data) => data.logo);
+    const editedDoc = {
+      createdAt: stocks[idx].createdAt,
+      id: id,
+      stockName: stocks[idx].stockName,
+      stockSymbol: stocks[idx].stockSymbol,
+      uid: userID,
+      stockLogo: logo,
+    };
+    await updateDocument(id, editedDoc);
+  };
+
   // Finnhub stock data fetch - fires on initial load
   useEffect(() => {
     stocks.forEach((stock) => {
@@ -103,7 +124,7 @@ export default function StockWatchList({
         }));
       });
     });
-  }, [stocks]);
+  }, [stocks, fetchData, FINNHUBAPI]);
 
   // Returns a color based on stock percentage as gain, loss, or no data
   const getLIStyle = (stock) => {
@@ -196,10 +217,12 @@ export default function StockWatchList({
                 )}
                 {/* no logo in database */}
                 {!stock.stockLogo && (
-                  <div className={styles['stocks-watchlist-symbol']}>
-                    {' '}
+                  <button
+                    onClick={(e) => handleUpdateLogo(e, idx)}
+                    className={styles['stocks-watchlist-symbol']}
+                  >
                     {stock.stockSymbol}
-                  </div>
+                  </button>
                 )}
                 <button
                   onClick={() => setToggleEdit((prevState) => stock.id)}
