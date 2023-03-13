@@ -10,12 +10,7 @@ import { UilTimesCircle } from '@iconscout/react-unicons';
 import { UilCheckCircle } from '@iconscout/react-unicons';
 import { UilPlusCircle } from '@iconscout/react-unicons';
 
-export default function StockWatchList({
-  stocks,
-  user,
-  toggleNewStockSymbol,
-  fetchData,
-}) {
+export default function StockWatchList({ stocks, user, fetchData }) {
   const { updateDocument, deleteDocument, response } = useFirestore('stocks');
   const [showStockWatchListForm, setShowStockWatchListForm] = useState(false);
   const [toggleDeleteIcon, setToggleDeleteIcon] = useState('');
@@ -85,6 +80,7 @@ export default function StockWatchList({
     }
   };
 
+  // if stock has no logo, search for logo url and update
   const handleUpdateLogo = async (e, idx) => {
     e.preventDefault();
     let userID = user.uid;
