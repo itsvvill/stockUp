@@ -14,7 +14,7 @@ export default function Footer() {
         <div className={styles.stockup}>
           <div className={styles['links-container']}>
             <span>
-              <img src={logo} className={styles.logo} alt="StockUp Logo" />
+              <img src={logo} className={styles.logo} alt="S" />
               tockUp
             </span>
             <p className={styles.motto}>

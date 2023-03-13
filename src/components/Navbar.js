@@ -40,11 +40,7 @@ export default function Navbar() {
                       {location.pathname === '/' ? (
                         <>
                           <li className={styles.stocks}>
-                            <img
-                              src={logo}
-                              className={styles.logo}
-                              alt="StockUp Logo"
-                            />
+                            <img src={logo} className={styles.logo} alt="S" />
                             <Link
                               to="/"
                               style={{
