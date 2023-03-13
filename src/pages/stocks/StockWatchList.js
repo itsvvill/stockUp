@@ -28,7 +28,6 @@ export default function StockWatchList({
 
   // Finnhub API Key
   const FINNHUBAPI = process.env.REACT_APP_FINNHUB;
-
   // Toggles delete icon for matching ID if clicked
   const handleToggleDeleteIcon = (id) => {
     if (toggleDeleteIcon === '') {
@@ -185,12 +184,23 @@ export default function StockWatchList({
           >
             {(toggleEdit === '' || toggleEdit !== stock.id) && (
               <>
-                <button
-                  onClick={() => toggleNewStockSymbol(stock.stockSymbol)}
-                  className={styles['stocks-watchlist-symbol']}
-                >
-                  {stock.stockSymbol}
-                </button>
+                {/* stockLogo is in database */}
+                {stock.stockLogo && (
+                  <div className={styles['stocks-watchlist-logo-container']}>
+                    <img
+                      className={styles['stock-watchlist-logo']}
+                      src={stock.stockLogo}
+                      alt={`${stock.stockName} logo`}
+                    />
+                  </div>
+                )}
+                {/* no logo in database */}
+                {!stock.stockLogo && (
+                  <div className={styles['stocks-watchlist-symbol']}>
+                    {' '}
+                    {stock.stockSymbol}
+                  </div>
+                )}
                 <button
                   onClick={() => setToggleEdit((prevState) => stock.id)}
                   className={styles['stocks-watchlist-name']}

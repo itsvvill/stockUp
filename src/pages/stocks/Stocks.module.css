@@ -466,12 +466,24 @@
   margin-top: 8px;
   padding: 5px 15px;
 }
+.stocks-watchlist-logo-container {
+  display: flex;
+  align-items: center;
+  background: rgba(228, 227, 227, 0.643);
+  border-radius: 50%;
+  -webkit-box-shadow: var(--webkit-box-shadow);
+  box-shadow: var(--box-shadow);
+}
+.stock-watchlist-logo {
+  width: 25px;
+  border-radius: 50%;
+}
 .stocks-watchlist-symbol {
   background: rgba(228, 227, 227, 0.643);
   font-weight: bold;
   border-radius: 25px;
   border: none;
-  padding: 4px 10px;
+  padding: 2px 6px;
   -webkit-box-shadow: var(--webkit-box-shadow);
   box-shadow: var(--box-shadow);
 }
