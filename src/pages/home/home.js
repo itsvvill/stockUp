@@ -9,7 +9,7 @@ export default function Home() {
       <div className={styles.intro}>
         <h1 className={styles.header}>Welcome to</h1>
         <h1 className={styles['header-logo']}>
-          <img src={logo} className={styles.logo} alt="StockUp Logo" />
+          <img src={logo} className={styles.logo} alt="S" />
           tockUp!
         </h1>
         <h2 className={styles.slogan}>
