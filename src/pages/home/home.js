@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
+// styles and logo
 import styles from './Home.module.css';
 import logo from '../../components/logo.png';
 
@@ -34,12 +36,12 @@ export default function Home() {
           </li>
         </ul>
         <div className={styles['button-container']}>
-          <Link to="/guide" className={styles.button}>
-            Learn More
-          </Link>
-          <Link to="/login" className={styles.button}>
-            Get Started
-          </Link>
+          <motion.div className={styles.button} whileHover={{ scale: 1.2 }}>
+            <Link to="/guide">Learn More</Link>
+          </motion.div>
+          <motion.div className={styles.button} whileHover={{ scale: 1.2 }}>
+            <Link to="/login">Get Started</Link>
+          </motion.div>
         </div>
       </div>
       {/* Home page animation */}
