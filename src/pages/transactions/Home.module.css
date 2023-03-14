@@ -660,14 +660,25 @@ nav.category-filter {
 @media screen and (max-width: 400px) {
   .transactions,
   .transaction-filter-container,
-  .transaction-info {
-    max-width: 300px;
+  .transaction-info,
+  .transaction-info-categories,
+  .category-filter-container {
+    max-width: 320px;
+  }
+  .transaction-info-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6em;
+    padding: 2px;
+    margin: 0;
   }
   .transaction-filter-container .button {
-    padding: 5px 10px 0 10px;
+    padding: 5px 15px 0 15px;
   }
   .transaction-filter-container .button-active {
-    padding: 5px 10px 0px 10px;
+    padding: 5px 15px 0px 15px;
   }
   .transactions .date,
   .transactions .category {
@@ -675,7 +686,7 @@ nav.category-filter {
   }
   .transactions li {
     justify-content: flex-start;
-    padding: 0 50px 0 0;
+    padding: 2px 70px 2px 0;
   }
   .transactions .name {
     width: 125px;
@@ -688,7 +699,7 @@ nav.category-filter {
   .transactions .delete,
   .transactions .edit,
   .transactions .clicked {
-    padding: 7.25px 3px;
+    padding: 9px 3px;
   }
   .transactions .edit {
     right: 24px;
