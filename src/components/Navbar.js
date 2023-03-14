@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useLogout } from '../hooks/useLogout';
 import { useAuthContext } from '../hooks/useAuthContext';
 import Media from 'react-media';
+import { motion } from 'framer-motion';
 
 // styles and logo
 import styles from './Navbar.module.css';
@@ -91,9 +92,12 @@ export default function Navbar() {
                         </Link>
                       )}
                     </div>
-                    <Link className={styles.login} to="/login">
-                      Login
-                    </Link>
+                    <motion.div
+                      whileHover={{ scale: 1.2 }}
+                      className={styles.login}
+                    >
+                      <Link to="/login">Login</Link>
+                    </motion.div>
                   </ul>
                 )}
                 {user && (
@@ -178,9 +182,13 @@ export default function Navbar() {
                         {user.displayName ? user.displayName : 'Guest'}
                       </li>
                       <li>
-                        <button className={styles.logout} onClick={logout}>
+                        <motion.button
+                          whileHover={{ scale: 1.2 }}
+                          className={styles.logout}
+                          onClick={logout}
+                        >
                           Logout
-                        </button>
+                        </motion.button>
                       </li>
                     </div>
                     {!toggleMenu && (

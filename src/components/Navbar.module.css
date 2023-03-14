@@ -58,8 +58,7 @@
   box-shadow: var(--box-shadow);
   cursor: pointer;
 }
-.navbar .login:hover {
-  scale: 1.1;
+.navbar .login > a:hover {
   color: #333;
 }
 .logo {
@@ -99,9 +98,6 @@
   margin-left: 25px;
   -webkit-box-shadow: var(--webkit-box-shadow);
   box-shadow: var(--box-shadow);
-}
-.logout:hover {
-  scale: 1.1;
 }
 .menu {
   display: none;
