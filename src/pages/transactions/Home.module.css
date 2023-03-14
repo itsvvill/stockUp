@@ -45,9 +45,6 @@
   --webkit-box-shadow: var(--webkit-box-shadow);
   box-shadow: var(--box-shadow);
 }
-.toggle:hover {
-  scale: 1.1;
-}
 .sidebar {
   display: flex;
   flex-direction: column;

@@ -41,9 +41,6 @@
   --webkit-box-shadow: var(--webkit-box-shadow);
   box-shadow: var(--box-shadow);
 }
-.toggle:hover {
-  scale: 1.1;
-}
 .stocks-components-container {
   height: 60vh;
   display: flex;
@@ -116,9 +113,6 @@
   background: #4cc49a;
   cursor: pointer;
 }
-.btn:hover {
-  scale: 1.1;
-}
 .logo {
   width: 30px;
   margin-right: 10px;
@@ -157,10 +151,6 @@
 .toggle-watchlist-btn-added {
   cursor: auto;
 }
-.toggle-watchlist-btn:hover {
-  scale: 1.1;
-}
-
 .title-and-prices {
   display: flex;
   flex-direction: column;
@@ -334,9 +324,6 @@
   -webkit-box-shadow: var(--webkit-box-shadow);
   box-shadow: var(--box-shadow);
 }
-.watchlist-form-btn:hover {
-  scale: 1.1;
-}
 /* Stock WatchList */
 .flex {
   display: flex;
@@ -429,9 +416,6 @@
   -webkit-box-shadow: var(--webkit-box-shadow);
   box-shadow: var(--box-shadow);
 }
-.watchlist-heading-btn:hover {
-  scale: 1.1;
-}
 
 .stocks-watchlist-item-green {
   list-style: none;
@@ -490,7 +474,6 @@
 .stocks-watchlist-symbol:hover {
   background: rgba(207, 205, 205, 0.643);
   cursor: pointer;
-  scale: 1.1;
 }
 .stock-watchlist-name-data {
   display: flex;
@@ -574,7 +557,6 @@
 }
 .stock-watchlist-menu:hover {
   background: rgba(207, 205, 205, 0.643);
-  scale: 1.1;
 }
 .stock-watchlist-delete {
   background: #f75d55a7;
@@ -582,7 +564,6 @@
 }
 .stock-watchlist-delete:hover {
   background: #e7564fa7;
-  scale: 1.1;
 }
 .stock-watchlist-edit-title-container {
   display: flex;
@@ -647,19 +628,11 @@
   cursor: pointer;
   background: none;
 }
-.stock-watchlist-edit-submit:hover {
-  cursor: pointer;
-  scale: 1.3;
-}
 .stock-watchlist-edit-cancel {
   border: none;
   padding: 0;
   cursor: pointer;
   background: none;
-}
-.stock-watchlist-edit-cancel:hover {
-  cursor: pointer;
-  scale: 1.3;
 }
 @media screen and (max-width: 550px), screen and (max-height: 850px) {
   .stock {

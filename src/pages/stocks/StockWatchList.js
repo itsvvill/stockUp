@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
 import StockWatchListForm from './StockWatchListForm';
+import { motion } from 'framer-motion';
 
 // styles and icons
 import styles from './Stocks.module.css';
@@ -168,29 +169,32 @@ export default function StockWatchList({ stocks, user, fetchData }) {
               onChange={(e) => setNewStockWatchList(e.target.value)}
             />
             <div className={styles['stock-watchlist-edit-button-container']}>
-              <button
+              <motion.button
+                whileHover={{ scale: 1.1 }}
                 className={styles['stock-watchlist-edit-submit']}
                 type="submit"
                 onClick={(e) => handleWatchListSubmit(e)}
               >
                 <UilCheckCircle size="22" />
-              </button>
-              <button
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
                 type="button"
                 className={styles['stock-watchlist-edit-cancel']}
                 onClick={() => setTitleEdit((prevState) => !prevState)}
               >
                 <UilTimesCircle color="red" size="22" />
-              </button>
+              </motion.button>
             </div>
           </div>
         )}
-        <button
+        <motion.button
+          whileHover={{ scale: 1.1 }}
           onClick={() => toggleWatchListVisibility()}
           className={styles['watchlist-heading-btn']}
         >
           <UilPlusCircle size="22" />
-        </button>
+        </motion.button>
       </span>
       {/* if stocks exist in the watchlist */}
       {stocks &&
@@ -213,12 +217,13 @@ export default function StockWatchList({ stocks, user, fetchData }) {
                 )}
                 {/* no logo in database */}
                 {!stock.stockLogo && (
-                  <button
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
                     onClick={(e) => handleUpdateLogo(e, idx)}
                     className={styles['stocks-watchlist-symbol']}
                   >
                     {stock.stockSymbol}
-                  </button>
+                  </motion.button>
                 )}
                 <button
                   onClick={() => setToggleEdit((prevState) => stock.id)}
@@ -281,26 +286,29 @@ export default function StockWatchList({ stocks, user, fetchData }) {
                 <div
                   className={styles['stock-watchlist-edit-button-container']}
                 >
-                  <button
+                  <motion.button
+                    whileHover={{ scale: 1.3 }}
                     type="submit"
                     className={styles['stock-watchlist-edit-submit']}
                   >
                     <UilCheckCircle size="22" />
-                  </button>
-                  <button
+                  </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.3 }}
                     type="button"
                     className={styles['stock-watchlist-edit-cancel']}
                     onClick={() => setToggleEdit((prevState) => '')}
                   >
                     <UilTimesCircle color="red" size="22" />
-                  </button>
+                  </motion.button>
                 </div>
               </form>
             )}
             <div className={styles['stock-watchlist-button-container']}>
               {/* menu is clicked on stock */}
               {toggleDeleteIcon === stock.id && (
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
                   className={styles['stock-watchlist-delete']}
                   onClick={() => deleteDocument(stock.id)}
                 >
@@ -308,9 +316,10 @@ export default function StockWatchList({ stocks, user, fetchData }) {
                     size="22"
                     className={styles['stock-watchlist-delete-icon']}
                   />
-                </button>
+                </motion.button>
               )}
-              <button
+              <motion.button
+                whileHover={{ scale: 1.1 }}
                 className={styles['stock-watchlist-menu']}
                 onClick={() => handleToggleDeleteIcon(stock.id)}
               >
@@ -318,7 +327,7 @@ export default function StockWatchList({ stocks, user, fetchData }) {
                   size="22"
                   className={styles['stock-watchlist-menu-icon']}
                 />
-              </button>
+              </motion.button>
             </div>
           </li>
         ))}

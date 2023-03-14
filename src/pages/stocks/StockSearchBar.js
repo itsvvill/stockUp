@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 // styles and icons
 import styles from './Stocks.module.css';
 
@@ -31,9 +32,14 @@ export default function StockSearchBar({
             autoComplete="off"
             required
           />
-          <button type="submit" value="Search" className={styles['btn']}>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            type="submit"
+            value="Search"
+            className={styles['btn']}
+          >
             Search
-          </button>
+          </motion.button>
         </form>
       </div>
       {stockName === undefined && (

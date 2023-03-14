@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { useCollection } from '../../hooks/useCollection';
+import { motion } from 'framer-motion';
 
 // pages and components
 // import SearchResults from './SearchResults';
@@ -102,7 +103,8 @@ export default function StocksHome() {
   };
   return (
     <div className={styles['stocks-home-container']}>
-      <button
+      <motion.button
+        whileHover={{ scale: 1.1 }}
         className={styles.toggle}
         onClick={() => setToggleView(!toggleView)}
       >
@@ -123,7 +125,7 @@ export default function StocksHome() {
         >
           <UilListUl size="20" color={toggleView ? '#333' : '#333'} />
         </span>
-      </button>
+      </motion.button>
       {!toggleView && !stockName && (
         <div className={styles['stocks-components-container']}>
           <div className={styles['container']}>
