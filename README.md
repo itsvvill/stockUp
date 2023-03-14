@@ -62,7 +62,7 @@ Users have 4 options for signing up:
 
 ---
 
-![Stock watchlist component](./public/stockUp_stock__watchlist_component.png)
+![Stock watchlist component](./public/stockUp_stock_watchlist_component.png)
 
 ##### Stock Watchlist
 
