@@ -304,14 +304,20 @@ export default function StockWatchList({ stocks, user, fetchData }) {
                   className={styles['stock-watchlist-delete']}
                   onClick={() => deleteDocument(stock.id)}
                 >
-                  <UilTrashAlt size="24" />
+                  <UilTrashAlt
+                    size="22"
+                    className={styles['stock-watchlist-delete-icon']}
+                  />
                 </button>
               )}
               <button
                 className={styles['stock-watchlist-menu']}
                 onClick={() => handleToggleDeleteIcon(stock.id)}
               >
-                <UilEllipsisV size="22" />
+                <UilEllipsisV
+                  size="22"
+                  className={styles['stock-watchlist-menu-icon']}
+                />
               </button>
             </div>
           </li>

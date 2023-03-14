@@ -557,38 +557,32 @@
   justify-content: flex-end;
   align-items: center;
 }
-.stock-watchlist-menu {
+.stock-watchlist-menu,
+.stock-watchlist-delete {
   background: rgba(228, 227, 227, 0.643);
-  padding: 3px 1px 2px 1px;
+  padding: 0 2px;
   border: none;
   border-radius: 50%;
   cursor: pointer;
   -webkit-box-shadow: var(--webkit-box-shadow);
   box-shadow: var(--box-shadow);
+}
+.stock-watchlist-menu-icon,
+.stock-watchlist-delete-icon {
+  position: relative;
+  top: 2px;
 }
 .stock-watchlist-menu:hover {
   background: rgba(207, 205, 205, 0.643);
-  cursor: pointer;
   scale: 1.1;
-  -webkit-box-shadow: var(--webkit-box-shadow);
-  box-shadow: var(--box-shadow);
 }
 .stock-watchlist-delete {
   background: #f75d55a7;
-  padding: 2px 1px 1px 1px;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
   margin-right: 3px;
-  -webkit-box-shadow: var(--webkit-box-shadow);
-  box-shadow: var(--box-shadow);
 }
 .stock-watchlist-delete:hover {
   background: #e7564fa7;
-  cursor: pointer;
   scale: 1.1;
-  -webkit-box-shadow: var(--webkit-box-shadow);
-  box-shadow: var(--box-shadow);
 }
 .stock-watchlist-edit-title-container {
   display: flex;
@@ -843,7 +837,6 @@
   .stock-watchlist-menu,
   .stock-watchlist-delete {
     font-size: 0.6em;
-    padding: 3px 0px 0px 0px;
   }
   .stocks-watchlist-name-span,
   .stocks-watchlist-symbol,
