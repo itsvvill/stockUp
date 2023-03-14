@@ -657,3 +657,43 @@ nav.category-filter {
     cursor: pointer;
   }
 }
+@media screen and (max-width: 400px) {
+  .transactions,
+  .transaction-filter-container,
+  .transaction-info {
+    max-width: 300px;
+  }
+  .transaction-filter-container .button {
+    padding: 5px 10px 0 10px;
+  }
+  .transaction-filter-container .button-active {
+    padding: 5px 10px 0px 10px;
+  }
+  .transactions .date,
+  .transactions .category {
+    font-size: 0.5em;
+  }
+  .transactions li {
+    justify-content: flex-start;
+    padding: 0 50px 0 0;
+  }
+  .transactions .name {
+    width: 125px;
+  }
+  .transactions .name,
+  .transactions .amount {
+    font-size: 0.6em;
+    padding: 8px 10px;
+  }
+  .transactions .delete,
+  .transactions .edit,
+  .transactions .clicked {
+    padding: 7.25px 3px;
+  }
+  .transactions .edit {
+    right: 24px;
+  }
+  .transactions .clicked {
+    right: 48px;
+  }
+}
