@@ -7,18 +7,31 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <div className={styles.intro}>
-        <h1 className={styles.header}>Welcome to</h1>
-        <h1 className={styles['header-logo']}>
-          <img src={logo} className={styles.logo} alt="S" />
+        <h1 className={styles.header} data-nosnippet>
+          Welcome to
+        </h1>
+        <h1 className={styles['header-logo']} data-nosnippet>
+          <img
+            src={logo}
+            className={styles.logo}
+            data-nosnippet
+            alt="StockUp Logo"
+          />
           tockUp!
         </h1>
         <h2 className={styles.slogan}>
           A financial website for smarter decision making.
         </h2>
         <ul className={styles.blurb}>
-          <li>Search for real-time stock prices and information.</li>
-          <li>Create a custom watchlist of the stocks you care about.</li>
-          <li>Stay on top of your budget with our transaction tracker.</li>
+          <li data-nosnippet>
+            Search for real-time stock prices and information.
+          </li>
+          <li data-nosnippet>
+            Create a custom watchlist of the stocks you care about.
+          </li>
+          <li data-nosnippet>
+            Stay on top of your budget with our transaction tracker.
+          </li>
         </ul>
         <div className={styles['button-container']}>
           <Link to="/guide" className={styles.button}>
