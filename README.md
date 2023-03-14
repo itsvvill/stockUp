@@ -53,12 +53,16 @@ Users have 4 options for signing up:
 
 ---
 
-![Stock component](./public/stockUp_stock_component.png)
+![Stock search component](./public/stockUp_stock_component.png)
 
 ##### Stock Search
 
 - Lookup pricing information and other metrics using the stock symbol
 - Add stock to watchlist from symbol lookup with single button press
+
+---
+
+![Stock watchlist component](./public/stockUp_stock__watchlist_component.png)
 
 ##### Stock Watchlist
 
