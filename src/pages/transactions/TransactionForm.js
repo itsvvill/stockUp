@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
+import { motion } from 'framer-motion';
 
 // styles and icons
 import styles from './Home.module.css';
@@ -104,7 +105,11 @@ export default function TransactionForm({ uid, categories }) {
             value={color}
           />
         </label>
-        {formSuccess === '' && <button>Add Transaction</button>}
+        {formSuccess === '' && (
+          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            Add Transaction
+          </motion.button>
+        )}
         {formSuccess && (
           <button disabled>
             <UilCheckCircle size="25" />

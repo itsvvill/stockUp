@@ -36,10 +36,18 @@ export default function Home() {
           </li>
         </ul>
         <div className={styles['button-container']}>
-          <motion.div className={styles.button} whileHover={{ scale: 1.2 }}>
+          <motion.div
+            className={styles.button}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 1 }}
+          >
             <Link to="/guide">Learn More</Link>
           </motion.div>
-          <motion.div className={styles.button} whileHover={{ scale: 1.2 }}>
+          <motion.div
+            className={styles.button}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 1 }}
+          >
             <Link to="/login">Get Started</Link>
           </motion.div>
         </div>

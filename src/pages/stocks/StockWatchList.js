@@ -190,6 +190,7 @@ export default function StockWatchList({ stocks, user, fetchData }) {
         )}
         <motion.button
           whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
           onClick={() => toggleWatchListVisibility()}
           className={styles['watchlist-heading-btn']}
         >
@@ -219,6 +220,7 @@ export default function StockWatchList({ stocks, user, fetchData }) {
                 {!stock.stockLogo && (
                   <motion.button
                     whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
                     onClick={(e) => handleUpdateLogo(e, idx)}
                     className={styles['stocks-watchlist-symbol']}
                   >
@@ -320,6 +322,7 @@ export default function StockWatchList({ stocks, user, fetchData }) {
               )}
               <motion.button
                 whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
                 className={styles['stock-watchlist-menu']}
                 onClick={() => handleToggleDeleteIcon(stock.id)}
               >

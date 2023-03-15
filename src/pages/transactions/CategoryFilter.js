@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 //styles
 import styles from './Home.module.css';
 
@@ -15,7 +16,8 @@ export default function CategoryFilter({
     <div className={styles['category-filter-container']}>
       <nav className={styles['category-filter']}>
         {categories.map((c, idx) => (
-          <button
+          <motion.button
+            whileHover={{ scale: 1.1, border: '2px solid #333' }}
             key={`${c}_${idx}`}
             onClick={() => handleClick(c)}
             className={
@@ -25,7 +27,7 @@ export default function CategoryFilter({
             }
           >
             {c}
-          </button>
+          </motion.button>
         ))}
       </nav>
     </div>

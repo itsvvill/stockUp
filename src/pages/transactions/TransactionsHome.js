@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { useCollection } from '../../hooks/useCollection';
+import { motion } from 'framer-motion';
 
 //styles and icons
 import styles from './Home.module.css';
@@ -110,7 +111,9 @@ export default function TransactionsHome() {
   };
   return (
     <div className={styles.container}>
-      <button
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
         className={styles.toggle}
         onClick={() => setToggleView(!toggleView)}
       >
@@ -131,7 +134,7 @@ export default function TransactionsHome() {
         >
           <UilListUl size="20" color={toggleView ? '#333' : '#333'} />
         </span>
-      </button>
+      </motion.button>
       <div className={styles.content}>
         {error && <p>{error}</p>}
         {toggleView && documents.length < 1 && (
@@ -150,12 +153,13 @@ export default function TransactionsHome() {
                   color="red"
                 />
               </h1>
-              <button
+              <motion.button
+                whileHover={{ scale: 1.1 }}
                 className={styles.click}
                 onClick={() => setToggleView(false)}
               >
                 Start a new list
-              </button>
+              </motion.button>
             </div>
           </div>
         )}
@@ -163,14 +167,16 @@ export default function TransactionsHome() {
         {toggleView && documents && documents.length > 0 && (
           <>
             <div className={styles['transaction-filter-container']}>
-              <button
+              <motion.button
+                whileHover={{ scale: 1.2 }}
                 onClick={handleClick}
                 value="drop-down"
                 className={styles['button']}
               >
                 <UilAngleDoubleDown size="20" />
-              </button>
-              <button
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.2 }}
                 onClick={handleClick}
                 value="amount"
                 className={
@@ -184,8 +190,9 @@ export default function TransactionsHome() {
                 {amount === 'asc' && (
                   <UilAngleDown className={styles.down} size="12" />
                 )}
-              </button>
-              <button
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.2 }}
                 onClick={handleClick}
                 value="date"
                 className={
@@ -199,8 +206,9 @@ export default function TransactionsHome() {
                 {date === 'asc' && (
                   <UilAngleDown className={styles.down} size="12" />
                 )}
-              </button>
-              <button
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.2 }}
                 onClick={handleClick}
                 value="name"
                 className={
@@ -214,16 +222,17 @@ export default function TransactionsHome() {
                 {name === 'asc' && (
                   <UilAngleDown className={styles.down} size="12" />
                 )}
-              </button>
+              </motion.button>
               {transactions.length >= 1 && (
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.2 }}
                   className={
                     showInfo ? styles['button-active'] : styles['button']
                   }
                   onClick={() => setShowInfo((prevState) => !prevState)}
                 >
                   <UilInfoCircle size="20" />
-                </button>
+                </motion.button>
               )}
               {transactions.length < 1 && (
                 <button

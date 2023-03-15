@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
+import { motion } from 'framer-motion';
 
 // styles and icons
 import styles from './Stocks.module.css';
@@ -82,12 +83,14 @@ export default function Stocks({
                 </button>
               )}
               {!inWatchList && (
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 1 }}
                   onClick={(e) => handleSubmit(e)}
                   className={styles['toggle-watchlist-btn']}
                 >
                   <UilPlusCircle size="22" />
-                </button>
+                </motion.button>
               )}
             </span>
             <div className={styles['prices']}>

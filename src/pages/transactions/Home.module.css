@@ -96,16 +96,12 @@
   -webkit-box-shadow: var(--webkit-box-shadow);
   box-shadow: var(--box-shadow);
 }
-.sidebar button:hover {
-  scale: 1.1;
-}
 .sidebar button:disabled {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .sidebar button:disabled:hover {
-  scale: 1;
   cursor: default;
 }
 .sidebar h3 {
@@ -389,9 +385,6 @@
   background: none;
   cursor: pointer;
 }
-.transaction-filter-container .button:hover {
-  scale: 1.25;
-}
 .down {
   position: absolute;
   bottom: 8px;
@@ -485,11 +478,6 @@ nav.category-filter {
   font-weight: bold;
   cursor: pointer;
   font-size: 0.7em;
-}
-.category-btn:hover {
-  background: #daf7dc;
-  border: 2px solid #333;
-  scale: 1.3;
 }
 
 @media screen and (max-height: 750px), screen and (max-width: 1200px) {

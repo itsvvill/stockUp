@@ -34,6 +34,7 @@ export default function StockSearchBar({
           />
           <motion.button
             whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 1 }}
             type="submit"
             value="Search"
             className={styles['btn']}

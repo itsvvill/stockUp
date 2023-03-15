@@ -105,6 +105,7 @@ export default function StocksHome() {
     <div className={styles['stocks-home-container']}>
       <motion.button
         whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
         className={styles.toggle}
         onClick={() => setToggleView(!toggleView)}
       >

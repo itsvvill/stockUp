@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
+import { motion } from 'framer-motion';
 
 // styles
 import styles from './Stocks.module.css';
@@ -67,7 +68,13 @@ export default function StockWatchListForm({
             className={styles['watchlist-form-input']}
             onChange={(e) => setNewStockName(e.target.value)}
           />
-          <button className={styles['watchlist-form-btn']}>Add</button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 1 }}
+            className={styles['watchlist-form-btn']}
+          >
+            Add
+          </motion.button>
         </form>
       )}
       {/* watchlist not yet created */}
@@ -102,7 +109,13 @@ export default function StockWatchListForm({
               className={styles['new-watchlist-form-input']}
               onChange={(e) => setNewStockName(e.target.value)}
             />
-            <button className={styles['watchlist-form-btn']}>Add</button>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 1 }}
+              className={styles['watchlist-form-btn']}
+            >
+              Add
+            </motion.button>
           </form>
         </div>
       )}
