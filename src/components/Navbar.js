@@ -34,7 +34,7 @@ export default function Navbar() {
         {(matches) => (
           <>
             {matches.normal && (
-              <nav className={styles.navbar}>
+              <motion.nav className={styles.navbar} layout>
                 {!user && (
                   <ul className={styles.ul}>
                     <div className={styles.leftnav}>
@@ -196,7 +196,7 @@ export default function Navbar() {
                     )}
                   </ul>
                 )}
-              </nav>
+              </motion.nav>
             )}
             {/* nav for mobile */}
             {matches.small && !toggleMenu && (
