@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useSignup } from '../../../hooks/useSignup';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 //styles and icons
 import styles from './Signup.module.css';
@@ -28,9 +29,38 @@ export default function Signup() {
     e.preventDefault();
     setShowPassword((prevState) => !prevState);
   };
+  const pageVariants = {
+    initial: {
+      opacity: 0,
+      x: '-100vw',
+      scale: 0.8,
+    },
+    in: {
+      opacity: 1,
+      x: '0vw',
+      scale: 1,
+    },
+    out: {
+      opacity: 0,
+      x: '40vw',
+      scale: 1.2,
+    },
+  };
+  const pageTransition = {
+    type: 'tween',
+    ease: 'anticipate',
+    duration: 0.5,
+  };
 
   return (
-    <div className={styles['form-container']}>
+    <motion.div
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      transition={pageTransition}
+      className={styles['form-container']}
+    >
       <form onSubmit={handleSubmit} className={styles['signup-form']}>
         <h2 className={styles['signup-form-h2']}>
           <img src={logo} className={styles['logo']} alt="StockUp Logo" />
@@ -180,6 +210,6 @@ export default function Signup() {
           </span>
         </p>
       </form>
-    </div>
+    </motion.div>
   );
 }
