@@ -146,7 +146,7 @@ export default function StockWatchList({ stocks, user, fetchData }) {
   };
 
   return (
-    <div className={styles['stock-watchlist-container']}>
+    <motion.div layout className={styles['stock-watchlist-container']}>
       <span className={styles['stocks-watchlist-heading']}>
         {/* stock watchlist title normal state */}
         {!titleEdit && (
@@ -200,7 +200,8 @@ export default function StockWatchList({ stocks, user, fetchData }) {
       {/* if stocks exist in the watchlist */}
       {stocks &&
         stocks.map((stock, idx) => (
-          <li
+          <motion.li
+            layout
             key={stock.id}
             className={styles[`stocks-watchlist-item-` + getLIStyle(stock)]}
           >
@@ -332,7 +333,7 @@ export default function StockWatchList({ stocks, user, fetchData }) {
                 />
               </motion.button>
             </div>
-          </li>
+          </motion.li>
         ))}
       {showStockWatchListForm && (
         <StockWatchListForm
@@ -341,6 +342,6 @@ export default function StockWatchList({ stocks, user, fetchData }) {
           toggleStockWatchListForm={toggleWatchListVisibility}
         />
       )}
-    </div>
+    </motion.div>
   );
 }

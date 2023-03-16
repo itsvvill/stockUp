@@ -260,40 +260,73 @@ export default function Navbar() {
                   )}
                   {user && (
                     <div className={styles.div}>
-                      <div>
+                      <motion.div
+                        whileHover={{
+                          backgroundColor: '#4cc49a',
+                          transition: { duration: 0.6 },
+                        }}
+                        className={styles['link-container']}
+                      >
                         <Link to="/">Home</Link>
-                      </div>
-                      <div>
+                      </motion.div>
+                      <motion.div
+                        whileHover={{
+                          backgroundColor: '#4cc49a',
+                          transition: { duration: 0.6 },
+                        }}
+                        className={styles['link-container']}
+                      >
                         <Link to="/guide">Guide</Link>
-                      </div>
-                      <div>
+                      </motion.div>
+                      <motion.div
+                        whileHover={{
+                          backgroundColor: '#4cc49a',
+                          transition: { duration: 0.6 },
+                        }}
+                        className={styles['link-container']}
+                      >
                         <Link to="/stocks">Stocks</Link>
-                      </div>
-                      <div>
+                      </motion.div>
+                      <motion.div
+                        whileHover={{
+                          backgroundColor: '#4cc49a',
+                          transition: { duration: 0.6 },
+                        }}
+                        className={styles['link-container']}
+                      >
                         <Link to="/transactions">Transactions</Link>
-                      </div>
-                      <Link to="/user" className={styles.user}>
-                        {user.photoURL ? (
-                          <img
-                            className={styles.profileimg}
-                            src={user.photoURL}
-                            referrerPolicy="no-referrer"
-                            alt={`${user} profile`}
-                          />
-                        ) : (
-                          <UilUserCircle className={styles.profileimg} />
-                        )}
-                        <div className={styles.username}>
-                          {user.displayName ? user.displayName : 'Guest'}
-                        </div>
-                      </Link>
+                      </motion.div>
+                      <motion.div
+                        whileHover={{
+                          backgroundColor: '#4cc49a',
+                          transition: { duration: 0.6 },
+                        }}
+                        className={styles['link-container']}
+                      >
+                        <Link to="/user" className={styles.user}>
+                          {user.photoURL ? (
+                            <img
+                              className={styles.profileimg}
+                              src={user.photoURL}
+                              referrerPolicy="no-referrer"
+                              alt={`${user} profile`}
+                            />
+                          ) : (
+                            <UilUserCircle className={styles.profileimg} />
+                          )}
+                          <div className={styles.username}>
+                            {user.displayName ? user.displayName : 'Guest'}
+                          </div>
+                        </Link>
+                      </motion.div>
                       <div>
-                        <button
+                        <motion.button
+                          whileHover={{ scale: 1.2, transition: 0.6 }}
                           onClick={() => logout()}
                           className={styles.logout}
                         >
                           Logout
-                        </button>
+                        </motion.button>
                       </div>
                     </div>
                   )}

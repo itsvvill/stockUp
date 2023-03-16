@@ -189,7 +189,8 @@
     row-gap: 10px;
   }
   .div a,
-  .logout {
+  .logout,
+  .link-container {
     display: block;
     width: 300px;
     text-decoration: none;
@@ -199,9 +200,6 @@
     border-radius: 25px;
     padding: 5px;
   }
-  .div a:hover {
-    background: #4cc49a;
-  }
   .logout,
   .login {
     width: 315px;
@@ -210,10 +208,6 @@
     box-shadow: var(--box-shadow);
     background: 1px solid #1f8a58;
     margin-left: 0px;
-  }
-  .login:hover,
-  .logout:hover {
-    scale: 1.1;
   }
   .div .user {
     display: flex;
