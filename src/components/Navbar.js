@@ -265,8 +265,7 @@ export default function Navbar() {
                       </motion.div>
                       <motion.div
                         whileHover={{
-                          backgroundColor: '#4cc49a',
-                          transition: { duration: 0.6 },
+                          scale: 1.2,
                         }}
                         className={styles['link-container']}
                       >
