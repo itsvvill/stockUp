@@ -245,17 +245,35 @@ export default function Navbar() {
                   </div>
                   {!user && (
                     <div className={styles.div}>
-                      <div>
+                      <motion.div
+                        whileHover={{
+                          backgroundColor: '#4cc49a',
+                          transition: { duration: 0.6 },
+                        }}
+                        className={styles['link-container']}
+                      >
                         <Link to="/">Home</Link>
-                      </div>
-                      <div>
+                      </motion.div>
+                      <motion.div
+                        whileHover={{
+                          backgroundColor: '#4cc49a',
+                          transition: { duration: 0.6 },
+                        }}
+                        className={styles['link-container']}
+                      >
                         <Link to="/guide">Guide</Link>
-                      </div>
-                      <div>
+                      </motion.div>
+                      <motion.div
+                        whileHover={{
+                          backgroundColor: '#4cc49a',
+                          transition: { duration: 0.6 },
+                        }}
+                        className={styles['link-container']}
+                      >
                         <Link className={styles.login} to="/login">
                           Login
                         </Link>
-                      </div>
+                      </motion.div>
                     </div>
                   )}
                   {user && (
