@@ -13,8 +13,8 @@
   flex-direction: column;
   align-items: center;
   z-index: 1;
-  background: rgba(228, 227, 227, 1);
-  padding: 20px;
+  background: #f8f8f8;
+  padding: 25px 10px;
   border-radius: 25px;
   --webkit-box-shadow: var(--webkit-box-shadow);
   box-shadow: var(--box-shadow);

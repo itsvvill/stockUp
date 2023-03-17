@@ -5,8 +5,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 50px 0;
+}
+.border {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f8f8f8;
+  border-radius: 25px;
   row-gap: 10px;
-  margin: 40px 0;
+  padding: 5px;
+  --webkit-box-shadow: var(--webkit-box-shadow);
+  box-shadow: var(--box-shadow);
 }
 .header,
 .header-logo {
@@ -248,6 +259,14 @@
   }
 }
 @media screen and (max-height: 600px) {
+  .container {
+    justify-content: center;
+    margin: 30px 0;
+  }
+  .border {
+    padding: 2px;
+    row-gap: 5px;
+  }
   .header,
   .header-logo {
     font-size: 1.2em;
@@ -276,9 +295,6 @@
   }
 }
 @media screen and (max-height: 500px) {
-  .container {
-    justify-content: center;
-  }
   .header,
   .header-logo {
     font-size: 1em;
