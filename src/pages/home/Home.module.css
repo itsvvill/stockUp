@@ -13,11 +13,8 @@
   flex-direction: column;
   align-items: center;
   z-index: 1;
-  background: #f8f8f8;
-  padding: 25px 10px;
+  background: #f8f8f8f5;
   border-radius: 25px;
-  --webkit-box-shadow: var(--webkit-box-shadow);
-  box-shadow: var(--box-shadow);
 }
 .header,
 .header-logo {

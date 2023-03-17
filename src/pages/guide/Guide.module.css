@@ -12,12 +12,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #f8f8f8;
+  background: #f8f8f8f5;
   border-radius: 25px;
   row-gap: 10px;
-  padding: 5px;
-  --webkit-box-shadow: var(--webkit-box-shadow);
-  box-shadow: var(--box-shadow);
 }
 .header,
 .header-logo {
@@ -261,10 +258,9 @@
 @media screen and (max-height: 600px) {
   .container {
     justify-content: center;
-    margin: 30px 0;
+    margin: 40px 0;
   }
   .border {
-    padding: 2px;
     row-gap: 5px;
   }
   .header,
