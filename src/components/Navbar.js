@@ -92,11 +92,10 @@ export default function Navbar() {
                         </Link>
                       )}
                     </div>
-                    <motion.div
-                      whileHover={{ scale: 1.2 }}
-                      className={styles.login}
-                    >
-                      <Link to="/login">Login</Link>
+                    <motion.div whileHover={{ scale: 1.2 }}>
+                      <Link to="/login" className={styles.login}>
+                        Login
+                      </Link>
                     </motion.div>
                   </ul>
                 )}

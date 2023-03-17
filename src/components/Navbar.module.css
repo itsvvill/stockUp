@@ -58,7 +58,7 @@
   box-shadow: var(--box-shadow);
   cursor: pointer;
 }
-.navbar .login > a:hover {
+.navbar .login:hover {
   color: #333;
 }
 .logo {
