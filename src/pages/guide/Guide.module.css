@@ -49,7 +49,7 @@
   text-decoration: none;
 }
 .card {
-  background: rgba(228, 227, 227, 1);
+  background: #ebeaea;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

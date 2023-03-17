@@ -38,6 +38,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  background-color: #ebeaea;
   margin: 20px;
   padding: 15px 15px;
   border-radius: 25px;
