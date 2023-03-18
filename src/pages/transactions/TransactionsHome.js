@@ -170,7 +170,9 @@ export default function TransactionsHome() {
               <button
                 onClick={handleClick}
                 value="drop-down"
-                className={styles['button']}
+                className={
+                  showDropDown ? styles['button-active'] : styles['button']
+                }
               >
                 <UilAngleDoubleDown size="20" />
               </button>

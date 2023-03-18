@@ -365,6 +365,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  column-gap: 5px;
   box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
   border-bottom: 0.5px solid #5555555c;
   background-color: #f2f2f2;
@@ -372,15 +373,18 @@
 }
 .transaction-filter-container .button {
   border: 2px solid transparent;
-  padding: 5px 30px 0px 30px;
+  padding: 5px 20px 0px 20px;
   margin-bottom: 3px;
   background: none;
   cursor: pointer;
 }
+.transaction-filter-container .button:hover {
+  scale: 1.2;
+}
 .button-active {
   border: 2px solid transparent;
   border-bottom: 2px solid #333;
-  padding: 5px 30px 0px 30px;
+  padding: 5px 20px 0px 20px;
   margin-bottom: 3px;
   background: none;
   cursor: pointer;
