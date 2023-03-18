@@ -167,16 +167,14 @@ export default function TransactionsHome() {
         {toggleView && documents && documents.length > 0 && (
           <>
             <div className={styles['transaction-filter-container']}>
-              <motion.button
-                whileHover={{ scale: 1.2 }}
+              <button
                 onClick={handleClick}
                 value="drop-down"
                 className={styles['button']}
               >
                 <UilAngleDoubleDown size="20" />
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.2 }}
+              </button>
+              <button
                 onClick={handleClick}
                 value="amount"
                 className={
@@ -190,9 +188,8 @@ export default function TransactionsHome() {
                 {amount === 'asc' && (
                   <UilAngleDown className={styles.down} size="12" />
                 )}
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.2 }}
+              </button>
+              <button
                 onClick={handleClick}
                 value="date"
                 className={
@@ -206,9 +203,8 @@ export default function TransactionsHome() {
                 {date === 'asc' && (
                   <UilAngleDown className={styles.down} size="12" />
                 )}
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.2 }}
+              </button>
+              <button
                 onClick={handleClick}
                 value="name"
                 className={
@@ -222,17 +218,16 @@ export default function TransactionsHome() {
                 {name === 'asc' && (
                   <UilAngleDown className={styles.down} size="12" />
                 )}
-              </motion.button>
+              </button>
               {transactions.length >= 1 && (
-                <motion.button
-                  whileHover={{ scale: 1.2 }}
+                <button
                   className={
                     showInfo ? styles['button-active'] : styles['button']
                   }
                   onClick={() => setShowInfo((prevState) => !prevState)}
                 >
                   <UilInfoCircle size="20" />
-                </motion.button>
+                </button>
               )}
               {transactions.length < 1 && (
                 <button

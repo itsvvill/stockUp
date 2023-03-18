@@ -13,8 +13,8 @@ export default function CategoryFilter({
   };
 
   return (
-    <div className={styles['category-filter-container']}>
-      <nav className={styles['category-filter']}>
+    <motion.div layout className={styles['category-filter-container']}>
+      <motion.nav layout className={styles['category-filter']}>
         {categories.map((c, idx) => (
           <motion.button
             whileHover={{ scale: 1.1, border: '2px solid #333' }}
@@ -29,7 +29,7 @@ export default function CategoryFilter({
             {c}
           </motion.button>
         ))}
-      </nav>
-    </div>
+      </motion.nav>
+    </motion.div>
   );
 }
