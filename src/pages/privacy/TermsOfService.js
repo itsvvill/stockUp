@@ -407,7 +407,22 @@ export default function TermsOfService() {
         through such Third-Party Account, except the username and profile
         picture that become associated with your account.
       </p>
-      <h2>10. PRIVACY POLICY</h2>
+      <h2>10. SOCIAL MEDIA</h2>
+      <p>
+        You acknowledge and agree that any questions, comments, suggestions,
+        ideas feedback, or other information regarding the Site ("Submissions")
+        provided by you to us are non-confidential and shall become our sole
+        property. We shall own exclusive rights, including all intellectual
+        property rights, and shall be entitled to the unrestricted use and
+        dissemination of these Submissions for any lawful purpose, commercial,
+        or otherwise, without acknowledgment or compensation to you. You hereby
+        waive all moral rights to any such Submissions, and you hereby warrant
+        that any such Submissions are oriignal with you or that you have the
+        right to submit such Submissions. You agree there shall be no recourse
+        against us for any alleged or actual infringement or misappropriation of
+        any proprietary right in your Submissions.
+      </p>
+      <h2>11. PRIVACY POLICY</h2>
       <p>
         We care about privacy and security. Please review our Privacy Policy:{' '}
         <a
@@ -425,7 +440,7 @@ export default function TermsOfService() {
         transferring your data to the United Staates, and you agree to have your
         data transferred and processed in the United States.
       </p>
-      <h2>11. MISCELLANEOUS</h2>
+      <h2>12. MISCELLANEOUS</h2>
       <p>
         These Terms of Use and policies or operating rules posted by us on the
         Site or in respect to the Site constitute the entire agreement and
@@ -447,7 +462,7 @@ export default function TermsOfService() {
         form of these Terms of Use and the lack of signing by the parties hereto
         to execute these Terms of Use.
       </p>
-      <h2>12. CONTACT US</h2>
+      <h2>13. CONTACT US</h2>
       <p>
         In order to resolve a complaint regarding the Site or to recieve further
         information regarding use of the Site, please contact us at:
