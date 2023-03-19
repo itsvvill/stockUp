@@ -407,7 +407,7 @@ export default function TermsOfService() {
         through such Third-Party Account, except the username and profile
         picture that become associated with your account.
       </p>
-      <h2>10. SOCIAL MEDIA</h2>
+      <h2>10. SUBMISSIONS</h2>
       <p>
         You acknowledge and agree that any questions, comments, suggestions,
         ideas feedback, or other information regarding the Site ("Submissions")
@@ -422,7 +422,40 @@ export default function TermsOfService() {
         against us for any alleged or actual infringement or misappropriation of
         any proprietary right in your Submissions.
       </p>
-      <h2>11. PRIVACY POLICY</h2>
+      <h2>11. THIRD-PARTY WEBSITE AND CONTENT</h2>
+      <p>
+        The Site may contain (or you may be sent via the Site) links to other
+        websites ("Third-Party Websites") as well as articles, photographs,
+        text, graphics, pictures, designs, music, sound, video, information,
+        applications, software, and other content or items belonging to or
+        originating from third parties ("Third-Party Content"). Such Third-Party
+        Websites and Third-Party Content are not investigated, monitored, or
+        checked for accuracy, appropriateness, or completeness by us, and we are
+        not responsible for any Third-Party Websites accessed through the Site
+        or any Third-Party Content posted on, available through, or installed
+        from the Site, including the content, accuracy, offensiveness, opinions,
+        reliability, privacy practices, or other policies of or contained in the
+        Third-Party Websites or the Third-Party Content. Inclusion of, linking
+        to, or permitting the use or installation of any Third-Party Websites or
+        any Third-Party Content does not imply approval or endorsement thereof
+        by us. If you decide to leave the Site and access the Third-Party
+        Websites or to use or install any Third-Party Content, you do so at your
+        own risk, and you should be aware these Terms of Use no longer govern.
+        You should review the applicable terms and policies, including privacy
+        and data gathering practices, of any website to which you navigate from
+        the Site or relating to any applications you use or install from the
+        Site. Any purchases you make through Third-Party Websites will be
+        through other websites and from other companies, and we take no
+        responsibility whatsoever in relation to such purchases which are
+        exclusively between you and the applicable third party. You agree and
+        acknowledge that we do not endorse the products or services offered on
+        Third-Party Websites and you shall hold us harmless from any harm caused
+        by your purchase of such products or services. Additionally, you shall
+        hold us harmless from any losses sustained by you or harm caused to you
+        relating to or resulting in any way from any Third-Party Content or any
+        contact with Third-Party Websites.
+      </p>
+      <h2>12. PRIVACY POLICY</h2>
       <p>
         We care about privacy and security. Please review our Privacy Policy:{' '}
         <a
@@ -440,7 +473,7 @@ export default function TermsOfService() {
         transferring your data to the United Staates, and you agree to have your
         data transferred and processed in the United States.
       </p>
-      <h2>12. MISCELLANEOUS</h2>
+      <h2>13. MISCELLANEOUS</h2>
       <p>
         These Terms of Use and policies or operating rules posted by us on the
         Site or in respect to the Site constitute the entire agreement and
@@ -462,7 +495,7 @@ export default function TermsOfService() {
         form of these Terms of Use and the lack of signing by the parties hereto
         to execute these Terms of Use.
       </p>
-      <h2>13. CONTACT US</h2>
+      <h2>14. CONTACT US</h2>
       <p>
         In order to resolve a complaint regarding the Site or to recieve further
         information regarding use of the Site, please contact us at:
