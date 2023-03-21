@@ -2,11 +2,7 @@ import { useState, useEffect } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
 import StockWatchListForm from './StockWatchListForm';
 import { motion } from 'framer-motion';
-import {
-  COMPANY_OVERVIEW_BASE_URL,
-  FINN_HUB_API_KEY,
-  STOCK_LOOKUP_BASE_URL,
-} from '../../config';
+import API from '../../API';
 
 // styles and icons
 import styles from './Stocks.module.css';
@@ -16,7 +12,7 @@ import { UilTimesCircle } from '@iconscout/react-unicons';
 import { UilCheckCircle } from '@iconscout/react-unicons';
 import { UilPlusCircle } from '@iconscout/react-unicons';
 
-export default function StockWatchList({ stocks, user, fetchData }) {
+export default function StockWatchList({ stocks, user }) {
   const { updateDocument, deleteDocument, response } = useFirestore('stocks');
   const [showStockWatchListForm, setShowStockWatchListForm] = useState(false);
   const [toggleDeleteIcon, setToggleDeleteIcon] = useState('');
@@ -26,9 +22,6 @@ export default function StockWatchList({ stocks, user, fetchData }) {
   const [newStockName, setNewStockName] = useState('');
   const [newStockSymbol, setNewStockSymbol] = useState('');
   const [stockData, setStockData] = useState({});
-
-  // Finnhub API Key
-  // const FINNHUBAPI = process.env.REACT_APP_FINNHUB;
 
   // Toggles delete icon for matching ID if clicked
   const handleToggleDeleteIcon = (id) => {
@@ -92,9 +85,7 @@ export default function StockWatchList({ stocks, user, fetchData }) {
     let userID = user.uid;
     let id = stocks[idx].id;
     let stockSymbol = stocks[idx].stockSymbol;
-    let logo = await fetchData(
-      `${COMPANY_OVERVIEW_BASE_URL}${stockSymbol}${FINN_HUB_API_KEY}`
-    ).then((data) => data.logo);
+    let logo = await API.fetchProfile(stockSymbol).then((data) => data.logo);
     const editedDoc = {
       createdAt: stocks[idx].createdAt,
       id: id,
@@ -110,8 +101,7 @@ export default function StockWatchList({ stocks, user, fetchData }) {
   useEffect(() => {
     stocks.forEach((stock) => {
       let stockSymbol = stock.stockSymbol;
-      let url = `${STOCK_LOOKUP_BASE_URL}${stockSymbol}${FINN_HUB_API_KEY}`;
-      fetchData(url).then((data) => {
+      API.fetchQuote(stockSymbol).then((data) => {
         let newData = data;
         let percent = newData.dp;
         setStockData((prevState) => ({
@@ -126,7 +116,7 @@ export default function StockWatchList({ stocks, user, fetchData }) {
         }));
       });
     });
-  }, [stocks, fetchData]);
+  }, [stocks]);
 
   // Returns a color based on stock percentage as gain, loss, or no data
   const getLIStyle = (stock) => {

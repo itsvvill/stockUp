@@ -2,11 +2,7 @@ import { useState } from 'react';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { useCollection } from '../../hooks/useCollection';
 import { motion } from 'framer-motion';
-import {
-  COMPANY_OVERVIEW_BASE_URL,
-  FINN_HUB_API_KEY,
-  STOCK_LOOKUP_BASE_URL,
-} from '../../config';
+import API from '../../API';
 
 // pages and components
 // import SearchResults from './SearchResults';
@@ -43,20 +39,10 @@ export default function StocksHome() {
     ['uid', '==', user.uid],
     ['createdAt', 'desc']
   );
-  // api URLs
-  let companyOverviewURL = `${COMPANY_OVERVIEW_BASE_URL}${searchQuery}${FINN_HUB_API_KEY}`;
-  let quoteEndpointURL = `${STOCK_LOOKUP_BASE_URL}${searchQuery}${FINN_HUB_API_KEY}`;
-
-  // async fetch
-  const fetchData = async (url) => {
-    let response = await fetch(url);
-    let data = await response.json();
-    return data;
-  };
 
   //general info api call
-  const getGeneralInfo = (fetchCall, url) => {
-    fetchCall(url).then((data) => {
+  const getGeneralInfo = async () => {
+    await API.fetchProfile(searchQuery).then((data) => {
       setStockSymbol(data.ticker);
       setStockName(data.name);
       setStockExchange(
@@ -72,8 +58,8 @@ export default function StocksHome() {
   };
 
   //pricing info api call
-  const getPricingInfo = (fetchCall, url) => {
-    fetchCall(url).then((data) => {
+  const getPricingInfo = async () => {
+    await API.fetchQuote(searchQuery).then((data) => {
       setHighPrice(parseFloat(data.h).toFixed(2));
       setLowPrice(parseFloat(data.l).toFixed(2));
       setCurrentPrice(parseFloat(data.c).toFixed(2));
@@ -99,8 +85,8 @@ export default function StocksHome() {
   // api request for general, pricing, and search information
   const toggleSubmit = (e) => {
     e.preventDefault();
-    getGeneralInfo(fetchData, companyOverviewURL);
-    getPricingInfo(fetchData, quoteEndpointURL);
+    getGeneralInfo();
+    getPricingInfo();
     setStockSymbol('');
   };
   return (
@@ -190,11 +176,7 @@ export default function StocksHome() {
       {toggleView && documents !== null && documents.length >= 1 && (
         <div className={styles['stocks-components-container']}>
           {documents !== null && documents.length >= 1 && (
-            <StockWatchList
-              stocks={documents}
-              user={user}
-              fetchData={fetchData}
-            />
+            <StockWatchList stocks={documents} user={user} />
           )}
         </div>
       )}
