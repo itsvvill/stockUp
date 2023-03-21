@@ -2,7 +2,11 @@ import { useState, useEffect } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
 import StockWatchListForm from './StockWatchListForm';
 import { motion } from 'framer-motion';
-import { FINN_HUB_API_KEY, FINN_HUB_URL } from '../../config';
+import {
+  COMPANY_OVERVIEW_BASE_URL,
+  FINN_HUB_API_KEY,
+  STOCK_LOOKUP_BASE_URL,
+} from '../../config';
 
 // styles and icons
 import styles from './Stocks.module.css';
@@ -89,7 +93,7 @@ export default function StockWatchList({ stocks, user, fetchData }) {
     let id = stocks[idx].id;
     let stockSymbol = stocks[idx].stockSymbol;
     let logo = await fetchData(
-      `${FINN_HUB_URL}stock/profile2?symbol=${stockSymbol}&token=${FINN_HUB_API_KEY}`
+      `${COMPANY_OVERVIEW_BASE_URL}${stockSymbol}${FINN_HUB_API_KEY}`
     ).then((data) => data.logo);
     const editedDoc = {
       createdAt: stocks[idx].createdAt,
@@ -106,7 +110,7 @@ export default function StockWatchList({ stocks, user, fetchData }) {
   useEffect(() => {
     stocks.forEach((stock) => {
       let stockSymbol = stock.stockSymbol;
-      let url = `${FINN_HUB_URL}quote?symbol=${stockSymbol}&token=${FINN_HUB_API_KEY}`;
+      let url = `${STOCK_LOOKUP_BASE_URL}${stockSymbol}${FINN_HUB_API_KEY}`;
       fetchData(url).then((data) => {
         let newData = data;
         let percent = newData.dp;

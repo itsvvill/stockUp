@@ -1,5 +1,16 @@
 //Configuration for Finnhub API
-const FINN_HUB_API_KEY = process.env.REACT_APP_FINNHUB;
+const FINN_HUB_API_KEY = `&token=${process.env.REACT_APP_FINNHUB}`;
 const FINN_HUB_URL = 'https://finnhub.io/api/v1/';
+const FINN_HUB_PROFILE_URL = 'stock/profile2?symbol=';
+const FINN_HUB_SYMBOL_URL = 'quote?symbol=';
 
-export { FINN_HUB_API_KEY, FINN_HUB_URL };
+const COMPANY_OVERVIEW_BASE_URL = `${FINN_HUB_URL}${FINN_HUB_PROFILE_URL}`;
+const STOCK_LOOKUP_BASE_URL = `${FINN_HUB_URL}${FINN_HUB_SYMBOL_URL}`;
+export {
+  FINN_HUB_API_KEY,
+  FINN_HUB_URL,
+  FINN_HUB_PROFILE_URL,
+  FINN_HUB_SYMBOL_URL,
+  COMPANY_OVERVIEW_BASE_URL,
+  STOCK_LOOKUP_BASE_URL,
+};

@@ -2,7 +2,11 @@ import { useState } from 'react';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { useCollection } from '../../hooks/useCollection';
 import { motion } from 'framer-motion';
-import { FINN_HUB_API_KEY, FINN_HUB_URL } from '../../config';
+import {
+  COMPANY_OVERVIEW_BASE_URL,
+  FINN_HUB_API_KEY,
+  STOCK_LOOKUP_BASE_URL,
+} from '../../config';
 
 // pages and components
 // import SearchResults from './SearchResults';
@@ -39,12 +43,9 @@ export default function StocksHome() {
     ['uid', '==', user.uid],
     ['createdAt', 'desc']
   );
-  // FINNHUBAPI KEY
-  // const FINNHUBAPI = process.env.REACT_APP_FINNHUB;
-
   // api URLs
-  let companyOverviewURL = `${FINN_HUB_URL}stock/profile2?symbol=${searchQuery}&token=${FINN_HUB_API_KEY}`;
-  let quoteEndpointURL = `${FINN_HUB_URL}quote?symbol=${searchQuery}&token=${FINN_HUB_API_KEY}`;
+  let companyOverviewURL = `${COMPANY_OVERVIEW_BASE_URL}${searchQuery}${FINN_HUB_API_KEY}`;
+  let quoteEndpointURL = `${STOCK_LOOKUP_BASE_URL}${searchQuery}${FINN_HUB_API_KEY}`;
 
   // async fetch
   const fetchData = async (url) => {
