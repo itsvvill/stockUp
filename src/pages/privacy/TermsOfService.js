@@ -495,7 +495,23 @@ export default function TermsOfService() {
         form of these Terms of Use and the lack of signing by the parties hereto
         to execute these Terms of Use.
       </p>
-      <h2>14. CONTACT US</h2>
+      <h2>14. SITE MANAGEMENT</h2>
+      <p>
+        We reserve the right, but not the obligation, to: (1) monitor the Site
+        for violations of these Terms of Use; (2) take approprate legal action
+        against anyone who, in our sole discretion, violates the law or these
+        Terms of Use, including without limitation, reporting such user to law
+        enforcement authoritiesl (3) in our sole discretion and without
+        limitation, refuse, restrict access to, limit the availability of, or
+        disable (to the extent technologically feasible) any of your
+        Contributions or any portion thereof; (4) in our sole discretion and
+        without limitation, notice, or liability, to remove from the Site or
+        otherwise disable all files and content that are excessive in size or
+        are in any way burdensome to our systems; and (5) otherwise manage the
+        Site in a manner designed to protect our rights and property and to
+        facilitate the proper functioning of the Site.
+      </p>
+      <h2>15. CONTACT US</h2>
       <p>
         In order to resolve a complaint regarding the Site or to recieve further
         information regarding use of the Site, please contact us at:
