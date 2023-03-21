@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
 import StockWatchListForm from './StockWatchListForm';
 import { motion } from 'framer-motion';
+import { FINN_HUB_API_KEY, FINN_HUB_URL } from '../../config';
 
 // styles and icons
 import styles from './Stocks.module.css';
@@ -23,7 +24,7 @@ export default function StockWatchList({ stocks, user, fetchData }) {
   const [stockData, setStockData] = useState({});
 
   // Finnhub API Key
-  const FINNHUBAPI = process.env.REACT_APP_FINNHUB;
+  // const FINNHUBAPI = process.env.REACT_APP_FINNHUB;
 
   // Toggles delete icon for matching ID if clicked
   const handleToggleDeleteIcon = (id) => {
@@ -88,7 +89,7 @@ export default function StockWatchList({ stocks, user, fetchData }) {
     let id = stocks[idx].id;
     let stockSymbol = stocks[idx].stockSymbol;
     let logo = await fetchData(
-      `https://finnhub.io/api/v1/stock/profile2?symbol=${stockSymbol}&token=${FINNHUBAPI}`
+      `${FINN_HUB_URL}stock/profile2?symbol=${stockSymbol}&token=${FINN_HUB_API_KEY}`
     ).then((data) => data.logo);
     const editedDoc = {
       createdAt: stocks[idx].createdAt,
@@ -105,7 +106,7 @@ export default function StockWatchList({ stocks, user, fetchData }) {
   useEffect(() => {
     stocks.forEach((stock) => {
       let stockSymbol = stock.stockSymbol;
-      let url = `https://finnhub.io/api/v1/quote?symbol=${stockSymbol}&token=${FINNHUBAPI}`;
+      let url = `${FINN_HUB_URL}quote?symbol=${stockSymbol}&token=${FINN_HUB_API_KEY}`;
       fetchData(url).then((data) => {
         let newData = data;
         let percent = newData.dp;
@@ -121,7 +122,7 @@ export default function StockWatchList({ stocks, user, fetchData }) {
         }));
       });
     });
-  }, [stocks, fetchData, FINNHUBAPI]);
+  }, [stocks, fetchData]);
 
   // Returns a color based on stock percentage as gain, loss, or no data
   const getLIStyle = (stock) => {
