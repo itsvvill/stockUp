@@ -487,6 +487,7 @@
   background: none;
   font-weight: bold;
   font-size: 0.9em;
+  cursor: text;
 }
 .stocks-watchlist-name-span {
   background: rgba(228, 227, 227, 0.643);
@@ -529,7 +530,9 @@
   margin: 1px;
   font-size: 0.9em;
   border-radius: 10px;
+  font-weight: bold;
   padding: 4px 6px;
+  border: none;
   -webkit-box-shadow: var(--webkit-box-shadow);
   box-shadow: var(--box-shadow);
 }

@@ -22,6 +22,7 @@ export default function StockWatchList({ stocks, user }) {
   const [newStockName, setNewStockName] = useState('');
   const [newStockSymbol, setNewStockSymbol] = useState('');
   const [stockData, setStockData] = useState({});
+  const [toggleData, setToggleData] = useState(false);
 
   // Toggles delete icon for matching ID if clicked
   const handleToggleDeleteIcon = (id) => {
@@ -104,6 +105,7 @@ export default function StockWatchList({ stocks, user }) {
       API.fetchQuote(stockSymbol).then((data) => {
         let newData = data;
         let percent = newData.dp;
+        let changeAmount = newData.d;
         setStockData((prevState) => ({
           ...prevState,
           [stockSymbol]: {
@@ -112,6 +114,7 @@ export default function StockWatchList({ stocks, user }) {
             high: newData.h,
             low: newData.l,
             open: newData.o,
+            change: parseFloat(changeAmount).toFixed(2),
           },
         }));
       });
@@ -233,7 +236,8 @@ export default function StockWatchList({ stocks, user }) {
                     {stock.stockSymbol}
                   </motion.button>
                 )}
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
                   onClick={() => setToggleEdit((prevState) => stock.id)}
                   className={styles['stocks-watchlist-name']}
                 >
@@ -242,10 +246,14 @@ export default function StockWatchList({ stocks, user }) {
                       {stock.stockName}
                     </span>
                   </div>
-                </button>
+                </motion.button>
                 {stockData[stock.stockSymbol] && (
                   <div className={styles['stock-watchlist-data-container']}>
-                    <span className={styles['stocks-watchlist-percent']}>
+                    <motion.button
+                      whileHover={{ scale: 1.1 }}
+                      onClick={() => setToggleData(!toggleData)}
+                      className={styles['stocks-watchlist-percent']}
+                    >
                       {getLIStyle(stock) === 'green' ? (
                         <span className={styles['stock-watchlist-green-arrow']}>
                           ⬆
@@ -255,8 +263,10 @@ export default function StockWatchList({ stocks, user }) {
                           ⬇
                         </span>
                       )}
-                      {stockData[stock.stockSymbol].percent}%
-                    </span>
+                      {!toggleData &&
+                        `${stockData[stock.stockSymbol].percent}%`}
+                      {toggleData && `${stockData[stock.stockSymbol].change}`}
+                    </motion.button>
                     <span className={styles['stocks-watchlist-price']}>
                       ${stockData[stock.stockSymbol].price}
                     </span>
