@@ -142,18 +142,28 @@ export default function StockWatchList({ stocks, user }) {
 
   return (
     <motion.div layout className={styles['stock-watchlist-container']}>
-      <span className={styles['stocks-watchlist-heading']}>
-        {/* stock watchlist title normal state */}
-        {!titleEdit && (
+      {/* stock watchlist title normal state */}
+      {!titleEdit && (
+        <span className={styles['stocks-watchlist-heading']}>
           <button
             onClick={() => setTitleEdit((prevState) => true)}
             className={styles['stock-watchlist-heading-title']}
           >
             {stocks[stocks.length - 1].watchList}
           </button>
-        )}
-        {/* stock watchlist title editing state */}
-        {titleEdit && (
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => toggleWatchListVisibility()}
+            className={styles['watchlist-heading-btn']}
+          >
+            <UilPlusCircle size="22" />
+          </motion.button>
+        </span>
+      )}
+      {/* stock watchlist title editing state */}
+      {titleEdit && (
+        <span className={styles['stocks-watchlist-heading']}>
           <div className={styles['stock-watchlist-edit-title-container']}>
             <input
               type="text"
@@ -182,16 +192,16 @@ export default function StockWatchList({ stocks, user }) {
               </motion.button>
             </div>
           </div>
-        )}
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => toggleWatchListVisibility()}
-          className={styles['watchlist-heading-btn']}
-        >
-          <UilPlusCircle size="22" />
-        </motion.button>
-      </span>
+          <button
+            disabled
+            className={styles['watchlist-heading-btn']}
+            style={{ cursor: 'default' }}
+          >
+            <UilPlusCircle size="22" />
+          </button>
+        </span>
+      )}
+
       {/* if stocks exist in the watchlist */}
       {stocks &&
         stocks.map((stock, idx) => (
