@@ -241,31 +241,27 @@ export default function StockWatchList({ stocks, user }) {
                     <span className={styles['stocks-watchlist-name-span']}>
                       {stock.stockName}
                     </span>
-                    {stockData[stock.stockSymbol] && (
-                      <div className={styles['stock-watchlist-data-container']}>
-                        <span className={styles['stocks-watchlist-percent']}>
-                          {getLIStyle(stock) === 'green' ? (
-                            <span
-                              className={styles['stock-watchlist-green-arrow']}
-                            >
-                              ⬆
-                            </span>
-                          ) : (
-                            <span
-                              className={styles['stock-watchlist-red-arrow']}
-                            >
-                              ⬇
-                            </span>
-                          )}
-                          {stockData[stock.stockSymbol].percent}%
-                        </span>
-                        <span className={styles['stocks-watchlist-price']}>
-                          ${stockData[stock.stockSymbol].price}
-                        </span>
-                      </div>
-                    )}
                   </div>
                 </button>
+                {stockData[stock.stockSymbol] && (
+                  <div className={styles['stock-watchlist-data-container']}>
+                    <span className={styles['stocks-watchlist-percent']}>
+                      {getLIStyle(stock) === 'green' ? (
+                        <span className={styles['stock-watchlist-green-arrow']}>
+                          ⬆
+                        </span>
+                      ) : (
+                        <span className={styles['stock-watchlist-red-arrow']}>
+                          ⬇
+                        </span>
+                      )}
+                      {stockData[stock.stockSymbol].percent}%
+                    </span>
+                    <span className={styles['stocks-watchlist-price']}>
+                      ${stockData[stock.stockSymbol].price}
+                    </span>
+                  </div>
+                )}
               </>
             )}
             {/* editing a single stock in the watchlist */}
