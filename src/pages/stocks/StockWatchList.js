@@ -20,7 +20,6 @@ export default function StockWatchList({ stocks, user }) {
   const [titleEdit, setTitleEdit] = useState(false);
   const [newStockWatchList, setNewStockWatchList] = useState('');
   const [newStockName, setNewStockName] = useState('');
-  const [newStockSymbol, setNewStockSymbol] = useState('');
   const [stockData, setStockData] = useState({});
   const [toggleData, setToggleData] = useState(false);
 
@@ -69,17 +68,15 @@ export default function StockWatchList({ stocks, user }) {
       createdAt: stocks[idx].createdAt,
       id: toggleEdit,
       stockName: newStockName,
-      stockSymbol: newStockSymbol,
+      stockSymbol: stocks[idx].stockSymbol,
       uid: userID,
     };
     await updateDocument(toggleEdit, editedDoc);
     if (!response.error) {
       setToggleEdit((prevState) => '');
-      setNewStockSymbol((prevState) => '');
       setNewStockName((prevState) => '');
     }
   };
-
   // if stock has no logo, search for logo url and update
   const handleUpdateLogo = async (e, idx) => {
     e.preventDefault();
@@ -280,14 +277,6 @@ export default function StockWatchList({ stocks, user }) {
                 onSubmit={(e) => handleSubmit(e, idx)}
                 className={styles['stock-watchlist-edit-form']}
               >
-                <input
-                  type="text"
-                  required
-                  placeholder={stock.stockSymbol ? stock.stockSymbol : 'Symbol'}
-                  value={newStockSymbol}
-                  className={styles['stock-watchlist-edit-symbol']}
-                  onChange={(e) => setNewStockSymbol(e.target.value)}
-                />
                 <input
                   type="text"
                   autoFocus
