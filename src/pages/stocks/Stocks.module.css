@@ -586,25 +586,15 @@
 }
 .stock-watchlist-edit-form {
   display: flex;
+  justify-content: center;
   align-items: center;
-}
-.stock-watchlist-edit-symbol {
-  border: none;
-  text-align: center;
-  border-radius: 25px;
-  width: 50px;
-  padding: 5px 10px;
-  font-weight: bold;
-  font-size: 0.9em;
-  margin-right: 2px;
 }
 .stock-watchlist-edit-name {
   border: none;
   text-align: center;
   border-radius: 25px;
-  width: 150px;
+  width: 250px;
   padding: 5px 8px;
-  margin: 2px;
   font-weight: bold;
   font-size: 0.9em;
 }
@@ -624,6 +614,8 @@
   align-items: center;
 }
 .stock-watchlist-edit-submit {
+  position: relative;
+  top: 4px;
   border: none;
   padding: 0;
   border-radius: 50%;
@@ -631,6 +623,8 @@
   background: none;
 }
 .stock-watchlist-edit-cancel {
+  position: relative;
+  top: 2px;
   border: none;
   padding: 0;
   cursor: pointer;
@@ -710,21 +704,13 @@
   .stock-watchlist-edit-form {
     width: 200px;
   }
-  .stock-watchlist-edit-name,
-  .stock-watchlist-edit-symbol,
-  .stock-watchlist-edit-exchange {
+  .stock-watchlist-edit-name {
     font-size: 0.75em;
     font-weight: 500;
     padding: 5px 2px;
   }
-  .stock-watchlist-edit-symbol {
-    width: 40px;
-  }
   .stock-watchlist-edit-name {
-    width: 125px;
-  }
-  .stock-watchlist-edit-exchange {
-    width: 90px;
+    width: 180px;
   }
   .no-watchlist,
   .watchlist-form {
@@ -772,19 +758,11 @@
   .stock-watchlist-edit-cancel {
     font-size: 0.6em;
   }
-  .stock-watchlist-edit-name,
-  .stock-watchlist-edit-symbol,
-  .stock-watchlist-edit-exchange {
+  .stock-watchlist-edit-name {
     font-size: 0.6em;
   }
-  .stock-watchlist-edit-symbol {
-    width: 35px;
-  }
   .stock-watchlist-edit-name {
-    width: 110px;
-  }
-  .stock-watchlist-edit-exchange {
-    width: 70px;
+    width: 150px;
   }
 
   .stock,

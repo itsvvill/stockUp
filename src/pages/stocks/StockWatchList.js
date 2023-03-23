@@ -240,7 +240,7 @@ export default function StockWatchList({ stocks, user }) {
                 >
                   <div className={styles['stock-watchlist-name-data']}>
                     <span className={styles['stocks-watchlist-name-span']}>
-                      {toggleData ? stock.stockName : stock.stockSymbol}
+                      {!toggleData ? stock.stockName : stock.stockSymbol}
                     </span>
                   </div>
                 </motion.button>
