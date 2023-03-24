@@ -74,11 +74,15 @@
   -webkit-box-shadow: var(--webkit-box-shadow);
   box-shadow: var(--box-shadow);
 }
-.error {
+.error,
+.duplicate {
   padding-bottom: 10px;
   font-weight: 600;
   color: red;
   font-size: 0.8em;
+}
+.duplicate {
+  text-align: center;
 }
 .search {
   margin: 50px 50px 25px 50px;
@@ -356,6 +360,10 @@
   position: relative;
   top: 6px;
   padding: 0 5px 0 5px;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
 }
 .new-watchlist-form-input {
   width: 100px;
