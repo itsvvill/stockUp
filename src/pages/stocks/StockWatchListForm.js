@@ -14,10 +14,25 @@ export default function StockWatchListForm({
   const [newStockWatchList, setNewStockWatchList] = useState('');
   const [newStockSymbol, setNewStockSymbol] = useState('');
   const [newStockName, setNewStockName] = useState('');
+  const [inWatchList, setInWatchList] = useState(false);
 
   // either starts a new stock watchlist, or adds a new stock to watchlist
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (stocks) {
+      let duplicateCheck = stocks.filter(
+        (stock) => stock.stockSymbol === newStockSymbol
+      );
+      if (duplicateCheck.length >= 1) {
+        setInWatchList(true);
+        setTimeout(() => {
+          setInWatchList(false);
+          setNewStockName('');
+          setNewStockSymbol('');
+        }, 2000);
+        return;
+      }
+    }
     const newDocument = {
       watchList: stocks?.[stocks.length - 1]?.watchList
         ? stocks[stocks.length - 1].watchList
@@ -34,6 +49,9 @@ export default function StockWatchListForm({
   // waits for response and hides stock watchlist form
   useEffect(() => {
     if (response.success) {
+      setInWatchList(false);
+      setNewStockName('');
+      setNewStockSymbol('');
       toggleStockWatchListForm((prevState) => !prevState);
     }
   }, [response.success, toggleStockWatchListForm]);
@@ -43,6 +61,7 @@ export default function StockWatchListForm({
       {/* watchlist already exists */}
       {stocks?.[stocks.length - 1]?.watchList && (
         <form className={styles['watchlist-form']} onSubmit={handleSubmit}>
+          {inWatchList && <p>Stock is already in watchlist!</p>}
           {stocks.length < 1 && (
             <input
               type="text"
