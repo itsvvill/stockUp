@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
 import { motion } from 'framer-motion';
+import API from '../../API';
 
 // styles
 import styles from './Stocks.module.css';
@@ -15,10 +16,25 @@ export default function StockWatchListForm({
   const [newStockSymbol, setNewStockSymbol] = useState('');
   const [newStockName, setNewStockName] = useState('');
   const [inWatchList, setInWatchList] = useState(false);
+  const [notFound, setNotFound] = useState(false);
 
-  // either starts a new stock watchlist, or adds a new stock to watchlist
-  const handleSubmit = (e) => {
+  // either starts a new stock watchlist, or adds stock to watchlist
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    //check to see if stock symbol is valid and exists in api
+    let data = await API.fetchQuote(newStockSymbol);
+    if (data.d === null) {
+      setNotFound(true);
+      setTimeout(() => {
+        setNotFound(false);
+        setNewStockName('');
+        setNewStockSymbol('');
+      }, 2000);
+      return;
+    }
+
+    // check to see if stock symbol already exists in watchlist
     let duplicateCheck = stocks?.filter(
       (stock) => stock.stockSymbol === newStockSymbol
     );
@@ -31,6 +47,9 @@ export default function StockWatchListForm({
       }, 2000);
       return;
     }
+
+    // add stock if passed previous checks
+    let logo = await API.fetchProfile(newStockSymbol).then((data) => data.logo);
     const newDocument = {
       watchList: stocks?.[stocks.length - 1]?.watchList
         ? stocks[stocks.length - 1].watchList
@@ -39,6 +58,7 @@ export default function StockWatchListForm({
         : newStockWatchList.trim(),
       stockName: newStockName.trim(),
       stockSymbol: newStockSymbol.trim().toUpperCase(),
+      stockLogo: logo,
       uid: uid,
     };
     addDocument(newDocument);
@@ -61,6 +81,9 @@ export default function StockWatchListForm({
         <motion.div layout className={styles['form-container']}>
           {inWatchList && (
             <p className={styles.duplicate}>Stock is already in watchlist!</p>
+          )}
+          {notFound && (
+            <p className={styles.duplicate}>Sorry, that stock wasn't found.</p>
           )}
           <form className={styles['watchlist-form']} onSubmit={handleSubmit}>
             {stocks.length < 1 && (
