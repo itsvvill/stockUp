@@ -77,23 +77,6 @@ export default function StockWatchList({ stocks, user }) {
       setNewStockName((prevState) => '');
     }
   };
-  // if stock has no logo, search for logo url and update
-  const handleUpdateLogo = async (e, idx) => {
-    e.preventDefault();
-    let userID = user.uid;
-    let id = stocks[idx].id;
-    let stockSymbol = stocks[idx].stockSymbol;
-    let logo = await API.fetchProfile(stockSymbol).then((data) => data.logo);
-    const editedDoc = {
-      createdAt: stocks[idx].createdAt,
-      id: id,
-      stockName: stocks[idx].stockName,
-      stockSymbol: stocks[idx].stockSymbol,
-      uid: userID,
-      stockLogo: logo,
-    };
-    await updateDocument(id, editedDoc);
-  };
 
   // Finnhub stock data fetch - fires on initial load
   useEffect(() => {
@@ -212,27 +195,13 @@ export default function StockWatchList({ stocks, user }) {
           >
             {(toggleEdit === '' || toggleEdit !== stock.id) && (
               <>
-                {/* stockLogo is in database */}
-                {stock.stockLogo && (
-                  <div className={styles['stocks-watchlist-logo-container']}>
-                    <img
-                      className={styles['stock-watchlist-logo']}
-                      src={stock.stockLogo}
-                      alt={`${stock.stockName} logo`}
-                    />
-                  </div>
-                )}
-                {/* no logo in database */}
-                {!stock.stockLogo && (
-                  <motion.button
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    onClick={(e) => handleUpdateLogo(e, idx)}
-                    className={styles['stocks-watchlist-symbol']}
-                  >
-                    {stock.stockSymbol}
-                  </motion.button>
-                )}
+                <div className={styles['stocks-watchlist-logo-container']}>
+                  <img
+                    className={styles['stock-watchlist-logo']}
+                    src={stock.stockLogo}
+                    alt={`${stock.stockName} logo`}
+                  />
+                </div>
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   onClick={() => setToggleEdit((prevState) => stock.id)}
