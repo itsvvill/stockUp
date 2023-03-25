@@ -1,14 +1,38 @@
+import { useState } from 'react';
+import API from '../../API';
+
 import { motion } from 'framer-motion';
 // styles and icons
 import styles from './Stocks.module.css';
 
 export default function StockSearchBar({
+  searchQuery,
   stockName,
   updateSearchQuery,
   toggleSubmit,
 }) {
+  const [searchResults, setSearchResults] = useState([]);
+
+  const getSearchResults = async () => {
+    try {
+      await API.fetchSearch(searchQuery).then((data) => {
+        let filteredData = data.bestMatches
+          .filter((res) => !res['1. symbol'].includes('.'))
+          .map((stock) => {
+            return stock['1. symbol'];
+          });
+        if (filteredData?.length >= 1) {
+          setSearchResults((prevState) => [...filteredData]);
+        }
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const handleSubmit = (e) => {
     toggleSubmit(e);
+    getSearchResults();
   };
   return (
     <>
@@ -43,10 +67,27 @@ export default function StockSearchBar({
           </motion.button>
         </form>
       </div>
-      {stockName === undefined && (
+      {stockName === undefined && searchResults === undefined && (
         <p className={styles.error}>
           Sorry, no results found. Try another search.
         </p>
+      )}
+      {stockName === undefined && searchResults?.length >= 1 && (
+        <div className={styles['search-results']}>
+          {searchResults.map((res, index) => (
+            <button
+              key={res}
+              value={res}
+              // onClick={(e) => handleClick(e, res[0])}
+            >
+              {res}
+            </button>
+          ))}
+        </div>
+        // <p className={styles.error}>
+        //   Related to your search:{' '}
+        //   <button>{searchResults[0]['1. symbol']}</button>
+        // </p>
       )}
     </>
   );

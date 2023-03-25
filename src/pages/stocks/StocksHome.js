@@ -33,6 +33,7 @@ export default function StocksHome() {
   const [changeAmount, setChangeAmount] = useState(0);
   const [percentChange, setPercentChange] = useState(0);
   const [isLoss, setIsLoss] = useState(false);
+  const [searchError, setSearchError] = useState(false);
   const { user } = useAuthContext();
   const { documents } = useCollection(
     'stocks',
@@ -42,39 +43,47 @@ export default function StocksHome() {
 
   //general info api call
   const getGeneralInfo = async () => {
-    await API.fetchProfile(searchQuery).then((data) => {
-      setStockSymbol(data.ticker);
-      setStockName(data.name);
-      setStockExchange(
-        data.exchange?.split(' ')[0] === 'NASDAQ'
-          ? data.exchange?.split(' ')[0]
-          : data.exchange?.split(' ')[0] === 'NEW'
-          ? 'NYSE'
-          : data.exchange
-      );
-      setSector(data.finnhubIndustry.toUpperCase());
-      setLogoURL(data.logo);
-    });
+    try {
+      await API.fetchProfile(searchQuery).then((data) => {
+        setStockSymbol(data.ticker);
+        setStockName(data.name);
+        setStockExchange(
+          data.exchange?.split(' ')[0] === 'NASDAQ'
+            ? data.exchange?.split(' ')[0]
+            : data.exchange?.split(' ')[0] === 'NEW'
+            ? 'NYSE'
+            : data.exchange
+        );
+        setSector(data.finnhubIndustry.toUpperCase());
+        setLogoURL(data.logo);
+      });
+    } catch (error) {
+      setSearchError(true);
+    }
   };
 
   //pricing info api call
   const getPricingInfo = async () => {
-    await API.fetchQuote(searchQuery).then((data) => {
-      setHighPrice(parseFloat(data.h).toFixed(2));
-      setLowPrice(parseFloat(data.l).toFixed(2));
-      setCurrentPrice(parseFloat(data.c).toFixed(2));
-      setChangeAmount(parseFloat(data.d).toFixed(2));
-      setPercentChange(
-        ('' + data.dp)?.[0] === '-'
-          ? ('' + data.dp)?.slice(0, 5)
-          : ('' + data.dp)?.slice(0, 4)
-      );
-      if (data.dp < 0) {
-        setIsLoss(true);
-      } else {
-        setIsLoss(false);
-      }
-    });
+    try {
+      await API.fetchQuote(searchQuery).then((data) => {
+        setHighPrice(parseFloat(data.h).toFixed(2));
+        setLowPrice(parseFloat(data.l).toFixed(2));
+        setCurrentPrice(parseFloat(data.c).toFixed(2));
+        setChangeAmount(parseFloat(data.d).toFixed(2));
+        setPercentChange(
+          ('' + data.dp)?.[0] === '-'
+            ? ('' + data.dp)?.slice(0, 5)
+            : ('' + data.dp)?.slice(0, 4)
+        );
+        if (data.dp < 0) {
+          setIsLoss(true);
+        } else {
+          setIsLoss(false);
+        }
+      });
+    } catch (error) {
+      setSearchError(true);
+    }
   };
 
   // updates search to a new query
@@ -83,7 +92,7 @@ export default function StocksHome() {
   };
 
   // api request for general, pricing, and search information
-  const toggleSubmit = (e) => {
+  const toggleSubmit = async (e) => {
     e.preventDefault();
     getGeneralInfo();
     getPricingInfo();
@@ -119,6 +128,7 @@ export default function StocksHome() {
         <div className={styles['stocks-components-container']}>
           <div className={styles['container']}>
             <StockSearchBar
+              searchQuery={searchQuery}
               stockName={stockName}
               updateSearchQuery={updateSearchQuery}
               toggleSubmit={toggleSubmit}
@@ -146,8 +156,8 @@ export default function StocksHome() {
             />
             <StockSearchBar
               stockName={stockName}
-              updateSearchQuery={updateSearchQuery}
               toggleSubmit={toggleSubmit}
+              updateSearchQuery={updateSearchQuery}
             />
           </div>
         </div>
