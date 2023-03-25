@@ -2,7 +2,7 @@
 
 ![StockUp Icon](./public/favicon.ico)
 
-[StockUp](https://stockupfinance.app) is a finance and stock tracker created to help the user make smarter financial decisions.
+![StockUp](https://stockupfinance.app) is a finance and stock tracker created to help the user make smarter financial decisions.
 
 ---
 
@@ -59,6 +59,7 @@ Users have 4 options for signing up:
 
 - Lookup pricing information and other metrics using the stock symbol
 - Add stock to watchlist from symbol lookup with single button press
+- Get suggested stock symbols using the name of the company
 
 ---
 
@@ -102,7 +103,7 @@ Users have 4 options for signing up:
 
 ## License
 
-Stock prices and information are retrieved using the [Finnhubb API](https://finnhub.io/docs/api).
+Stock prices and information are retrieved using the ![Finnhubb API](https://finnhub.io/docs/api), suggested search results are retrieved using the ![AlphaVantage API](https://www.alphavantage.co/).
 
 ## Disclaimer
 
