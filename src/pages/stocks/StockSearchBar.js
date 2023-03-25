@@ -12,10 +12,13 @@ export default function StockSearchBar({
   toggleSubmit,
 }) {
   const [searchResults, setSearchResults] = useState([]);
+  const [notFound, setNotFound] = useState(false);
 
   const getSearchResults = async () => {
+    setSearchResults([]);
+    setNotFound(false);
     try {
-      await API.fetchSearch(searchQuery).then((data) => {
+      await API.fetchSearch(searchQuery.toLowerCase()).then((data) => {
         let filteredData = data.bestMatches
           .filter((res) => !res['1. symbol'].includes('.'))
           .map((stock) => {
@@ -23,6 +26,8 @@ export default function StockSearchBar({
           });
         if (filteredData?.length >= 1) {
           setSearchResults((prevState) => [...filteredData]);
+        } else {
+          setNotFound(true);
         }
       });
     } catch (error) {
@@ -67,27 +72,20 @@ export default function StockSearchBar({
           </motion.button>
         </form>
       </div>
-      {stockName === undefined && searchResults === undefined && (
+      {stockName === undefined && notFound && (
         <p className={styles.error}>
           Sorry, no results found. Try another search.
         </p>
       )}
       {stockName === undefined && searchResults?.length >= 1 && (
         <div className={styles['search-results']}>
+          <p className={styles.suggestions}>Related to your search:</p>
           {searchResults.map((res, index) => (
-            <button
-              key={res}
-              value={res}
-              // onClick={(e) => handleClick(e, res[0])}
-            >
+            <div className={styles['suggested-symbols']} key={res} value={res}>
               {res}
-            </button>
+            </div>
           ))}
         </div>
-        // <p className={styles.error}>
-        //   Related to your search:{' '}
-        //   <button>{searchResults[0]['1. symbol']}</button>
-        // </p>
       )}
     </>
   );
