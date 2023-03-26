@@ -36,8 +36,13 @@ export default function StockSearchBar({
   };
 
   const handleSubmit = (e) => {
-    toggleSubmit(e);
-    getSearchResults();
+    const { dataset } = e.currentTarget;
+    if (dataset.submit === 'button') {
+      toggleSubmit(e);
+    } else {
+      toggleSubmit(e);
+      getSearchResults();
+    }
   };
   return (
     <>
@@ -47,6 +52,7 @@ export default function StockSearchBar({
       <div>
         <form
           id="stockForm"
+          data-submit="form"
           onSubmit={handleSubmit}
           className={styles['search']}
         >
@@ -70,23 +76,32 @@ export default function StockSearchBar({
           >
             Search
           </motion.button>
+
+          {stockName === undefined && notFound && (
+            <p className={styles.error}>
+              Sorry, no results found. Try another search.
+            </p>
+          )}
+          {stockName === undefined && searchResults?.length >= 1 && (
+            <div className={styles['search-results']}>
+              <p className={styles.suggestions}>Related to your search:</p>
+              {searchResults.map((res) => (
+                <button
+                  type="submit"
+                  form="stockForm"
+                  data-submit="button"
+                  onClick={(e) => updateSearchQuery(e.target.value)}
+                  className={styles['suggested-symbols']}
+                  key={res}
+                  value={res}
+                >
+                  {res}
+                </button>
+              ))}
+            </div>
+          )}
         </form>
       </div>
-      {stockName === undefined && notFound && (
-        <p className={styles.error}>
-          Sorry, no results found. Try another search.
-        </p>
-      )}
-      {stockName === undefined && searchResults?.length >= 1 && (
-        <div className={styles['search-results']}>
-          <p className={styles.suggestions}>Related to your search:</p>
-          {searchResults.map((res, index) => (
-            <div className={styles['suggested-symbols']} key={res} value={res}>
-              {res}
-            </div>
-          ))}
-        </div>
-      )}
     </>
   );
 }

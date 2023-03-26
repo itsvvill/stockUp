@@ -92,7 +92,7 @@ export default function StocksHome() {
   };
 
   // api request for general, pricing, and search information
-  const toggleSubmit = async (e) => {
+  const toggleSubmit = (e) => {
     e.preventDefault();
     getGeneralInfo();
     getPricingInfo();
