@@ -124,37 +124,28 @@ export default function StocksHome() {
           <UilListUl size="20" color={toggleView ? '#333' : '#333'} />
         </span>
       </motion.button>
-      {!toggleView && !stockName && (
+      {!toggleView && (
         <div className={styles['stocks-components-container']}>
           <div className={styles['container']}>
+            {stockName && currentPrice !== 0 && (
+              <Stocks
+                stocks={documents}
+                stockName={stockName}
+                currentPrice={currentPrice}
+                sector={sector}
+                highPrice={highPrice}
+                lowPrice={lowPrice}
+                isLoss={isLoss}
+                changeAmount={changeAmount}
+                percentChange={percentChange}
+                logoURL={logoURL}
+                stockSymbol={stockSymbol}
+                stockExchange={stockExchange}
+                uid={user.uid}
+              />
+            )}
             <StockSearchBar
               searchQuery={searchQuery}
-              stockName={stockName}
-              updateSearchQuery={updateSearchQuery}
-              toggleSubmit={toggleSubmit}
-            />
-          </div>
-        </div>
-      )}
-      {!toggleView && stockName && currentPrice !== 0 && (
-        <div className={styles['stocks-components-container']}>
-          <div className={styles['container']}>
-            <Stocks
-              stocks={documents}
-              stockName={stockName}
-              currentPrice={currentPrice}
-              sector={sector}
-              highPrice={highPrice}
-              lowPrice={lowPrice}
-              isLoss={isLoss}
-              changeAmount={changeAmount}
-              percentChange={percentChange}
-              logoURL={logoURL}
-              stockSymbol={stockSymbol}
-              stockExchange={stockExchange}
-              uid={user.uid}
-            />
-            <StockSearchBar
               stockName={stockName}
               toggleSubmit={toggleSubmit}
               updateSearchQuery={updateSearchQuery}

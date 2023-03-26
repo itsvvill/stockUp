@@ -8,8 +8,8 @@ import styles from './Stocks.module.css';
 export default function StockSearchBar({
   searchQuery,
   stockName,
-  updateSearchQuery,
   toggleSubmit,
+  updateSearchQuery,
 }) {
   const [searchResults, setSearchResults] = useState([]);
   const [notFound, setNotFound] = useState(false);
@@ -49,7 +49,7 @@ export default function StockSearchBar({
       {(stockName === '' || stockName === undefined) && (
         <span className={styles['title']}>Stock Prices</span>
       )}
-      <motion.div layout className={styles['search-container']}>
+      <div className={styles['search-container']}>
         <form
           id="stockForm"
           data-submit="form"
@@ -103,7 +103,7 @@ export default function StockSearchBar({
             </div>
           )}
         </form>
-      </motion.div>
+      </div>
     </>
   );
 }
