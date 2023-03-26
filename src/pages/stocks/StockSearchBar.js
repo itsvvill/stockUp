@@ -49,34 +49,35 @@ export default function StockSearchBar({
       {(stockName === '' || stockName === undefined) && (
         <span className={styles['title']}>Stock Prices</span>
       )}
-      <div>
+      <motion.div layout className={styles['search-container']}>
         <form
           id="stockForm"
           data-submit="form"
           onSubmit={handleSubmit}
           className={styles['search']}
         >
-          <input
-            placeholder="Enter a stock ticker"
-            type="text"
-            name="stockName"
-            className={styles['input']}
-            onChange={(e) => updateSearchQuery(e.target.value.toUpperCase())}
-            minLength="1"
-            maxLength="10"
-            autoComplete="off"
-            required
-          />
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 1 }}
-            type="submit"
-            value="Search"
-            className={styles['btn']}
-          >
-            Search
-          </motion.button>
-
+          <div className={styles.searchbar}>
+            <input
+              placeholder="Enter a stock ticker"
+              type="text"
+              name="stockName"
+              className={styles['input']}
+              onChange={(e) => updateSearchQuery(e.target.value.toUpperCase())}
+              minLength="1"
+              maxLength="10"
+              autoComplete="off"
+              required
+            />
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 1 }}
+              type="submit"
+              value="Search"
+              className={styles['btn']}
+            >
+              Search
+            </motion.button>
+          </div>
           {stockName === undefined && notFound && (
             <p className={styles.error}>
               Sorry, no results found. Try another search.
@@ -86,7 +87,8 @@ export default function StockSearchBar({
             <div className={styles['search-results']}>
               <p className={styles.suggestions}>Related to your search:</p>
               {searchResults.map((res) => (
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.2 }}
                   type="submit"
                   form="stockForm"
                   data-submit="button"
@@ -96,12 +98,12 @@ export default function StockSearchBar({
                   value={res}
                 >
                   {res}
-                </button>
+                </motion.button>
               ))}
             </div>
           )}
         </form>
-      </div>
+      </motion.div>
     </>
   );
 }
