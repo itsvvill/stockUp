@@ -8,6 +8,7 @@ import DataDeletion from './pages/privacy/DataDeletion';
 import Guide from './pages/guide/Guide';
 import Home from './pages/home/Home';
 import Login from './pages/auth/login/Login';
+import NotFound from './pages/notfound/NotFound';
 import Privacy from './pages/privacy/Privacy';
 import Signup from './pages/auth/signup/Signup';
 import StocksHome from './pages/stocks/StocksHome';
@@ -62,6 +63,9 @@ export default function AnimatedRoutes() {
         <Route path="/user">
           {user && <User />}
           {!user && <Redirect to="/" />}
+        </Route>
+        <Route exact path="*">
+          <NotFound />
         </Route>
         <Route
           exact
