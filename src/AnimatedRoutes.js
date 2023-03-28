@@ -20,6 +20,7 @@ export default function AnimatedRoutes() {
   const { user } = useAuthContext();
   const location = useLocation();
   return (
+    // Allows framer-motion to play exit or entrance animations on page switch
     <AnimatePresence mode="wait">
       <Switch location={location} key={location.pathname}>
         <Route exact path="/stocks">

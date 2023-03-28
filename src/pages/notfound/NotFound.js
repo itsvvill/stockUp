@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-// styles
-import { UilExclamationCircle } from '@iconscout/react-unicons';
+
+// styles and icons
 import styles from './NotFound.module.css';
+import { UilExclamationCircle } from '@iconscout/react-unicons';
 
 export default function NotFound() {
   return (
