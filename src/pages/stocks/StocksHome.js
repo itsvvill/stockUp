@@ -5,12 +5,11 @@ import { motion } from 'framer-motion';
 import API from '../../API';
 
 // pages and components
-// import SearchResults from './SearchResults';
 import Stocks from './Stocks';
 import StockSearchBar from './StockSearchBar';
 import StockWatchList from './StockWatchList';
 
-// styles
+// styles and icons
 import styles from './Stocks.module.css';
 import {
   UilSearch,
@@ -153,6 +152,7 @@ export default function StocksHome() {
           </div>
         </div>
       )}
+      {/* no watchlist created */}
       {toggleView && documents.length < 1 && (
         <div className={styles.flex}>
           <div className={styles['no-watchlist']}>
@@ -174,6 +174,7 @@ export default function StocksHome() {
           </div>
         </div>
       )}
+      {/* if stocks exist in the watchlist */}
       {toggleView && documents !== null && documents.length >= 1 && (
         <div className={styles['stocks-components-container']}>
           {documents !== null && documents.length >= 1 && (

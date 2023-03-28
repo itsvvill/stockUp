@@ -6,11 +6,13 @@ import API from '../../API';
 
 // styles and icons
 import styles from './Stocks.module.css';
-import { UilEllipsisV } from '@iconscout/react-unicons';
-import { UilTrashAlt } from '@iconscout/react-unicons';
-import { UilTimesCircle } from '@iconscout/react-unicons';
-import { UilCheckCircle } from '@iconscout/react-unicons';
-import { UilPlusCircle } from '@iconscout/react-unicons';
+import {
+  UilCheckCircle,
+  UilEllipsisV,
+  UilPlusCircle,
+  UilTimesCircle,
+  UilTrashAlt,
+} from '@iconscout/react-unicons';
 
 export default function StockWatchList({ stocks, user }) {
   const { updateDocument, deleteDocument, response } = useFirestore('stocks');
