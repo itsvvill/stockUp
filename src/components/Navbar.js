@@ -46,6 +46,7 @@ export default function Navbar() {
                               to="/"
                               style={{
                                 color: '#4CC49A',
+                                cursor: 'default',
                               }}
                             >
                               tockUp
@@ -56,6 +57,7 @@ export default function Navbar() {
                             className={styles.links}
                             style={{
                               color: '#4CC49A',
+                              cursor: 'default',
                             }}
                           >
                             Home
@@ -81,6 +83,7 @@ export default function Navbar() {
                           to="/guide"
                           style={{
                             color: '#4CC49A',
+                            cursor: 'default',
                           }}
                           className={styles.links}
                         >
@@ -114,6 +117,7 @@ export default function Navbar() {
                               to="/"
                               style={{
                                 color: '#4CC49A',
+                                cursor: 'default',
                               }}
                             >
                               tockUp
@@ -136,6 +140,7 @@ export default function Navbar() {
                               className={styles.links}
                               style={{
                                 color: '#4CC49A',
+                                cursor: 'default',
                               }}
                             >
                               Stocks
@@ -152,6 +157,7 @@ export default function Navbar() {
                               to="/transactions"
                               style={{
                                 color: '#4CC49A',
+                                cursor: 'default',
                               }}
                             >
                               Transactions
