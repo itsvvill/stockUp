@@ -238,17 +238,6 @@ export default function Navbar() {
             {/* nav for mobile */}
             {matches.small && !toggleMenu && (
               <nav className={styles.navbar}>
-                {/* <div className={styles.stocks}>
-                  <img src={logo} className={styles.logo} alt="StockUp Logo" />
-                  <Link
-                    to="/"
-                    style={{
-                      color: '#4CC49A',
-                    }}
-                  >
-                    tockUp
-                  </Link>
-                </div> */}
                 {location.pathname === '/' ? (
                   <div>
                     <Link
@@ -339,24 +328,43 @@ export default function Navbar() {
                   </div>
                   {!user && (
                     <div className={styles.div}>
-                      <motion.div
-                        whileHover={{
-                          backgroundColor: '#4cc49a',
-                          transition: { duration: 0.6 },
-                        }}
-                        className={styles['link-container']}
-                      >
-                        <Link to="/">Home</Link>
-                      </motion.div>
-                      <motion.div
-                        whileHover={{
-                          backgroundColor: '#4cc49a',
-                          transition: { duration: 0.6 },
-                        }}
-                        className={styles['link-container']}
-                      >
-                        <Link to="/guide">Guide</Link>
-                      </motion.div>
+                      {location.pathname === '/' ? (
+                        <div
+                          className={styles['link-container']}
+                          style={{ color: '#4CC49A' }}
+                        >
+                          Home
+                        </div>
+                      ) : (
+                        <motion.div
+                          whileHover={{
+                            backgroundColor: '#4cc49a',
+                            transition: { duration: 0.6 },
+                          }}
+                          className={styles['link-container']}
+                        >
+                          <Link to="/">Home</Link>
+                        </motion.div>
+                      )}
+                      {location.pathname === '/guide' ? (
+                        <div
+                          className={styles['link-container']}
+                          style={{ color: '#4CC49A' }}
+                        >
+                          Guide
+                        </div>
+                      ) : (
+                        <motion.div
+                          whileHover={{
+                            backgroundColor: '#4cc49a',
+                            transition: { duration: 0.6 },
+                          }}
+                          className={styles['link-container']}
+                        >
+                          <Link to="/guide">Guide</Link>
+                        </motion.div>
+                      )}
+
                       <motion.div
                         whileHover={{
                           scale: 1.2,
@@ -371,65 +379,128 @@ export default function Navbar() {
                   )}
                   {user && (
                     <div className={styles.div}>
-                      <motion.div
-                        whileHover={{
-                          backgroundColor: '#4cc49a',
-                          transition: { duration: 0.6 },
-                        }}
-                        className={styles['link-container']}
-                      >
-                        <Link to="/">Home</Link>
-                      </motion.div>
-                      <motion.div
-                        whileHover={{
-                          backgroundColor: '#4cc49a',
-                          transition: { duration: 0.6 },
-                        }}
-                        className={styles['link-container']}
-                      >
-                        <Link to="/guide">Guide</Link>
-                      </motion.div>
-                      <motion.div
-                        whileHover={{
-                          backgroundColor: '#4cc49a',
-                          transition: { duration: 0.6 },
-                        }}
-                        className={styles['link-container']}
-                      >
-                        <Link to="/stocks">Stocks</Link>
-                      </motion.div>
-                      <motion.div
-                        whileHover={{
-                          backgroundColor: '#4cc49a',
-                          transition: { duration: 0.6 },
-                        }}
-                        className={styles['link-container']}
-                      >
-                        <Link to="/transactions">Transactions</Link>
-                      </motion.div>
-                      <motion.div
-                        whileHover={{
-                          backgroundColor: '#4cc49a',
-                          transition: { duration: 0.6 },
-                        }}
-                        className={styles['link-container']}
-                      >
-                        <Link to="/user" className={styles.user}>
-                          {user.photoURL ? (
-                            <img
-                              className={styles.profileimg}
-                              src={user.photoURL}
-                              referrerPolicy="no-referrer"
-                              alt={`${user} profile`}
-                            />
-                          ) : (
-                            <UilUserCircle className={styles.profileimg} />
-                          )}
-                          <div className={styles.username}>
-                            {user.displayName ? user.displayName : 'Guest'}
+                      {location.pathname === '/' ? (
+                        <div
+                          className={styles['link-container']}
+                          style={{ color: '#4CC49A' }}
+                        >
+                          Home
+                        </div>
+                      ) : (
+                        <motion.div
+                          whileHover={{
+                            backgroundColor: '#4cc49a',
+                            transition: { duration: 0.6 },
+                          }}
+                          className={styles['link-container']}
+                        >
+                          <Link to="/">Home</Link>
+                        </motion.div>
+                      )}
+                      {location.pathname === '/guide' ? (
+                        <div
+                          className={styles['link-container']}
+                          style={{ color: '#4CC49A' }}
+                        >
+                          Guide
+                        </div>
+                      ) : (
+                        <motion.div
+                          whileHover={{
+                            backgroundColor: '#4cc49a',
+                            transition: { duration: 0.6 },
+                          }}
+                          className={styles['link-container']}
+                        >
+                          <Link to="/guide">Guide</Link>
+                        </motion.div>
+                      )}
+                      {location.pathname === '/stocks' ? (
+                        <div
+                          className={styles['link-container']}
+                          style={{ color: '#4CC49A' }}
+                        >
+                          Stocks
+                        </div>
+                      ) : (
+                        <motion.div
+                          whileHover={{
+                            backgroundColor: '#4cc49a',
+                            transition: { duration: 0.6 },
+                          }}
+                          className={styles['link-container']}
+                        >
+                          <Link to="/stocks">Stocks</Link>
+                        </motion.div>
+                      )}
+                      {location.pathname === '/transactions' ? (
+                        <div
+                          className={styles['link-container']}
+                          style={{ color: '#4CC49A' }}
+                        >
+                          Transactions
+                        </div>
+                      ) : (
+                        <motion.div
+                          whileHover={{
+                            backgroundColor: '#4cc49a',
+                            transition: { duration: 0.6 },
+                          }}
+                          className={styles['link-container']}
+                        >
+                          <Link to="/transactions">Transactions</Link>
+                        </motion.div>
+                      )}
+                      {location.pathname === '/user' ? (
+                        <div className={styles['link-container']}>
+                          <div
+                            className={styles.user}
+                            style={{ color: '#4CC49A' }}
+                          >
+                            {user.photoURL ? (
+                              <img
+                                className={styles.profileimg}
+                                src={user.photoURL}
+                                referrerPolicy="no-referrer"
+                                alt={`${user} profile`}
+                              />
+                            ) : (
+                              <UilUserCircle className={styles.profileimg} />
+                            )}
+                            <div className={styles.username}>
+                              {user.displayName ? user.displayName : 'Guest'}
+                            </div>
                           </div>
-                        </Link>
-                      </motion.div>
+                        </div>
+                      ) : (
+                        <motion.div
+                          whileHover={{
+                            backgroundColor: '#4cc49a',
+                            transition: { duration: 0.6 },
+                          }}
+                          className={styles['link-container']}
+                        >
+                          <Link
+                            to="/user"
+                            className={styles.user}
+                            style={{ cursor: 'pointer' }}
+                          >
+                            {user.photoURL ? (
+                              <img
+                                className={styles.profileimg}
+                                src={user.photoURL}
+                                referrerPolicy="no-referrer"
+                                alt={`${user} profile`}
+                              />
+                            ) : (
+                              <UilUserCircle className={styles.profileimg} />
+                            )}
+                            <div className={styles.username}>
+                              {user.displayName ? user.displayName : 'Guest'}
+                            </div>
+                          </Link>
+                        </motion.div>
+                      )}
                       <div>
                         <motion.button
                           whileHover={{ scale: 1.2, transition: 0.6 }}
