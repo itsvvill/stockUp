@@ -40,20 +40,23 @@ export default function Navbar() {
                     <div className={styles.leftnav}>
                       {location.pathname === '/' ? (
                         <>
-                          <li className={styles.stocks}>
-                            <img
-                              src={logo}
-                              className={styles.logo}
-                              alt="S"
-                              style={{ cursor: 'default' }}
-                            />
+                          <li>
                             <Link
                               to="/"
+                              className={styles.stocks}
                               style={{
                                 color: '#4CC49A',
                                 cursor: 'default',
                               }}
                             >
+                              <img
+                                src={logo}
+                                className={styles.logo}
+                                alt="S"
+                                style={{
+                                  cursor: 'default',
+                                }}
+                              />
                               tockUp
                             </Link>
                           </li>
@@ -70,13 +73,15 @@ export default function Navbar() {
                         </>
                       ) : (
                         <>
-                          <li className={styles.stocks}>
-                            <img
-                              src={logo}
-                              className={styles.logo}
-                              alt="StockUp Logo"
-                            />
-                            <Link to="/">tockUp</Link>
+                          <li>
+                            <Link className={styles.stocks} to="/">
+                              <img
+                                src={logo}
+                                className={styles.logo}
+                                alt="StockUp Logo"
+                              />
+                              tockUp
+                            </Link>
                           </li>
                           <Link to="/" className={styles.links}>
                             Home
@@ -112,31 +117,34 @@ export default function Navbar() {
                     <div className={styles.div}>
                       <div className={styles.leftnav}>
                         {location.pathname === '/' ? (
-                          <li className={styles.stocks}>
-                            <img
-                              src={logo}
-                              className={styles.logo}
-                              style={{ cursor: 'default' }}
-                              alt="StockUp Logo"
-                            />
+                          <li>
                             <Link
                               to="/"
+                              className={styles.stocks}
                               style={{
                                 color: '#4CC49A',
                                 cursor: 'default',
                               }}
                             >
+                              <img
+                                src={logo}
+                                className={styles.logo}
+                                style={{ cursor: 'default' }}
+                                alt="StockUp Logo"
+                              />
                               tockUp
                             </Link>
                           </li>
                         ) : (
-                          <li className={styles.stocks}>
-                            <img
-                              src={logo}
-                              className={styles.logo}
-                              alt="StockUp Logo"
-                            />
-                            <Link to="/">tockUp</Link>
+                          <li>
+                            <Link className={styles.stocks} to="/">
+                              <img
+                                src={logo}
+                                className={styles.logo}
+                                alt="StockUp Logo"
+                              />
+                              tockUp
+                            </Link>
                           </li>
                         )}
                         <li className={styles.links}>
@@ -175,8 +183,8 @@ export default function Navbar() {
                       </div>
                     </div>
                     <div className={styles.div}>
-                      <Link to="/user">
-                        <li>
+                      {location.pathname === '/user' ? (
+                        <li className={styles.user}>
                           {user.photoURL ? (
                             <img
                               className={styles.profileimg}
@@ -187,11 +195,29 @@ export default function Navbar() {
                           ) : (
                             <UilUserCircle className={styles.profileimg} />
                           )}
+                          <div className={styles.username}>
+                            {user.displayName ? user.displayName : 'Guest'}
+                          </div>
                         </li>
-                      </Link>
-                      <li className={styles.username}>
-                        {user.displayName ? user.displayName : 'Guest'}
-                      </li>
+                      ) : (
+                        <Link to="/user">
+                          <li className={styles['user-active']}>
+                            {user.photoURL ? (
+                              <img
+                                className={styles.profileimg}
+                                src={user.photoURL}
+                                referrerPolicy="no-referrer"
+                                alt={`${user} profile`}
+                              />
+                            ) : (
+                              <UilUserCircle className={styles.profileimg} />
+                            )}
+                            <div className={styles.username}>
+                              {user.displayName ? user.displayName : 'Guest'}
+                            </div>
+                          </li>
+                        </Link>
+                      )}
                       <li>
                         <motion.button
                           whileHover={{ scale: 1.2 }}
