@@ -238,7 +238,7 @@ export default function Navbar() {
             {/* nav for mobile */}
             {matches.small && !toggleMenu && (
               <nav className={styles.navbar}>
-                <div className={styles.stocks}>
+                {/* <div className={styles.stocks}>
                   <img src={logo} className={styles.logo} alt="StockUp Logo" />
                   <Link
                     to="/"
@@ -248,7 +248,43 @@ export default function Navbar() {
                   >
                     tockUp
                   </Link>
-                </div>
+                </div> */}
+                {location.pathname === '/' ? (
+                  <div>
+                    <Link
+                      className={styles['stocks']}
+                      to="/"
+                      style={{
+                        color: '#4CC49A',
+                        cursor: 'default',
+                      }}
+                    >
+                      <img
+                        src={logo}
+                        className={styles.logo}
+                        style={{ cursor: 'default' }}
+                        alt="StockUp Logo"
+                      />
+                      tockUp
+                    </Link>
+                  </div>
+                ) : (
+                  <div className={styles['stocks']}>
+                    <img
+                      src={logo}
+                      className={styles.logo}
+                      alt="StockUp Logo"
+                    />
+                    <Link
+                      to="/"
+                      style={{
+                        color: '#4CC49A',
+                      }}
+                    >
+                      tockUp
+                    </Link>
+                  </div>
+                )}
                 <button onClick={toggleState} className={styles.menu}>
                   <UilBars color="#4cc49a" />
                 </button>
@@ -258,21 +294,42 @@ export default function Navbar() {
               <>
                 <nav className={styles['navbar-menu']}>
                   <div className={styles['navbar-row']}>
-                    <div className={styles['stocks']}>
-                      <img
-                        src={logo}
-                        className={styles.logo}
-                        alt="StockUp Logo"
-                      />
-                      <Link
-                        to="/"
-                        style={{
-                          color: '#4CC49A',
-                        }}
-                      >
-                        tockUp
-                      </Link>
-                    </div>
+                    {location.pathname === '/' ? (
+                      <div>
+                        <Link
+                          className={styles['stocks']}
+                          to="/"
+                          style={{
+                            color: '#4CC49A',
+                            cursor: 'default',
+                          }}
+                        >
+                          <img
+                            src={logo}
+                            className={styles.logo}
+                            style={{ cursor: 'default' }}
+                            alt="StockUp Logo"
+                          />
+                          tockUp
+                        </Link>
+                      </div>
+                    ) : (
+                      <div className={styles['stocks']}>
+                        <img
+                          src={logo}
+                          className={styles.logo}
+                          alt="StockUp Logo"
+                        />
+                        <Link
+                          to="/"
+                          style={{
+                            color: '#4CC49A',
+                          }}
+                        >
+                          tockUp
+                        </Link>
+                      </div>
+                    )}
                     <button
                       onClick={() => toggleState()}
                       className={styles.menu}
