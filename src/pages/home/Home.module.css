@@ -50,11 +50,13 @@
   background: #4cc49a;
   -webkit-box-shadow: var(--webkit-box-shadow);
   box-shadow: var(--box-shadow);
+  text-decoration: none;
+  color: #333;
 }
-.button > a {
+/* .button > a {
   color: #333;
   text-decoration: none;
-}
+} */
 
 /* logo animation */
 .logos-container {
