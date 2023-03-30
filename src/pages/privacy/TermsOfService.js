@@ -533,7 +533,17 @@ export default function TermsOfService() {
         action, including without limitation pursuing civil, criminal, and
         injunctive redress.
       </p>
-      <h2>16. CONTACT US</h2>
+      <h2>16. MODIFICATIONS AND INTERRUPTIONS</h2>
+      <p>
+        We reserve the right to change, modify, or remove the contents of the
+        Site at any time or for any reason at our sole discretion without
+        notice. However, we have no obligation to update any information on our
+        Site. We also reserve the right to modify or discontinue all or part of
+        the Site without notice at any time. We will not be liable to you or any
+        third party for any modification, price change, suspension, or
+        discontinuance of the Site.
+      </p>
+      <h2>17. CONTACT US</h2>
       <p>
         In order to resolve a complaint regarding the Site or to recieve further
         information regarding use of the Site, please contact us at:
