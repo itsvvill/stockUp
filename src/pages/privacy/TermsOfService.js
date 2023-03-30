@@ -543,6 +543,19 @@ export default function TermsOfService() {
         third party for any modification, price change, suspension, or
         discontinuance of the Site.
       </p>
+      <p>
+        We cannot guarantee the Site will be available at all times. We may
+        experience hardware, software, or other problems or need to perform
+        maintenance related to the Site, resulting in interruptions, delays, or
+        errors. We reserve the right to change, revise, update, suspend,
+        discontinue, or otherwise modify the Site at any time or for any reason
+        without notice to you. You agree that we have no liability whatsoever
+        for any loss, damage, or inconvenience caused by your inability to
+        access or use the Site during any downtime or discontinuance of the
+        Site. Nothing in these Terms of Use will be construed to obligate us to
+        maintain and support the Site or to supply any corrections, updates, or
+        releases in connection therewith.
+      </p>
       <h2>17. CONTACT US</h2>
       <p>
         In order to resolve a complaint regarding the Site or to recieve further
