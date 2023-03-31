@@ -147,11 +147,6 @@ export default function TransactionList({ transactions, amount, date, name }) {
           {editClicked === transaction.id ? (
             <EditTransaction
               transaction={transaction}
-              name={transaction.name}
-              amount={transaction.amount}
-              date={transaction.date}
-              category={transaction.category}
-              color={transaction.color}
               toggleEditing={toggleEditing}
             />
           ) : (

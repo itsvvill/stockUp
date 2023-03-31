@@ -6,14 +6,7 @@ import { useAuthContext } from '../../hooks/useAuthContext';
 import styles from './Home.module.css';
 import { UilTimesCircle, UilCheckCircle } from '@iconscout/react-unicons';
 
-export default function EditTransaction({
-  transaction,
-  name,
-  amount,
-  date,
-  category,
-  toggleEditing,
-}) {
+export default function EditTransaction({ transaction, toggleEditing }) {
   const [newName, setNewName] = useState(transaction.newName);
   const [newAmount, setNewAmount] = useState(transaction.newAmount);
   const [newDate, setNewDate] = useState(transaction.newDate);
