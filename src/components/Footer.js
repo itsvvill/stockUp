@@ -58,6 +58,7 @@ export default function Footer() {
             className={styles['link']}
             target="blank"
             alt="React Documentation"
+            aria-label="Learn more about React"
           >
             ReactJS
           </a>
@@ -66,6 +67,7 @@ export default function Footer() {
             className={styles['link']}
             target="blank"
             alt="Firebase Documentation"
+            aria-label="Learn more about Firebase"
           >
             Firebase
           </a>
@@ -77,6 +79,7 @@ export default function Footer() {
             className={styles['link']}
             target="blank"
             alt="Will Eason's Github"
+            aria-label="Visit Will Eason's Github"
           >
             Github
           </a>
@@ -85,6 +88,7 @@ export default function Footer() {
             className={styles['link']}
             target="blank"
             alt="Will Eason's LinkedIn"
+            aria-label="Visit Will Eason's LinkedIn"
           >
             Personal Site
           </a>
