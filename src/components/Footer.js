@@ -26,6 +26,7 @@ export default function Footer() {
                 className={styles['link']}
                 target="blank"
                 alt="Will Eason's Github"
+                aria-label="Visit Will Eason's Github"
               >
                 <UilGithub size="23" />
               </a>
@@ -34,6 +35,7 @@ export default function Footer() {
                 className={styles['link']}
                 target="blank"
                 alt="Will Eason's LinkedIn"
+                aria-label="Visit Will Eason's LinkedIn"
               >
                 <UilExternalLinkAlt size="20" />
               </a>
