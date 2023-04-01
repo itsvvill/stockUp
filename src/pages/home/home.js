@@ -49,7 +49,7 @@ export default function Home() {
         </div>
       </div>
       {/* Home page animation */}
-      <ul className={styles['logos-container']}>
+      <div className={styles['logos-container']}>
         <motion.img
           layout
           src={logo}
@@ -110,7 +110,7 @@ export default function Home() {
           className={styles.logos}
           alt="StockUp Logo"
         />
-      </ul>
+      </div>
     </div>
   );
 }
