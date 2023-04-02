@@ -556,6 +556,13 @@ export default function TermsOfService() {
         maintain and support the Site or to supply any corrections, updates, or
         releases in connection therewith.
       </p>
+      <h2>17. Governing Law</h2>
+      <p>
+        These Terms of Use and your use of the Site are governed by and
+        construed in accordance with the laws of the State of Washington and
+        applicable to agreements made and to be entirely performed within the
+        State of Washington, without regard to its conflict of law principles.
+      </p>
       <h2>17. CONTACT US</h2>
       <p>
         In order to resolve a complaint regarding the Site or to recieve further
