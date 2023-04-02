@@ -33,10 +33,10 @@
 
 ### Notable Dependencies
 
-- react-router [React Router](https://www.npmjs.com/package/react-router)
-- framer-motion [Framer Motion](https://www.npmjs.com/package/framer-motion)
-- react-unicons [IconScout](https://github.com/Iconscout/unicons)
-- react-media [react-media](https://www.npmjs.com/package/react-media)
+- [react-router](https://www.npmjs.com/package/react-router)
+- [framer-motion](https://www.npmjs.com/package/framer-motion)
+- [react-unicons](https://github.com/Iconscout/unicons)
+- [react-media](https://www.npmjs.com/package/react-media)
 
 ## Usage
 
