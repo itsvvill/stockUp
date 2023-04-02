@@ -35,7 +35,7 @@
 
 - [react-router](https://www.npmjs.com/package/react-router)
 - [framer-motion](https://www.npmjs.com/package/framer-motion)
-- [react-unicons](https://github.com/Iconscout/unicons)
+- [react-unicons](https://www.npmjs.com/package/@iconscout/react-unicons)
 - [react-media](https://www.npmjs.com/package/react-media)
 
 ## Usage
