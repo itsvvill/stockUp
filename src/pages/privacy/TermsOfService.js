@@ -563,7 +563,15 @@ export default function TermsOfService() {
         applicable to agreements made and to be entirely performed within the
         State of Washington, without regard to its conflict of law principles.
       </p>
-      <h2>17. CONTACT US</h2>
+      <h2>18. CORRECTIONS</h2>
+      <p>
+        There may be information on the Site that contains typographical erros,
+        inaccuracies, or omissions, including descriptions, pricing,
+        availability, and various other information. We reserve the right to
+        correct any errors, inaccuracies, or omissions and to change or update
+        the information on the Site at any time, without prior notice.
+      </p>
+      <h2>19. CONTACT US</h2>
       <p>
         In order to resolve a complaint regarding the Site or to recieve further
         information regarding use of the Site, please contact us at:
