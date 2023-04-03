@@ -571,6 +571,17 @@ export default function TermsOfService() {
         correct any errors, inaccuracies, or omissions and to change or update
         the information on the Site at any time, without prior notice.
       </p>
+      <h2>19. DISPUTE RESOLUTION</h2>
+      <p>
+        To expedite resolution and control the cost of any dispute, controversy,
+        or claim related to these Terms of Use (each "Dispute" and collectively
+        the "Disputes") brought by either you or us (individually, a "Party" and
+        collectively, the "Parties"), the Parties agree to first attempt to
+        negotiate any Dispute (except those Disputes expressly provided below)
+        informally for at least thirty (30) days before initiating arbitration.
+        Such informal negotiations commence upon written notice from one Party
+        to the other Party.
+      </p>
       <h2>19. CONTACT US</h2>
       <p>
         In order to resolve a complaint regarding the Site or to recieve further
