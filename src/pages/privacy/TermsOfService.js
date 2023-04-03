@@ -582,7 +582,32 @@ export default function TermsOfService() {
         Such informal negotiations commence upon written notice from one Party
         to the other Party.
       </p>
-      <h2>19. CONTACT US</h2>
+      <h3>Binding Arbitration</h3>
+      <p>
+        If the Parties are unable to resolve a Dispute through informal
+        negotiations, the Dispute (except those Disputes expressly excluded
+        below) will be finally and exclusively resolved through binding
+        arbitration. YOU UNDERSTAND THAT WITHOUT THIS PROVISION, YOU WOULD HAVE
+        THE RIGHT TO SUE IN COURT AND HAVE A JURY TRIAL. The arbitration shall
+        be commenced and conducted under the Commercial Arbitration Rules of the
+        American Arbitration Association ("AAA") and, where appropriate, the
+        AAA's Supplementary Procedures for Consumer Related Disputes ("AAA
+        Consumer Rules"), both of which are available at the AAA website:{' '}
+        <a href="www.adr.ord" alt="ADR website">
+          www.adr.org.
+        </a>
+        . Your arbitration fees and your share of arbitrator compensation shall
+        be governed by the AAA Consumer Rules and, where appropriate, limited by
+        the AAA Consumer Rules. The arbitration may be conducted in person,
+        through the submission of documents, by phone, or online. The arbitrator
+        will make a decision in writing, but need not provide a statement of
+        reasons unless requested by either Party. The arbitrator will take place
+        in King County, Washington. Expect as otherwise provided herein the
+        Parties may litigate in court to compel arbitration, stay proceedings,
+        pending arbitration, or to confirm, modify, vacate, or enter judgment on
+        the award entered by the arbitrator.
+      </p>
+      <h2>20. CONTACT US</h2>
       <p>
         In order to resolve a complaint regarding the Site or to recieve further
         information regarding use of the Site, please contact us at:
