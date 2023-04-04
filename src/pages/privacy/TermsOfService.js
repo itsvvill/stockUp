@@ -628,6 +628,17 @@ export default function TermsOfService() {
         courts listed for jurisdiction above, and the Parties agree to submit
         the personal jurisdiction of that court.
       </p>
+      <h3>Restrictions</h3>
+      <p>
+        The Parties agree that any arbitration shall be limited to the Dispute
+        between the Parties individually. To the full extent permitted by law,
+        (a) no arbitration shall be joined with any other proceeding; (b) there
+        is no right or authority for any Dispute to be arbitrated on a
+        class-action basis or to utilize class action procedures; and (c) there
+        is no right or authority for any Dispute to be brought in a purported
+        representative capacity on behalf of the general public or any other
+        persons.
+      </p>
       <h2>20. CONTACT US</h2>
       <p>
         In order to resolve a complaint regarding the Site or to recieve further
