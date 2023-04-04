@@ -639,6 +639,21 @@ export default function TermsOfService() {
         representative capacity on behalf of the general public or any other
         persons.
       </p>
+      <h3>Exceptions to Informal Negotiation and Arbitration</h3>
+      <p>
+        The Parties agree that the following Disputes are not subject to the
+        above provisions concerning informal negotiations and binding
+        arbitration: (a) any Disputes seeking to enforce or protect, or
+        concerning the validity of, any of the intellectual property rights of a
+        Party; (b) any Dispute related to, or arising from, allegations of
+        theft, piracy, invasion of privacy, or unauthorized use; and (c) any
+        claim for injuctive relief. If this provision is found to be illegal or
+        unenforceable, then neither Party will elect to arbitrate any Dispute
+        falling within that portion of this provision found to be illegal or
+        unenforceable and such Dispute shall be decided by a court of competent
+        jurisdiction within the courts listed for jurisdiction above, and the
+        Parties argree to submit the personal jurisdiction of that court.
+      </p>
       <h2>20. CONTACT US</h2>
       <p>
         In order to resolve a complaint regarding the Site or to recieve further
