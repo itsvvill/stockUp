@@ -607,6 +607,27 @@ export default function TermsOfService() {
         pending arbitration, or to confirm, modify, vacate, or enter judgment on
         the award entered by the arbitrator.
       </p>
+      <p>
+        If for any reaason, a Dispute proceeds in court rather than arbitration,
+        the Dispute shall be commenced or prosecuted in the state and federal
+        courts located in King County, Washington, and the Parties hereby
+        consent to, and waive all defenses lack of personal jurisdiction, and
+        forum non conveniens with respect to venue and jurisdiction in such
+        state and federal courts. Application of the United Nations Convention
+        on Contracts for the International Sale of Goods and the Uniform
+        Computer Information Transaction Act (UCITA) is excluded from these
+        Terms of Use.
+      </p>
+      <p>
+        In no event shall any Dispute brought by either Party related in any way
+        to the Site be commenced more than (1) years after the cause of action
+        arose. If this provision is found to be illegal or uneforceable, then
+        neither Party will elect to arbitrate any Dispute falling within that
+        portion of this provision found to be illegal or unenforceable, and such
+        Dispute shall be decided by a court of competent jurisdiction within the
+        courts listed for jurisdiction above, and the Parties agree to submit
+        the personal jurisdiction of that court.
+      </p>
       <h2>20. CONTACT US</h2>
       <p>
         In order to resolve a complaint regarding the Site or to recieve further
