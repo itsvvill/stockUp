@@ -720,6 +720,21 @@ export default function TermsOfService() {
         this indemnification upon becoming aware of it.
       </p>
       <h2>23. ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES</h2>
+      <p>
+        Visiting the Site, sending us emails, and completing online forms
+        constitute electronic communications. You consent to receive electronic
+        communications, and you agree that all agreements, notices, disclosures,
+        and other communications we provide to you electronically, via email and
+        on the Site, satisfy any legal requirement that such communication be in
+        writing. YOU HEREBY AGREE TO THE USE OF ELECTRONIC SIGNATURES,
+        CONTRACTS, ORDERS, AND OTHER RECORDS, AND TO ELECTRONIC DELIVERY OF
+        NOTICES, POLICIES, AND RECORDS OF TRANSACTIONS INITIATED OR COMPLETED BY
+        US OR VIA THE SITE. You hereby waive any rights or requirements under
+        any statutes, regulations, rules, ordinances, or other laws in any
+        jurisdiction which require an original signature or delivery or
+        retention of non-electronic records, or to payments or the granting of
+        credits by any means other than electronic means.
+      </p>
       <h2>24. CONTACT US</h2>
       <p>
         In order to resolve a complaint regarding the Site or to recieve further
