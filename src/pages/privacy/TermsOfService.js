@@ -234,7 +234,7 @@ export default function TermsOfService() {
         corruption of any such data, and you hearby waive any right of action
         against us arising from any such loss or corruption of such data.
       </p>
-      <h2>8. USER GENERATED CONTRIBUTIONS</h2>
+      <h2>7. USER GENERATED CONTRIBUTIONS</h2>
       <p>
         The Site may invite you to chat, contribute to, or participate in blogs,
         message boards, online forums, and other functionality, and may provide
@@ -556,7 +556,7 @@ export default function TermsOfService() {
         maintain and support the Site or to supply any corrections, updates, or
         releases in connection therewith.
       </p>
-      <h2>17. Governing Law</h2>
+      <h2>17. GOVERNING LAW</h2>
       <p>
         These Terms of Use and your use of the Site are governed by and
         construed in accordance with the laws of the State of Washington and
@@ -719,7 +719,8 @@ export default function TermsOfService() {
         notify you of any such claim, action, or proceeding which is subject to
         this indemnification upon becoming aware of it.
       </p>
-      <h2>23. CONTACT US</h2>
+      <h2>23. ELECTRONIC COMMUNICATIONS, TRANSACTIONS, AND SIGNATURES</h2>
+      <h2>24. CONTACT US</h2>
       <p>
         In order to resolve a complaint regarding the Site or to recieve further
         information regarding use of the Site, please contact us at:
