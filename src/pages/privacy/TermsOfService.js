@@ -5,7 +5,7 @@ export default function TermsOfService() {
   return (
     <div className={styles.container}>
       <h1>TERMS OF SERVICE</h1>
-      <p>Last updated February 26, 2023</p>
+      <p>Last updated April 9, 2023</p>
       <h2>1. AGREEMENT TO TERMS</h2>
       <p>
         These Terms of Use consitute a legally binding agreement made between
@@ -700,7 +700,7 @@ export default function TermsOfService() {
         SOME OR ALL OF THE ABOVE DISCLAIMERS OR LIMITATIONS MAY NOT APPLY TO
         YOU, AND YOU MAY HAVE ADDITIONAL RIGHTS.
       </p>
-      <h2>INDEMIFICATION</h2>
+      <h2>22. INDEMIFICATION</h2>
       <p>
         You agree to defend, indemnify, and hold us harmless including our
         subsidiaries, affiliates, and all of our respective officers aents,
