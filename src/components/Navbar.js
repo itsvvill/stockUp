@@ -8,7 +8,8 @@ import { motion } from 'framer-motion';
 // styles and logo
 import styles from './Navbar.module.css';
 import logo from './logo.png';
-import { UilBars, UilMultiply, UilUserCircle } from '@iconscout/react-unicons';
+import Avatar from 'boring-avatars';
+import { UilBars, UilMultiply } from '@iconscout/react-unicons';
 
 export default function Navbar() {
   const { logout } = useLogout();
@@ -193,7 +194,13 @@ export default function Navbar() {
                               alt={`${user} profile`}
                             />
                           ) : (
-                            <UilUserCircle className={styles.profileimg} />
+                            <Avatar
+                              size="35"
+                              variant="beam"
+                              name="Guest"
+                              className={styles.profileimg}
+                              colors={['#1f8a58', '#ebeaea', '#4cc49a']}
+                            />
                           )}
                           <div className={styles.username}>
                             {user.displayName ? user.displayName : 'Guest'}
@@ -210,7 +217,13 @@ export default function Navbar() {
                                 alt={`${user} profile`}
                               />
                             ) : (
-                              <UilUserCircle className={styles.profileimg} />
+                              <Avatar
+                                size="35"
+                                variant="beam"
+                                name="Guest"
+                                className={styles.profileimg}
+                                colors={['#1f8a58', '#ebeaea', '#4cc49a']}
+                              />
                             )}
                             <div className={styles.username}>
                               {user.displayName ? user.displayName : 'Guest'}
@@ -465,7 +478,13 @@ export default function Navbar() {
                                 alt={`${user} profile`}
                               />
                             ) : (
-                              <UilUserCircle className={styles.profileimg} />
+                              <Avatar
+                                size="35"
+                                variant="beam"
+                                name="Guest"
+                                className={styles.profileimg}
+                                colors={['#1f8a58', '#ebeaea', '#4cc49a']}
+                              />
                             )}
                             <div className={styles.username}>
                               {user.displayName ? user.displayName : 'Guest'}
@@ -493,7 +512,13 @@ export default function Navbar() {
                                 alt={`${user} profile`}
                               />
                             ) : (
-                              <UilUserCircle className={styles.profileimg} />
+                              <Avatar
+                                size="35"
+                                variant="beam"
+                                name="Guest"
+                                className={styles.profileimg}
+                                colors={['#1f8a58', '#ebeaea', '#4cc49a']}
+                              />
                             )}
                             <div className={styles.username}>
                               {user.displayName ? user.displayName : 'Guest'}
