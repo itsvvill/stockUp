@@ -37,6 +37,7 @@
 - [react-media](https://www.npmjs.com/package/react-media)
 - [react-router](https://www.npmjs.com/package/react-router)
 - [react-unicons](https://www.npmjs.com/package/@iconscout/react-unicons)
+- [boring-avatars](https://www.npmjs.com/package/boring-avatars)
 
 ## Usage
 
