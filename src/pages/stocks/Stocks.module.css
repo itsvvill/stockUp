@@ -238,11 +238,8 @@
   -webkit-box-shadow: var(--webkit-box-shadow);
   box-shadow: var(--box-shadow);
 }
+.percent-change,
 .current-price {
-  font-size: 25px;
-  font-weight: bold;
-}
-.percent-change {
   font-size: 25px;
   font-weight: bold;
 }
@@ -333,20 +330,20 @@
 }
 /* Stock WatchList */
 .flex {
+  width: 100vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100vw;
   justify-content: center;
+  align-items: center;
 }
 .no-watchlist {
   background: rgba(228, 227, 227, 0.643);
+  width: 400px;
+  height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  width: 400px;
-  height: 150px;
   border: none;
   border-radius: 25px;
   text-align: center;
@@ -380,13 +377,13 @@
   border-radius: 50%;
 }
 .stock-watchlist-container {
+  height: fit-content;
+  width: 500px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
-  height: fit-content;
   justify-content: space-evenly;
   align-items: center;
-  max-width: 600px;
-  width: 500px;
   padding-bottom: 10px;
   border-radius: 25px;
   -webkit-box-shadow: var(--webkit-box-shadow);
@@ -431,8 +428,8 @@
 .stocks-watchlist-item-green {
   list-style: none;
   display: flex;
-  column-gap: 10px;
   align-items: center;
+  column-gap: 10px;
   background: #daf7dc;
   border-radius: 25px;
   width: 90%;
@@ -442,8 +439,8 @@
 .stocks-watchlist-item-red {
   list-style: none;
   display: flex;
-  column-gap: 10px;
   align-items: center;
+  column-gap: 10px;
   background: #ff69614b;
   border-radius: 25px;
   width: 90%;
@@ -487,11 +484,11 @@
   cursor: pointer;
 }
 .stock-watchlist-name-data {
+  width: 170px;
   display: flex;
   justify-content: space-between;
-  border-radius: 10px;
   align-items: center;
-  width: 170px;
+  border-radius: 10px;
 }
 .stocks-watchlist-name {
   border: none;
@@ -509,12 +506,12 @@
   box-shadow: var(--box-shadow);
 }
 .stock-watchlist-data-container {
+  width: 130px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   column-gap: 3px;
   padding: 1px 0;
-  width: 130px;
   cursor: default;
 }
 .stocks-watchlist-price {
@@ -586,12 +583,12 @@
   margin-left: 40px;
 }
 .stock-watchlist-edit-title {
+  width: 350px;
   border: none;
   text-align: center;
   border-radius: 25px;
   font-weight: 600;
   font-size: 25px;
-  width: 350px;
   padding: 5px 8px;
   margin: 2px;
 }
@@ -600,7 +597,8 @@
   justify-content: center;
   align-items: center;
 }
-.stock-watchlist-edit-name {
+.stock-watchlist-edit-name,
+.stock-watchlist-edit-exchange {
   border: none;
   text-align: center;
   border-radius: 25px;
@@ -610,14 +608,7 @@
   font-size: 0.9em;
 }
 .stock-watchlist-edit-exchange {
-  border: none;
-  text-align: center;
-  border-radius: 25px;
   width: 100px;
-  padding: 5px 8px;
-  margin: 2px;
-  font-weight: bold;
-  font-size: 0.9em;
 }
 .stock-watchlist-edit-button-container {
   display: flex;
