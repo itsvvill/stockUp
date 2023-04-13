@@ -37,7 +37,7 @@ export default function Navbar() {
             {matches.normal && (
               <motion.nav className={styles.navbar} layout>
                 {!user && (
-                  <ul className={styles.ul}>
+                  <ul className={styles.ul} role="navigation">
                     <div className={styles.leftnav}>
                       {location.pathname === '/' ? (
                         <>
@@ -45,10 +45,12 @@ export default function Navbar() {
                             <Link
                               to="/"
                               className={styles.stocks}
+                              tabIndex={0}
                               style={{
                                 color: '#4CC49A',
                                 cursor: 'default',
                               }}
+                              role="link"
                             >
                               <img
                                 src={logo}
@@ -68,6 +70,7 @@ export default function Navbar() {
                               color: '#4CC49A',
                               cursor: 'default',
                             }}
+                            role="link"
                           >
                             Home
                           </Link>
@@ -84,7 +87,7 @@ export default function Navbar() {
                               tockUp
                             </Link>
                           </li>
-                          <Link to="/" className={styles.links}>
+                          <Link to="/" className={styles.links} role="link">
                             Home
                           </Link>
                         </>
@@ -97,24 +100,25 @@ export default function Navbar() {
                             cursor: 'default',
                           }}
                           className={styles.links}
+                          role="link"
                         >
                           Guide
                         </Link>
                       ) : (
-                        <Link to="/guide" className={styles.links}>
+                        <Link to="/guide" className={styles.links} role="link">
                           Guide
                         </Link>
                       )}
                     </div>
                     <motion.div whileHover={{ scale: 1.2 }}>
-                      <Link to="/login" className={styles.login}>
+                      <Link to="/login" className={styles.login} role="link">
                         Login
                       </Link>
                     </motion.div>
                   </ul>
                 )}
                 {user && (
-                  <ul className={styles.ul}>
+                  <ul className={styles.ul} role="navigation">
                     <div className={styles.div}>
                       <div className={styles.leftnav}>
                         {location.pathname === '/' ? (
@@ -126,6 +130,7 @@ export default function Navbar() {
                                 color: '#4CC49A',
                                 cursor: 'default',
                               }}
+                              role="link"
                             >
                               <img
                                 src={logo}
@@ -138,7 +143,7 @@ export default function Navbar() {
                           </li>
                         ) : (
                           <li>
-                            <Link className={styles.stocks} to="/">
+                            <Link className={styles.stocks} to="/" role="link">
                               <img
                                 src={logo}
                                 className={styles.logo}
@@ -157,11 +162,16 @@ export default function Navbar() {
                                 color: '#4CC49A',
                                 cursor: 'default',
                               }}
+                              role="link"
                             >
                               Stocks
                             </Link>
                           ) : (
-                            <Link to="/stocks" className={styles.links}>
+                            <Link
+                              to="/stocks"
+                              className={styles.links}
+                              role="link"
+                            >
                               Stocks
                             </Link>
                           )}
@@ -174,11 +184,14 @@ export default function Navbar() {
                                 color: '#4CC49A',
                                 cursor: 'default',
                               }}
+                              role="link"
                             >
                               Transactions
                             </Link>
                           ) : (
-                            <Link to="/transactions">Transactions</Link>
+                            <Link to="/transactions" role="link">
+                              Transactions
+                            </Link>
                           )}
                         </li>
                       </div>
@@ -207,7 +220,7 @@ export default function Navbar() {
                           </div>
                         </li>
                       ) : (
-                        <Link to="/user">
+                        <Link to="/user" role="link">
                           <li className={styles['user-active']}>
                             {user.photoURL ? (
                               <img
@@ -236,13 +249,18 @@ export default function Navbar() {
                           whileHover={{ scale: 1.2 }}
                           className={styles.logout}
                           onClick={logout}
+                          role="button"
                         >
                           Logout
                         </motion.button>
                       </li>
                     </div>
                     {!toggleMenu && (
-                      <UilBars className={styles.menu} color="1f8a58" />
+                      <UilBars
+                        className={styles.menu}
+                        color="1f8a58"
+                        role="button"
+                      />
                     )}
                   </ul>
                 )}
@@ -250,7 +268,7 @@ export default function Navbar() {
             )}
             {/* nav for mobile */}
             {matches.small && !toggleMenu && (
-              <nav className={styles.navbar}>
+              <nav className={styles.navbar} role="navigation">
                 {location.pathname === '/' ? (
                   <div>
                     <Link
@@ -260,6 +278,7 @@ export default function Navbar() {
                         color: '#4CC49A',
                         cursor: 'default',
                       }}
+                      role="link"
                     >
                       <img
                         src={logo}
@@ -282,6 +301,7 @@ export default function Navbar() {
                       style={{
                         color: '#4CC49A',
                       }}
+                      role="link"
                     >
                       tockUp
                     </Link>
@@ -294,7 +314,7 @@ export default function Navbar() {
             )}
             {matches.small && toggleMenu && (
               <>
-                <nav className={styles['navbar-menu']}>
+                <nav className={styles['navbar-menu']} role="navigation">
                   <div className={styles['navbar-row']}>
                     {location.pathname === '/' ? (
                       <div>
@@ -305,6 +325,7 @@ export default function Navbar() {
                             color: '#4CC49A',
                             cursor: 'default',
                           }}
+                          role="link"
                         >
                           <img
                             src={logo}
@@ -327,6 +348,7 @@ export default function Navbar() {
                           style={{
                             color: '#4CC49A',
                           }}
+                          role="link"
                         >
                           tockUp
                         </Link>
@@ -356,7 +378,9 @@ export default function Navbar() {
                           }}
                           className={styles['link-container']}
                         >
-                          <Link to="/">Home</Link>
+                          <Link to="/" role="link">
+                            Home
+                          </Link>
                         </motion.div>
                       )}
                       {location.pathname === '/guide' ? (
@@ -374,7 +398,9 @@ export default function Navbar() {
                           }}
                           className={styles['link-container']}
                         >
-                          <Link to="/guide">Guide</Link>
+                          <Link to="/guide" role="link">
+                            Guide
+                          </Link>
                         </motion.div>
                       )}
 
@@ -384,7 +410,7 @@ export default function Navbar() {
                         }}
                         className={styles['link-container']}
                       >
-                        <Link className={styles.login} to="/login">
+                        <Link className={styles.login} to="/login" role="link">
                           Login
                         </Link>
                       </motion.div>
@@ -407,7 +433,9 @@ export default function Navbar() {
                           }}
                           className={styles['link-container']}
                         >
-                          <Link to="/">Home</Link>
+                          <Link to="/" role="link">
+                            Home
+                          </Link>
                         </motion.div>
                       )}
                       {location.pathname === '/guide' ? (
@@ -425,7 +453,9 @@ export default function Navbar() {
                           }}
                           className={styles['link-container']}
                         >
-                          <Link to="/guide">Guide</Link>
+                          <Link to="/guide" role="link">
+                            Guide
+                          </Link>
                         </motion.div>
                       )}
                       {location.pathname === '/stocks' ? (
@@ -443,7 +473,9 @@ export default function Navbar() {
                           }}
                           className={styles['link-container']}
                         >
-                          <Link to="/stocks">Stocks</Link>
+                          <Link to="/stocks" role="link">
+                            Stocks
+                          </Link>
                         </motion.div>
                       )}
                       {location.pathname === '/transactions' ? (
@@ -461,7 +493,9 @@ export default function Navbar() {
                           }}
                           className={styles['link-container']}
                         >
-                          <Link to="/transactions">Transactions</Link>
+                          <Link to="/transactions" role="link">
+                            Transactions
+                          </Link>
                         </motion.div>
                       )}
                       {location.pathname === '/user' ? (
@@ -503,6 +537,7 @@ export default function Navbar() {
                             to="/user"
                             className={styles.user}
                             style={{ cursor: 'pointer' }}
+                            role="link"
                           >
                             {user.photoURL ? (
                               <img
@@ -531,6 +566,7 @@ export default function Navbar() {
                           whileHover={{ scale: 1.2, transition: 0.6 }}
                           onClick={() => logout()}
                           className={styles.logout}
+                          role="button"
                         >
                           Logout
                         </motion.button>
