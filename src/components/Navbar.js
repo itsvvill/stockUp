@@ -260,6 +260,7 @@ export default function Navbar() {
                         className={styles.menu}
                         color="1f8a58"
                         role="button"
+                        aria-label="toggle menu"
                       />
                     )}
                   </ul>
@@ -307,7 +308,11 @@ export default function Navbar() {
                     </Link>
                   </div>
                 )}
-                <button onClick={toggleState} className={styles.menu}>
+                <button
+                  onClick={toggleState}
+                  className={styles.menu}
+                  aria-label="toggle menu"
+                >
                   <UilBars color="#4cc49a" />
                 </button>
               </nav>
