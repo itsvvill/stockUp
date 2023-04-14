@@ -9,7 +9,7 @@ import logo from './logo.png';
 
 export default function Footer() {
   return (
-    <nav className={styles.footer}>
+    <nav className={styles.footer} role="navigation">
       <div className={styles.container}>
         <div className={styles.stockup}>
           <div className={styles['links-container']}>
@@ -44,10 +44,10 @@ export default function Footer() {
         </div>
         <div className={styles['footer-links']}>
           <p className={styles['footer-title']}>INFO</p>
-          <Link to="/guide" className={styles['link']}>
+          <Link to="/guide" className={styles['link']} role="link">
             Guide
           </Link>
-          <Link to="/careers" className={styles['link']}>
+          <Link to="/careers" className={styles['link']} role="link">
             Careers
           </Link>
         </div>
@@ -97,7 +97,7 @@ export default function Footer() {
       <div className={styles.copyright}>
         <span className={styles['break-line']}></span>
         <UilCopyright size="18" className={styles.icon} /> StockUp 2023 |{' '}
-        <Link className={styles.privacy} to="/privacy">
+        <Link className={styles.privacy} to="/privacy" role="link">
           Privacy Policy
         </Link>
       </div>
