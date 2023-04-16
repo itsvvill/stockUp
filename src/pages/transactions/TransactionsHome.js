@@ -261,7 +261,7 @@ export default function TransactionsHome() {
         )}
       </div>
       {!toggleView && (
-        <div className={styles.sidebar}>
+        <div className={styles.form}>
           <TransactionForm
             uid={user.uid}
             categories={

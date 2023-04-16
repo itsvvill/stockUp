@@ -45,22 +45,22 @@
   --webkit-box-shadow: var(--webkit-box-shadow);
   box-shadow: var(--box-shadow);
 }
-.sidebar {
+.form {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.sidebar form {
+.form form {
   padding: 30px;
-  background: #daf7dc;
+  background: #ebeaea;
   border-radius: 25px;
   --webkit-box-shadow: var(--webkit-box-shadow);
   box-shadow: var(--box-shadow);
 }
-.sidebar input,
-.sidebar select {
+.form input,
+.form select {
   width: 100%;
   display: block;
   padding: 10px;
@@ -70,20 +70,20 @@
   color: #555;
   font-size: 1em;
 }
-.sidebar label {
+.form label {
   margin: 0 auto 20px;
   display: block;
   color: #000;
 }
-.sidebar .date {
+.form .date {
   font-size: 0.8em;
 }
-.sidebar .date:hover,
-.sidebar .category:hover {
+.form .date:hover,
+.form .category:hover {
   cursor: pointer;
 }
 
-.sidebar button {
+.form button {
   font-size: 1em;
   cursor: pointer;
   display: block;
@@ -96,24 +96,24 @@
   -webkit-box-shadow: var(--webkit-box-shadow);
   box-shadow: var(--box-shadow);
 }
-.sidebar button:disabled {
+.form button:disabled {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.sidebar button:disabled:hover {
+.form button:disabled:hover {
   cursor: default;
 }
-.sidebar h3 {
+.form h3 {
   color: #000;
   margin-bottom: 20px;
   text-align: center;
 }
-.sidebar aside {
+.form aside {
   margin-top: 40px;
   color: #555;
 }
-.sidebar aside li {
+.form aside li {
   margin: 10px;
 }
 .transactions .edit-color-input {
@@ -128,7 +128,7 @@
   margin: 10px 5px 10px 0;
 }
 /* color picker styling */
-.sidebar input[type='color'] {
+.form input[type='color'] {
   height: 45px;
   width: 265px;
   -webkit-appearance: none;
@@ -139,12 +139,12 @@
   border: none;
   cursor: pointer;
 }
-.sidebar input[type='color']::-webkit-color-swatch,
-.sidebar input[type='color']::-moz-color-swatch {
+.form input[type='color']::-webkit-color-swatch,
+.form input[type='color']::-moz-color-swatch {
   border-radius: 10px;
   border: none;
 }
-.sidebar .brush {
+.form .brush {
   position: absolute;
   margin-top: 38px;
   margin-left: 188px;
@@ -462,37 +462,37 @@ nav.category-filter {
 }
 
 @media screen and (max-height: 750px), screen and (max-width: 1200px) {
-  .sidebar h3 {
+  .form h3 {
     font-size: 0.9em;
     margin: 5px;
   }
-  .sidebar form {
+  .form form {
     height: 340px;
     padding: 0 10px 0 10px;
   }
-  .sidebar label {
+  .form label {
     margin: 0;
     padding: 2px;
     font-size: 0.9em;
   }
-  .sidebar input,
-  .sidebar select {
+  .form input,
+  .form select {
     padding: 5px;
     font-size: 0.8em;
   }
-  .sidebar input[type='color'] {
+  .form input[type='color'] {
     height: 30px;
     padding-right: 30px;
   }
-  .sidebar span {
+  .form span {
     font-size: 0.8em;
   }
-  .sidebar button {
+  .form button {
     font-size: 0.75em;
     padding: 4px;
     margin-top: 10px;
   }
-  .sidebar .brush {
+  .form .brush {
     margin-top: 30px;
     margin-left: 202px;
   }
@@ -576,48 +576,48 @@ nav.category-filter {
     margin-top: 90px;
     padding: 10px;
   }
-  .sidebar h3 {
+  .form h3 {
     font-size: 0.6em;
     margin: 2px;
   }
-  .sidebar form {
+  .form form {
     height: 270px;
   }
-  .sidebar label {
+  .form label {
     padding: 1px;
     font-size: 0.75em;
   }
-  .sidebar input,
-  .sidebar select {
+  .form input,
+  .form select {
     padding: 3px;
     font-size: 0.75em;
   }
-  .sidebar span {
+  .form span {
     font-size: 0.75em;
   }
-  .sidebar button {
+  .form button {
     font-size: 0.6em;
     padding: 2px;
     margin-top: 10px;
   }
-  .sidebar .brush {
+  .form .brush {
     margin-top: 24px;
     margin-left: 208px;
     cursor: pointer;
   }
 }
 @media screen and (max-height: 600px) {
-  .sidebar h3 {
+  .form h3 {
     display: none;
   }
-  .sidebar form {
+  .form form {
     height: 260px;
   }
-  .sidebar input[type='color'] {
+  .form input[type='color'] {
     height: 25px;
     padding-right: 30px;
   }
-  .sidebar .brush {
+  .form .brush {
     margin-top: 22px;
     margin-left: 208px;
     cursor: pointer;
