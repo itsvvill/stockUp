@@ -12,7 +12,7 @@ export default function TransactionForm({ uid, categories }) {
   const [date, setDate] = useState('');
   const [category, setCategory] = useState('');
   const [formSuccess, setFormSuccess] = useState('');
-  const [color, setColor] = useState('#effaf0');
+  const [color, setColor] = useState('#4cc49a');
   const { addDocument, response, error } = useFirestore('transactions');
 
   // submits a new transaction item

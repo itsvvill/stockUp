@@ -213,9 +213,9 @@
   position: relative;
   display: flex;
   align-items: center;
-  background: #f2f2f2;
+  background: #ebeaea;
   margin: 0px auto;
-  border: 1px solid #f2f2f2;
+  border: 1px solid #ebeaea;
   box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
   padding: 15px 15px 15px 5px;
   overflow: hidden;
@@ -345,7 +345,7 @@
   column-gap: 5px;
   box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
   border-bottom: 0.5px solid #5555555c;
-  background-color: #f2f2f2;
+  background-color: #ebeaea;
   padding-top: 2px;
 }
 .transaction-filter-container .button {
@@ -384,7 +384,7 @@ svg {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #f2f2f2;
+  background-color: #ebeaea;
   box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
 }
 .transaction-info-item {
@@ -399,7 +399,7 @@ svg {
   margin-left: 1px;
   padding: 1px 6px;
   border-radius: 25px;
-  background: #daf7dc;
+  background: #4cc49a;
 }
 .transaction-info-categories {
   margin: 0 auto;
@@ -408,7 +408,7 @@ svg {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #f2f2f2;
+  background-color: #ebeaea;
   border-bottom: 0.5px solid #5555555c;
   box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
 }
@@ -434,13 +434,13 @@ nav.category-filter {
   justify-content: space-evenly;
   align-items: center;
   box-shadow: 3px 3px 5px rgba(50, 50, 50, 0.1);
-  background-color: #f2f2f2;
+  background-color: #ebeaea;
   padding: 3px 0;
 }
 .category-btn {
-  border: 2px solid #daf7dc;
+  border: 2px solid #4cc49a;
   border: 2px solid transparent;
-  background: #daf7dc;
+  background: #4cc49a;
   padding: 3px 6px;
   margin: 2px;
   border-radius: 25px;
@@ -450,7 +450,7 @@ nav.category-filter {
   font-size: 0.7em;
 }
 .active-btn {
-  background: #daf7dc;
+  background: #4cc49a;
   color: #333;
   border: 2px solid #333;
   padding: 3px 6px;
