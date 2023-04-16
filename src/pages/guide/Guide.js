@@ -25,7 +25,7 @@ export default function Guide() {
             Login to StockUp, try it out using a guest account, or sign up for a
             new account by clicking the button below.
           </p>
-          <motion.div whileHover={{ scale: 1.1 }}>
+          <motion.div whileHover={{ scale: 1.1 }} role="link">
             <Link to="/login" className={styles.button}>
               Login
             </Link>
@@ -39,7 +39,7 @@ export default function Guide() {
             Search for real-time prices of a single stock or create a watchlist
             to track a group of stocks.
           </p>
-          <motion.div whileHover={{ scale: 1.1 }}>
+          <motion.div whileHover={{ scale: 1.1 }} role="link">
             <Link to="/stocks" className={styles.button}>
               Stocks
             </Link>
@@ -53,7 +53,7 @@ export default function Guide() {
             Use our transaction list feature to easily categorize and sort your
             finances.
           </p>
-          <motion.div whileHover={{ scale: 1.1 }}>
+          <motion.div whileHover={{ scale: 1.1 }} role="link">
             <Link to="/transactions" className={styles.button}>
               Transactions
             </Link>
