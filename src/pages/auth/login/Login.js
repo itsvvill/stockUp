@@ -119,6 +119,7 @@ export default function Login() {
               name="submit"
               value="Login"
               className={styles['login-form-button-login']}
+              aria-label="login"
             >
               Login
             </button>
@@ -139,6 +140,7 @@ export default function Login() {
                 name="submit"
                 value="Google"
                 className={styles['login-form-button-social']}
+                aria-label="Login with Google"
               >
                 <img src={google} alt="continue with google" />
               </button>
@@ -146,6 +148,7 @@ export default function Login() {
                 name="submit"
                 value="Facebook"
                 className={styles['login-form-button-social']}
+                aria-label="Login with Facebook"
               >
                 <img src={facebook} alt="continue with facebook" />
               </button>
@@ -179,6 +182,7 @@ export default function Login() {
               name="submit"
               value="guest"
               className={styles['login-form-button-guest']}
+              aria-label="Login as guest user"
             >
               Guest Acount
             </button>
@@ -197,7 +201,11 @@ export default function Login() {
         </>
         <p className={styles['signup-p']}>
           First time here?{' '}
-          <span className={styles['signup-link']}>
+          <span
+            className={styles['signup-link']}
+            role="link"
+            aria-label="Link to Signup page"
+          >
             <Link to="/signup">Signup</Link>
           </span>
         </p>
