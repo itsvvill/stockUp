@@ -8,8 +8,7 @@ import styles from './Login.module.css';
 import logo from '../../../components/logo.png';
 import google from '../images/google_login.svg';
 import facebook from '../images/facebook_login.svg';
-import { UilEye } from '@iconscout/react-unicons';
-import { UilEyeSlash } from '@iconscout/react-unicons';
+import { UilEye, UilEyeSlash } from '@iconscout/react-unicons';
 
 export default function Login() {
   const [email, setEmail] = useState('');
