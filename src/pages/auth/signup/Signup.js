@@ -8,8 +8,7 @@ import styles from './Signup.module.css';
 import logo from '../../../components/logo.png';
 import google from '../images/google_signup.svg';
 import facebook from '../images/facebook_signup.svg';
-import { UilEye } from '@iconscout/react-unicons';
-import { UilEyeSlash } from '@iconscout/react-unicons';
+import { UilEye, UilEyeSlash } from '@iconscout/react-unicons';
 
 export default function Signup() {
   const [email, setEmail] = useState('');
