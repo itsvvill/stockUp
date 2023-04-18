@@ -127,6 +127,7 @@ export default function Signup() {
               name="submit"
               value="Signup"
               className={styles['signup-form-button-signup']}
+              aria-label="Signup for StockUp"
             >
               Sign Up
             </button>
@@ -147,6 +148,7 @@ export default function Signup() {
                 name="submit"
                 value="Google"
                 className={styles['signup-form-button-social']}
+                aria-label="Signup with Google"
               >
                 <img src={google} alt="signup with google" />
               </button>
@@ -154,6 +156,7 @@ export default function Signup() {
                 name="submit"
                 value="Facebook"
                 className={styles['signup-form-button-social']}
+                aria-label="Signup with Facebook"
               >
                 <img src={facebook} alt="signup with facebook" />
               </button>
@@ -187,6 +190,7 @@ export default function Signup() {
               name="submit"
               value="guest"
               className={styles['signup-form-button-guest']}
+              aria-label="Login using Guest Account"
             >
               Guest Acount
             </button>
@@ -204,7 +208,11 @@ export default function Signup() {
         </>
         <p className={styles['login-p']}>
           Already have an account?{' '}
-          <span className={styles['login-link']}>
+          <span
+            className={styles['login-link']}
+            role="link"
+            aria-label="Go to login"
+          >
             <Link to="/login">Login</Link>
           </span>
         </p>
