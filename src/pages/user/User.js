@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { useDeleteUser } from '../../hooks/useDeleteUser';
 import { useUpdateUser } from '../../hooks/useUpdateUser';
+import { storageRef } from '../../firebase/config';
+
 // styles
 import styles from './User.module.css';
 
@@ -10,6 +12,7 @@ export default function User() {
   const { updateUser } = useUpdateUser();
   const { user, userError, userPending } = useAuthContext();
   const [name, setName] = useState('');
+  const [imageUpload, setImageUpload] = useState(null);
   // const [password, setPassword] = useState('');
 
   const handleUpdate = (e) => {
@@ -21,6 +24,9 @@ export default function User() {
     e.preventDefault();
     deleteUser();
     if (error) console.log(error);
+  };
+  const uploadImage = (e) => {
+    if (imageUpload === null) return;
   };
   return (
     <>
@@ -66,9 +72,16 @@ export default function User() {
               </button>
             )}
             <h2 className={styles.section}>Add Profile Image</h2>
-            <button className={styles.button} disabled>
-              Add New Image
-            </button>
+            <input
+              type="file"
+              onChange={(e) => {
+                setImageUpload(e.target.files[0]);
+              }}
+            >
+              <button onClick={uploadImage} className={styles.button} disabled>
+                Add New Image
+              </button>
+            </input>
 
             <h2 className={styles.section}>Account Management</h2>
             {!isPending && (
