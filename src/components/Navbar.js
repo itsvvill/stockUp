@@ -4,6 +4,7 @@ import { useLogout } from '../hooks/useLogout';
 import { useAuthContext } from '../hooks/useAuthContext';
 import Media from 'react-media';
 import { motion } from 'framer-motion';
+import { storage } from '../firebase/config';
 
 // styles and logo
 import styles from './Navbar.module.css';
@@ -16,10 +17,19 @@ export default function Navbar() {
   const { user } = useAuthContext();
   let location = useLocation();
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [profileURL, setProfileURL] = useState(null);
 
   useEffect(() => {
     setToggleMenu(false);
-  }, [location]);
+    (async () => {
+      const storageRef = await storage.ref(user.uid + '/profilePicture/');
+      const files = await storageRef.list();
+      const url = await storage.ref(files.items[0].fullPath).getDownloadURL();
+      if (url !== null || url !== undefined || url !== '') {
+        setProfileURL((prevState) => url);
+      }
+    })();
+  }, [location, user.uid]);
 
   function toggleState() {
     setToggleMenu(!toggleMenu);
@@ -222,7 +232,14 @@ export default function Navbar() {
                       ) : (
                         <Link to="/user" role="link">
                           <li className={styles['user-active']}>
-                            {user.photoURL ? (
+                            {profileURL !== null ? (
+                              <img
+                                className={styles.profileimg}
+                                src={profileURL}
+                                referrerPolicy="no-referrer"
+                                alt={`${user} profile`}
+                              />
+                            ) : user.photoURL ? (
                               <img
                                 className={styles.profileimg}
                                 src={user.photoURL}
