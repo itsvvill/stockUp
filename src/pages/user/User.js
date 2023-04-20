@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { useDeleteUser } from '../../hooks/useDeleteUser';
 import { useUpdateUser } from '../../hooks/useUpdateUser';
-import { storageRef } from '../../firebase/config';
+import { storage } from '../../firebase/config';
 
 // styles
 import styles from './User.module.css';
@@ -25,8 +25,12 @@ export default function User() {
     deleteUser();
     if (error) console.log(error);
   };
-  const uploadImage = (e) => {
+  const uploadImage = () => {
     if (imageUpload === null) return;
+    let imageRef = storage.ref(
+      user.uid + '/profilePicture/' + imageUpload.name
+    );
+    imageRef.put(imageUpload).then((data) => console.log(data));
   };
   return (
     <>
@@ -74,14 +78,16 @@ export default function User() {
             <h2 className={styles.section}>Add Profile Image</h2>
             <input
               type="file"
+              className={styles.button}
               onChange={(e) => {
                 setImageUpload(e.target.files[0]);
               }}
-            >
-              <button onClick={uploadImage} className={styles.button} disabled>
+            />
+            {imageUpload !== null && (
+              <button onClick={uploadImage} className={styles.button}>
                 Add New Image
               </button>
-            </input>
+            )}
 
             <h2 className={styles.section}>Account Management</h2>
             {!isPending && (
