@@ -85,13 +85,18 @@ export default function User() {
               </button>
             )}
             <h2 className={styles.section}>Add Profile Image</h2>
-            <input
-              type="file"
-              className={styles.button}
-              onChange={(e) => {
-                setImageUpload(e.target.files[0]);
-              }}
-            />
+            <label for="profile-image" className={styles['button-label']}>
+              {imageUpload
+                ? imageUpload?.name.substring(0, 15) + '...'
+                : 'Choose New Image'}
+              <input
+                type="file"
+                id="profile-image"
+                onChange={(e) => {
+                  setImageUpload(e.target.files[0]);
+                }}
+              />
+            </label>
             {imageUpload !== null && (
               <button onClick={uploadImage} className={styles.button}>
                 Add New Image
