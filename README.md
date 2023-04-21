@@ -100,11 +100,11 @@ Users have 4 options for signing up:
 ## User Features
 
 - Ability to change user name
+- Ability to update user profile picture
 - Ability to delete account
 
 ## Future Features
 
-- Ability to change or add profile picture
 - Additional metrics for transactions
 - Ability to update and create new categories
 
