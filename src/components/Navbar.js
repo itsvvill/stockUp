@@ -533,7 +533,14 @@ export default function Navbar() {
                             className={styles.user}
                             style={{ color: '#4CC49A' }}
                           >
-                            {user.photoURL ? (
+                            {profileURL !== null ? (
+                              <img
+                                className={styles.profileimg}
+                                src={profileURL}
+                                referrerPolicy="no-referrer"
+                                alt={`${user} profile`}
+                              />
+                            ) : user.photoURL ? (
                               <img
                                 className={styles.profileimg}
                                 src={user.photoURL}
