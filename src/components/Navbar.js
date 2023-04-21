@@ -209,7 +209,14 @@ export default function Navbar() {
                     <div className={styles.div}>
                       {location.pathname === '/user' ? (
                         <li className={styles.user}>
-                          {user.photoURL ? (
+                          {profileURL !== null ? (
+                            <img
+                              className={styles.profileimg}
+                              src={profileURL}
+                              referrerPolicy="no-referrer"
+                              alt={`${user} profile`}
+                            />
+                          ) : user.photoURL ? (
                             <img
                               className={styles.profileimg}
                               src={user.photoURL}
