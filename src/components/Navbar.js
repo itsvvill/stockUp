@@ -22,14 +22,16 @@ export default function Navbar() {
   useEffect(() => {
     setToggleMenu(false);
     (async () => {
-      const storageRef = await storage.ref(user.uid + '/profilePicture/');
-      const files = await storageRef.list();
-      const url = await storage.ref(files.items[0].fullPath).getDownloadURL();
-      if (url !== null || url !== undefined || url !== '') {
-        setProfileURL((prevState) => url);
+      if (user) {
+        const storageRef = await storage.ref(user?.uid + '/profilePicture/');
+        const files = await storageRef.list();
+        const url = await storage.ref(files.items[0].fullPath).getDownloadURL();
+        if (url !== null || url !== undefined || url !== '') {
+          setProfileURL((prevState) => url);
+        }
       }
     })();
-  }, [location, user.uid]);
+  }, [location, user?.uid]);
 
   function toggleState() {
     setToggleMenu(!toggleMenu);

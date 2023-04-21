@@ -28,7 +28,7 @@ export default function User() {
   const uploadImage = () => {
     if (imageUpload === null) return;
     // deletes previously stored profilePicture
-    let storageRef = storage.ref(user.uid + '/profilePicture/');
+    let storageRef = storage.ref(user?.uid + '/profilePicture/');
     storageRef.listAll().then((listResults) => {
       const promises = listResults.items.map((item) => {
         return item.delete();
