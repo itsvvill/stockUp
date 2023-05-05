@@ -1,17 +1,14 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 import { UilEdit, UilListUl, UilSearch } from '@iconscout/react-unicons';
 import styles from '../pages/transactions/Home.module.css';
 
-export default function ViewToggle({ page }) {
-  const [toggleView, setToggleView] = useState(false);
-
+export default function ViewToggle({ page, changeView, toggleView }) {
   return (
     <motion.button
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       className={styles.toggle}
-      onClick={() => setToggleView(!toggleView)}
+      onClick={() => changeView((prevState) => !prevState)}
     >
       <span
         className={
