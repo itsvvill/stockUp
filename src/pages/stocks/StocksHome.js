@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { useCollection } from '../../hooks/useCollection';
-import { motion } from 'framer-motion';
 import API from '../../API';
 
 // pages and components
@@ -11,12 +10,9 @@ import StockWatchList from './StockWatchList';
 
 // styles and icons
 import styles from './Stocks.module.css';
-import {
-  UilSearch,
-  UilListUl,
-  UilExclamationCircle,
-} from '@iconscout/react-unicons';
+import { UilExclamationCircle } from '@iconscout/react-unicons';
 import StockWatchListForm from './StockWatchListForm';
+import ViewToggle from '../../components/ViewToggle';
 
 export default function StocksHome() {
   const [toggleView, setToggleView] = useState(false);
@@ -89,6 +85,10 @@ export default function StocksHome() {
   const updateSearchQuery = (query) => {
     setSearchQuery(query);
   };
+  // allows ViewToggle to change state in parent
+  const changeView = () => {
+    setToggleView((prevState) => !prevState);
+  };
 
   // api request for general, pricing, and search information
   const toggleSubmit = (e) => {
@@ -99,30 +99,11 @@ export default function StocksHome() {
   };
   return (
     <div className={styles['stocks-home-container']}>
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        className={styles.toggle}
-        onClick={() => setToggleView(!toggleView)}
-      >
-        <span
-          className={
-            !toggleView
-              ? styles['toggle-search-active']
-              : styles['toggle-search']
-          }
-        >
-          <UilSearch size="20" color={!toggleView ? '#333' : '#333'} />
-        </span>
-        <span className={styles.line}>|</span>
-        <span
-          className={
-            toggleView ? styles['toggle-list-active'] : styles['toggle-list']
-          }
-        >
-          <UilListUl size="20" color={toggleView ? '#333' : '#333'} />
-        </span>
-      </motion.button>
+      <ViewToggle
+        page={'stocks'}
+        changeView={changeView}
+        toggleView={toggleView}
+      />
       {!toggleView && (
         <div className={styles['stocks-components-container']}>
           <div className={styles['container']}>
