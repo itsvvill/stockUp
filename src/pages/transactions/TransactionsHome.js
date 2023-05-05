@@ -13,9 +13,7 @@ import {
   UilLetterEnglishA,
   UilInfoCircle,
   UilAngleDoubleDown,
-  UilEdit,
   UilExclamationCircle,
-  UilListUl,
 } from '@iconscout/react-unicons';
 
 // components and pages
@@ -24,6 +22,7 @@ import TransactionInfo from './TransactionInfo';
 import TransactionList from './TransactionList';
 import CategoryFilter from './CategoryFilter';
 import { categoryList } from './categoryList';
+import ViewToggle from '../../components/ViewToggle';
 
 export default function TransactionsHome() {
   const [toggleView, setToggleView] = useState(false);
@@ -105,36 +104,21 @@ export default function TransactionsHome() {
       setShowDropDown((prevState) => !prevState);
     }
   };
+  // allows ViewToggle to change state in parent
+  const changeView = () => {
+    setToggleView((prevState) => !prevState);
+  };
   // sets a new category to filter by
   const changeCategory = (newCategory) => {
     setCurrentCategory(newCategory);
   };
   return (
     <div className={styles.container}>
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        className={styles.toggle}
-        onClick={() => setToggleView(!toggleView)}
-      >
-        <span
-          className={
-            !toggleView
-              ? styles['toggle-search-active']
-              : styles['toggle-search']
-          }
-        >
-          <UilEdit size="20" color={!toggleView ? '#333' : '#333'} />
-        </span>
-        <span className={styles.line}>|</span>
-        <span
-          className={
-            toggleView ? styles['toggle-list-active'] : styles['toggle-list']
-          }
-        >
-          <UilListUl size="20" color={toggleView ? '#333' : '#333'} />
-        </span>
-      </motion.button>
+      <ViewToggle
+        page={'transactions'}
+        changeView={changeView}
+        toggleView={toggleView}
+      />
       <div className={styles.content}>
         {error && <p>{error}</p>}
         {toggleView && documents.length < 1 && (
