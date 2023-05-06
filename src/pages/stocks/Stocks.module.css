@@ -4,43 +4,6 @@
   max-height: 90vh;
   max-width: 100vw;
 }
-.toggle {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 100px auto 20px auto;
-  width: 120px;
-  border: none;
-  padding: 10px 8px;
-  border-radius: 25px;
-  background: rgba(207, 205, 205, 0.643);
-  cursor: pointer;
-  --webkit-box-shadow: var(--webkit-box-shadow);
-  box-shadow: var(--box-shadow);
-}
-.line {
-  font-size: 20px;
-  font-weight: 400;
-  margin: 0 4px;
-  color: rgba(207, 205, 205, 1);
-}
-.toggle-search,
-.toggle-search-active,
-.toggle-list,
-.toggle-list-active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 30px;
-  border-radius: 25px;
-}
-.toggle-search-active,
-.toggle-list-active {
-  background: #4cc49a;
-  --webkit-box-shadow: var(--webkit-box-shadow);
-  box-shadow: var(--box-shadow);
-}
 .stocks-components-container {
   height: 60vh;
   display: flex;
