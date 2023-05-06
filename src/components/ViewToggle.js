@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
+
+// styles and icons
+import styles from './ViewToggle.module.css';
 import { UilEdit, UilListUl, UilSearch } from '@iconscout/react-unicons';
-import styles from '../pages/transactions/Home.module.css';
 
 export default function ViewToggle({ page, changeView, toggleView }) {
   return (
