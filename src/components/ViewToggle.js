@@ -30,7 +30,7 @@ export default function ViewToggle({ page, changeView, toggleView }) {
           toggleView ? styles['toggle-list-active'] : styles['toggle-list']
         }
       >
-        <UilListUl size="20" color={toggleView ? '#333' : '#333'} />
+        <UilListUl size="20" color="#333" />
       </span>
     </motion.button>
   );
