@@ -17,8 +17,12 @@ export default function ViewToggle({ page, changeView, toggleView }) {
           !toggleView ? styles['toggle-search-active'] : styles['toggle-search']
         }
       >
-        {page === 'transactions' && <UilSearch size="20" />}
-        {page === 'stocks' && <UilEdit size="20" />}
+        {/* Renders icon based on page passed as props */}
+        {page === 'transactions' ? (
+          <UilSearch size="20" color="#333" />
+        ) : (
+          <UilEdit size="20" color="#333" />
+        )}
       </span>
       <span className={styles.line}>|</span>
       <span
