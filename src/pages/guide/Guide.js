@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 //styles and icons
 import styles from './Guide.module.css';
 import logo from '../../components/logo.png';
+import LogoAnimation from '../../components/LogoAnimation';
 
 export default function Guide() {
   return (
@@ -60,21 +61,7 @@ export default function Guide() {
           </motion.div>
         </div>
       </motion.div>
-      {/* Home page animation */}
-      <ul className={styles['logos-container']}>
-        <img src={logo} className={styles.logos} alt="StockUp Logo" />
-        <img src={logo} className={styles.logos} alt="StockUp Logo" />
-        <img src={logo} className={styles.logos} alt="StockUp Logo" />
-        <img src={logo} className={styles.logos} alt="StockUp Logo" />
-        <img src={logo} className={styles.logos} alt="StockUp Logo" />
-        <img src={logo} className={styles.logos} alt="StockUp Logo" />
-        <img src={logo} className={styles.logos} alt="StockUp Logo" />
-        <img src={logo} className={styles.logos} alt="StockUp Logo" />
-        <img src={logo} className={styles.logos} alt="StockUp Logo" />
-        <img src={logo} className={styles.logos} alt="StockUp Logo" />
-        <img src={logo} className={styles.logos} alt="StockUp Logo" />
-        <img src={logo} className={styles.logos} alt="StockUp Logo" />
-      </ul>
+      <LogoAnimation />
     </motion.div>
   );
 }

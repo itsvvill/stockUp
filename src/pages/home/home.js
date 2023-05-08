@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import LogoAnimation from '../../components/LogoAnimation';
 
 // styles and logo
 import styles from './Home.module.css';
@@ -58,69 +59,7 @@ export default function Home() {
           </motion.div>
         </div>
       </div>
-      {/* Home page animation */}
-      <div className={styles['logos-container']}>
-        <motion.img
-          layout
-          src={logo}
-          className={styles.logos}
-          alt="StockUp Logo"
-        />
-        <motion.img
-          layout
-          src={logo}
-          className={styles.logos}
-          alt="StockUp Logo"
-        />
-        <motion.img
-          layout
-          src={logo}
-          className={styles.logos}
-          alt="StockUp Logo"
-        />
-        <motion.img
-          layout
-          src={logo}
-          className={styles.logos}
-          alt="StockUp Logo"
-        />
-        <motion.img
-          layout
-          src={logo}
-          className={styles.logos}
-          alt="StockUp Logo"
-        />
-        <motion.img
-          layout
-          src={logo}
-          className={styles.logos}
-          alt="StockUp Logo"
-        />
-        <motion.img
-          layout
-          src={logo}
-          className={styles.logos}
-          alt="StockUp Logo"
-        />
-        <motion.img
-          layout
-          src={logo}
-          className={styles.logos}
-          alt="StockUp Logo"
-        />
-        <motion.img
-          layout
-          src={logo}
-          className={styles.logos}
-          alt="StockUp Logo"
-        />
-        <motion.img
-          layout
-          src={logo}
-          className={styles.logos}
-          alt="StockUp Logo"
-        />
-      </div>
+      <LogoAnimation />
     </div>
   );
 }
