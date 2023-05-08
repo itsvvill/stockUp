@@ -117,3 +117,12 @@
     transform: translateY(-110vh) rotate(600deg);
   }
 }
+@media screen and (max-width: 770px) {
+  .logos-container img:nth-child(8),
+  .logos-container img:nth-child(9),
+  .logos-container img:nth-child(10),
+  .logos-container img:nth-child(11),
+  .logos-container img:nth-child(12) {
+    display: none;
+  }
+}

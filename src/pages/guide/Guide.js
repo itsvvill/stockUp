@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import LogoAnimation from '../../components/LogoAnimation';
 
 //styles and icons
 import styles from './Guide.module.css';
 import logo from '../../components/logo.png';
-import LogoAnimation from '../../components/LogoAnimation';
 
 export default function Guide() {
   return (

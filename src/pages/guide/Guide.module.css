@@ -70,125 +70,6 @@
   font-size: 0.8em;
   text-align: center;
 }
-/* logo animation */
-.logos-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-}
-.logos-container img {
-  position: absolute;
-  display: block;
-  width: 40px;
-  height: 40px;
-  background-color: fade(white, 15%);
-  bottom: -50px;
-  -webkit-animation: logomation 25s infinite;
-  animation: logomation 25s infinite;
-  -webkit-transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
-  transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
-}
-.logos-container img:nth-child(1) {
-  left: 10%;
-}
-.logos-container img:nth-child(2) {
-  left: 15%;
-  width: 80px;
-  height: 80px;
-  animation-delay: 2s;
-  animation-duration: 17s;
-}
-.logos-container img:nth-child(3) {
-  left: 70%;
-  width: 30px;
-  height: 30px;
-  animation-delay: 2.5s;
-  animation-duration: 25s;
-}
-.logos-container img:nth-child(4) {
-  left: 90%;
-  width: 50px;
-  height: 50px;
-  animation-delay: 0.5s;
-  animation-duration: 15s;
-}
-.logos-container img:nth-child(5) {
-  left: 45%;
-  width: 60px;
-  height: 60px;
-  animation-delay: 2s;
-  animation-duration: 22s;
-}
-.logos-container img:nth-child(6) {
-  left: 40%;
-  width: 15px;
-  height: 15px;
-  animation-delay: 2.5s;
-  animation-duration: 25s;
-}
-.logos-container img:nth-child(7) {
-  left: 80%;
-  width: 70px;
-  height: 70px;
-  animation-delay: 3s;
-  animation-duration: 21s;
-}
-.logos-container img:nth-child(8) {
-  left: 60%;
-  width: 20px;
-  height: 20px;
-  animation-delay: 1s;
-  animation-duration: 25s;
-}
-.logos-container img:nth-child(9) {
-  left: 25%;
-  width: 30px;
-  height: 30px;
-  animation-delay: 0.5s;
-  animation-duration: 18s;
-}
-.logos-container img:nth-child(10) {
-  left: 75%;
-  width: 70px;
-  height: 70px;
-  animation-delay: 0.5s;
-  animation-duration: 22s;
-}
-.logos-container img:nth-child(11) {
-  left: 85%;
-  width: 80px;
-  height: 80px;
-  animation-delay: 2s;
-  animation-duration: 24s;
-}
-.logos-container img:nth-child(12) {
-  left: 5%;
-  width: 20px;
-  height: 20px;
-  animation-delay: 4s;
-  animation-duration: 16s;
-}
-
-@-webkit-keyframes logomation {
-  0% {
-    transform: translateY(10vh);
-  }
-  100% {
-    transform: translateY(-110vh) rotate(600deg);
-  }
-}
-@keyframes logomation {
-  0% {
-    transform: translateY(10vh);
-  }
-  100% {
-    transform: translateY(-110vh) rotate(600deg);
-  }
-}
 @media screen and (max-width: 1200px) {
   .container {
     justify-content: center;
@@ -219,13 +100,6 @@
   }
   .card-heading {
     font-size: 0.9em;
-  }
-  .logos-container img:nth-child(8),
-  .logos-container img:nth-child(9),
-  .logos-container img:nth-child(10),
-  .logos-container img:nth-child(11),
-  .logos-container img:nth-child(12) {
-    display: none;
   }
 }
 @media screen and (max-height: 900px) {
