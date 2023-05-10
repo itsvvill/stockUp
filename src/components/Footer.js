@@ -2,9 +2,11 @@ import { Link } from 'react-router-dom';
 
 // styles and icons
 import styles from './Footer.module.css';
-import { UilCopyright } from '@iconscout/react-unicons';
-import { UilGithub } from '@iconscout/react-unicons';
-import { UilExternalLinkAlt } from '@iconscout/react-unicons';
+import {
+  UilCopyright,
+  UilExternalLinkAlt,
+  UilGithub,
+} from '@iconscout/react-unicons';
 import logo from './logo.png';
 
 export default function Footer() {
