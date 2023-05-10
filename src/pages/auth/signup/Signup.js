@@ -28,6 +28,7 @@ export default function Signup() {
     e.preventDefault();
     setShowPassword((prevState) => !prevState);
   };
+  // animation parameters for framer motion
   const pageVariants = {
     initial: {
       opacity: 0,
