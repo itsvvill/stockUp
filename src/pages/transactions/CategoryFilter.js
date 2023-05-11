@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-//styles
+
+// styles
 import styles from './Home.module.css';
 
 export default function CategoryFilter({

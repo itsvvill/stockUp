@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useFirestore } from '../../hooks/useFirestore';
 import { useAuthContext } from '../../hooks/useAuthContext';
+import { categoryList } from './categoryList';
 
 // styles and icons
 import styles from './Home.module.css';
@@ -14,30 +15,6 @@ export default function EditTransaction({ transaction, toggleEditing }) {
   const [newColor, setNewColor] = useState('');
   const { updateDocument, response } = useFirestore('transactions');
   const { user } = useAuthContext();
-
-  // all categories
-  const categoryList = [
-    'All',
-    'Auto Maintenance',
-    'Cellphone',
-    'Eating Out',
-    'Education',
-    'Electricity',
-    'Entertainment',
-    'Gifts',
-    'Groceries',
-    'Health & Wellness',
-    'Hobbies',
-    'Home Improvement',
-    'Home Maintenance',
-    'Internet',
-    'Miscellaneous',
-    'Other',
-    'Rent/Mortgage',
-    'Transportation',
-    'Vacation',
-    'Water',
-  ];
 
   // updates single transaction with edited information
   const handleSubmit = async (e) => {
@@ -96,6 +73,7 @@ export default function EditTransaction({ transaction, toggleEditing }) {
         />
         <input
           type="number"
+          step="0.01"
           required
           placeholder={'$' + transaction.amount}
           value={newAmount}

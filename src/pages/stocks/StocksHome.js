@@ -7,12 +7,12 @@ import API from '../../API';
 import Stocks from './Stocks';
 import StockSearchBar from './StockSearchBar';
 import StockWatchList from './StockWatchList';
+import StockWatchListForm from './StockWatchListForm';
+import ViewToggle from '../../components/ViewToggle';
 
 // styles and icons
 import styles from './Stocks.module.css';
 import { UilExclamationCircle } from '@iconscout/react-unicons';
-import StockWatchListForm from './StockWatchListForm';
-import ViewToggle from '../../components/ViewToggle';
 
 export default function StocksHome() {
   const [toggleView, setToggleView] = useState(false);

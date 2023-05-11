@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import API from '../../API';
-
 import { motion } from 'framer-motion';
-// styles and icons
+
+// styles
 import styles from './Stocks.module.css';
 
 export default function StockSearchBar({
