@@ -63,6 +63,7 @@ export default function TransactionForm({ uid, categories }) {
           <span>Amount ($):</span>
           <input
             type="number"
+            step="0.01"
             required
             placeholder="00.00"
             onChange={(e) => setAmount(e.target.value)}
