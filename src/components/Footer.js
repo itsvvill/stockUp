@@ -98,7 +98,7 @@ export default function Footer() {
       </div>
       <div className={styles.copyright}>
         <span className={styles['break-line']}></span>
-        <UilCopyright size="18" className={styles.icon} /> StockUp 2023 |{' '}
+        <UilCopyright size="16" className={styles.icon} /> StockUp 2023 |{' '}
         <Link className={styles.privacy} to="/privacy" role="link">
           Privacy Policy
         </Link>
