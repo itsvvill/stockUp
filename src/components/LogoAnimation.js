@@ -7,66 +7,15 @@ export default function LogoAnimation() {
     <>
       {/* Home page animation */}
       <div className={styles['logos-container']}>
-        <motion.img
-          layout
-          src={logo}
-          className={styles.logos}
-          alt="StockUp Logo"
-        />
-        <motion.img
-          layout
-          src={logo}
-          className={styles.logos}
-          alt="StockUp Logo"
-        />
-        <motion.img
-          layout
-          src={logo}
-          className={styles.logos}
-          alt="StockUp Logo"
-        />
-        <motion.img
-          layout
-          src={logo}
-          className={styles.logos}
-          alt="StockUp Logo"
-        />
-        <motion.img
-          layout
-          src={logo}
-          className={styles.logos}
-          alt="StockUp Logo"
-        />
-        <motion.img
-          layout
-          src={logo}
-          className={styles.logos}
-          alt="StockUp Logo"
-        />
-        <motion.img
-          layout
-          src={logo}
-          className={styles.logos}
-          alt="StockUp Logo"
-        />
-        <motion.img
-          layout
-          src={logo}
-          className={styles.logos}
-          alt="StockUp Logo"
-        />
-        <motion.img
-          layout
-          src={logo}
-          className={styles.logos}
-          alt="StockUp Logo"
-        />
-        <motion.img
-          layout
-          src={logo}
-          className={styles.logos}
-          alt="StockUp Logo"
-        />
+        {[...Array(9)].map((n, i) => (
+          <motion.img
+            layout
+            src={logo}
+            className={styles.logos}
+            key={i}
+            alt="StockUp Logo"
+          />
+        ))}
       </div>
     </>
   );
