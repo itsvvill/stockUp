@@ -1,6 +1,7 @@
 {
   "short_name": "StockUp",
   "name": "StockUp",
+  "description": "A financial website for smarter decision making.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#000",
+  "background_color": "#fff"
 }
