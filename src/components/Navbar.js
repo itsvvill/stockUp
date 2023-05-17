@@ -22,7 +22,7 @@ export default function Navbar() {
   useEffect(() => {
     setToggleMenu(false);
     (async () => {
-      if (user) {
+      if (user && !user?.isAnonymous) {
         const storageRef = await storage.ref(user?.uid + '/profilePicture/');
         const files = await storageRef.list();
         const url = await storage.ref(files.items[0].fullPath).getDownloadURL();
