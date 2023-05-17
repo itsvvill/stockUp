@@ -51,7 +51,7 @@
   -webkit-box-shadow: var(--webkit-box-shadow);
   box-shadow: var(--box-shadow);
   text-decoration: none;
-  color: #333;
+  color: #000;
 }
 @media screen and (max-width: 1200px) {
   .header,
