@@ -92,7 +92,7 @@ export default function Footer() {
             alt="Will Eason's LinkedIn"
             aria-label="Visit Will Eason's LinkedIn"
           >
-            Personal Site
+            LinkedIn
           </a>
         </div>
       </div>
