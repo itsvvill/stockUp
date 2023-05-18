@@ -19,9 +19,9 @@ export default function ViewToggle({ page, changeView, toggleView }) {
       >
         {/* Renders icon based on page passed as props */}
         {page === 'transactions' ? (
-          <UilSearch size="20" color="#333" />
+          <UilSearch size="20" color="#000" />
         ) : (
-          <UilEdit size="20" color="#333" />
+          <UilEdit size="20" color="#000" />
         )}
       </span>
       <span className={styles.line}>|</span>
@@ -30,7 +30,7 @@ export default function ViewToggle({ page, changeView, toggleView }) {
           toggleView ? styles['toggle-list-active'] : styles['toggle-list']
         }
       >
-        <UilListUl size="20" color="#333" />
+        <UilListUl size="20" color="#000" />
       </span>
     </motion.button>
   );
