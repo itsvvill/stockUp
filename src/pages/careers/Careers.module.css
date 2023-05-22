@@ -84,13 +84,16 @@
   font-weight: 600;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1400px) {
+  .container {
+    margin: 35px 0;
+  }
   .heading {
     font-size: 0.75em;
     padding-bottom: 5px;
   }
   .logo {
-    top: 12px;
+    top: 14px;
     width: 55px;
   }
   .jobs-container {
