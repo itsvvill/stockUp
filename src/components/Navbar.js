@@ -61,6 +61,7 @@ export default function Navbar() {
                               style={{
                                 color: '#4CC49A',
                                 cursor: 'default',
+                                textShadow: '1px 1px white',
                               }}
                               role="link"
                             >
@@ -81,6 +82,7 @@ export default function Navbar() {
                             style={{
                               color: '#4CC49A',
                               cursor: 'default',
+                              textShadow: '1px 1px white',
                             }}
                             role="link"
                           >
@@ -110,6 +112,7 @@ export default function Navbar() {
                           style={{
                             color: '#4CC49A',
                             cursor: 'default',
+                            textShadow: '1px 1px white',
                           }}
                           className={styles.links}
                           role="link"
@@ -141,6 +144,7 @@ export default function Navbar() {
                               style={{
                                 color: '#4CC49A',
                                 cursor: 'default',
+                                textShadow: '1px 1px white',
                               }}
                               role="link"
                             >
@@ -173,6 +177,7 @@ export default function Navbar() {
                               style={{
                                 color: '#4CC49A',
                                 cursor: 'default',
+                                textShadow: '1px 1px white',
                               }}
                               role="link"
                             >
@@ -195,6 +200,7 @@ export default function Navbar() {
                               style={{
                                 color: '#4CC49A',
                                 cursor: 'default',
+                                textShadow: '1px 1px white',
                               }}
                               role="link"
                             >
