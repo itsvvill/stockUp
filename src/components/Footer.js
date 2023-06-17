@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 // styles and icons
 import styles from './Footer.module.css';
@@ -10,6 +10,7 @@ import {
 import logo from './logo.png';
 
 export default function Footer() {
+  let location = useLocation();
   return (
     <nav className={styles.footer} role="navigation">
       <div className={styles.container}>
@@ -46,12 +47,42 @@ export default function Footer() {
         </div>
         <div className={styles['footer-links']}>
           <p className={styles['footer-title']}>INFO</p>
-          <Link to="/guide" className={styles['link']} role="link">
-            Guide
-          </Link>
-          <Link to="/careers" className={styles['link']} role="link">
-            Careers
-          </Link>
+          {location.pathname === '/guide' ? (
+            <Link
+              to="/guide"
+              className={styles['link']}
+              style={{
+                color: '#4CC49A',
+                cursor: 'default',
+                textShadow: '1px 1px white',
+              }}
+              role="link"
+            >
+              Guide
+            </Link>
+          ) : (
+            <Link to="/guide" className={styles['link']} role="link">
+              Guide
+            </Link>
+          )}
+          {location.pathname === '/careers' ? (
+            <Link
+              to="/careers"
+              className={styles['link']}
+              style={{
+                color: '#4CC49A',
+                cursor: 'default',
+                textShadow: '1px 1px white',
+              }}
+              role="link"
+            >
+              Careers
+            </Link>
+          ) : (
+            <Link to="/careers" className={styles['link']} role="link">
+              Careers
+            </Link>
+          )}
         </div>
         <div className={styles['footer-links']}>
           <p className={styles['footer-title']}>STACK</p>
@@ -99,9 +130,24 @@ export default function Footer() {
       <div className={styles.copyright}>
         <span className={styles['break-line']}></span>
         <UilCopyright size="16" className={styles.icon} /> StockUp 2023 |{' '}
-        <Link className={styles.privacy} to="/privacy" role="link">
-          Privacy Policy
-        </Link>
+        {location.pathname === '/privacy' ? (
+          <Link
+            className={styles.privacy}
+            style={{
+              color: '#4CC49A',
+              cursor: 'default',
+              textShadow: '1px 1px white',
+            }}
+            to="/privacy"
+            role="link"
+          >
+            Privacy Policy
+          </Link>
+        ) : (
+          <Link className={styles.privacy} to="/privacy" role="link">
+            Privacy Policy
+          </Link>
+        )}
       </div>
     </nav>
   );
