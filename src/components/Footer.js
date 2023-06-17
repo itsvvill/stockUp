@@ -87,7 +87,7 @@ export default function Footer() {
         <div className={styles['footer-links']}>
           <p className={styles['footer-title']}>STACK</p>
           <a
-            href="https://reactjs.org/docs/getting-started.html"
+            href="https://react.dev/learn"
             className={styles['link']}
             target="blank"
             alt="React Documentation"
