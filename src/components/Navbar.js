@@ -240,7 +240,14 @@ export default function Navbar() {
                               colors={['#1f8a58', '#ebeaea', '#4cc49a']}
                             />
                           )}
-                          <div className={styles.username}>
+                          <div
+                            className={styles.username}
+                            style={{
+                              color: '#4CC49A',
+                              cursor: 'default',
+                              textShadow: '1px 1px white',
+                            }}
+                          >
                             {user.displayName ? user.displayName : 'Guest'}
                           </div>
                         </li>
