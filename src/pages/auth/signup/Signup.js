@@ -100,14 +100,14 @@ export default function Signup() {
                 className={styles['toggle-password']}
                 onClick={togglePassword}
               >
-                <UilEyeSlash size="20" />
+                <UilEyeSlash size="20" color="#8C8C8C" />
               </button>
             ) : (
               <button
                 className={styles['toggle-password']}
                 onClick={togglePassword}
               >
-                <UilEye size="20" />
+                <UilEye size="20" color="#8C8C8C" />
               </button>
             )}
           </div>
