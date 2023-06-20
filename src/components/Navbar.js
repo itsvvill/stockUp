@@ -312,7 +312,8 @@ export default function Navbar() {
                 {location.pathname === '/' ? (
                   <div>
                     <Link
-                      className={styles['stocks']}
+                      className={styles['stocks-small']}
+                      id="mobilelogo"
                       to="/"
                       style={{
                         color: '#4CC49A',
@@ -330,7 +331,7 @@ export default function Navbar() {
                     </Link>
                   </div>
                 ) : (
-                  <div className={styles['stocks']}>
+                  <div className={styles['stocks-small']}>
                     <img
                       src={logo}
                       className={styles.logo}
@@ -363,7 +364,7 @@ export default function Navbar() {
                     {location.pathname === '/' ? (
                       <div>
                         <Link
-                          className={styles['stocks']}
+                          className={styles['stocks-small']}
                           to="/"
                           style={{
                             color: '#4CC49A',
@@ -381,7 +382,7 @@ export default function Navbar() {
                         </Link>
                       </div>
                     ) : (
-                      <div className={styles['stocks']}>
+                      <div className={styles['stocks-small']}>
                         <img
                           src={logo}
                           className={styles.logo}
