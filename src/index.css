@@ -39,6 +39,7 @@ body {
 body {
   font-size: 1.1em;
   background: #f8f8f8;
+  user-select: none;
 }
 ul,
 li,
