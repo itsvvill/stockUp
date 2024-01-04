@@ -129,7 +129,7 @@ export default function Footer() {
       </div>
       <div className={styles.copyright}>
         <span className={styles['break-line']}></span>
-        <UilCopyright size="16" className={styles.icon} /> StockUp 2023 |{' '}
+        <UilCopyright size="16" className={styles.icon} /> StockUp 2024 |{' '}
         {location.pathname === '/privacy' ? (
           <Link
             className={styles.privacy}
